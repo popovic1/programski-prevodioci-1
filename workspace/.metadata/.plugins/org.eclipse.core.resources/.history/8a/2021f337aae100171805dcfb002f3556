@@ -1,0 +1,415 @@
+package rs.ac.bg.etf.pp1;
+
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.StandardOpenOption;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.concurrent.atomic.AtomicInteger;
+
+import rs.ac.bg.etf.pp1.ast.ActualParam;
+import rs.ac.bg.etf.pp1.ast.ActualParamList;
+import rs.ac.bg.etf.pp1.ast.ActualParams;
+import rs.ac.bg.etf.pp1.ast.ActualPars;
+import rs.ac.bg.etf.pp1.ast.Actuals;
+import rs.ac.bg.etf.pp1.ast.AddExpr;
+import rs.ac.bg.etf.pp1.ast.Addop;
+import rs.ac.bg.etf.pp1.ast.Assignment;
+import rs.ac.bg.etf.pp1.ast.Const;
+import rs.ac.bg.etf.pp1.ast.Designator;
+import rs.ac.bg.etf.pp1.ast.ErrAssignment;
+import rs.ac.bg.etf.pp1.ast.Expr;
+import rs.ac.bg.etf.pp1.ast.Factor;
+import rs.ac.bg.etf.pp1.ast.FormParams;
+import rs.ac.bg.etf.pp1.ast.FormPars;
+import rs.ac.bg.etf.pp1.ast.FormalParamDecl;
+import rs.ac.bg.etf.pp1.ast.FormalParamDecls;
+import rs.ac.bg.etf.pp1.ast.FormalParamList;
+import rs.ac.bg.etf.pp1.ast.FuncCall;
+import rs.ac.bg.etf.pp1.ast.Matched;
+import rs.ac.bg.etf.pp1.ast.MatchedIf;
+import rs.ac.bg.etf.pp1.ast.MatchedStmt;
+import rs.ac.bg.etf.pp1.ast.MethodDecl;
+import rs.ac.bg.etf.pp1.ast.MethodDeclList;
+import rs.ac.bg.etf.pp1.ast.MethodDeclarations;
+import rs.ac.bg.etf.pp1.ast.MethodTypeName;
+import rs.ac.bg.etf.pp1.ast.NoActuals;
+import rs.ac.bg.etf.pp1.ast.NoFormParam;
+import rs.ac.bg.etf.pp1.ast.NoMethodDecl;
+import rs.ac.bg.etf.pp1.ast.NoStmt;
+import rs.ac.bg.etf.pp1.ast.NoVarDecl;
+import rs.ac.bg.etf.pp1.ast.PrintStmt;
+import rs.ac.bg.etf.pp1.ast.ProcCall;
+import rs.ac.bg.etf.pp1.ast.ProgName;
+import rs.ac.bg.etf.pp1.ast.Program;
+import rs.ac.bg.etf.pp1.ast.ReturnExpr;
+import rs.ac.bg.etf.pp1.ast.ReturnNoExpr;
+import rs.ac.bg.etf.pp1.ast.SingleFormalParamDecl;
+import rs.ac.bg.etf.pp1.ast.Statement;
+import rs.ac.bg.etf.pp1.ast.StatementList;
+import rs.ac.bg.etf.pp1.ast.Statements;
+import rs.ac.bg.etf.pp1.ast.Term;
+import rs.ac.bg.etf.pp1.ast.TermExpr;
+import rs.ac.bg.etf.pp1.ast.Type;
+import rs.ac.bg.etf.pp1.ast.UnmachedStmt;
+import rs.ac.bg.etf.pp1.ast.Unmatched;
+import rs.ac.bg.etf.pp1.ast.UnmatchedIf;
+import rs.ac.bg.etf.pp1.ast.UnmatchedIfElse;
+import rs.ac.bg.etf.pp1.ast.Var;
+import rs.ac.bg.etf.pp1.ast.VarDecl;
+import rs.ac.bg.etf.pp1.ast.VarDeclList;
+import rs.ac.bg.etf.pp1.ast.VarDeclarations;
+import rs.ac.bg.etf.pp1.ast.VisitorAdaptor;
+
+public class SyntaxTreePrinter extends VisitorAdaptor {	
+	
+	private List<String> nodes = new ArrayList<>();
+	
+	private List<String> links = new ArrayList<>();
+	
+	protected String nodeId(Object obj) {
+		return "\"" + obj.getClass().getSimpleName() + obj.hashCode() + "\"";
+	}
+	
+	protected String nodeName(Object obj) {
+		return obj.getClass().getSimpleName();
+	}
+	
+	protected String createLink(Object pred, Object succ) {
+		return nodeId(pred) + " -> " + nodeId(succ);
+	}
+	
+	protected String createNode(Object obj) {
+		return nodeId(obj) + " [label=\"{"+ nodeName(obj) + "}\" color=black]";
+	}
+	
+	@Override
+	public void visit(Var Var) {
+		nodes.add(createNode(Var));
+		links.add(createLink(Var.getParent(), Var));
+		Var.getDesignator().accept(this);
+	}
+	
+	@Override
+	public void visit(ActualParam ActualParam) {
+		nodes.add(createNode(ActualParam));
+	}
+	
+	@Override
+	public void visit(ActualParamList ActualParamList) {
+		nodes.add(createNode(ActualParamList));
+		links.add(createLink(ActualParamList.getParent(), ActualParamList));
+	}
+	
+	@Override
+	public void visit(ActualParams ActualParams) {
+		nodes.add(createNode(ActualParams));
+		links.add(createLink(ActualParams.getParent(), ActualParams));
+		ActualParams.getActualParamList().accept(this);
+		ActualParams.getExpr().accept(this);
+	}
+	
+	@Override
+	public void visit(ActualPars ActualPars) {
+		nodes.add(createNode(ActualPars));
+	}
+	
+	@Override
+	public void visit(Actuals Actuals) {
+		nodes.add(createNode(Actuals));
+	}
+	
+	@Override
+	public void visit(AddExpr AddExpr) {
+		nodes.add(createNode(AddExpr));
+		links.add(createLink(AddExpr.getParent(), AddExpr));
+		AddExpr.getExpr().accept(this);
+		AddExpr.getTerm().accept(this);
+		AddExpr.getAddop().accept(this);
+	}
+	
+	@Override
+	public void visit(Addop Addop) {
+		nodes.add(createNode(Addop));
+		links.add(createLink(Addop.getParent(), Addop));
+	}
+	
+	@Override
+	public void visit(Assignment Assignment) {
+		nodes.add(createNode(Assignment));
+		links.add(createLink(Assignment.getParent(), Assignment));
+	}
+	
+	@Override
+	public void visit(Const Const) {
+		nodes.add(createNode(Const));
+		links.add(createLink(Const.getParent(), Const));
+	}
+	
+	@Override
+	public void visit(Designator Designator) {
+		nodes.add(createNode(Designator));
+		links.add(createLink(Designator.getParent(), Designator));
+	}
+	
+	@Override
+	public void visit(ErrAssignment ErrAssignment) {
+		nodes.add(createNode(ErrAssignment));
+		links.add(createLink(ErrAssignment.getParent(), ErrAssignment));
+	}
+	
+	@Override
+	public void visit(Expr Expr) {
+		nodes.add(createNode(Expr));
+	}
+	
+	@Override
+	public void visit(Factor Factor) {
+		nodes.add(createNode(Factor));
+	}
+	
+	@Override
+	public void visit(Term Term) {
+		nodes.add(createNode(Term));
+	}
+	
+	@Override
+	public void visit(FormalParamDecl FormalParamDecl) {
+		nodes.add(createNode(FormalParamDecl));
+	}
+	
+	@Override
+	public void visit(FormalParamDecls FormalParamDecls) {
+		nodes.add(createNode(FormalParamDecls));
+	}
+	
+	@Override
+	public void visit(FormalParamList FormalParamList) {
+		nodes.add(createNode(FormalParamList));
+	}
+	
+	@Override
+	public void visit(FuncCall FuncCall) {
+		nodes.add(createNode(FuncCall));
+	}
+	
+	@Override
+	public void visit(NoMethodDecl NoMethodDecl) {
+		nodes.add(createNode(NoMethodDecl));
+	}
+
+	@Override
+	public void visit(FormPars FormPars) {
+		nodes.add(createNode(FormPars));
+	}
+
+	@Override
+	public void visit(VarDeclList VarDeclList) {
+		nodes.add(createNode(VarDeclList));
+		links.add(createLink(VarDeclList.getParent(), VarDeclList));
+	}
+
+	@Override
+	public void visit(Unmatched Unmatched) {
+		nodes.add(createNode(Unmatched));
+	}
+
+	@Override
+	public void visit(MethodDeclList MethodDeclList) {
+		nodes.add(createNode(MethodDeclList));
+		links.add(createLink(MethodDeclList.getParent(), MethodDeclList));
+	}
+
+	@Override
+	public void visit(Statement Statement) {
+		nodes.add(createNode(Statement));
+	}
+
+	@Override
+	public void visit(StatementList StatementList) {
+		nodes.add(createNode(StatementList));
+	}
+
+	@Override
+	public void visit(Matched Matched) {
+		nodes.add(createNode(Matched));
+	}
+
+	@Override
+	public void visit(NoActuals NoActuals) {
+		nodes.add(createNode(NoActuals));
+	}
+
+	@Override
+	public void visit(TermExpr TermExpr) {
+		nodes.add(createNode(TermExpr));
+	}
+
+	@Override
+	public void visit(ProcCall ProcCall) {
+		nodes.add(createNode(ProcCall));
+		links.add(createLink(ProcCall.getParent(), ProcCall));
+		ProcCall.getActualPars().accept(this);
+		ProcCall.getDesignator().accept(this);
+	}
+
+	@Override
+	public void visit(MatchedIf MatchedIf) {
+		nodes.add(createNode(MatchedIf));
+	}
+
+	@Override
+	public void visit(ReturnNoExpr ReturnNoExpr) {
+		nodes.add(createNode(ReturnNoExpr));
+	}
+
+	@Override
+	public void visit(ReturnExpr ReturnExpr) {
+		nodes.add(createNode(ReturnExpr));
+		links.add(createLink(ReturnExpr.getParent(), ReturnExpr));
+	}
+
+	@Override
+	public void visit(PrintStmt PrintStmt) {
+		nodes.add(createNode(PrintStmt));
+		links.add(createLink(PrintStmt.getParent(), PrintStmt));
+	}
+
+	@Override
+	public void visit(UnmatchedIfElse UnmatchedIfElse) {
+		nodes.add(createNode(UnmatchedIfElse));
+	}
+
+	@Override
+	public void visit(UnmatchedIf UnmatchedIf) {
+		nodes.add(createNode(UnmatchedIf));
+	}
+
+	@Override
+	public void visit(UnmachedStmt UnmachedStmt) {
+		nodes.add(createNode(UnmachedStmt));
+	}
+
+	@Override
+	public void visit(MatchedStmt MatchedStmt) {
+		nodes.add(createNode(MatchedStmt));
+	}
+
+	@Override
+	public void visit(NoStmt NoStmt) {
+		nodes.add(createNode(NoStmt));
+	}
+
+	@Override
+	public void visit(Statements Statements) {
+		nodes.add(createNode(Statements));
+		links.add(createLink(Statements.getParent(), Statements));
+		Statements.getStatement().accept(this);
+		Statements.getStatementList().accept(this);
+	}
+
+	@Override
+	public void visit(SingleFormalParamDecl SingleFormalParamDecl) {
+		nodes.add(createNode(SingleFormalParamDecl));
+		links.add(createLink(SingleFormalParamDecl.getParent(), SingleFormalParamDecl));
+	}
+
+	@Override
+	public void visit(NoFormParam NoFormParam) {
+		nodes.add(createNode(NoFormParam));
+	}
+
+	@Override
+	public void visit(FormParams FormParams) {
+		nodes.add(createNode(FormParams));
+		links.add(createLink(FormParams.getParent(), FormParams));
+		FormParams.getFormalParamList().accept(this);
+	}
+
+	@Override
+	public void visit(MethodTypeName MethodTypeName) {
+		nodes.add(createNode(MethodTypeName));
+		links.add(createLink(MethodTypeName.getParent(), MethodTypeName));
+	}
+
+	@Override
+	public void visit(MethodDecl MethodDecl) {
+		nodes.add(createNode(MethodDecl));
+		links.add(createLink(MethodDecl.getParent(), MethodDecl));
+		
+		MethodDecl.getMethodTypeName().accept(this);
+		MethodDecl.getFormPars().accept(this);
+		MethodDecl.getVarDeclList().accept(this);
+		MethodDecl.getStatementList().accept(this);
+	}
+
+	@Override
+	public void visit(MethodDeclarations MethodDeclarations) {
+		nodes.add(createNode(MethodDeclarations));
+		links.add(createLink(MethodDeclarations.getParent(), MethodDeclarations));
+		MethodDeclarations.getMethodDeclList().accept(this);
+		MethodDeclarations.getMethodDecl().accept(this);
+	}
+
+	@Override
+	public void visit(Type Type) {
+		nodes.add(createNode(Type));
+		links.add(createLink(Type.getParent(), Type));
+	}
+
+	@Override
+	public void visit(VarDecl VarDecl) {
+		nodes.add(createNode(VarDecl));
+		VarDecl.getType().accept(this);
+		links.add(createLink(VarDecl.getParent(), VarDecl));
+	}
+
+	@Override
+	public void visit(NoVarDecl NoVarDecl) {
+		nodes.add(createNode(NoVarDecl));
+		links.add(createLink(NoVarDecl.getParent(), NoVarDecl));
+	}
+
+	@Override
+	public void visit(VarDeclarations VarDeclarations) {
+		nodes.add(createNode(VarDeclarations));
+		links.add(createLink(VarDeclarations.getParent(), VarDeclarations));
+		VarDeclarations.getVarDeclList().accept(this);
+		VarDeclarations.getVarDecl().accept(this);
+	}
+
+	@Override
+	public void visit(ProgName ProgName) {
+		nodes.add(createNode(ProgName));
+	}
+
+	@Override
+	public void visit(Program Program) {
+		nodes.add(createNode(Program));
+		Program.getMethodDeclList().accept(this);
+		Program.getVarDeclList().accept(this);
+	}
+	
+	public void generateDotFile(Path filePath) {
+		try (PrintWriter writer = new PrintWriter(Files.newOutputStream(filePath, StandardOpenOption.WRITE, StandardOpenOption.CREATE))) {
+			writer.println("digraph cluster1 {");
+			writer.println("	graph [label=\"Syntax tree\", labelloc=top, fontsize=10, rankdir=LR];");
+			writer.println("	node [shape=record];");
+			for (String node : nodes) {
+				writer.println(node);
+			}
+			for (String link : links) {
+				writer.println(link);
+			}
+			writer.println("}");
+		} 
+		catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+}

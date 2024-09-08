@@ -1,0 +1,122 @@
+package rs.ac.bg.etf.pp1;
+
+import jdk.nashorn.internal.ir.VarNode;
+import rs.ac.bg.etf.pp1.CounterVisitor.FormParamCounter;
+import rs.ac.bg.etf.pp1.CounterVisitor.VarCounter;
+import rs.ac.bg.etf.pp1.ast.AddExpr;
+import rs.ac.bg.etf.pp1.ast.Assignment;
+import rs.ac.bg.etf.pp1.ast.Const;
+import rs.ac.bg.etf.pp1.ast.Designator;
+import rs.ac.bg.etf.pp1.ast.FormPars;
+import rs.ac.bg.etf.pp1.ast.FormalParamDecl;
+import rs.ac.bg.etf.pp1.ast.FormalParamDecls;
+import rs.ac.bg.etf.pp1.ast.Matched;
+import rs.ac.bg.etf.pp1.ast.MatchedStmt;
+import rs.ac.bg.etf.pp1.ast.MethodDecl;
+import rs.ac.bg.etf.pp1.ast.MethodDeclarations;
+import rs.ac.bg.etf.pp1.ast.MethodTypeName;
+import rs.ac.bg.etf.pp1.ast.PrintStmt;
+import rs.ac.bg.etf.pp1.ast.Program;
+import rs.ac.bg.etf.pp1.ast.ReturnExpr;
+import rs.ac.bg.etf.pp1.ast.ReturnNoExpr;
+import rs.ac.bg.etf.pp1.ast.SingleFormalParamDecl;
+import rs.ac.bg.etf.pp1.ast.Statement;
+import rs.ac.bg.etf.pp1.ast.StatementList;
+import rs.ac.bg.etf.pp1.ast.Statements;
+import rs.ac.bg.etf.pp1.ast.SyntaxNode;
+import rs.ac.bg.etf.pp1.ast.Term;
+import rs.ac.bg.etf.pp1.ast.TermExpr;
+import rs.ac.bg.etf.pp1.ast.VarDecl;
+import rs.ac.bg.etf.pp1.ast.VarDeclList;
+import rs.ac.bg.etf.pp1.ast.VarDeclarations;
+import rs.ac.bg.etf.pp1.ast.VisitorAdaptor;
+import rs.etf.pp1.mj.runtime.Code;
+import rs.etf.pp1.symboltable.concepts.Obj;
+
+public class CodeGenerator extends VisitorAdaptor {
+	
+	private int varCount;
+	
+	private int paramCnt;
+	
+	private int mainPc;
+	
+	public int getMainPc() {
+		return mainPc;
+	}
+	
+	@Override
+	public void visit(MethodTypeName MethodTypeName) {
+		if ("main".equalsIgnoreCase(MethodTypeName.getMethName())) {
+			mainPc = Code.pc;
+		}
+		SyntaxNode methodNode = MethodTypeName.getParent();
+		VarCounter varCnt = new VarCounter();
+		methodNode.traverseTopDown(varCnt);
+		FormParamCounter fpCnt = new FormParamCounter();
+		methodNode.traverseTopDown(fpCnt);
+		
+		Code.put(Code.enter);
+		Code.put(varCnt.getCount() + fpCnt.getCount());
+		Code.put(fpCnt.getCount());
+	}
+	
+	@Override
+	public void visit(VarDecl VarDecl) {
+		varCount++;
+	}
+
+	@Override
+	public void visit(FormalParamDecl FormalParam) {
+		paramCnt++;
+	}	
+	
+	@Override
+	public void visit(MethodDecl MethodDecl) {
+		Code.put(Code.exit);
+		Code.put(Code.return_);
+	}
+	
+	@Override
+	public void visit(ReturnExpr ReturnExpr) {
+		Code.put(Code.exit);
+		Code.put(Code.return_);
+	}
+	
+	@Override
+	public void visit(ReturnNoExpr ReturnNoExpr) {
+		Code.put(Code.exit);
+		Code.put(Code.return_);
+	}
+	
+	@Override
+	public void visit(Assignment Assignment) {
+		Code.store(Assignment.getDesignator().obj);
+	}
+	
+	
+	@Override
+	public void visit(Const Const) {
+		Code.load(new Obj(Obj.Con, "$", Const.struct, Const.getN1(), 0));
+	}
+	
+	@Override
+	public void visit(Designator Designator) {
+		SyntaxNode parent = Designator.getParent();
+		if (Assignment.class != parent.getClass()) {
+			Code.load(Designator.obj);
+		}
+	}
+	
+	@Override
+	public void visit(PrintStmt PrintStmt) {
+		Code.put(Code.const_5);
+		Code.put(Code.print);
+	}
+	
+	@Override
+	public void visit(AddExpr AddExpr) {
+		Code.put(Code.add);
+	}
+	
+}
