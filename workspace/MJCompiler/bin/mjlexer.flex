@@ -1,3 +1,4 @@
+
 package rs.ac.bg.etf.pp1;
 
 import java_cup.runtime.Symbol;
@@ -36,30 +37,61 @@ import java_cup.runtime.Symbol;
 "\r\n" 	{ }
 "\f" 	{ }
 
-"program"   { return new_symbol(sym.PROG, yytext()); }
+"program"   { return new_symbol(sym.PROG, yytext());}
+"break"     { return new_symbol(sym.BREAK, yytext());}
+"class"     { return new_symbol(sym.CLASS, yytext());}
+"else"      { return new_symbol(sym.ELSE, yytext());}
+"const"     { return new_symbol(sym.CONST, yytext());}
+"if"        { return new_symbol(sym.IF, yytext());}
+"new"       { return new_symbol(sym.NEW, yytext());}
 "print" 	{ return new_symbol(sym.PRINT, yytext()); }
+"read" 	    { return new_symbol(sym.READ, yytext()); }
 "return" 	{ return new_symbol(sym.RETURN, yytext()); }
 "void" 		{ return new_symbol(sym.VOID, yytext()); }
-<YYINITIAL> "+" 		{ return new_symbol(sym.PLUS, yytext()); }
-"=" 		{ return new_symbol(sym.EQUAL, yytext()); }
+"extends" 	{ return new_symbol(sym.EXTENDS, yytext()); }
+"continue" 	{ return new_symbol(sym.CONTINUE, yytext()); }
+"for"	 	{ return new_symbol(sym.FOR, yytext()); }
+"static" 	{ return new_symbol(sym.STATIC, yytext()); }
+
+"+" 		{ return new_symbol(sym.PLUS, yytext()); }
+"-" 		{ return new_symbol(sym.MINUS, yytext()); }
+"*" 		{ return new_symbol(sym.ASTERISK, yytext()); }
+"/" 		{ return new_symbol(sym.FORWARD_SLASH, yytext()); }
+"%" 		{ return new_symbol(sym.PERCENT, yytext()); }
+"==" 		{ return new_symbol(sym.EQUAL, yytext()); }
+"!=" 		{ return new_symbol(sym.NOT_EQUAL, yytext()); }
+">" 		{ return new_symbol(sym.GREATER_THAN, yytext()); }
+">=" 		{ return new_symbol(sym.GREATER_THAN_OR_EQUAL, yytext()); }
+"<" 		{ return new_symbol(sym.LESS_THAN, yytext()); }
+"<=" 		{ return new_symbol(sym.LESS_THAN_OR_EQUAL, yytext()); }
+"&&" 		{ return new_symbol(sym.AND, yytext()); }
+"||" 		{ return new_symbol(sym.OR, yytext()); }
+"=" 		{ return new_symbol(sym.ASSIGN, yytext()); }
+"++" 		{ return new_symbol(sym.INCREMENT, yytext()); }
+"--" 		{ return new_symbol(sym.DECREMENT, yytext()); }
 ";" 		{ return new_symbol(sym.SEMI, yytext()); }
+":" 		{ return new_symbol(sym.COLON, yytext()); }
 "," 		{ return new_symbol(sym.COMMA, yytext()); }
+"." 		{ return new_symbol(sym.DOT, yytext()); }
 "(" 		{ return new_symbol(sym.LPAREN, yytext()); }
 ")" 		{ return new_symbol(sym.RPAREN, yytext()); }
+"[" 		{ return new_symbol(sym.LBRACKET, yytext()); }
+"]" 		{ return new_symbol(sym.RBRACKET, yytext()); }
 "{" 		{ return new_symbol(sym.LBRACE, yytext()); }
 "}"			{ return new_symbol(sym.RBRACE, yytext()); }
+"=>"		{ return new_symbol(sym.ARROW, yytext()); }
 
-<YYINITIAL> "//" 		     { yybegin(COMMENT); }
-<COMMENT> .      { yybegin(COMMENT); }
+"//" {yybegin(COMMENT);}
+<COMMENT> . {yybegin(COMMENT);}
 <COMMENT> "\r\n" { yybegin(YYINITIAL); }
 
-[0-9]+  { return new_symbol(sym.NUMBER, new Integer (yytext())); }
+[0-9]+  	{ return new_symbol(sym.NUMBER, new Integer (yytext())); }
+'([\ -~])'	{ return new_symbol(sym.CHAR, new Character (yytext().charAt(1))); }
+
+"true" 		{return new_symbol(sym.BOOL, new String("true"));}
+"false" 	{return new_symbol(sym.BOOL, new String("false"));}
+
 ([a-z]|[A-Z])[a-z|A-Z|0-9|_]* 	{return new_symbol (sym.IDENT, yytext()); }
 
+
 . { System.err.println("Leksicka greska ("+yytext()+") u liniji "+(yyline+1)); }
-
-
-
-
-
-
