@@ -39,7 +39,6 @@ import java_cup.runtime.Symbol;
 
 "program"   { return new_symbol(sym.PROG, yytext());}
 "break"     { return new_symbol(sym.BREAK, yytext());}
-"class"     { return new_symbol(sym.CLASS, yytext());}
 "else"      { return new_symbol(sym.ELSE, yytext());}
 "const"     { return new_symbol(sym.CONST, yytext());}
 "if"        { return new_symbol(sym.IF, yytext());}
@@ -48,9 +47,7 @@ import java_cup.runtime.Symbol;
 "read" 	    { return new_symbol(sym.READ, yytext()); }
 "return" 	{ return new_symbol(sym.RETURN, yytext()); }
 "void" 		{ return new_symbol(sym.VOID, yytext()); }
-"extends" 	{ return new_symbol(sym.EXTENDS, yytext()); }
 "continue" 	{ return new_symbol(sym.CONTINUE, yytext()); }
-"for"	 	{ return new_symbol(sym.FOR, yytext()); }
 "static" 	{ return new_symbol(sym.STATIC, yytext()); }
 
 "+" 		{ return new_symbol(sym.PLUS, yytext()); }
@@ -79,7 +76,6 @@ import java_cup.runtime.Symbol;
 "]" 		{ return new_symbol(sym.RBRACKET, yytext()); }
 "{" 		{ return new_symbol(sym.LBRACE, yytext()); }
 "}"			{ return new_symbol(sym.RBRACE, yytext()); }
-"=>"		{ return new_symbol(sym.ARROW, yytext()); }
 
 "//" {yybegin(COMMENT);}
 <COMMENT> . {yybegin(COMMENT);}

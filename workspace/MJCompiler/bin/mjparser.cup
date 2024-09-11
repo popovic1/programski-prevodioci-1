@@ -1,16 +1,13 @@
+
+
 package rs.ac.bg.etf.pp1;
 
 import java_cup.runtime.*;
 import org.apache.log4j.*;
-
-// import java.io.*;
 import rs.ac.bg.etf.pp1.ast.*;
 
-
 parser code {:
-	
-	boolean errorDetected = false;
-	
+
 	Logger log = Logger.getLogger(getClass());
    
    
@@ -30,21 +27,15 @@ parser code {:
     }
 
     public void report_error(String message, Object info) {
-    	errorDetected = true;
     	StringBuilder msg = new StringBuilder(message); 
     	if (info instanceof Symbol)
             msg.append (" na liniji ").append(((Symbol)info).left);
         log.error(msg.toString());
     }
-    
-    public void report_info(String message, Object info) {
-    	StringBuilder msg = new StringBuilder(message); 
-    	if (info instanceof Symbol)
-            msg.append (" na liniji ").append(((Symbol)info).left);
-        log.info(msg.toString());
-    }
-    
+
+
 :}
+
 
 scan with {:
 	Symbol s = this.getScanner().next_token();
@@ -53,110 +44,189 @@ scan with {:
 	return s;
 :}
 
+terminal PROG, LBRACE, RBRACE, CONST, ASSIGN, SEMI, COMMA, CHAR, BOOL, OR;
+terminal LBRACKET, RBRACKET, STATIC, LPAREN, RPAREN, VOID, COLON, IF, ELSE, BREAK, CONTINUE, RETURN;
+terminal READ, PRINT, INCREMENT, DECREMENT, AND, PLUS, MINUS, NEW, DOT, ASTERISK, FORWARD_SLASH, PERCENT;
+terminal EQUAL, NOT_EQUAL, GREATER_THAN, GREATER_THAN_OR_EQUAL, LESS_THAN, LESS_THAN_OR_EQUAL;
+terminal Integer NUMBER;
+terminal String IDENT;
 
-terminal PROG, LBRACE, RBRACE, SEMI, LPAREN, RPAREN, COMMA, PRINT, RETURN, PLUS, EQUAL, VOID;
-terminal Integer NUMBER ;
-terminal String IDENT ;
-terminal IF, ELSE;
+nonterminal Program, VarOrConstDeclList, MethodDeclList, VarOrConstDecl, VarDecl, ConstDecl, Type, Const, ConstDeclSuffix;
+nonterminal BracketsOpt, VarDeclSuffix, VarDeclList, StaticInitializer, StatementList, MethodDecl, TypeOrVoid, FormParsOpt;
+nonterminal FormPars, FormParsList, Statement, DesignatorStatement, Condition, Expr, Designator, Assignop, ActPars;
+nonterminal CommaExprList, CondTerm, OrCondTermList, CondFact, AndCondFactList, Relop, Term, AddopTermList, Addop;
+nonterminal Factor, MulopFactorList, Mulop, DesignatorSuffix, Label;
 
-nonterminal MethodDeclList, VarDecl;
-nonterminal FormalParamList, FormalParamDecl, FormPars, ActualPars, ActualParamList; 
-nonterminal StatementList, Statement, Addop;
-nonterminal Unmatched, Matched;
+Program ::= (Program) PROG IDENT VarOrConstDeclList LBRACE MethodDeclList RBRACE;
 
-nonterminal rs.etf.pp1.symboltable.concepts.Obj Program, ProgName, Designator, MethodDecl, MethodTypeName; 
-nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, Term, Expr, Factor, VarDeclList; 
-
-Program ::= (Program) PROG ProgName:p VarDeclList LBRACE MethodDeclList RBRACE 
-;
-
-ProgName ::= (ProgName) IDENT:pName 
-;
-
-VarDeclList ::= (VarDeclarations) VarDeclList VarDecl  
-				|
-				(NoVarDecl)/* epsilon */ 
+VarOrConstDecl ::= (VarOrConstDeclVar) VarDecl
+				| (VarOrConstDeclConst) ConstDecl
 				;
-				
-VarDecl ::= (VarDecl) Type:varType IDENT:varName SEMI 
-;
 
-Type ::= (Type) IDENT:typeName 
-;
-
-MethodDeclList ::= (MethodDeclarations) MethodDeclList MethodDecl
-					|
-					(NoMethodDecl)/* epsilon */
+VarOrConstDeclList ::= (VarOrConstDeclList1) VarOrConstDeclList VarOrConstDecl
+					| (NoVarOrConstDeclList) /* epsilon */
 					;
 
-MethodDecl ::= (MethodDecl) MethodTypeName
-			   LPAREN FormPars RPAREN VarDeclList LBRACE StatementList RBRACE 
-			   ;
+ConstDecl ::= (ConstDecl1) CONST Type IDENT ASSIGN Const ConstDeclSuffix SEMI;
 
-MethodTypeName ::= (MethodTypeName) Type:retType IDENT:methName
-;
+ConstDeclSuffix ::= (ConstDeclSuffix1) ConstDeclSuffix COMMA IDENT ASSIGN Const
+				| (NoConstDeclSuffix) /* epsilon */
+				;
 
-FormPars ::= (FormParams) FormalParamList | (NoFormParam) /* epsilon */ ;
+Const ::= (ConstNum) NUMBER
+		| (ConstChar) CHAR
+		| (ConstBool) BOOL
+		;
 
-FormalParamList ::= (FormalParamDecls) FormalParamList COMMA FormalParamDecl
-					|
-					(SingleFormalParamDecl) FormalParamDecl
+VarDecl ::= (VarDecl1) Type IDENT BracketsOpt VarDeclSuffix SEMI
+		| (VarDeclErrorComma) COMMA error:l {: parser.report_error("Izvrsen oporavak pri deklaraciji globalnih promjenjivih do , u liniji " + lleft, null); :}
+		| (VarDeclErrorSemi) SEMI error:l {: parser.report_error("Izvrsen oporavak pri deklaraciji globalnih promjenjivih do ; u liniji " + lleft, null); :}
+		;
+
+VarDeclList ::= (VarDeclList1) VarDeclList VarDecl
+			| (NoVarDeclList) /* epsilon */
+			;
+
+BracketsOpt ::= (BracketsOpt1) LBRACKET RBRACKET
+			| (BracketsOpt2) LBRACKET RBRACKET LBRACKET RBRACKET
+ 			| (NoBracketsOpt) /* epsilon */
+			;
+
+VarDeclSuffix ::= (VarDeclSuffix1) COMMA Type IDENT BracketsOpt
+				| (NoVarDeclSuffix) /* epsilon */
+				;
+
+StaticInitializer ::= (StaticInitializer1) STATIC LBRACE StatementList RBRACE;
+
+MethodDecl ::= (MethodDecl1) TypeOrVoid IDENT LPAREN FormParsOpt RPAREN VarDeclList LBRACE StatementList RBRACE;
+
+MethodDeclList ::= (MethodDeclList1) MethodDeclList MethodDecl
+				| (NoMethodDeclList) /* epsilon */
+				;
+
+FormParsOpt ::= (FormParsOpt1) FormPars
+			| (NoFormParsOpt) /* epsilon */
+			;
+
+TypeOrVoid ::= (TypeOrVoidType) Type
+			| (TypeOrVoidVoid) VOID
+			;
+
+FormPars ::= (FormPars1) Type IDENT FormParsList
+			| (FormPars2) Type IDENT LBRACKET RBRACKET FormParsList
+			;
+
+FormParsList ::= (FormParsList1) FormParsList COMMA Type IDENT
+				| (FormParsList2) FormParsList COMMA Type IDENT LBRACKET RBRACKET
+				| (NoFormParsList) /* epsilon */
+				;
+
+Type ::= (Type1) IDENT
+		| (Type2) IDENT COLON COLON IDENT
+		;
+
+Statement ::= (Statement1) DesignatorStatement SEMI
+			| (StatementIf) IF LPAREN Condition RPAREN Statement
+			| (StatementBreak) BREAK SEMI
+			| (StatementContinue) CONTINUE SEMI
+			| (StatementReturnExpr) RETURN Expr SEMI
+			| (StatementReturn) RETURN SEMI
+			| (StatementRead) READ LPAREN Designator RPAREN SEMI
+			| (StatementPrintExpr) PRINT LPAREN Expr RPAREN SEMI
+			| (StatementPrintExprWithNum) PRINT LPAREN Expr COMMA NUMBER RPAREN SEMI
+			| (Statement2) LBRACE StatementList RBRACE
+			;
+
+StatementList ::= (StatementList1) StatementList Statement
+				| (NoStatementList) /* epsilon */
+				;
+
+DesignatorStatement ::= (DesignatorStatement1) Designator Assignop Expr
+					| (DesignatorStatement2) Designator LPAREN ActPars RPAREN
+					| (DesignatorStatementInc) Designator INCREMENT
+					| (DesignatorStatementDec) Designator DECREMENT
+					| (DesignatorStatementError) SEMI error:l {: parser.report_error("Izvrsen oporavak pri designator statement-u do ; u liniji " + lleft, null); :}
 					;
-					
-FormalParamDecl ::= (FormalParamDecl) Type IDENT ;
 
-StatementList ::= (Statements) StatementList Statement 
-					|
-				  (NoStmt) /* epsilon */
-				  ;
+ActPars ::= (ActPars1) Expr CommaExprList
+		| (NoActPars) /* epsilon */
+		;
 
-Statement ::= (MatchedStmt) Matched | (UnmachedStmt) Unmatched ;
+CommaExprList ::= (CommaExprList1) CommaExprList COMMA Expr
+				| (NoCommaExprList) /* epsilon */
+				;
 
-Unmatched ::= (UnmatchedIf) IF Expr Statement | (UnmatchedIfElse) IF Expr Matched ELSE Unmatched;
-	
-				  
-Matched ::= (Assignment) Designator:dest EQUAL Expr:e SEMI 
-			  |
-			  (ErrAssignment) Designator EQUAL error SEMI
-			  {: parser.log.debug("Uspesan oporavak od greske pri dodeli vrednosti."); :}
-			  |
-			  (PrintStmt) PRINT LPAREN Expr RPAREN SEMI 
-			  |
-			  (ReturnExpr) RETURN Expr:t SEMI
-			  |
-			  (ReturnNoExpr) RETURN SEMI
-			  | 
-			  (MatchedIf) IF Expr Matched ELSE Matched
-			  |
-			  (ProcCall) Designator:func LPAREN ActualPars RPAREN SEMI
-			  ;
-			  
-Expr ::= (AddExpr) Expr:te Addop Term:t
-		 |
-		 (TermExpr) Term:t
-		 ;
+Condition ::= (Condition1) CondTerm OrCondTermList;
 
-Term ::= (Term) Factor:t 
-;
+OrCondTermList ::= (OrCondTermList1) OrCondTermList OR CondTerm
+				| (NoOrCondTermList) /* epsilon */
+				;
 
-Factor ::= (Const) NUMBER
-			|
-		   (Var) Designator:d
-		    |
-		   (FuncCall) Designator:func LPAREN ActualPars RPAREN
-		   ;
+CondTerm ::= (CondTerm1) CondFact AndCondFactList;
 
-ActualPars ::= (Actuals) ActualParamList 
-				| 
-			   (NoActuals) /* epsilon */ 
-			   ;
-			   
-ActualParamList ::= (ActualParams) ActualParamList COMMA Expr
-					|
-					(ActualParam) Expr
-					;
+AndCondFactList ::= (AndCondFactList1) AndCondFactList AND CondFact
+				| (NoAndCondFactList) /* epsilon */
+				;
 
-Designator ::= (Designator) IDENT:name
-;
+CondFact ::= (CondFact1) Expr
+			| (CondFact2) Expr Relop Expr
+			;
 
-Addop ::= (Addop) PLUS ;
+Expr ::= (ExprPlus) Term AddopTermList
+		| (ExprMinus) MINUS Term AddopTermList
+		;
+
+AddopTermList ::= (AddopTermList1) AddopTermList Addop Term
+				| (NoAddopTermList) /* epsilon */
+				;
+
+Term ::= (Term1) Factor MulopFactorList;
+
+MulopFactorList ::= (MulopFactorList1) MulopFactorList Mulop Factor
+				| (NoMulopFactorList) /* epsilon */
+				;
+
+Factor ::= (Factor1) Designator
+		| (Factor2) Designator LPAREN ActPars RPAREN
+		| (FactorNum) NUMBER
+		| (FactorChar) CHAR
+		| (FactorBool) BOOL
+		| (Factor3) NEW Type LBRACKET Expr RBRACKET
+		| (Factor4) NEW Type LBRACKET Expr RBRACKET LBRACKET Expr RBRACKET
+		| (Factor5) NEW Type LPAREN ActPars RPAREN
+		| (Factor6) LPAREN Expr RPAREN
+		;
+
+Designator ::= (Designator1) IDENT DesignatorSuffix
+               |
+               (Designator2) IDENT COLON COLON IDENT DesignatorSuffix
+               ;
+               
+DesignatorSuffix ::= (DesignatorSuffix1) DesignatorSuffix DOT IDENT
+                   |
+                   (DesignatorSuffix2)  DesignatorSuffix LBRACKET Expr RBRACKET
+				   |
+				   (NoDesignatorSuffix) /* epsilon */
+                   ;
+
+Label ::= (LabelClass) IDENT;
+
+Assignop ::= (Assignop) ASSIGN;
+
+Relop ::= (Equalop) EQUAL
+		| (NotEqualop) NOT_EQUAL
+		| (GreaterThanop) GREATER_THAN
+		| (GreaterThanOrEqualop) GREATER_THAN_OR_EQUAL
+		| (LessThanop) LESS_THAN
+		| (LessThanOrEqualop) LESS_THAN_OR_EQUAL
+		;
+
+Addop ::= (AddopPlus) PLUS
+		| (Subop) MINUS
+		;
+		
+Mulop ::= (Mulop) ASTERISK
+		| (Divop) FORWARD_SLASH
+		| (Modop) PERCENT
+		;
+

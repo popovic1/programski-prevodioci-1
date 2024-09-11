@@ -44,7 +44,7 @@ scan with {:
 	return s;
 :}
 
-terminal PROG, IDENT, LBRACE, RBRACE, CONST, ASSIGN, SEMI, COMMA, NUMBER, CHAR, BOOL;
+terminal PROG, LBRACE, RBRACE, CONST, ASSIGN, SEMI, COMMA, CHAR, BOOL, OR;
 terminal LBRACKET, RBRACKET, STATIC, LPAREN, RPAREN, VOID, COLON, IF, ELSE, BREAK, CONTINUE, RETURN;
 terminal READ, PRINT, INCREMENT, DECREMENT, AND, PLUS, MINUS, NEW, DOT, ASTERISK, FORWARD_SLASH, PERCENT;
 terminal EQUAL, NOT_EQUAL, GREATER_THAN, GREATER_THAN_OR_EQUAL, LESS_THAN, LESS_THAN_OR_EQUAL;
@@ -59,17 +59,17 @@ nonterminal Factor, MulopFactorList, Mulop, DesignatorSuffix, Label;
 
 Program ::= (Program) PROG IDENT VarOrConstDeclList LBRACE MethodDeclList RBRACE;
 
-VarOrConstDecl :: = (VarOrConstDeclVar) VarDecl
+VarOrConstDecl ::= (VarOrConstDeclVar) VarDecl
 				| (VarOrConstDeclConst) ConstDecl
 				;
 
-VarOrConstDeclList ::= (VarOrConstDeclList) VarOrConstDeclList VarOrConstDecl
+VarOrConstDeclList ::= (VarOrConstDeclList1) VarOrConstDeclList VarOrConstDecl
 					| (NoVarOrConstDeclList) /* epsilon */
 					;
 
-ConstDecl ::= (ConstDecl) CONST Type IDENT ASSIGN Const ConstDeclSuffix SEMI;
+ConstDecl ::= (ConstDecl1) CONST Type IDENT ASSIGN Const ConstDeclSuffix SEMI;
 
-ConstDeclSuffix ::= (ConstDeclSuffix) ConstDeclSuffix COMMA IDENT ASSIGN Const
+ConstDeclSuffix ::= (ConstDeclSuffix1) ConstDeclSuffix COMMA IDENT ASSIGN Const
 				| (NoConstDeclSuffix) /* epsilon */
 				;
 
@@ -78,32 +78,33 @@ Const ::= (ConstNum) NUMBER
 		| (ConstBool) BOOL
 		;
 
-VarDecl ::= (VarDecl) Type IDENT BracketsOpt BracketsOpt VarDeclSuffix SEMI
+VarDecl ::= (VarDecl1) Type IDENT BracketsOpt VarDeclSuffix SEMI
 		| (VarDeclErrorComma) COMMA error:l {: parser.report_error("Izvrsen oporavak pri deklaraciji globalnih promjenjivih do , u liniji " + lleft, null); :}
 		| (VarDeclErrorSemi) SEMI error:l {: parser.report_error("Izvrsen oporavak pri deklaraciji globalnih promjenjivih do ; u liniji " + lleft, null); :}
 		;
 
-VarDeclList ::= (VarDeclList) VarDeclList VarDecl
+VarDeclList ::= (VarDeclList1) VarDeclList VarDecl
 			| (NoVarDeclList) /* epsilon */
 			;
 
-BracketsOpt ::= (BracketsOpt) LBRACKET RBRACKET
-			| (NoBracketsOpt) /* epsilon */
+BracketsOpt ::= (BracketsOpt1) LBRACKET RBRACKET
+			| (BracketsOpt2) LBRACKET RBRACKET LBRACKET RBRACKET
+ 			| (NoBracketsOpt) /* epsilon */
 			;
 
-VarDeclSuffix ::= (VarDeclSuffix) COMMA Type IDENT BracketsOpt BracketsOpt
+VarDeclSuffix ::= (VarDeclSuffix1) COMMA Type IDENT BracketsOpt
 				| (NoVarDeclSuffix) /* epsilon */
 				;
 
-StaticInitializer ::= (StaticInitializer) STATIC LBRACE StatementList RBRACE;
+StaticInitializer ::= (StaticInitializer1) STATIC LBRACE StatementList RBRACE;
 
-MethodDecl ::= (MethodDecl) TypeOrVoid IDENT LPAREN FormParsOpt RPAREN VarDeclList LBRACE StatementList RBRACE;
+MethodDecl ::= (MethodDecl1) TypeOrVoid IDENT LPAREN FormParsOpt RPAREN VarDeclList LBRACE StatementList RBRACE;
 
-MethodDeclList ::= (MethodDeclList) MethodDeclList MethodDecl
+MethodDeclList ::= (MethodDeclList1) MethodDeclList MethodDecl
 				| (NoMethodDeclList) /* epsilon */
 				;
 
-FormParsOpt ::= (FormParsOpt) FormPars
+FormParsOpt ::= (FormParsOpt1) FormPars
 			| (NoFormParsOpt) /* epsilon */
 			;
 
@@ -125,7 +126,6 @@ Type ::= (Type1) IDENT
 		;
 
 Statement ::= (Statement1) DesignatorStatement SEMI
-			| (StatementIfElse) IF LPAREN Condition RPAREN Statement ELSE Statement
 			| (StatementIf) IF LPAREN Condition RPAREN Statement
 			| (StatementBreak) BREAK SEMI
 			| (StatementContinue) CONTINUE SEMI
@@ -137,7 +137,7 @@ Statement ::= (Statement1) DesignatorStatement SEMI
 			| (Statement2) LBRACE StatementList RBRACE
 			;
 
-StatementList ::= (StatementList) StatementList Statement
+StatementList ::= (StatementList1) StatementList Statement
 				| (NoStatementList) /* epsilon */
 				;
 
@@ -148,23 +148,23 @@ DesignatorStatement ::= (DesignatorStatement1) Designator Assignop Expr
 					| (DesignatorStatementError) SEMI error:l {: parser.report_error("Izvrsen oporavak pri designator statement-u do ; u liniji " + lleft, null); :}
 					;
 
-ActPars ::= (ActPars) Expr CommaExprList
+ActPars ::= (ActPars1) Expr CommaExprList
 		| (NoActPars) /* epsilon */
 		;
 
-CommaExprList ::= (CommaExprList) CommaExprList COMMA Expr
+CommaExprList ::= (CommaExprList1) CommaExprList COMMA Expr
 				| (NoCommaExprList) /* epsilon */
 				;
 
-Condition ::= (Condition) CondTerm OrCondTermList;
+Condition ::= (Condition1) CondTerm OrCondTermList;
 
-OrCondTermList ::= (OrCondTermList) OrCondTermList OR CondTerm
+OrCondTermList ::= (OrCondTermList1) OrCondTermList OR CondTerm
 				| (NoOrCondTermList) /* epsilon */
 				;
 
-CondTerm ::= (CondTerm) CondFact AndCondFactList;
+CondTerm ::= (CondTerm1) CondFact AndCondFactList;
 
-AndCondFactList ::= (AndCondFactList) AndCondFactList AND CondFact
+AndCondFactList ::= (AndCondFactList1) AndCondFactList AND CondFact
 				| (NoAndCondFactList) /* epsilon */
 				;
 
@@ -176,13 +176,13 @@ Expr ::= (ExprPlus) Term AddopTermList
 		| (ExprMinus) MINUS Term AddopTermList
 		;
 
-AddopTermList ::= (AddopTermList) AddopTermList Addop Term
+AddopTermList ::= (AddopTermList1) AddopTermList Addop Term
 				| (NoAddopTermList) /* epsilon */
 				;
 
-Term ::= (Term) Factor MulopFactorList;
+Term ::= (Term1) Factor MulopFactorList;
 
-MulopFactorList ::= (MulopFactorList) MulopFactorList Mulop Factor
+MulopFactorList ::= (MulopFactorList1) MulopFactorList Mulop Factor
 				| (NoMulopFactorList) /* epsilon */
 				;
 
@@ -205,17 +205,13 @@ Designator ::= (Designator1) IDENT DesignatorSuffix
 DesignatorSuffix ::= (DesignatorSuffix1) DesignatorSuffix DOT IDENT
                    |
                    (DesignatorSuffix2)  DesignatorSuffix LBRACKET Expr RBRACKET
-                   |
-                   (DesignatorSuffix3) DOT IDENT
-                   |
-                   (DesignatorSuffix4) LBRACKET Expr RBRACKET
 				   |
 				   (NoDesignatorSuffix) /* epsilon */
                    ;
 
-Label ::= (Label) IDENT;
+Label ::= (LabelClass) IDENT;
 
-Assignop = (Assignop) ASSIGN;
+Assignop ::= (Assignop) ASSIGN;
 
 Relop ::= (Equalop) EQUAL
 		| (NotEqualop) NOT_EQUAL
@@ -225,7 +221,7 @@ Relop ::= (Equalop) EQUAL
 		| (LessThanOrEqualop) LESS_THAN_OR_EQUAL
 		;
 
-Addop ::= (Addop) PLUS
+Addop ::= (AddopPlus) PLUS
 		| (Subop) MINUS
 		;
 		
