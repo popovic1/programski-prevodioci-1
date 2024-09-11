@@ -44,12 +44,18 @@ scan with {:
 	return s;
 :}
 
-terminal PROG, LBRACE, RBRACE, SEMI, LPAREN, RPAREN, EQUAL, RETURN, PLUS, COMMA, PRINT, VOID, MINUS;
+terminal PROG, IDENT, LBRACE, RBRACE, CONST, ASSIGN, SEMI, COMMA, NUMBER, CHAR, BOOL;
+terminal LBRACKET, RBRACKET, STATIC, LPAREN, RPAREN, VOID, COLON, IF, ELSE, BREAK, CONTINUE, RETURN;
+terminal READ, PRINT, INCREMENT, DECREMENT, AND, PLUS, MINUS, NEW, DOT, ASTERISK, FORWARD_SLASH, PERCENT;
+terminal EQUAL, NOT_EQUAL, GREATER_THAN, GREATER_THAN_OR_EQUAL, LESS_THAN, LESS_THAN_OR_EQUAL;
 terminal Integer NUMBER;
 terminal String IDENT;
 
-nonterminal Program;
-nonterminal Designator, Designator1, Designator2;
+nonterminal Program, VarOrConstDeclList, MethodDeclList, VarOrConstDecl, VarDecl, ConstDecl, Type, Const, ConstDeclSuffix;
+nonterminal BracketsOpt, VarDeclSuffix, VarDeclList, StaticInitializer, StatementList, MethodDecl, TypeOrVoid, FormParsOpt;
+nonterminal FormPars, FormParsList, Statement, DesignatorStatement, Condition, Expr, Designator, Assignop, ActPars;
+nonterminal CommaExprList, CondTerm, OrCondTermList, CondFact, AndCondFactList, Relop, Term, AddopTermList, Addop;
+nonterminal Factor, MulopFactorList, Mulop, DesignatorSuffix, Label;
 
 Program ::= (Program) PROG IDENT VarOrConstDeclList LBRACE MethodDeclList RBRACE;
 
@@ -72,7 +78,10 @@ Const ::= (ConstNum) NUMBER
 		| (ConstBool) BOOL
 		;
 
-VarDecl ::= (VarDecl) Type IDENT BracketsOpt BracketsOpt VarDeclSuffix SEMI;
+VarDecl ::= (VarDecl) Type IDENT BracketsOpt BracketsOpt VarDeclSuffix SEMI
+		| (VarDeclErrorComma) COMMA error:l {: parser.report_error("Izvrsen oporavak pri deklaraciji globalnih promjenjivih do , u liniji " + lleft, null); :}
+		| (VarDeclErrorSemi) SEMI error:l {: parser.report_error("Izvrsen oporavak pri deklaraciji globalnih promjenjivih do ; u liniji " + lleft, null); :}
+		;
 
 VarDeclList ::= (VarDeclList) VarDeclList VarDecl
 			| (NoVarDeclList) /* epsilon */
@@ -136,6 +145,7 @@ DesignatorStatement ::= (DesignatorStatement1) Designator Assignop Expr
 					| (DesignatorStatement2) Designator LPAREN ActPars RPAREN
 					| (DesignatorStatementInc) Designator INCREMENT
 					| (DesignatorStatementDec) Designator DECREMENT
+					| (DesignatorStatementError) SEMI error:l {: parser.report_error("Izvrsen oporavak pri designator statement-u do ; u liniji " + lleft, null); :}
 					;
 
 ActPars ::= (ActPars) Expr CommaExprList
