@@ -51,13 +51,18 @@ terminal EQUAL, NOT_EQUAL, GREATER_THAN, GREATER_THAN_OR_EQUAL, LESS_THAN, LESS_
 terminal Integer NUMBER;
 terminal String IDENT;
 
-nonterminal Program, VarOrConstDeclList, MethodDeclList, VarOrConstDecl, VarDecl, ConstDecl, Type, Const, ConstDeclSuffix;
-nonterminal BracketsOpt, VarDeclSuffix, VarDeclList, StaticInitializer, StatementList, MethodDecl, TypeOrVoid, FormParsOpt;
-nonterminal FormPars, FormParsList, Statement, DesignatorStatement, Condition, Expr, Designator, Assignop, ActPars;
-nonterminal CommaExprList, CondTerm, OrCondTermList, CondFact, AndCondFactList, Relop, Term, AddopTermList, Addop;
-nonterminal Factor, MulopFactorList, Mulop, DesignatorSuffix, Label;
+nonterminal VarOrConstDeclList, MethodDeclList, VarOrConstDecl, VarDecl, ConstDecl, Const, ConstDeclSuffix;
+nonterminal BracketsOpt, VarDeclSuffix, VarDeclList, StaticInitializer, StatementList, TypeOrVoid, FormParsOpt;
+nonterminal FormPars, FormParsList, Statement, DesignatorStatement, Condition, Assignop, ActPars;
+nonterminal CommaExprList, CondTerm, OrCondTermList, CondFact, AndCondFactList, Relop, AddopTermList, Addop;
+nonterminal MulopFactorList, Mulop, DesignatorSuffix, Label;
 
-Program ::= (Program) PROG IDENT VarOrConstDeclList LBRACE MethodDeclList RBRACE;
+nonterminal rs.etf.pp1.symboltable.concepts.Obj ProgName, Program, MethodDecl, MethodTypeName, Designator;
+nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, Term, Factor, Expr;
+
+Program ::= (Program) PROG ProgName:progName VarOrConstDeclList LBRACE MethodDeclList RBRACE;
+
+ProgName ::= (ProgName) IDENT:progName;
 
 VarOrConstDecl ::= (VarOrConstDeclVar) VarDecl
 				| (VarOrConstDeclConst) ConstDecl
@@ -87,18 +92,20 @@ VarDeclList ::= (VarDeclList1) VarDeclList VarDecl
 			| (NoVarDeclList) /* epsilon */
 			;
 
-BracketsOpt ::= (BracketsOpt1) LBRACKET RBRACKET
-			| (BracketsOpt2) LBRACKET RBRACKET LBRACKET RBRACKET
+BracketsOpt ::= (BracketsOptArray) LBRACKET RBRACKET
+			| (BracketsOptMatrix) LBRACKET RBRACKET LBRACKET RBRACKET
  			| (NoBracketsOpt) /* epsilon */
 			;
 
-VarDeclSuffix ::= (VarDeclSuffix1) COMMA Type IDENT BracketsOpt
+VarDeclSuffix ::= (VarDeclSuffix1) VarDeclSuffix COMMA Type IDENT BracketsOpt
 				| (NoVarDeclSuffix) /* epsilon */
 				;
 
 StaticInitializer ::= (StaticInitializer1) STATIC LBRACE StatementList RBRACE;
 
-MethodDecl ::= (MethodDecl1) TypeOrVoid IDENT LPAREN FormParsOpt RPAREN VarDeclList LBRACE StatementList RBRACE;
+MethodDecl ::= (MethodDecl1) MethodTypeName LPAREN FormParsOpt RPAREN VarDeclList LBRACE StatementList RBRACE;
+
+MethodTypeName ::= (MethodTypeName) Type:retType IDENT:methName;
 
 MethodDeclList ::= (MethodDeclList1) MethodDeclList MethodDecl
 				| (NoMethodDeclList) /* epsilon */
@@ -121,8 +128,7 @@ FormParsList ::= (FormParsList1) FormParsList COMMA Type IDENT
 				| (NoFormParsList) /* epsilon */
 				;
 
-Type ::= (Type1) IDENT
-		| (Type2) IDENT COLON COLON IDENT
+Type ::= (Type) IDENT:typeName
 		;
 
 Statement ::= (Statement1) DesignatorStatement SEMI
@@ -197,14 +203,9 @@ Factor ::= (Factor1) Designator
 		| (Factor6) LPAREN Expr RPAREN
 		;
 
-Designator ::= (Designator1) IDENT DesignatorSuffix
-               |
-               (Designator2) IDENT COLON COLON IDENT DesignatorSuffix
-               ;
+Designator ::= (Designator) IDENT DesignatorSuffix;
                
-DesignatorSuffix ::= (DesignatorSuffix1) DesignatorSuffix DOT IDENT
-                   |
-                   (DesignatorSuffix2)  DesignatorSuffix LBRACKET Expr RBRACKET
+DesignatorSuffix ::= (DesignatorSuffix1)  DesignatorSuffix LBRACKET Expr RBRACKET
 				   |
 				   (NoDesignatorSuffix) /* epsilon */
                    ;
