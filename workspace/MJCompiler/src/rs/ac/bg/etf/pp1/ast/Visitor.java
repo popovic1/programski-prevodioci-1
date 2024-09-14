@@ -1,18 +1,17 @@
 // generated with ast extension for cup
 // version 0.8
-// 11/8/2024 20:1:5
+// 14/8/2024 3:4:20
 
 
 package rs.ac.bg.etf.pp1.ast;
 
 public interface Visitor { 
 
-    public void visit(DesignatorSuffix DesignatorSuffix);
-    public void visit(MethodDecl MethodDecl);
     public void visit(FormParsOpt FormParsOpt);
     public void visit(Relop Relop);
     public void visit(MulopFactorList MulopFactorList);
     public void visit(ConstDeclSuffix ConstDeclSuffix);
+    public void visit(VarDeclElems VarDeclElems);
     public void visit(VarOrConstDecl VarOrConstDecl);
     public void visit(StatementList StatementList);
     public void visit(Addop Addop);
@@ -30,14 +29,13 @@ public interface Visitor {
     public void visit(Expr Expr);
     public void visit(OrCondTermList OrCondTermList);
     public void visit(ActPars ActPars);
+    public void visit(MethodTypeName MethodTypeName);
     public void visit(TypeOrVoid TypeOrVoid);
     public void visit(DesignatorStatement DesignatorStatement);
     public void visit(Const Const);
     public void visit(Statement Statement);
     public void visit(VarDecl VarDecl);
     public void visit(VarDeclSuffix VarDeclSuffix);
-    public void visit(Type Type);
-    public void visit(ConstDecl ConstDecl);
     public void visit(StaticInitializer StaticInitializer);
     public void visit(CondFact CondFact);
     public void visit(CommaExprList CommaExprList);
@@ -57,11 +55,10 @@ public interface Visitor {
     public void visit(Equalop Equalop);
     public void visit(Assignop Assignop);
     public void visit(LabelClass LabelClass);
-    public void visit(NoDesignatorSuffix NoDesignatorSuffix);
-    public void visit(DesignatorSuffix2 DesignatorSuffix2);
-    public void visit(DesignatorSuffix1 DesignatorSuffix1);
-    public void visit(Designator2 Designator2);
+    public void visit(DesignatorMatrix DesignatorMatrix);
+    public void visit(DesignatorArray DesignatorArray);
     public void visit(Designator1 Designator1);
+    public void visit(Empty Empty);
     public void visit(Factor6 Factor6);
     public void visit(Factor5 Factor5);
     public void visit(Factor4 Factor4);
@@ -107,8 +104,7 @@ public interface Visitor {
     public void visit(StatementBreak StatementBreak);
     public void visit(StatementIf StatementIf);
     public void visit(Statement1 Statement1);
-    public void visit(Type2 Type2);
-    public void visit(Type1 Type1);
+    public void visit(Type Type);
     public void visit(NoFormParsList NoFormParsList);
     public void visit(FormParsList2 FormParsList2);
     public void visit(FormParsList1 FormParsList1);
@@ -120,28 +116,40 @@ public interface Visitor {
     public void visit(FormParsOpt1 FormParsOpt1);
     public void visit(NoMethodDeclList NoMethodDeclList);
     public void visit(MethodDeclList1 MethodDeclList1);
-    public void visit(MethodDecl1 MethodDecl1);
+    public void visit(MethodTypeNameVoid MethodTypeNameVoid);
+    public void visit(MethodDecl MethodDecl);
     public void visit(StaticInitializer1 StaticInitializer1);
     public void visit(NoVarDeclSuffix NoVarDeclSuffix);
     public void visit(VarDeclSuffix1 VarDeclSuffix1);
+    public void visit(VarDeclElemsMatrix VarDeclElemsMatrix);
+    public void visit(VarDeclElemsArray VarDeclElemsArray);
+    public void visit(VarDeclElems1 VarDeclElems1);
+    public void visit(VarDeclElemsMatrixMultiple VarDeclElemsMatrixMultiple);
+    public void visit(VarDeclElemsArrayMultiple VarDeclElemsArrayMultiple);
+    public void visit(VarDeclElems1Multiple VarDeclElems1Multiple);
     public void visit(NoBracketsOpt NoBracketsOpt);
-    public void visit(BracketsOpt2 BracketsOpt2);
-    public void visit(BracketsOpt1 BracketsOpt1);
-    public void visit(NoVarDeclList NoVarDeclList);
-    public void visit(VarDeclList1 VarDeclList1);
+    public void visit(BracketsOptMatrix BracketsOptMatrix);
+    public void visit(BracketsOptArray BracketsOptArray);
     public void visit(VarDeclErrorSemi VarDeclErrorSemi);
     public void visit(VarDeclErrorComma VarDeclErrorComma);
     public void visit(VarDecl1 VarDecl1);
+    public void visit(NoVarDeclList NoVarDeclList);
+    public void visit(VarDeclList1 VarDeclList1);
     public void visit(ConstBool ConstBool);
     public void visit(ConstChar ConstChar);
     public void visit(ConstNum ConstNum);
-    public void visit(NoConstDeclSuffix NoConstDeclSuffix);
-    public void visit(ConstDeclSuffix1 ConstDeclSuffix1);
-    public void visit(ConstDecl1 ConstDecl1);
+    public void visit(ConstDeclSuffixBool2 ConstDeclSuffixBool2);
+    public void visit(ConstDeclSuffixBool1 ConstDeclSuffixBool1);
+    public void visit(ConstDeclSuffixChar2 ConstDeclSuffixChar2);
+    public void visit(ConstDeclSuffixChar1 ConstDeclSuffixChar1);
+    public void visit(ConstDeclSuffixNum2 ConstDeclSuffixNum2);
+    public void visit(ConstDeclSuffixNum1 ConstDeclSuffixNum1);
+    public void visit(ConstDecl ConstDecl);
     public void visit(NoVarOrConstDeclList NoVarOrConstDeclList);
     public void visit(VarOrConstDeclList1 VarOrConstDeclList1);
     public void visit(VarOrConstDeclConst VarOrConstDeclConst);
     public void visit(VarOrConstDeclVar VarOrConstDeclVar);
+    public void visit(ProgName ProgName);
     public void visit(Program Program);
 
 }

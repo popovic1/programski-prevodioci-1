@@ -14,6 +14,20 @@ import org.apache.log4j.xml.DOMConfigurator;
 
 import rs.ac.bg.etf.pp1.ast.Program;
 import rs.ac.bg.etf.pp1.util.Log4JUtils;
+import rs.etf.pp1.symboltable.Tab;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.Reader;
+
+import java_cup.runtime.Symbol;
+
+import org.apache.log4j.Logger;
+import org.apache.log4j.xml.DOMConfigurator;
+
+import rs.ac.bg.etf.pp1.ast.Program;
+import rs.ac.bg.etf.pp1.util.Log4JUtils;
 
 public class MJParserTest {
 
@@ -38,17 +52,24 @@ public class MJParserTest {
 	        Symbol s = p.parse();  //pocetak parsiranja
 	        
 	        Program prog = (Program)(s.value); 
+	        Tab.init();
 			// ispis sintaksnog stabla
 			log.info(prog.toString(""));
 			log.info("===================================");
 
 			// ispis prepoznatih programskih konstrukcija
-			RuleVisitor v = new RuleVisitor();
+			SemanticPass v = new SemanticPass();
 			prog.traverseBottomUp(v); 
 	      
 			log.info(" Print count calls = " + v.printCallCount);
 
-			log.info(" Deklarisanih promenljivih ima = " + v.varDeclCount);
+			log.info(" Deklarisanih lokalnih promenljivih ima = " + v.varDeclCount);
+			log.info(" Deklarisanih globalnih promenljivih ima = " + v.globalDeclCount);
+			log.info(" Deklarisanih konstanti ima = " + v.constDeclCount);
+			
+			log.info("===================================");
+			Tab.dump();
+			
 			
 		} 
 		finally {

@@ -1,18 +1,17 @@
 // generated with ast extension for cup
 // version 0.8
-// 11/8/2024 20:1:5
+// 14/8/2024 3:4:20
 
 
 package rs.ac.bg.etf.pp1.ast;
 
 public abstract class VisitorAdaptor implements Visitor { 
 
-    public void visit(DesignatorSuffix DesignatorSuffix) { }
-    public void visit(MethodDecl MethodDecl) { }
     public void visit(FormParsOpt FormParsOpt) { }
     public void visit(Relop Relop) { }
     public void visit(MulopFactorList MulopFactorList) { }
     public void visit(ConstDeclSuffix ConstDeclSuffix) { }
+    public void visit(VarDeclElems VarDeclElems) { }
     public void visit(VarOrConstDecl VarOrConstDecl) { }
     public void visit(StatementList StatementList) { }
     public void visit(Addop Addop) { }
@@ -30,14 +29,13 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(Expr Expr) { }
     public void visit(OrCondTermList OrCondTermList) { }
     public void visit(ActPars ActPars) { }
+    public void visit(MethodTypeName MethodTypeName) { }
     public void visit(TypeOrVoid TypeOrVoid) { }
     public void visit(DesignatorStatement DesignatorStatement) { }
     public void visit(Const Const) { }
     public void visit(Statement Statement) { }
     public void visit(VarDecl VarDecl) { }
     public void visit(VarDeclSuffix VarDeclSuffix) { }
-    public void visit(Type Type) { }
-    public void visit(ConstDecl ConstDecl) { }
     public void visit(StaticInitializer StaticInitializer) { }
     public void visit(CondFact CondFact) { }
     public void visit(CommaExprList CommaExprList) { }
@@ -57,11 +55,10 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(Equalop Equalop) { visit(); }
     public void visit(Assignop Assignop) { visit(); }
     public void visit(LabelClass LabelClass) { visit(); }
-    public void visit(NoDesignatorSuffix NoDesignatorSuffix) { visit(); }
-    public void visit(DesignatorSuffix2 DesignatorSuffix2) { visit(); }
-    public void visit(DesignatorSuffix1 DesignatorSuffix1) { visit(); }
-    public void visit(Designator2 Designator2) { visit(); }
+    public void visit(DesignatorMatrix DesignatorMatrix) { visit(); }
+    public void visit(DesignatorArray DesignatorArray) { visit(); }
     public void visit(Designator1 Designator1) { visit(); }
+    public void visit(Empty Empty) { visit(); }
     public void visit(Factor6 Factor6) { visit(); }
     public void visit(Factor5 Factor5) { visit(); }
     public void visit(Factor4 Factor4) { visit(); }
@@ -107,8 +104,7 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(StatementBreak StatementBreak) { visit(); }
     public void visit(StatementIf StatementIf) { visit(); }
     public void visit(Statement1 Statement1) { visit(); }
-    public void visit(Type2 Type2) { visit(); }
-    public void visit(Type1 Type1) { visit(); }
+    public void visit(Type Type) { visit(); }
     public void visit(NoFormParsList NoFormParsList) { visit(); }
     public void visit(FormParsList2 FormParsList2) { visit(); }
     public void visit(FormParsList1 FormParsList1) { visit(); }
@@ -120,28 +116,40 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(FormParsOpt1 FormParsOpt1) { visit(); }
     public void visit(NoMethodDeclList NoMethodDeclList) { visit(); }
     public void visit(MethodDeclList1 MethodDeclList1) { visit(); }
-    public void visit(MethodDecl1 MethodDecl1) { visit(); }
+    public void visit(MethodTypeNameVoid MethodTypeNameVoid) { visit(); }
+    public void visit(MethodDecl MethodDecl) { visit(); }
     public void visit(StaticInitializer1 StaticInitializer1) { visit(); }
     public void visit(NoVarDeclSuffix NoVarDeclSuffix) { visit(); }
     public void visit(VarDeclSuffix1 VarDeclSuffix1) { visit(); }
+    public void visit(VarDeclElemsMatrix VarDeclElemsMatrix) { visit(); }
+    public void visit(VarDeclElemsArray VarDeclElemsArray) { visit(); }
+    public void visit(VarDeclElems1 VarDeclElems1) { visit(); }
+    public void visit(VarDeclElemsMatrixMultiple VarDeclElemsMatrixMultiple) { visit(); }
+    public void visit(VarDeclElemsArrayMultiple VarDeclElemsArrayMultiple) { visit(); }
+    public void visit(VarDeclElems1Multiple VarDeclElems1Multiple) { visit(); }
     public void visit(NoBracketsOpt NoBracketsOpt) { visit(); }
-    public void visit(BracketsOpt2 BracketsOpt2) { visit(); }
-    public void visit(BracketsOpt1 BracketsOpt1) { visit(); }
-    public void visit(NoVarDeclList NoVarDeclList) { visit(); }
-    public void visit(VarDeclList1 VarDeclList1) { visit(); }
+    public void visit(BracketsOptMatrix BracketsOptMatrix) { visit(); }
+    public void visit(BracketsOptArray BracketsOptArray) { visit(); }
     public void visit(VarDeclErrorSemi VarDeclErrorSemi) { visit(); }
     public void visit(VarDeclErrorComma VarDeclErrorComma) { visit(); }
     public void visit(VarDecl1 VarDecl1) { visit(); }
+    public void visit(NoVarDeclList NoVarDeclList) { visit(); }
+    public void visit(VarDeclList1 VarDeclList1) { visit(); }
     public void visit(ConstBool ConstBool) { visit(); }
     public void visit(ConstChar ConstChar) { visit(); }
     public void visit(ConstNum ConstNum) { visit(); }
-    public void visit(NoConstDeclSuffix NoConstDeclSuffix) { visit(); }
-    public void visit(ConstDeclSuffix1 ConstDeclSuffix1) { visit(); }
-    public void visit(ConstDecl1 ConstDecl1) { visit(); }
+    public void visit(ConstDeclSuffixBool2 ConstDeclSuffixBool2) { visit(); }
+    public void visit(ConstDeclSuffixBool1 ConstDeclSuffixBool1) { visit(); }
+    public void visit(ConstDeclSuffixChar2 ConstDeclSuffixChar2) { visit(); }
+    public void visit(ConstDeclSuffixChar1 ConstDeclSuffixChar1) { visit(); }
+    public void visit(ConstDeclSuffixNum2 ConstDeclSuffixNum2) { visit(); }
+    public void visit(ConstDeclSuffixNum1 ConstDeclSuffixNum1) { visit(); }
+    public void visit(ConstDecl ConstDecl) { visit(); }
     public void visit(NoVarOrConstDeclList NoVarOrConstDeclList) { visit(); }
     public void visit(VarOrConstDeclList1 VarOrConstDeclList1) { visit(); }
     public void visit(VarOrConstDeclConst VarOrConstDeclConst) { visit(); }
     public void visit(VarOrConstDeclVar VarOrConstDeclVar) { visit(); }
+    public void visit(ProgName ProgName) { visit(); }
     public void visit(Program Program) { visit(); }
 
 
