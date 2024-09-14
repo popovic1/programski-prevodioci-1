@@ -14,6 +14,7 @@ public class SemanticPass extends VisitorAdaptor {
 	int globalDeclCount = 0;
 	Obj currentMethod = null;
 	Struct currentType = null;
+	Struct currentStruct = null;
 	boolean returnFound = false;
 	boolean errorDetected = false;
 	int nVars;
@@ -71,8 +72,7 @@ public class SemanticPass extends VisitorAdaptor {
     		type.struct = Tab.noType;
     	}else{
     		if(Obj.Type == typeNode.getKind()){
-    			type.struct = typeNode.getType();
-    			currentType = type.struct;
+    			type.struct = currentType = typeNode.getType();
     		}else{
     			report_error("Greska: Ime " + type.getTypeName() + " ne predstavlja tip!", type);
     			type.struct = Tab.noType;
@@ -203,7 +203,7 @@ public class SemanticPass extends VisitorAdaptor {
     		return;
     	}
     	
-    	constDecl.obj = Tab.insert(Obj.Con, constDecl.getConstName(), currentType);
+    	constDecl.obj = Tab.insert(Obj.Con, constDecl.getConstName(), Tab.intType);
     	constDecl.obj.setAdr(constDecl.getLiteral());
     	
     	report_info("Konstanta definisana na liniji "+ constDecl.getLine() + ": " + constDecl.getConstName(), null);
@@ -221,7 +221,7 @@ public class SemanticPass extends VisitorAdaptor {
     		return;
     	}
     	
-    	constDecl.obj = Tab.insert(Obj.Con, constDecl.getConstName(), currentType);
+    	constDecl.obj = Tab.insert(Obj.Con, constDecl.getConstName(), Tab.intType);
     	constDecl.obj.setAdr(constDecl.getLiteral());
     	
     	report_info("Konstanta definisana na liniji "+ constDecl.getLine() + ": " + constDecl.getConstName(), null);
@@ -239,7 +239,7 @@ public class SemanticPass extends VisitorAdaptor {
     		return;
     	}
     	
-    	constDecl.obj = Tab.insert(Obj.Con, constDecl.getConstName(), currentType);
+    	constDecl.obj = Tab.insert(Obj.Con, constDecl.getConstName(), Tab.charType);
     	constDecl.obj.setAdr(constDecl.getCh());
     	
     	report_info("Konstanta definisana na liniji "+ constDecl.getLine() + ": " + constDecl.getConstName(), null);
@@ -257,7 +257,7 @@ public class SemanticPass extends VisitorAdaptor {
     		return;
     	}
     	
-    	constDecl.obj = Tab.insert(Obj.Con, constDecl.getConstName(), currentType);
+    	constDecl.obj = Tab.insert(Obj.Con, constDecl.getConstName(), Tab.charType);
     	constDecl.obj.setAdr(constDecl.getCh());
     	
     	report_info("Konstanta definisana na liniji "+ constDecl.getLine() + ": " + constDecl.getConstName(), null);
@@ -275,7 +275,7 @@ public class SemanticPass extends VisitorAdaptor {
     		return;
     	}
     	
-    	constDecl.obj = Tab.insert(Obj.Con, constDecl.getConstName(), currentType);
+    	constDecl.obj = Tab.insert(Obj.Con, constDecl.getConstName(), boolType);
     	
     	if(constDecl.getBo() == true) {
     		constDecl.obj.setAdr(1);
@@ -299,7 +299,7 @@ public class SemanticPass extends VisitorAdaptor {
     		return;
     	}
     	
-    	constDecl.obj = Tab.insert(Obj.Con, constDecl.getConstName(), currentType);
+    	constDecl.obj = Tab.insert(Obj.Con, constDecl.getConstName(), boolType);
     	
     	if(constDecl.getBo() == true) {
     		constDecl.obj.setAdr(1);
@@ -313,55 +313,68 @@ public class SemanticPass extends VisitorAdaptor {
     }
     
     public void visit (Designator1 designator) {
-    	if((designator.obj = Tab.find(designator.getDesName())) == Tab.noObj) {
+    	
+    	designator.obj = Tab.find(designator.getDesName());
+    	if(designator.obj  == Tab.noObj) {
     		report_error("Semanticka greska na liniji " + designator.getLine() + ". Korisceni simbol nije deklarisan: " + designator.getDesName(),  null);
     		return;
     	}
+    	
     	report_info("Koriscen simbol " + designator.getDesName() + " na liniji " + designator.getLine(), null);
     }
     
     public void visit (DesignatorArray designator) {
-    	Obj arrayObj;
-    	if((arrayObj = Tab.find(designator.getDesName())) == Tab.noObj) {
-    		report_error("Semanticka greska na liniji " + designator.getLine() + ". Korisceni simbol (niz) nije deklarisan: " + designator.getDesName(),  null);
-    		return;
-    	}
     	
-    	if(designator.obj.getType().getKind() != Struct.Array) {
-    		report_error("Semanticka greska na liniji " + designator.getLine() + ". Korisceni simbol (niz) nije tipa Array: " + designator.getDesName(), null);
+    	Obj arrayObj = designator.getDesignName().obj;;
+    	
+    	
+    	if(arrayObj.getType().getKind() != Struct.Array) {
+    		report_error("Semanticka greska na liniji " + designator.getLine() + ". Korisceni simbol (niz) nije tipa Array: " + designator.getDesignName().getName(), null);
     		return;
     	}
     	
     	if(designator.getExpr().struct != Tab.intType) {
-    		report_error("Semanticka greska na liniji " + designator.getLine() + ". Expr nije tipa int: " + designator.getDesName(), null);
+    		report_error("Semanticka greska na liniji " + designator.getLine() + ". Expr nije tipa int: " + designator.getDesignName().getName(), null);
     		return;
     	}
-    	designator.obj = new Obj(Obj.Elem, arrayObj.getName(), arrayObj.getType().getElemType().getElemType());
-    	report_info("Koriscen simbol (niz) " + designator.getDesName() + " na liniji " + designator.getLine(), null);
+    	designator.obj = new Obj(Obj.Elem, arrayObj.getName(), arrayObj.getType().getElemType());
+    	report_info("Koriscen simbol (niz) " + designator.getDesignName().getName() + " na liniji " + designator.getLine(), null);
     	
     }
     
     public void visit (DesignatorMatrix designator) {
-    	Obj matrixObj;
-    	if((matrixObj = Tab.find(designator.getDesName())) == Tab.noObj) {
-    		report_error("Semanticka greska na liniji " + designator.getLine() + ". Korisceni simbol (matrica) nije deklarisan: " + designator.getDesName(),  null);
+    	report_info("USAO U DESIGNATORMATRIX NA LINIJI " + designator.getLine(), null);
+    	
+    	Obj matrixObj = designator.getDesignName().obj;
+    	
+    	if(matrixObj.getType().getElemType().getKind() != Struct.Array
+    			|| matrixObj.getType().getElemType().getKind() != Struct.Array) {
+    		report_error("Semanticka greska na liniji " + designator.getLine() + ". Korisceni simbol (matrica) nije tipa Array: " + designator.getDesignName().getName(), null);
     		return;
     	}
     	
-    	if(designator.obj.getType().getKind() != Struct.Array
-    			|| designator.obj.getType().getElemType().getKind() != Struct.Array) {
-    		report_error("Semanticka greska na liniji " + designator.getLine() + ". Korisceni simbol (matrica) nije tipa Array: " + designator.getDesName(), null);
+    	if(matrixObj.getType().getKind() != Struct.Array
+    			|| matrixObj.getType().getElemType().getKind() != Struct.Array) {
+    		report_error("Semanticka greska na liniji " + designator.getLine() + ". Korisceni simbol (matrica) nije tipa Array: " + designator.getDesignName().getName(), null);
     		return;
     	}
     	
     	if(designator.getExpr().struct != Tab.intType) {
-    		report_error("Semanticka greska na liniji " + designator.getLine() + ". Expr nije tipa int: " + designator.getDesName(), null);
+    		report_error("Semanticka greska na liniji " + designator.getLine() + ". Expr nije tipa int: " + designator.getDesignName().getName(), null);
     		return;
     	}
     	
     	designator.obj = new Obj(Obj.Elem, matrixObj.getName(), matrixObj.getType().getElemType().getElemType());
-    	report_info("Koriscen simbol (matrica) " + designator.getDesName() + " na liniji " + designator.getLine(), null);
+    	report_info("Koriscen simbol (matrica) " + designator.getDesignName().getName() + " na liniji " + designator.getLine(), null);
     	
+    }
+    
+    public void visit (DesignName dn) {
+    	Obj o = Tab.find(dn.getName());
+    	
+    	if(o != Tab.noObj) {
+    		dn.obj = o;
+    	}
     }
     
     public void visit (DesignatorStatement1 desStmt) {
@@ -373,11 +386,12 @@ public class SemanticPass extends VisitorAdaptor {
     		return;
     	}
     	
-    	if(!desStmt.getDesignator().obj.getType().compatibleWith(desStmt.getExpr().struct)) {
+    	if(!desStmt.getExpr().struct.compatibleWith(desStmt.getDesignator().obj.getType())) {
+    		report_info("Tip expr: " + desStmt.getExpr().struct + ", tip designatora = " + desStmt.getDesignator().obj.getType(), null);
     		report_error("Semanticka greska na liniji " + desStmt.getLine() + ": Tipovi designatora i expr-a nisu kompatibilni.", null);
     		return;
     	}
-    	report_info("Dodela vrednosti simbolu " + desStmt.getDesignator() + " na liniji " + desStmt.getLine(), null);
+    	report_info("Dodela vrednosti simbolu " + desStmt.getDesignator().obj.getName() + " na liniji " + desStmt.getLine(), null);
     }
     
     public void visit (DesignatorStatementInc desStmt) {
@@ -392,7 +406,7 @@ public class SemanticPass extends VisitorAdaptor {
     		return;
     	}
     	
-    	report_info("Inkrementirana vrednost simbola " + desStmt.getDesignator() + " na liniji " + desStmt.getLine(), null);
+    	report_info("Inkrementirana vrednost simbola " + desStmt.getDesignator().obj.getName() + " na liniji " + desStmt.getLine(), null);
     }
 
     public void visit (DesignatorStatementDec desStmt) {
@@ -407,10 +421,135 @@ public class SemanticPass extends VisitorAdaptor {
     		return;
     	}
     	
-    	report_info("Dekrementirana vrednost simbola " + desStmt.getDesignator() + " na liniji " + desStmt.getLine(), null);
+    	report_info("Dekrementirana vrednost simbola " + desStmt.getDesignator().obj.getName() + " na liniji " + desStmt.getLine(), null);
     }
     
-
+    public void visit (ExprPlus expr) {
+    	expr.struct = expr.getTerm().struct;
+    	currentStruct = expr.struct;
+    	report_info("ExprPlus na liniji " + expr.getLine() + " tipa: " + expr.getTerm().struct, null);
+    }
+    
+    public void visit (ExprMinus expr) {
+    	if(expr.getTerm().struct != Tab.intType) {
+    		expr.struct = Tab.noType;
+    		currentStruct = expr.struct;
+    		report_error("Semanticka greska na liniji " + expr.getLine() + ": Negativni izraz nije tipa int.", null);
+    		return;
+    	}
+    	expr.struct = expr.getTerm().struct;
+    	currentStruct = expr.struct;
+    	report_info("ExprMinus na liniji " + expr.getLine(), null);
+    }
+    
+    public void visit (ExprMultiple expr) {
+    	if(!(expr.getTerm().struct == Tab.intType && expr.getExpr().struct == Tab.intType)) {
+    		report_error("Semanticka greska na liniji " + expr.getLine() + ": Kompleksni addop izraz nije tipa int.", null);
+    		expr.struct = Tab.noType;
+    		return;
+    	}
+    	expr.struct = Tab.intType;
+    	report_info("AddopTermList Expr na liniji " + expr.getLine(), null);
+    }
+    
+    public void visit (Term1 term) {
+    	
+    	term.struct = currentStruct = term.getFactor().struct;
+    	
+    }
+    
+    public void visit (Term2 term) {
+	
+    	if(term.getTerm().struct.getKind() == Struct.Array) {
+//    		term.getTerm().struct = currentStruct =  term.getTerm().struct.getElemType();
+    		if(term.getTerm().struct.getKind() == Struct.Array) {
+//    			term.getTerm().struct = currentStruct =  term.getTerm().struct.getElemType();
+    		}
+    	}
+    	
+    	if(term.getFactor().struct.getKind() == Struct.Array) {
+//    		term.getFactor().struct = currentStruct =  term.getFactor().struct.getElemType();
+    		if(term.getFactor().struct.getKind() == Struct.Array) {
+//    			term.getFactor().struct = currentStruct =  term.getFactor().struct.getElemType();
+    		}
+    	}
+    	
+    	if(term.getFactor().struct == Tab.intType &&  term.getTerm().struct == Tab.intType) {
+    		term.struct = term.getTerm().struct;
+    	}else {
+    		report_error("Semanticka greska na liniji " + term.getLine() + ": Elementi mulop izraza nisu kompatibilni", null);
+    	}
+    	
+    	
+    	
+    }
+    
+    public void visit(MulopFactorList1 term) {
+    	// TODO sta ako je matrica ili niz?
+    	if(!(currentStruct == Tab.intType && term.getFactor().struct == Tab.intType)) {
+    		report_error("Semanticka greska na liniji " + term.getLine() + ": Kompleksni mulop izraz nije tipa int.", null);
+    		term.struct = currentStruct = Tab.noType;
+    		return;
+    	}
+    	term.struct = currentStruct;
+    	report_info("MulopFactorList Expr na liniji " + term.getLine(), null);
+    }
+    
+    public void visit(Factor1 fact) {
+    	fact.struct = fact.getDesignator().obj.getType();
+    }
+    
+    public void visit(FactorNum fact) {
+    	fact.struct = Tab.intType;
+    }
+    
+    public void visit(FactorChar fact) {
+    	fact.struct = Tab.charType;
+    }
+    
+    public void visit(FactorBool fact) {
+    	fact.struct = boolType;
+    }
+    
+    public void visit(Factor3 fact) {
+    	fact.struct = new Struct(Struct.Array, fact.getType().struct);
+    }
+    
+    public void visit(Factor4 fact) {
+    	fact.struct = new Struct(Struct.Array, new Struct(Struct.Array, fact.getType().struct));
+    }
+    
+    public void visit(Factor6 fact) {
+    	fact.struct = fact.getExpr().struct;
+    }
+    
+    public void visit(StatementPrintExpr p) {
+    	Struct s = p.getExpr().struct;
+    	
+    	while(s.getKind() == Struct.Array) {
+    		s = s.getElemType();
+    	}
+    	
+    	if(!(s == Tab.intType || s == Tab.charType || s == boolType)) {
+    		report_error("Semanticka greska na liniji " + p.getLine() + ": Print ne podrzava dati tip", null);
+    		return;
+    	}
+    	report_info("Print na liniji " + p.getLine(), null);
+    }
+    
+    public void visit(StatementPrintExprWithNum p) {
+    	Struct s = p.getExpr().struct;
+    	
+    	while(s.getKind() == Struct.Array) {
+    		s = s.getElemType();
+    	}
+    	
+    	if(!(s == Tab.intType || s == Tab.charType || s == boolType)) {
+    		report_error("Semanticka greska na liniji " + p.getLine() + ": Print ne podrzava dati tip", null);
+    		return;
+    	}
+    	report_info("Print na liniji " + p.getLine(), null);
+    }
     
     
     public boolean passed(){

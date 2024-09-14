@@ -56,11 +56,11 @@ terminal Boolean BOOL;
 nonterminal VarOrConstDeclList, MethodDeclList, VarOrConstDecl, VarDecl, Const;
 nonterminal BracketsOpt, VarDeclSuffix, VarDeclList, StaticInitializer, StatementList, TypeOrVoid, FormParsOpt;
 nonterminal FormPars, FormParsList, Statement, DesignatorStatement, Condition, Assignop, ActPars;
-nonterminal CommaExprList, CondTerm, OrCondTermList, CondFact, AndCondFactList, Relop, AddopTermList, Addop;
-nonterminal MulopFactorList, Mulop, Label, Empty;
+nonterminal CommaExprList, CondTerm, OrCondTermList, CondFact, AndCondFactList, Relop, Addop;
+nonterminal Mulop, Label, Empty;
 
-nonterminal rs.etf.pp1.symboltable.concepts.Obj ProgName, Program, MethodDecl, MethodTypeName, Designator, VarDeclElems, ConstDeclSuffix, ConstDecl;
-nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, Term, Factor, Expr;
+nonterminal rs.etf.pp1.symboltable.concepts.Obj ProgName, Program, MethodDecl, MethodTypeName, DesignName, Designator, VarDeclElems, ConstDeclSuffix, ConstDecl;
+nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, Term, Factor, Expr, AddopTermList, MulopFactorList;
 
 Program ::= (Program) PROG ProgName:progName VarOrConstDeclList LBRACE MethodDecl RBRACE;
 
@@ -105,10 +105,10 @@ BracketsOpt ::= (BracketsOptArray) LBRACKET RBRACKET
 			
 VarDeclElems ::= (VarDeclElems1Multiple) VarDeclElems COMMA IDENT:varName
 		| (VarDeclElemsArrayMultiple) VarDeclElems COMMA IDENT:varName LBRACKET RBRACKET
-		| (VarDeclElemsMatrixMultiple) VarDeclElems COMMA IDENT:varName LBRACKET RBRACKET LBRACKET RBRACKET
+		| (VarDeclElemsMatrixMultiple) VarDeclElems COMMA IDENT:varName LBRACKET RBRACKET Empty LBRACKET RBRACKET
 		| (VarDeclElems1) IDENT:varName
 		| (VarDeclElemsArray) IDENT:varName LBRACKET RBRACKET
-		| (VarDeclElemsMatrix) IDENT:varName LBRACKET RBRACKET LBRACKET RBRACKET
+		| (VarDeclElemsMatrix) IDENT:varName LBRACKET RBRACKET Empty LBRACKET RBRACKET
 		;
 		
 		
@@ -193,15 +193,18 @@ CondFact ::= (CondFact1) Expr
 			| (CondFact2) Expr Relop Expr
 			;
 
-Expr ::= (ExprPlus) Term AddopTermList
-		| (ExprMinus) MINUS Term AddopTermList
+Expr ::= (ExprPlus) Term
+		| (ExprMinus) MINUS Term
+		| (ExprMultiple) Expr Addop Term
 		;
 
-AddopTermList ::= (AddopTermList1) AddopTermList Addop Term
+AddopTermList ::= (AddopTermList1) AddopTermList Addop
 				| (NoAddopTermList) /* epsilon */
 				;
 
-Term ::= (Term1) Factor MulopFactorList;
+Term ::= (Term1) Factor
+		| (Term2) Term Mulop Factor
+		;
 
 MulopFactorList ::= (MulopFactorList1) MulopFactorList Mulop Factor
 				| (NoMulopFactorList) /* epsilon */
@@ -213,7 +216,7 @@ Factor ::= (Factor1) Designator
 		| (FactorChar) CHAR
 		| (FactorBool) BOOL
 		| (Factor3) NEW Type LBRACKET Expr RBRACKET
-		| (Factor4) NEW Type LBRACKET Expr RBRACKET LBRACKET Expr RBRACKET
+		| (Factor4) NEW Type LBRACKET Expr RBRACKET Empty LBRACKET Expr RBRACKET
 		| (Factor5) NEW Type LPAREN ActPars RPAREN
 		| (Factor6) LPAREN Expr RPAREN
 		;
@@ -221,10 +224,10 @@ Factor ::= (Factor1) Designator
 Empty ::= (Empty);
 
 Designator ::= (Designator1) IDENT:desName
-			| (DesignatorArray) IDENT:desName LBRACKET Expr RBRACKET
-			| (DesignatorMatrix) IDENT:desName LBRACKET Expr:exa RBRACKET LBRACKET Expr:exb RBRACKET
+			| (DesignatorArray) DesignName:desName LBRACKET Expr RBRACKET
+			| (DesignatorMatrix) DesignName:desName LBRACKET Expr:exa RBRACKET Empty LBRACKET Expr:exb RBRACKET
             ;
-
+DesignName ::= (DesignName) IDENT:name;
 Label ::= (LabelClass) IDENT;
 
 Assignop ::= (Assignop) ASSIGN;

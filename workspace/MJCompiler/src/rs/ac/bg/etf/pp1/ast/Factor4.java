@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 14/8/2024 3:4:20
+// 14/8/2024 18:24:11
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -9,13 +9,16 @@ public class Factor4 extends Factor {
 
     private Type Type;
     private Expr Expr;
+    private Empty Empty;
     private Expr Expr1;
 
-    public Factor4 (Type Type, Expr Expr, Expr Expr1) {
+    public Factor4 (Type Type, Expr Expr, Empty Empty, Expr Expr1) {
         this.Type=Type;
         if(Type!=null) Type.setParent(this);
         this.Expr=Expr;
         if(Expr!=null) Expr.setParent(this);
+        this.Empty=Empty;
+        if(Empty!=null) Empty.setParent(this);
         this.Expr1=Expr1;
         if(Expr1!=null) Expr1.setParent(this);
     }
@@ -36,6 +39,14 @@ public class Factor4 extends Factor {
         this.Expr=Expr;
     }
 
+    public Empty getEmpty() {
+        return Empty;
+    }
+
+    public void setEmpty(Empty Empty) {
+        this.Empty=Empty;
+    }
+
     public Expr getExpr1() {
         return Expr1;
     }
@@ -51,6 +62,7 @@ public class Factor4 extends Factor {
     public void childrenAccept(Visitor visitor) {
         if(Type!=null) Type.accept(visitor);
         if(Expr!=null) Expr.accept(visitor);
+        if(Empty!=null) Empty.accept(visitor);
         if(Expr1!=null) Expr1.accept(visitor);
     }
 
@@ -58,12 +70,14 @@ public class Factor4 extends Factor {
         accept(visitor);
         if(Type!=null) Type.traverseTopDown(visitor);
         if(Expr!=null) Expr.traverseTopDown(visitor);
+        if(Empty!=null) Empty.traverseTopDown(visitor);
         if(Expr1!=null) Expr1.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
         if(Type!=null) Type.traverseBottomUp(visitor);
         if(Expr!=null) Expr.traverseBottomUp(visitor);
+        if(Empty!=null) Empty.traverseBottomUp(visitor);
         if(Expr1!=null) Expr1.traverseBottomUp(visitor);
         accept(visitor);
     }
@@ -81,6 +95,12 @@ public class Factor4 extends Factor {
 
         if(Expr!=null)
             buffer.append(Expr.toString("  "+tab));
+        else
+            buffer.append(tab+"  null");
+        buffer.append("\n");
+
+        if(Empty!=null)
+            buffer.append(Empty.toString("  "+tab));
         else
             buffer.append(tab+"  null");
         buffer.append("\n");
