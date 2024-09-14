@@ -9,6 +9,8 @@
 				<exclude name="Yylex.java"/>
 				<exclude name="RuleVisitor.java"/>
 				<exclude name="SemanticPass.java"/>
+				<exclude name="CodeGenerator.java"/>
+				<exclude name="CounterVisitor.java"/>
 			</fileset>
 		</delete>
 		<delete>
