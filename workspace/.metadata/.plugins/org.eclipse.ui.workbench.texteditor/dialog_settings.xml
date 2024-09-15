@@ -2,23 +2,27 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="Nije pronadjen tip"/>
+		<item key="selection" value="error"/>
 		<item key="casesensitive" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="wrap" value="true"/>
 		<item key="wholeword" value="false"/>
 		<list key="findhistory">
-			<item value="Nije pronadjen tip"/>
-			<item value="varDeclCount"/>
-			<item value="Deklarisanih promenljivih ima = 6"/>
-			<item value="PRINT"/>
-			<item value="BracketsOpt"/>
+			<item value="errorD"/>
 			<item value="error"/>
-			<item value=" ="/>
-			<item value="="/>
-			<item value="nelegalan"/>
-			<item value="designator"/>
-			<item value="expr"/>
+			<item value="(designName"/>
+			<item value="( designName"/>
+			<item value="designName"/>
+			<item value="Matrix"/>
+			<item value="DesignatorMatrix"/>
+			<item value="AddopTer"/>
+			<item value="Expr nije tipa int:"/>
+			<item value="ExprPlus"/>
+			<item value="Dodela vre"/>
+			<item value="designator.obj"/>
+			<item value="Designator :"/>
+			<item value="NEW"/>
+			<item value="intT"/>
 		</list>
 		<list key="replacehistory">
 		</list>
@@ -27,7 +31,7 @@
 		<item key="DIALOG_WIDTH" value="414"/>
 		<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
 		<item key="DIALOG_HEIGHT" value="454"/>
-		<item key="DIALOG_X_ORIGIN" value="1829"/>
-		<item key="DIALOG_Y_ORIGIN" value="467"/>
+		<item key="DIALOG_X_ORIGIN" value="2585"/>
+		<item key="DIALOG_Y_ORIGIN" value="586"/>
 	</section>
 </section>

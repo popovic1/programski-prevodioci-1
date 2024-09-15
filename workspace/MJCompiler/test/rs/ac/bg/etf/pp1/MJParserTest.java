@@ -3,6 +3,7 @@ package rs.ac.bg.etf.pp1;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.Reader;
@@ -14,20 +15,8 @@ import org.apache.log4j.xml.DOMConfigurator;
 
 import rs.ac.bg.etf.pp1.ast.Program;
 import rs.ac.bg.etf.pp1.util.Log4JUtils;
+import rs.etf.pp1.mj.runtime.Code;
 import rs.etf.pp1.symboltable.Tab;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.Reader;
-
-import java_cup.runtime.Symbol;
-
-import org.apache.log4j.Logger;
-import org.apache.log4j.xml.DOMConfigurator;
-
-import rs.ac.bg.etf.pp1.ast.Program;
-import rs.ac.bg.etf.pp1.util.Log4JUtils;
 
 public class MJParserTest {
 
@@ -63,14 +52,24 @@ public class MJParserTest {
 	      
 			log.info(" Print count calls = " + v.printCallCount);
 
-			log.info(" Deklarisanih lokalnih promenljivih ima = " + v.varDeclCount);
-			log.info(" Deklarisanih globalnih promenljivih ima = " + v.globalDeclCount);
-			log.info(" Deklarisanih konstanti ima = " + v.constDeclCount);
+			log.info(" Deklarisanih promenljivih ima = " + v.varDeclCount);
 			
 			log.info("===================================");
 			Tab.dump();
 			
-			
+			if(v.passed()){
+				File objFile = new File("test/program.obj");
+				if(objFile.exists()) objFile.delete();
+				
+				CodeGenerator codeGenerator = new CodeGenerator();
+				prog.traverseBottomUp(codeGenerator);
+				Code.dataSize = v.nVars;
+				Code.mainPc = codeGenerator.getMainPc();
+				Code.write(new FileOutputStream(objFile));
+				log.info("Parsiranje uspesno zavrseno!");
+			}else{
+				log.error("Parsiranje NIJE uspesno zavrseno!");
+			}
 		} 
 		finally {
 			if (br != null) try { br.close(); } catch (IOException e1) { log.error(e1.getMessage(), e1); }

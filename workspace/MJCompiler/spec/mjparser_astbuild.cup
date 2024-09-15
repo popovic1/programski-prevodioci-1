@@ -178,7 +178,7 @@ Statement ::= (Statement1) DesignatorStatement:D1 SEMI {: RESULT=new Statement1(
 			| (StatementReturn) RETURN SEMI {: RESULT=new StatementReturn(); :}
 			| (StatementRead) READ LPAREN Designator:D1 RPAREN SEMI {: RESULT=new StatementRead(D1); RESULT.setLine(D1left); :}
 			| (StatementPrintExpr) PRINT LPAREN Expr:E1 RPAREN SEMI {: RESULT=new StatementPrintExpr(E1); RESULT.setLine(E1left); :}
-			| (StatementPrintExprWithNum) PRINT LPAREN Expr:E1 COMMA NUMBER:N2 RPAREN SEMI {: RESULT=new StatementPrintExprWithNum(E1, N2); RESULT.setLine(E1left); :}
+			| (StatementPrintExprWithNum) PRINT LPAREN Expr:E1 COMMA NUMBER:num RPAREN SEMI {: RESULT=new StatementPrintExprWithNum(E1, num); RESULT.setLine(E1left); :}
 			| (Statement2) LBRACE StatementList:S1 RBRACE {: RESULT=new Statement2(S1); RESULT.setLine(S1left); :}
 			;
 
@@ -268,7 +268,7 @@ Addop ::= (AddopPlus) PLUS {: RESULT=new AddopPlus(); :}
 		| (Subop) MINUS {: RESULT=new Subop(); :}
 		;
 		
-Mulop ::= (Mulop) ASTERISK {: RESULT=new Mulop(); :}
+Mulop ::= (Mulop1) ASTERISK {: RESULT=new Mulop1(); :}
 		| (Divop) FORWARD_SLASH {: RESULT=new Divop(); :}
 		| (Modop) PERCENT {: RESULT=new Modop(); :}
 		;

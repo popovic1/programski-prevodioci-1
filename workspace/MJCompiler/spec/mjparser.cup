@@ -154,7 +154,7 @@ Statement ::= (Statement1) DesignatorStatement SEMI
 			| (StatementReturn) RETURN SEMI
 			| (StatementRead) READ LPAREN Designator RPAREN SEMI
 			| (StatementPrintExpr) PRINT LPAREN Expr RPAREN SEMI
-			| (StatementPrintExprWithNum) PRINT LPAREN Expr COMMA NUMBER RPAREN SEMI
+			| (StatementPrintExprWithNum) PRINT LPAREN Expr COMMA NUMBER:num RPAREN SEMI
 			| (Statement2) LBRACE StatementList RBRACE
 			;
 
@@ -244,7 +244,7 @@ Addop ::= (AddopPlus) PLUS
 		| (Subop) MINUS
 		;
 		
-Mulop ::= (Mulop) ASTERISK
+Mulop ::= (Mulop1) ASTERISK
 		| (Divop) FORWARD_SLASH
 		| (Modop) PERCENT
 		;
