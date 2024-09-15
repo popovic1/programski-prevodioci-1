@@ -16,10 +16,12 @@ public class CodeGenerator extends VisitorAdaptor {
 	}
 	
 	public void visit(StatementPrintExpr printStmt){
-		Code.loadConst(0);
+		
 		if(printStmt.getExpr().struct != Tab.charType){
+			Code.loadConst(5);
 			Code.put(Code.print);
 		}else{
+			Code.loadConst(1);
 			Code.put(Code.bprint);
 		}
 	}
@@ -94,7 +96,43 @@ public class CodeGenerator extends VisitorAdaptor {
 	}
 	
 	public void visit(Factor4 cnst){
-		// TODO MATRICA
+		Code.put(Code.enter);
+		Code.put(2);
+		Code.put(3);
+		
+		Code.put(Code.load_n);
+		Code.put(Code.newarray);
+		Code.put(1);
+		
+		int whileAddress = Code.pc;
+		Code.put(Code.load_2);
+		Code.put(Code.load_n);
+		Code.putFalseJump(Code.lt, 0);
+		int addressZero = Code.pc-2;
+		
+		//while
+		Code.put(Code.dup);
+		Code.put(Code.load_2);
+		Code.put(Code.load_1);
+		Code.put(Code.newarray);
+		if(cnst.getType().struct == Tab.charType) {
+			Code.put(0);
+		}
+		else {
+			Code.put(1);
+		}
+		Code.put(Code.astore);
+		
+		Code.put(Code.load_2);
+		Code.loadConst(1);
+		Code.put(Code.add);
+		Code.put(Code.store_2);
+		
+		Code.putJump(whileAddress);
+		Code.fixup(addressZero);
+		
+		Code.put(Code.exit);
+		
 	}
 	
 	public void visit(DesignatorStatement1 dStmt) {
@@ -106,7 +144,7 @@ public class CodeGenerator extends VisitorAdaptor {
 		if(dStmt.getDesignator().obj.getKind() == Obj.Elem) {
 			Code.put(Code.dup2);
 		}
-		Code.load(dStmt.getDesignator().obj);
+//		Code.load(dStmt.getDesignator().obj);
 		Code.loadConst(1);
 		Code.put(Code.add);
 		Code.store(dStmt.getDesignator().obj);
@@ -117,7 +155,7 @@ public class CodeGenerator extends VisitorAdaptor {
 		if(dStmt.getDesignator().obj.getKind() == Obj.Elem) {
 			Code.put(Code.dup2);
 		}
-		Code.load(dStmt.getDesignator().obj);
+//		Code.load(dStmt.getDesignator().obj);
 		Code.loadConst(1);
 		Code.put(Code.sub);
 		Code.store(dStmt.getDesignator().obj);
@@ -150,25 +188,28 @@ public class CodeGenerator extends VisitorAdaptor {
 			Code.load(dsg.obj);
 		}
 		
-//		if(dsg.getParent() instanceof Factor1 ||
-//				dsg.getParent() instanceof DesignatorStatementInc ||
-//				dsg.getParent() instanceof DesignatorStatementDec) {
+//		if(dsg.getParent() instanceof Factor1) {
 //				Code.load(dsg.obj);
 //			}
 	}
 	
 	public void visit (DesignatorArray dsg) {
 		
-		if(dsg.getParent().getParent().getParent().getParent() instanceof StatementPrintExpr){
-					
+//		if(dsg.getParent().getParent() instanceof Designator1 ||
+//			dsg.getParent() instanceof StatementRead){
+//				return;
+//		}
+		
+		if(!(dsg.getParent().getParent() instanceof Statement1)) {
+//		
 			if (dsg.getDesignName().obj.getType().getElemType() == Tab.charType) {
 				Code.put(Code.baload);
 				
 			}else {
-			}
+			
 				Code.put(Code.aload);
 			}
-		
+		}
 		
 	}
 	

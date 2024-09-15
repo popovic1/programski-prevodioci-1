@@ -1,222 +1,217 @@
-INFO  15:02:41,524 - Compiling source file: C:\Users\djordje.popovic\Desktop\Fakultet\PP1\programski-prevodioci-1\workspace\MJCompiler\test\program.mj
-INFO  15:02:41,564 - #2 program
-INFO  15:02:41,564 - #41 test301
-INFO  15:02:41,564 - #5 const
-INFO  15:02:41,565 - #41 int
-INFO  15:02:41,565 - #41 nula
-INFO  15:02:41,566 - #6 =
-INFO  15:02:41,566 - #40 0
-INFO  15:02:41,566 - #7 ;
-INFO  15:02:41,566 - #5 const
-INFO  15:02:41,566 - #41 int
-INFO  15:02:41,567 - #41 jedan
-INFO  15:02:41,567 - #6 =
-INFO  15:02:41,567 - #40 1
-INFO  15:02:41,567 - #7 ;
-INFO  15:02:41,567 - #5 const
-INFO  15:02:41,567 - #41 int
-INFO  15:02:41,567 - #41 pet
-INFO  15:02:41,567 - #6 =
-INFO  15:02:41,567 - #40 5
-INFO  15:02:41,567 - #7 ;
-INFO  15:02:41,569 - #41 int
-INFO  15:02:41,569 - #41 niz
-INFO  15:02:41,569 - #10 [
-INFO  15:02:41,569 - #11 ]
-INFO  15:02:41,569 - #7 ;
-INFO  15:02:41,569 - #41 char
-INFO  15:02:41,570 - #41 nizch
-INFO  15:02:41,570 - #10 [
-INFO  15:02:41,570 - #11 ]
-INFO  15:02:41,570 - #7 ;
-INFO  15:02:41,570 - #41 int
-INFO  15:02:41,570 - #41 mat
-INFO  15:02:41,570 - #10 [
-INFO  15:02:41,570 - #11 ]
-INFO  15:02:41,570 - #10 [
-INFO  15:02:41,570 - #11 ]
-INFO  15:02:41,571 - #7 ;
-INFO  15:02:41,571 - #41 int
-INFO  15:02:41,571 - #41 a
-INFO  15:02:41,571 - #7 ;
-INFO  15:02:41,571 - #3 {
-INFO  15:02:41,571 - #15 void
-INFO  15:02:41,571 - #41 main
-INFO  15:02:41,571 - #13 (
-INFO  15:02:41,572 - #14 )
-INFO  15:02:41,572 - #41 int
-INFO  15:02:41,572 - #41 bodovi
-INFO  15:02:41,573 - #7 ;
-INFO  15:02:41,573 - #41 bool
-INFO  15:02:41,573 - #41 bt
-INFO  15:02:41,573 - #7 ;
-INFO  15:02:41,573 - #3 {
-INFO  15:02:41,573 - #41 bodovi
-INFO  15:02:41,573 - #6 =
-INFO  15:02:41,573 - #40 0
-INFO  15:02:41,575 - #7 ;
-INFO  15:02:41,575 - #41 bodovi
-INFO  15:02:41,575 - #24 ++
-INFO  15:02:41,575 - #7 ;
-INFO  15:02:41,575 - #41 bodovi
-INFO  15:02:41,575 - #6 =
-INFO  15:02:41,575 - #41 bodovi
-INFO  15:02:41,575 - #27 +
-INFO  15:02:41,576 - #41 jedan
-INFO  15:02:41,577 - #7 ;
-INFO  15:02:41,577 - #41 bodovi
-INFO  15:02:41,577 - #6 =
-INFO  15:02:41,577 - #41 bodovi
-INFO  15:02:41,577 - #31 *
-INFO  15:02:41,577 - #41 pet
-INFO  15:02:41,578 - #7 ;
-INFO  15:02:41,579 - #41 bodovi
-INFO  15:02:41,579 - #25 --
-INFO  15:02:41,579 - #7 ;
-INFO  15:02:41,579 - #23 print
-INFO  15:02:41,579 - #13 (
-INFO  15:02:41,579 - #41 bodovi
-INFO  15:02:41,579 - #14 )
-INFO  15:02:41,579 - #7 ;
-INFO  15:02:41,579 - #41 niz
-INFO  15:02:41,579 - #6 =
-INFO  15:02:41,579 - #29 new
-INFO  15:02:41,579 - #41 int
-INFO  15:02:41,579 - #10 [
-INFO  15:02:41,579 - #40 3
-INFO  15:02:41,579 - #11 ]
-INFO  15:02:41,579 - #7 ;
-INFO  15:02:41,579 - #41 niz
-INFO  15:02:41,579 - #10 [
-INFO  15:02:41,580 - #41 nula
-INFO  15:02:41,580 - #11 ]
-INFO  15:02:41,580 - #6 =
-INFO  15:02:41,580 - #41 jedan
-INFO  15:02:41,580 - #7 ;
-INFO  15:02:41,580 - #41 niz
-INFO  15:02:41,580 - #10 [
-INFO  15:02:41,580 - #40 1
-INFO  15:02:41,581 - #11 ]
-INFO  15:02:41,581 - #6 =
-INFO  15:02:41,581 - #40 2
-INFO  15:02:41,581 - #7 ;
-INFO  15:02:41,581 - #41 bodovi
-INFO  15:02:41,581 - #6 =
-INFO  15:02:41,581 - #41 niz
-INFO  15:02:41,581 - #10 [
-INFO  15:02:41,581 - #40 2
-INFO  15:02:41,581 - #11 ]
-INFO  15:02:41,581 - #32 /
-INFO  15:02:41,581 - #40 2
-INFO  15:02:41,582 - #7 ;
-INFO  15:02:41,582 - #23 print
-INFO  15:02:41,582 - #13 (
-INFO  15:02:41,582 - #41 bodovi
-INFO  15:02:41,582 - #14 )
-INFO  15:02:41,582 - #7 ;
-INFO  15:02:41,582 - #23 print
-INFO  15:02:41,582 - #13 (
-INFO  15:02:41,582 - #41 niz
-INFO  15:02:41,582 - #10 [
-INFO  15:02:41,582 - #40 2
-INFO  15:02:41,582 - #11 ]
-INFO  15:02:41,582 - #14 )
-INFO  15:02:41,582 - #7 ;
-INFO  15:02:41,582 - #41 nizch
-INFO  15:02:41,582 - #6 =
-INFO  15:02:41,582 - #29 new
-INFO  15:02:41,582 - #41 char
-INFO  15:02:41,582 - #10 [
-INFO  15:02:41,582 - #40 3
-INFO  15:02:41,582 - #11 ]
-INFO  15:02:41,583 - #7 ;
-INFO  15:02:41,583 - #41 nizch
-INFO  15:02:41,583 - #10 [
-INFO  15:02:41,583 - #40 0
-INFO  15:02:41,583 - #11 ]
-INFO  15:02:41,583 - #6 =
-INFO  15:02:41,583 - #42 a
-INFO  15:02:41,583 - #7 ;
-INFO  15:02:41,583 - #41 nizch
-INFO  15:02:41,583 - #10 [
-INFO  15:02:41,583 - #41 jedan
-INFO  15:02:41,583 - #11 ]
-INFO  15:02:41,583 - #6 =
-INFO  15:02:41,583 - #42 b
-INFO  15:02:41,583 - #7 ;
-INFO  15:02:41,583 - #41 nizch
-INFO  15:02:41,583 - #10 [
-INFO  15:02:41,583 - #41 pet
-INFO  15:02:41,583 - #28 -
-INFO  15:02:41,583 - #40 3
-INFO  15:02:41,584 - #11 ]
-INFO  15:02:41,584 - #6 =
-INFO  15:02:41,584 - #42 c
-INFO  15:02:41,584 - #7 ;
-INFO  15:02:41,584 - #23 print
-INFO  15:02:41,584 - #13 (
-INFO  15:02:41,584 - #41 nizch
-INFO  15:02:41,584 - #10 [
-INFO  15:02:41,584 - #40 1
-INFO  15:02:41,584 - #11 ]
-INFO  15:02:41,584 - #14 )
-INFO  15:02:41,584 - #7 ;
-INFO  15:02:41,584 - #23 print
-INFO  15:02:41,584 - #13 (
-INFO  15:02:41,584 - #41 nizch
-INFO  15:02:41,584 - #10 [
-INFO  15:02:41,584 - #41 jedan
-INFO  15:02:41,584 - #31 *
-INFO  15:02:41,584 - #40 2
-INFO  15:02:41,584 - #11 ]
-INFO  15:02:41,584 - #14 )
-INFO  15:02:41,584 - #7 ;
-INFO  15:02:41,584 - #41 a
-INFO  15:02:41,584 - #6 =
-INFO  15:02:41,584 - #40 1
-INFO  15:02:41,584 - #7 ;
-INFO  15:02:41,584 - #22 read
-INFO  15:02:41,584 - #13 (
-INFO  15:02:41,584 - #41 bodovi
-INFO  15:02:41,584 - #14 )
-INFO  15:02:41,584 - #7 ;
-INFO  15:02:41,584 - #41 bodovi
-INFO  15:02:41,584 - #6 =
-INFO  15:02:41,584 - #28 -
-INFO  15:02:41,584 - #41 bodovi
-INFO  15:02:41,585 - #27 +
-INFO  15:02:41,585 - #13 (
-INFO  15:02:41,585 - #41 pet
-INFO  15:02:41,585 - #31 *
-INFO  15:02:41,585 - #41 a
-INFO  15:02:41,585 - #32 /
-INFO  15:02:41,585 - #40 2
-INFO  15:02:41,585 - #28 -
-INFO  15:02:41,585 - #41 jedan
-INFO  15:02:41,585 - #14 )
-INFO  15:02:41,585 - #31 *
-INFO  15:02:41,585 - #41 bodovi
-INFO  15:02:41,585 - #28 -
-INFO  15:02:41,585 - #13 (
-INFO  15:02:41,585 - #40 3
-INFO  15:02:41,585 - #33 %
-INFO  15:02:41,585 - #40 2
-INFO  15:02:41,586 - #27 +
-INFO  15:02:41,586 - #40 3
-INFO  15:02:41,586 - #31 *
-INFO  15:02:41,586 - #40 2
-INFO  15:02:41,586 - #28 -
-INFO  15:02:41,586 - #40 3
-INFO  15:02:41,586 - #14 )
-INFO  15:02:41,586 - #7 ;
-INFO  15:02:41,586 - #23 print
-INFO  15:02:41,586 - #13 (
-INFO  15:02:41,586 - #41 bodovi
-INFO  15:02:41,586 - #14 )
-INFO  15:02:41,586 - #7 ;
-INFO  15:02:41,586 - #4 }
-INFO  15:02:41,586 - #4 }
-INFO  15:02:41,593 - Program(
+INFO  16:30:10,948 - Compiling source file: C:\Users\djordje.popovic\Desktop\Fakultet\PP1\programski-prevodioci-1\workspace\MJCompiler\test\program.mj
+INFO  16:30:10,986 - #2 program
+INFO  16:30:10,986 - #41 test301
+INFO  16:30:10,986 - #5 const
+INFO  16:30:10,988 - #41 int
+INFO  16:30:10,988 - #41 nula
+INFO  16:30:10,988 - #6 =
+INFO  16:30:10,988 - #40 0
+INFO  16:30:10,988 - #7 ;
+INFO  16:30:10,988 - #5 const
+INFO  16:30:10,989 - #41 int
+INFO  16:30:10,989 - #41 jedan
+INFO  16:30:10,989 - #6 =
+INFO  16:30:10,989 - #40 1
+INFO  16:30:10,989 - #7 ;
+INFO  16:30:10,989 - #5 const
+INFO  16:30:10,989 - #41 int
+INFO  16:30:10,989 - #41 pet
+INFO  16:30:10,989 - #6 =
+INFO  16:30:10,989 - #40 5
+INFO  16:30:10,989 - #7 ;
+INFO  16:30:10,991 - #41 int
+INFO  16:30:10,991 - #41 niz
+INFO  16:30:10,991 - #10 [
+INFO  16:30:10,991 - #11 ]
+INFO  16:30:10,991 - #7 ;
+INFO  16:30:10,991 - #41 char
+INFO  16:30:10,991 - #41 nizch
+INFO  16:30:10,991 - #10 [
+INFO  16:30:10,991 - #11 ]
+INFO  16:30:10,991 - #7 ;
+INFO  16:30:10,991 - #41 int
+INFO  16:30:10,991 - #41 mat
+INFO  16:30:10,991 - #10 [
+INFO  16:30:10,991 - #11 ]
+INFO  16:30:10,991 - #10 [
+INFO  16:30:10,992 - #11 ]
+INFO  16:30:10,992 - #7 ;
+INFO  16:30:10,992 - #41 int
+INFO  16:30:10,992 - #41 a
+INFO  16:30:10,992 - #7 ;
+INFO  16:30:10,992 - #3 {
+INFO  16:30:10,992 - #15 void
+INFO  16:30:10,993 - #41 main
+INFO  16:30:10,993 - #13 (
+INFO  16:30:10,993 - #14 )
+INFO  16:30:10,993 - #41 int
+INFO  16:30:10,994 - #41 bodovi
+INFO  16:30:10,994 - #7 ;
+INFO  16:30:10,994 - #41 bool
+INFO  16:30:10,994 - #41 bt
+INFO  16:30:10,994 - #7 ;
+INFO  16:30:10,994 - #3 {
+INFO  16:30:10,994 - #41 bodovi
+INFO  16:30:10,995 - #6 =
+INFO  16:30:10,995 - #40 0
+INFO  16:30:10,996 - #7 ;
+INFO  16:30:10,996 - #41 bodovi
+INFO  16:30:10,997 - #24 ++
+INFO  16:30:10,997 - #7 ;
+INFO  16:30:10,997 - #41 bodovi
+INFO  16:30:10,997 - #6 =
+INFO  16:30:10,997 - #41 bodovi
+INFO  16:30:10,997 - #27 +
+INFO  16:30:10,997 - #41 jedan
+INFO  16:30:10,998 - #7 ;
+INFO  16:30:10,999 - #41 bodovi
+INFO  16:30:10,999 - #6 =
+INFO  16:30:10,999 - #41 bodovi
+INFO  16:30:10,999 - #31 *
+INFO  16:30:10,999 - #41 pet
+INFO  16:30:11,000 - #7 ;
+INFO  16:30:11,000 - #41 bodovi
+INFO  16:30:11,000 - #25 --
+INFO  16:30:11,000 - #7 ;
+INFO  16:30:11,000 - #23 print
+INFO  16:30:11,000 - #13 (
+INFO  16:30:11,000 - #41 bodovi
+INFO  16:30:11,000 - #14 )
+INFO  16:30:11,000 - #7 ;
+INFO  16:30:11,000 - #41 niz
+INFO  16:30:11,002 - #6 =
+INFO  16:30:11,002 - #29 new
+INFO  16:30:11,002 - #41 int
+INFO  16:30:11,002 - #10 [
+INFO  16:30:11,002 - #40 3
+INFO  16:30:11,002 - #11 ]
+INFO  16:30:11,002 - #7 ;
+INFO  16:30:11,002 - #41 niz
+INFO  16:30:11,002 - #10 [
+INFO  16:30:11,003 - #41 nula
+INFO  16:30:11,003 - #11 ]
+INFO  16:30:11,003 - #6 =
+INFO  16:30:11,003 - #41 jedan
+INFO  16:30:11,003 - #7 ;
+INFO  16:30:11,003 - #41 niz
+INFO  16:30:11,003 - #10 [
+INFO  16:30:11,003 - #40 1
+INFO  16:30:11,003 - #11 ]
+INFO  16:30:11,003 - #6 =
+INFO  16:30:11,003 - #40 2
+INFO  16:30:11,004 - #7 ;
+INFO  16:30:11,004 - #41 bodovi
+INFO  16:30:11,004 - #6 =
+INFO  16:30:11,004 - #41 niz
+INFO  16:30:11,004 - #10 [
+INFO  16:30:11,004 - #40 2
+INFO  16:30:11,004 - #11 ]
+INFO  16:30:11,004 - #32 /
+INFO  16:30:11,004 - #40 2
+INFO  16:30:11,005 - #7 ;
+INFO  16:30:11,005 - #23 print
+INFO  16:30:11,005 - #13 (
+INFO  16:30:11,005 - #41 bodovi
+INFO  16:30:11,005 - #14 )
+INFO  16:30:11,005 - #7 ;
+INFO  16:30:11,005 - #23 print
+INFO  16:30:11,005 - #13 (
+INFO  16:30:11,005 - #41 niz
+INFO  16:30:11,005 - #10 [
+INFO  16:30:11,005 - #40 2
+INFO  16:30:11,005 - #11 ]
+INFO  16:30:11,005 - #14 )
+INFO  16:30:11,005 - #7 ;
+INFO  16:30:11,005 - #41 nizch
+INFO  16:30:11,005 - #6 =
+INFO  16:30:11,005 - #29 new
+INFO  16:30:11,005 - #41 char
+INFO  16:30:11,005 - #10 [
+INFO  16:30:11,005 - #40 3
+INFO  16:30:11,005 - #11 ]
+INFO  16:30:11,006 - #7 ;
+INFO  16:30:11,006 - #41 nizch
+INFO  16:30:11,006 - #10 [
+INFO  16:30:11,006 - #40 0
+INFO  16:30:11,006 - #11 ]
+INFO  16:30:11,006 - #6 =
+INFO  16:30:11,006 - #42 a
+INFO  16:30:11,006 - #7 ;
+INFO  16:30:11,006 - #41 nizch
+INFO  16:30:11,006 - #10 [
+INFO  16:30:11,006 - #41 jedan
+INFO  16:30:11,006 - #11 ]
+INFO  16:30:11,006 - #6 =
+INFO  16:30:11,006 - #42 b
+INFO  16:30:11,006 - #7 ;
+INFO  16:30:11,006 - #41 nizch
+INFO  16:30:11,006 - #10 [
+INFO  16:30:11,006 - #41 pet
+INFO  16:30:11,006 - #28 -
+INFO  16:30:11,006 - #40 3
+INFO  16:30:11,007 - #11 ]
+INFO  16:30:11,007 - #6 =
+INFO  16:30:11,007 - #42 c
+INFO  16:30:11,007 - #7 ;
+INFO  16:30:11,007 - #23 print
+INFO  16:30:11,007 - #13 (
+INFO  16:30:11,007 - #41 nizch
+INFO  16:30:11,007 - #10 [
+INFO  16:30:11,007 - #40 1
+INFO  16:30:11,007 - #11 ]
+INFO  16:30:11,007 - #14 )
+INFO  16:30:11,007 - #7 ;
+INFO  16:30:11,007 - #23 print
+INFO  16:30:11,008 - #13 (
+INFO  16:30:11,008 - #41 nizch
+INFO  16:30:11,008 - #10 [
+INFO  16:30:11,008 - #41 jedan
+INFO  16:30:11,008 - #31 *
+INFO  16:30:11,008 - #40 2
+INFO  16:30:11,008 - #11 ]
+INFO  16:30:11,008 - #14 )
+INFO  16:30:11,008 - #7 ;
+INFO  16:30:11,008 - #41 a
+INFO  16:30:11,008 - #6 =
+INFO  16:30:11,008 - #40 1
+INFO  16:30:11,008 - #7 ;
+INFO  16:30:11,008 - #41 bodovi
+INFO  16:30:11,008 - #6 =
+INFO  16:30:11,008 - #28 -
+INFO  16:30:11,008 - #41 bodovi
+INFO  16:30:11,008 - #27 +
+INFO  16:30:11,008 - #13 (
+INFO  16:30:11,008 - #41 pet
+INFO  16:30:11,008 - #31 *
+INFO  16:30:11,008 - #41 a
+INFO  16:30:11,008 - #32 /
+INFO  16:30:11,008 - #40 2
+INFO  16:30:11,008 - #28 -
+INFO  16:30:11,008 - #41 jedan
+INFO  16:30:11,008 - #14 )
+INFO  16:30:11,009 - #31 *
+INFO  16:30:11,009 - #41 bodovi
+INFO  16:30:11,009 - #28 -
+INFO  16:30:11,009 - #13 (
+INFO  16:30:11,009 - #40 3
+INFO  16:30:11,009 - #33 %
+INFO  16:30:11,009 - #40 2
+INFO  16:30:11,010 - #27 +
+INFO  16:30:11,010 - #40 3
+INFO  16:30:11,010 - #31 *
+INFO  16:30:11,010 - #40 2
+INFO  16:30:11,010 - #28 -
+INFO  16:30:11,010 - #40 3
+INFO  16:30:11,010 - #14 )
+INFO  16:30:11,010 - #7 ;
+INFO  16:30:11,010 - #23 print
+INFO  16:30:11,010 - #13 (
+INFO  16:30:11,010 - #41 bodovi
+INFO  16:30:11,010 - #14 )
+INFO  16:30:11,010 - #7 ;
+INFO  16:30:11,010 - #4 }
+INFO  16:30:11,010 - #4 }
+INFO  16:30:11,016 - Program(
   ProgName(
    test301
   ) [ProgName]
@@ -358,62 +353,31 @@ INFO  15:02:41,593 - Program(
                                         StatementList1(
                                           StatementList1(
                                             StatementList1(
-                                              StatementList1(
-                                                NoStatementList(
-                                                ) [NoStatementList]
-                                                Statement1(
-                                                  DesignatorStatement1(
-                                                    Designator1(
-                                                     bodovi
-                                                    ) [Designator1]
-                                                    Assignop(
-                                                    ) [Assignop]
-                                                    ExprPlus(
-                                                      Term1(
-                                                        FactorNum(
-                                                         0
-                                                        ) [FactorNum]
-                                                      ) [Term1]
-                                                    ) [ExprPlus]
-                                                  ) [DesignatorStatement1]
-                                                ) [Statement1]
-                                              ) [StatementList1]
+                                              NoStatementList(
+                                              ) [NoStatementList]
                                               Statement1(
-                                                DesignatorStatementInc(
+                                                DesignatorStatement1(
                                                   Designator1(
                                                    bodovi
                                                   ) [Designator1]
-                                                ) [DesignatorStatementInc]
+                                                  Assignop(
+                                                  ) [Assignop]
+                                                  ExprPlus(
+                                                    Term1(
+                                                      FactorNum(
+                                                       0
+                                                      ) [FactorNum]
+                                                    ) [Term1]
+                                                  ) [ExprPlus]
+                                                ) [DesignatorStatement1]
                                               ) [Statement1]
                                             ) [StatementList1]
                                             Statement1(
-                                              DesignatorStatement1(
+                                              DesignatorStatementInc(
                                                 Designator1(
                                                  bodovi
                                                 ) [Designator1]
-                                                Assignop(
-                                                ) [Assignop]
-                                                ExprMultiple(
-                                                  ExprPlus(
-                                                    Term1(
-                                                      Factor1(
-                                                        Designator1(
-                                                         bodovi
-                                                        ) [Designator1]
-                                                      ) [Factor1]
-                                                    ) [Term1]
-                                                  ) [ExprPlus]
-                                                  AddopPlus(
-                                                  ) [AddopPlus]
-                                                  Term1(
-                                                    Factor1(
-                                                      Designator1(
-                                                       jedan
-                                                      ) [Designator1]
-                                                    ) [Factor1]
-                                                  ) [Term1]
-                                                ) [ExprMultiple]
-                                              ) [DesignatorStatement1]
+                                              ) [DesignatorStatementInc]
                                             ) [Statement1]
                                           ) [StatementList1]
                                           Statement1(
@@ -423,8 +387,8 @@ INFO  15:02:41,593 - Program(
                                               ) [Designator1]
                                               Assignop(
                                               ) [Assignop]
-                                              ExprPlus(
-                                                Term2(
+                                              ExprMultiple(
+                                                ExprPlus(
                                                   Term1(
                                                     Factor1(
                                                       Designator1(
@@ -432,89 +396,89 @@ INFO  15:02:41,593 - Program(
                                                       ) [Designator1]
                                                     ) [Factor1]
                                                   ) [Term1]
-                                                  Mulop1(
-                                                  ) [Mulop1]
+                                                ) [ExprPlus]
+                                                AddopPlus(
+                                                ) [AddopPlus]
+                                                Term1(
                                                   Factor1(
                                                     Designator1(
-                                                     pet
+                                                     jedan
                                                     ) [Designator1]
                                                   ) [Factor1]
-                                                ) [Term2]
-                                              ) [ExprPlus]
+                                                ) [Term1]
+                                              ) [ExprMultiple]
                                             ) [DesignatorStatement1]
                                           ) [Statement1]
                                         ) [StatementList1]
                                         Statement1(
-                                          DesignatorStatementDec(
+                                          DesignatorStatement1(
                                             Designator1(
                                              bodovi
                                             ) [Designator1]
-                                          ) [DesignatorStatementDec]
+                                            Assignop(
+                                            ) [Assignop]
+                                            ExprPlus(
+                                              Term2(
+                                                Term1(
+                                                  Factor1(
+                                                    Designator1(
+                                                     bodovi
+                                                    ) [Designator1]
+                                                  ) [Factor1]
+                                                ) [Term1]
+                                                Mulop1(
+                                                ) [Mulop1]
+                                                Factor1(
+                                                  Designator1(
+                                                   pet
+                                                  ) [Designator1]
+                                                ) [Factor1]
+                                              ) [Term2]
+                                            ) [ExprPlus]
+                                          ) [DesignatorStatement1]
                                         ) [Statement1]
                                       ) [StatementList1]
-                                      StatementPrintExpr(
-                                        ExprPlus(
-                                          Term1(
-                                            Factor1(
-                                              Designator1(
-                                               bodovi
-                                              ) [Designator1]
-                                            ) [Factor1]
-                                          ) [Term1]
-                                        ) [ExprPlus]
-                                      ) [StatementPrintExpr]
+                                      Statement1(
+                                        DesignatorStatementDec(
+                                          Designator1(
+                                           bodovi
+                                          ) [Designator1]
+                                        ) [DesignatorStatementDec]
+                                      ) [Statement1]
                                     ) [StatementList1]
-                                    Statement1(
-                                      DesignatorStatement1(
-                                        Designator1(
-                                         niz
-                                        ) [Designator1]
-                                        Assignop(
-                                        ) [Assignop]
-                                        ExprPlus(
-                                          Term1(
-                                            Factor3(
-                                              Type(
-                                               int
-                                              ) [Type]
-                                              ExprPlus(
-                                                Term1(
-                                                  FactorNum(
-                                                   3
-                                                  ) [FactorNum]
-                                                ) [Term1]
-                                              ) [ExprPlus]
-                                            ) [Factor3]
-                                          ) [Term1]
-                                        ) [ExprPlus]
-                                      ) [DesignatorStatement1]
-                                    ) [Statement1]
-                                  ) [StatementList1]
-                                  Statement1(
-                                    DesignatorStatement1(
-                                      DesignatorArray(
-                                        DesignName(
-                                         niz
-                                        ) [DesignName]
-                                        ExprPlus(
-                                          Term1(
-                                            Factor1(
-                                              Designator1(
-                                               nula
-                                              ) [Designator1]
-                                            ) [Factor1]
-                                          ) [Term1]
-                                        ) [ExprPlus]
-                                      ) [DesignatorArray]
-                                      Assignop(
-                                      ) [Assignop]
+                                    StatementPrintExpr(
                                       ExprPlus(
                                         Term1(
                                           Factor1(
                                             Designator1(
-                                             jedan
+                                             bodovi
                                             ) [Designator1]
                                           ) [Factor1]
+                                        ) [Term1]
+                                      ) [ExprPlus]
+                                    ) [StatementPrintExpr]
+                                  ) [StatementList1]
+                                  Statement1(
+                                    DesignatorStatement1(
+                                      Designator1(
+                                       niz
+                                      ) [Designator1]
+                                      Assignop(
+                                      ) [Assignop]
+                                      ExprPlus(
+                                        Term1(
+                                          Factor3(
+                                            Type(
+                                             int
+                                            ) [Type]
+                                            ExprPlus(
+                                              Term1(
+                                                FactorNum(
+                                                 3
+                                                ) [FactorNum]
+                                              ) [Term1]
+                                            ) [ExprPlus]
+                                          ) [Factor3]
                                         ) [Term1]
                                       ) [ExprPlus]
                                     ) [DesignatorStatement1]
@@ -528,9 +492,11 @@ INFO  15:02:41,593 - Program(
                                       ) [DesignName]
                                       ExprPlus(
                                         Term1(
-                                          FactorNum(
-                                           1
-                                          ) [FactorNum]
+                                          Factor1(
+                                            Designator1(
+                                             nula
+                                            ) [Designator1]
+                                          ) [Factor1]
                                         ) [Term1]
                                       ) [ExprPlus]
                                     ) [DesignatorArray]
@@ -538,9 +504,11 @@ INFO  15:02:41,593 - Program(
                                     ) [Assignop]
                                     ExprPlus(
                                       Term1(
-                                        FactorNum(
-                                         2
-                                        ) [FactorNum]
+                                        Factor1(
+                                          Designator1(
+                                           jedan
+                                          ) [Designator1]
+                                        ) [Factor1]
                                       ) [Term1]
                                     ) [ExprPlus]
                                   ) [DesignatorStatement1]
@@ -548,55 +516,6 @@ INFO  15:02:41,593 - Program(
                               ) [StatementList1]
                               Statement1(
                                 DesignatorStatement1(
-                                  Designator1(
-                                   bodovi
-                                  ) [Designator1]
-                                  Assignop(
-                                  ) [Assignop]
-                                  ExprPlus(
-                                    Term2(
-                                      Term1(
-                                        Factor1(
-                                          DesignatorArray(
-                                            DesignName(
-                                             niz
-                                            ) [DesignName]
-                                            ExprPlus(
-                                              Term1(
-                                                FactorNum(
-                                                 2
-                                                ) [FactorNum]
-                                              ) [Term1]
-                                            ) [ExprPlus]
-                                          ) [DesignatorArray]
-                                        ) [Factor1]
-                                      ) [Term1]
-                                      Divop(
-                                      ) [Divop]
-                                      FactorNum(
-                                       2
-                                      ) [FactorNum]
-                                    ) [Term2]
-                                  ) [ExprPlus]
-                                ) [DesignatorStatement1]
-                              ) [Statement1]
-                            ) [StatementList1]
-                            StatementPrintExpr(
-                              ExprPlus(
-                                Term1(
-                                  Factor1(
-                                    Designator1(
-                                     bodovi
-                                    ) [Designator1]
-                                  ) [Factor1]
-                                ) [Term1]
-                              ) [ExprPlus]
-                            ) [StatementPrintExpr]
-                          ) [StatementList1]
-                          StatementPrintExpr(
-                            ExprPlus(
-                              Term1(
-                                Factor1(
                                   DesignatorArray(
                                     DesignName(
                                      niz
@@ -604,63 +523,112 @@ INFO  15:02:41,593 - Program(
                                     ExprPlus(
                                       Term1(
                                         FactorNum(
-                                         2
+                                         1
                                         ) [FactorNum]
                                       ) [Term1]
                                     ) [ExprPlus]
                                   ) [DesignatorArray]
+                                  Assignop(
+                                  ) [Assignop]
+                                  ExprPlus(
+                                    Term1(
+                                      FactorNum(
+                                       2
+                                      ) [FactorNum]
+                                    ) [Term1]
+                                  ) [ExprPlus]
+                                ) [DesignatorStatement1]
+                              ) [Statement1]
+                            ) [StatementList1]
+                            Statement1(
+                              DesignatorStatement1(
+                                Designator1(
+                                 bodovi
+                                ) [Designator1]
+                                Assignop(
+                                ) [Assignop]
+                                ExprPlus(
+                                  Term2(
+                                    Term1(
+                                      Factor1(
+                                        DesignatorArray(
+                                          DesignName(
+                                           niz
+                                          ) [DesignName]
+                                          ExprPlus(
+                                            Term1(
+                                              FactorNum(
+                                               2
+                                              ) [FactorNum]
+                                            ) [Term1]
+                                          ) [ExprPlus]
+                                        ) [DesignatorArray]
+                                      ) [Factor1]
+                                    ) [Term1]
+                                    Divop(
+                                    ) [Divop]
+                                    FactorNum(
+                                     2
+                                    ) [FactorNum]
+                                  ) [Term2]
+                                ) [ExprPlus]
+                              ) [DesignatorStatement1]
+                            ) [Statement1]
+                          ) [StatementList1]
+                          StatementPrintExpr(
+                            ExprPlus(
+                              Term1(
+                                Factor1(
+                                  Designator1(
+                                   bodovi
+                                  ) [Designator1]
                                 ) [Factor1]
                               ) [Term1]
                             ) [ExprPlus]
                           ) [StatementPrintExpr]
                         ) [StatementList1]
-                        Statement1(
-                          DesignatorStatement1(
-                            Designator1(
-                             nizch
-                            ) [Designator1]
-                            Assignop(
-                            ) [Assignop]
-                            ExprPlus(
-                              Term1(
-                                Factor3(
-                                  Type(
-                                   char
-                                  ) [Type]
+                        StatementPrintExpr(
+                          ExprPlus(
+                            Term1(
+                              Factor1(
+                                DesignatorArray(
+                                  DesignName(
+                                   niz
+                                  ) [DesignName]
                                   ExprPlus(
                                     Term1(
                                       FactorNum(
-                                       3
+                                       2
                                       ) [FactorNum]
                                     ) [Term1]
                                   ) [ExprPlus]
-                                ) [Factor3]
-                              ) [Term1]
-                            ) [ExprPlus]
-                          ) [DesignatorStatement1]
-                        ) [Statement1]
+                                ) [DesignatorArray]
+                              ) [Factor1]
+                            ) [Term1]
+                          ) [ExprPlus]
+                        ) [StatementPrintExpr]
                       ) [StatementList1]
                       Statement1(
                         DesignatorStatement1(
-                          DesignatorArray(
-                            DesignName(
-                             nizch
-                            ) [DesignName]
-                            ExprPlus(
-                              Term1(
-                                FactorNum(
-                                 0
-                                ) [FactorNum]
-                              ) [Term1]
-                            ) [ExprPlus]
-                          ) [DesignatorArray]
+                          Designator1(
+                           nizch
+                          ) [Designator1]
                           Assignop(
                           ) [Assignop]
                           ExprPlus(
                             Term1(
-                              FactorChar(
-                               a
-                              ) [FactorChar]
+                              Factor3(
+                                Type(
+                                 char
+                                ) [Type]
+                                ExprPlus(
+                                  Term1(
+                                    FactorNum(
+                                     3
+                                    ) [FactorNum]
+                                  ) [Term1]
+                                ) [ExprPlus]
+                              ) [Factor3]
                             ) [Term1]
                           ) [ExprPlus]
                         ) [DesignatorStatement1]
@@ -674,11 +642,9 @@ INFO  15:02:41,593 - Program(
                           ) [DesignName]
                           ExprPlus(
                             Term1(
-                              Factor1(
-                                Designator1(
-                                 jedan
-                                ) [Designator1]
-                              ) [Factor1]
+                              FactorNum(
+                               0
+                              ) [FactorNum]
                             ) [Term1]
                           ) [ExprPlus]
                         ) [DesignatorArray]
@@ -687,7 +653,7 @@ INFO  15:02:41,593 - Program(
                         ExprPlus(
                           Term1(
                             FactorChar(
-                             b
+                             a
                             ) [FactorChar]
                           ) [Term1]
                         ) [ExprPlus]
@@ -700,57 +666,64 @@ INFO  15:02:41,593 - Program(
                         DesignName(
                          nizch
                         ) [DesignName]
-                        ExprMultiple(
-                          ExprPlus(
-                            Term1(
-                              Factor1(
-                                Designator1(
-                                 pet
-                                ) [Designator1]
-                              ) [Factor1]
-                            ) [Term1]
-                          ) [ExprPlus]
-                          Subop(
-                          ) [Subop]
+                        ExprPlus(
                           Term1(
-                            FactorNum(
-                             3
-                            ) [FactorNum]
+                            Factor1(
+                              Designator1(
+                               jedan
+                              ) [Designator1]
+                            ) [Factor1]
                           ) [Term1]
-                        ) [ExprMultiple]
+                        ) [ExprPlus]
                       ) [DesignatorArray]
                       Assignop(
                       ) [Assignop]
                       ExprPlus(
                         Term1(
                           FactorChar(
-                           c
+                           b
                           ) [FactorChar]
                         ) [Term1]
                       ) [ExprPlus]
                     ) [DesignatorStatement1]
                   ) [Statement1]
                 ) [StatementList1]
-                StatementPrintExpr(
-                  ExprPlus(
-                    Term1(
-                      Factor1(
-                        DesignatorArray(
-                          DesignName(
-                           nizch
-                          ) [DesignName]
-                          ExprPlus(
-                            Term1(
-                              FactorNum(
-                               1
-                              ) [FactorNum]
-                            ) [Term1]
-                          ) [ExprPlus]
-                        ) [DesignatorArray]
-                      ) [Factor1]
-                    ) [Term1]
-                  ) [ExprPlus]
-                ) [StatementPrintExpr]
+                Statement1(
+                  DesignatorStatement1(
+                    DesignatorArray(
+                      DesignName(
+                       nizch
+                      ) [DesignName]
+                      ExprMultiple(
+                        ExprPlus(
+                          Term1(
+                            Factor1(
+                              Designator1(
+                               pet
+                              ) [Designator1]
+                            ) [Factor1]
+                          ) [Term1]
+                        ) [ExprPlus]
+                        Subop(
+                        ) [Subop]
+                        Term1(
+                          FactorNum(
+                           3
+                          ) [FactorNum]
+                        ) [Term1]
+                      ) [ExprMultiple]
+                    ) [DesignatorArray]
+                    Assignop(
+                    ) [Assignop]
+                    ExprPlus(
+                      Term1(
+                        FactorChar(
+                         c
+                        ) [FactorChar]
+                      ) [Term1]
+                    ) [ExprPlus]
+                  ) [DesignatorStatement1]
+                ) [Statement1]
               ) [StatementList1]
               StatementPrintExpr(
                 ExprPlus(
@@ -761,20 +734,11 @@ INFO  15:02:41,593 - Program(
                          nizch
                         ) [DesignName]
                         ExprPlus(
-                          Term2(
-                            Term1(
-                              Factor1(
-                                Designator1(
-                                 jedan
-                                ) [Designator1]
-                              ) [Factor1]
-                            ) [Term1]
-                            Mulop1(
-                            ) [Mulop1]
+                          Term1(
                             FactorNum(
-                             2
+                             1
                             ) [FactorNum]
-                          ) [Term2]
+                          ) [Term1]
                         ) [ExprPlus]
                       ) [DesignatorArray]
                     ) [Factor1]
@@ -782,28 +746,52 @@ INFO  15:02:41,593 - Program(
                 ) [ExprPlus]
               ) [StatementPrintExpr]
             ) [StatementList1]
-            Statement1(
-              DesignatorStatement1(
-                Designator1(
-                 a
-                ) [Designator1]
-                Assignop(
-                ) [Assignop]
-                ExprPlus(
-                  Term1(
-                    FactorNum(
-                     1
-                    ) [FactorNum]
-                  ) [Term1]
-                ) [ExprPlus]
-              ) [DesignatorStatement1]
-            ) [Statement1]
+            StatementPrintExpr(
+              ExprPlus(
+                Term1(
+                  Factor1(
+                    DesignatorArray(
+                      DesignName(
+                       nizch
+                      ) [DesignName]
+                      ExprPlus(
+                        Term2(
+                          Term1(
+                            Factor1(
+                              Designator1(
+                               jedan
+                              ) [Designator1]
+                            ) [Factor1]
+                          ) [Term1]
+                          Mulop1(
+                          ) [Mulop1]
+                          FactorNum(
+                           2
+                          ) [FactorNum]
+                        ) [Term2]
+                      ) [ExprPlus]
+                    ) [DesignatorArray]
+                  ) [Factor1]
+                ) [Term1]
+              ) [ExprPlus]
+            ) [StatementPrintExpr]
           ) [StatementList1]
-          StatementRead(
-            Designator1(
-             bodovi
-            ) [Designator1]
-          ) [StatementRead]
+          Statement1(
+            DesignatorStatement1(
+              Designator1(
+               a
+              ) [Designator1]
+              Assignop(
+              ) [Assignop]
+              ExprPlus(
+                Term1(
+                  FactorNum(
+                   1
+                  ) [FactorNum]
+                ) [Term1]
+              ) [ExprPlus]
+            ) [DesignatorStatement1]
+          ) [Statement1]
         ) [StatementList1]
         Statement1(
           DesignatorStatement1(
@@ -938,115 +926,114 @@ INFO  15:02:41,593 - Program(
     ) [StatementList1]
   ) [MethodDecl]
 ) [Program]
-INFO  15:02:41,594 - ===================================
-INFO  15:02:41,596 - Konstanta definisana na liniji 5: nula
-INFO  15:02:41,596 - Konstanta definisana na liniji 6: jedan
-INFO  15:02:41,596 - Konstanta definisana na liniji 7: pet
-INFO  15:02:41,596 - Deklarisan novi simbol (niz) na liniji 9: niz
-INFO  15:02:41,596 - Deklarisan novi simbol (niz) na liniji 10: nizch
-INFO  15:02:41,596 - Deklarisan novi simbol (matrica) na liniji 11: mat
-INFO  15:02:41,596 - Deklarisan novi simbol na liniji 13: a
-INFO  15:02:41,596 - Obradjuje se funkcija main na liniji 16
-INFO  15:02:41,596 - Deklarisan novi simbol na liniji 17: bodovi
-INFO  15:02:41,596 - Deklarisan novi simbol na liniji 18: bt
-INFO  15:02:41,596 - Koriscen simbol bodovi na liniji 20
-INFO  15:02:41,596 - ExprPlus na liniji 20 tipa: rs.etf.pp1.symboltable.concepts.Struct@21a947fe
-INFO  15:02:41,596 - Dodela vrednosti simbolu bodovi na liniji 20
-INFO  15:02:41,596 - Koriscen simbol bodovi na liniji 21
-INFO  15:02:41,596 - Inkrementirana vrednost simbola bodovi na liniji 21
-INFO  15:02:41,596 - Koriscen simbol bodovi na liniji 22
-INFO  15:02:41,596 - Koriscen simbol bodovi na liniji 22
-INFO  15:02:41,596 - ExprPlus na liniji 22 tipa: rs.etf.pp1.symboltable.concepts.Struct@21a947fe
-INFO  15:02:41,596 - Koriscen simbol jedan na liniji 22
-INFO  15:02:41,597 - AddopTermList Expr na liniji 22
-INFO  15:02:41,597 - Dodela vrednosti simbolu bodovi na liniji 22
-INFO  15:02:41,597 - Koriscen simbol bodovi na liniji 23
-INFO  15:02:41,597 - Koriscen simbol bodovi na liniji 23
-INFO  15:02:41,597 - Koriscen simbol pet na liniji 23
-INFO  15:02:41,597 - ExprPlus na liniji 23 tipa: rs.etf.pp1.symboltable.concepts.Struct@21a947fe
-INFO  15:02:41,597 - Dodela vrednosti simbolu bodovi na liniji 23
-INFO  15:02:41,597 - Koriscen simbol bodovi na liniji 24
-INFO  15:02:41,597 - Dekrementirana vrednost simbola bodovi na liniji 24
-INFO  15:02:41,597 - Koriscen simbol bodovi na liniji 25
-INFO  15:02:41,597 - ExprPlus na liniji 25 tipa: rs.etf.pp1.symboltable.concepts.Struct@21a947fe
-INFO  15:02:41,597 - Print na liniji 25
-INFO  15:02:41,597 - Koriscen simbol niz na liniji 27
-INFO  15:02:41,597 - ExprPlus na liniji 27 tipa: rs.etf.pp1.symboltable.concepts.Struct@21a947fe
-INFO  15:02:41,597 - ExprPlus na liniji 27 tipa: rs.etf.pp1.symboltable.concepts.Struct@5606c0b
-INFO  15:02:41,597 - Dodela vrednosti simbolu niz na liniji 27
-INFO  15:02:41,597 - Koriscen simbol nula na liniji 28
-INFO  15:02:41,597 - ExprPlus na liniji 28 tipa: rs.etf.pp1.symboltable.concepts.Struct@21a947fe
-INFO  15:02:41,597 - Koriscen simbol (niz) niz na liniji 28
-INFO  15:02:41,597 - Koriscen simbol jedan na liniji 28
-INFO  15:02:41,597 - ExprPlus na liniji 28 tipa: rs.etf.pp1.symboltable.concepts.Struct@21a947fe
-INFO  15:02:41,597 - Dodela vrednosti simbolu niz na liniji 28
-INFO  15:02:41,597 - ExprPlus na liniji 29 tipa: rs.etf.pp1.symboltable.concepts.Struct@21a947fe
-INFO  15:02:41,597 - Koriscen simbol (niz) niz na liniji 29
-INFO  15:02:41,597 - ExprPlus na liniji 29 tipa: rs.etf.pp1.symboltable.concepts.Struct@21a947fe
-INFO  15:02:41,597 - Dodela vrednosti simbolu niz na liniji 29
-INFO  15:02:41,597 - Koriscen simbol bodovi na liniji 31
-INFO  15:02:41,597 - ExprPlus na liniji 31 tipa: rs.etf.pp1.symboltable.concepts.Struct@21a947fe
-INFO  15:02:41,597 - Koriscen simbol (niz) niz na liniji 31
-INFO  15:02:41,597 - ExprPlus na liniji 31 tipa: rs.etf.pp1.symboltable.concepts.Struct@21a947fe
-INFO  15:02:41,597 - Dodela vrednosti simbolu bodovi na liniji 31
-INFO  15:02:41,597 - Koriscen simbol bodovi na liniji 32
-INFO  15:02:41,597 - ExprPlus na liniji 32 tipa: rs.etf.pp1.symboltable.concepts.Struct@21a947fe
-INFO  15:02:41,597 - Print na liniji 32
-INFO  15:02:41,597 - ExprPlus na liniji 33 tipa: rs.etf.pp1.symboltable.concepts.Struct@21a947fe
-INFO  15:02:41,597 - Koriscen simbol (niz) niz na liniji 33
-INFO  15:02:41,597 - ExprPlus na liniji 33 tipa: rs.etf.pp1.symboltable.concepts.Struct@21a947fe
-INFO  15:02:41,597 - Print na liniji 33
-INFO  15:02:41,597 - Koriscen simbol nizch na liniji 36
-INFO  15:02:41,597 - ExprPlus na liniji 36 tipa: rs.etf.pp1.symboltable.concepts.Struct@21a947fe
-INFO  15:02:41,597 - ExprPlus na liniji 36 tipa: rs.etf.pp1.symboltable.concepts.Struct@80ec1f8
-INFO  15:02:41,597 - Dodela vrednosti simbolu nizch na liniji 36
-INFO  15:02:41,597 - ExprPlus na liniji 37 tipa: rs.etf.pp1.symboltable.concepts.Struct@21a947fe
-INFO  15:02:41,597 - Koriscen simbol (niz) nizch na liniji 37
-INFO  15:02:41,598 - ExprPlus na liniji 37 tipa: rs.etf.pp1.symboltable.concepts.Struct@1445d7f
-INFO  15:02:41,598 - Dodela vrednosti simbolu nizch na liniji 37
-INFO  15:02:41,598 - Koriscen simbol jedan na liniji 38
-INFO  15:02:41,598 - ExprPlus na liniji 38 tipa: rs.etf.pp1.symboltable.concepts.Struct@21a947fe
-INFO  15:02:41,598 - Koriscen simbol (niz) nizch na liniji 38
-INFO  15:02:41,598 - ExprPlus na liniji 38 tipa: rs.etf.pp1.symboltable.concepts.Struct@1445d7f
-INFO  15:02:41,598 - Dodela vrednosti simbolu nizch na liniji 38
-INFO  15:02:41,598 - Koriscen simbol pet na liniji 39
-INFO  15:02:41,598 - ExprPlus na liniji 39 tipa: rs.etf.pp1.symboltable.concepts.Struct@21a947fe
-INFO  15:02:41,598 - AddopTermList Expr na liniji 39
-INFO  15:02:41,598 - Koriscen simbol (niz) nizch na liniji 39
-INFO  15:02:41,598 - ExprPlus na liniji 39 tipa: rs.etf.pp1.symboltable.concepts.Struct@1445d7f
-INFO  15:02:41,598 - Dodela vrednosti simbolu nizch na liniji 39
-INFO  15:02:41,598 - ExprPlus na liniji 40 tipa: rs.etf.pp1.symboltable.concepts.Struct@21a947fe
-INFO  15:02:41,598 - Koriscen simbol (niz) nizch na liniji 40
-INFO  15:02:41,598 - ExprPlus na liniji 40 tipa: rs.etf.pp1.symboltable.concepts.Struct@1445d7f
-INFO  15:02:41,598 - Print na liniji 40
-INFO  15:02:41,598 - Koriscen simbol jedan na liniji 41
-INFO  15:02:41,598 - ExprPlus na liniji 41 tipa: rs.etf.pp1.symboltable.concepts.Struct@21a947fe
-INFO  15:02:41,598 - Koriscen simbol (niz) nizch na liniji 41
-INFO  15:02:41,598 - ExprPlus na liniji 41 tipa: rs.etf.pp1.symboltable.concepts.Struct@1445d7f
-INFO  15:02:41,598 - Print na liniji 41
-INFO  15:02:41,598 - Koriscen simbol a na liniji 43
-INFO  15:02:41,598 - ExprPlus na liniji 43 tipa: rs.etf.pp1.symboltable.concepts.Struct@21a947fe
-INFO  15:02:41,598 - Dodela vrednosti simbolu a na liniji 43
-INFO  15:02:41,598 - Koriscen simbol bodovi na liniji 44
-INFO  15:02:41,598 - Koriscen simbol bodovi na liniji 45
-INFO  15:02:41,598 - Koriscen simbol bodovi na liniji 45
-INFO  15:02:41,598 - ExprMinus na liniji 45
-INFO  15:02:41,598 - Koriscen simbol pet na liniji 45
-INFO  15:02:41,598 - Koriscen simbol a na liniji 45
-INFO  15:02:41,598 - ExprPlus na liniji 45 tipa: rs.etf.pp1.symboltable.concepts.Struct@21a947fe
-INFO  15:02:41,598 - Koriscen simbol jedan na liniji 45
-INFO  15:02:41,598 - AddopTermList Expr na liniji 45
-INFO  15:02:41,598 - Koriscen simbol bodovi na liniji 45
-INFO  15:02:41,598 - AddopTermList Expr na liniji 45
-INFO  15:02:41,598 - ExprPlus na liniji 45 tipa: rs.etf.pp1.symboltable.concepts.Struct@21a947fe
-INFO  15:02:41,598 - AddopTermList Expr na liniji 45
-INFO  15:02:41,598 - AddopTermList Expr na liniji 45
-INFO  15:02:41,598 - AddopTermList Expr na liniji 45
-INFO  15:02:41,598 - Dodela vrednosti simbolu bodovi na liniji 45
-INFO  15:02:41,598 - Koriscen simbol bodovi na liniji 46
-INFO  15:02:41,598 - ExprPlus na liniji 46 tipa: rs.etf.pp1.symboltable.concepts.Struct@21a947fe
-INFO  15:02:41,598 - Print na liniji 46
-INFO  15:02:41,598 -  Print count calls = 0
-INFO  15:02:41,598 -  Deklarisanih promenljivih ima = 2
-INFO  15:02:41,598 - ===================================
-INFO  15:02:41,602 - Parsiranje uspesno zavrseno!
+INFO  16:30:11,017 - ===================================
+INFO  16:30:11,019 - Konstanta definisana na liniji 5: nula
+INFO  16:30:11,019 - Konstanta definisana na liniji 6: jedan
+INFO  16:30:11,019 - Konstanta definisana na liniji 7: pet
+INFO  16:30:11,019 - Deklarisan novi simbol (niz) na liniji 9: niz
+INFO  16:30:11,019 - Deklarisan novi simbol (niz) na liniji 10: nizch
+INFO  16:30:11,019 - Deklarisan novi simbol (matrica) na liniji 11: mat
+INFO  16:30:11,019 - Deklarisan novi simbol na liniji 13: a
+INFO  16:30:11,019 - Obradjuje se funkcija main na liniji 16
+INFO  16:30:11,019 - Deklarisan novi simbol na liniji 17: bodovi
+INFO  16:30:11,019 - Deklarisan novi simbol na liniji 18: bt
+INFO  16:30:11,020 - Koriscen simbol bodovi na liniji 20
+INFO  16:30:11,020 - ExprPlus na liniji 20 tipa: rs.etf.pp1.symboltable.concepts.Struct@25359ed8
+INFO  16:30:11,020 - Dodela vrednosti simbolu bodovi na liniji 20
+INFO  16:30:11,020 - Koriscen simbol bodovi na liniji 21
+INFO  16:30:11,020 - Inkrementirana vrednost simbola bodovi na liniji 21
+INFO  16:30:11,020 - Koriscen simbol bodovi na liniji 22
+INFO  16:30:11,020 - Koriscen simbol bodovi na liniji 22
+INFO  16:30:11,020 - ExprPlus na liniji 22 tipa: rs.etf.pp1.symboltable.concepts.Struct@25359ed8
+INFO  16:30:11,020 - Koriscen simbol jedan na liniji 22
+INFO  16:30:11,020 - AddopTermList Expr na liniji 22
+INFO  16:30:11,020 - Dodela vrednosti simbolu bodovi na liniji 22
+INFO  16:30:11,020 - Koriscen simbol bodovi na liniji 23
+INFO  16:30:11,020 - Koriscen simbol bodovi na liniji 23
+INFO  16:30:11,020 - Koriscen simbol pet na liniji 23
+INFO  16:30:11,020 - ExprPlus na liniji 23 tipa: rs.etf.pp1.symboltable.concepts.Struct@25359ed8
+INFO  16:30:11,020 - Dodela vrednosti simbolu bodovi na liniji 23
+INFO  16:30:11,020 - Koriscen simbol bodovi na liniji 24
+INFO  16:30:11,020 - Dekrementirana vrednost simbola bodovi na liniji 24
+INFO  16:30:11,020 - Koriscen simbol bodovi na liniji 25
+INFO  16:30:11,020 - ExprPlus na liniji 25 tipa: rs.etf.pp1.symboltable.concepts.Struct@25359ed8
+INFO  16:30:11,020 - Print na liniji 25
+INFO  16:30:11,020 - Koriscen simbol niz na liniji 27
+INFO  16:30:11,020 - ExprPlus na liniji 27 tipa: rs.etf.pp1.symboltable.concepts.Struct@25359ed8
+INFO  16:30:11,020 - ExprPlus na liniji 27 tipa: rs.etf.pp1.symboltable.concepts.Struct@21a947fe
+INFO  16:30:11,020 - Dodela vrednosti simbolu niz na liniji 27
+INFO  16:30:11,020 - Koriscen simbol nula na liniji 28
+INFO  16:30:11,020 - ExprPlus na liniji 28 tipa: rs.etf.pp1.symboltable.concepts.Struct@25359ed8
+INFO  16:30:11,020 - Koriscen simbol (niz) niz na liniji 28
+INFO  16:30:11,020 - Koriscen simbol jedan na liniji 28
+INFO  16:30:11,020 - ExprPlus na liniji 28 tipa: rs.etf.pp1.symboltable.concepts.Struct@25359ed8
+INFO  16:30:11,020 - Dodela vrednosti simbolu niz na liniji 28
+INFO  16:30:11,020 - ExprPlus na liniji 29 tipa: rs.etf.pp1.symboltable.concepts.Struct@25359ed8
+INFO  16:30:11,020 - Koriscen simbol (niz) niz na liniji 29
+INFO  16:30:11,020 - ExprPlus na liniji 29 tipa: rs.etf.pp1.symboltable.concepts.Struct@25359ed8
+INFO  16:30:11,020 - Dodela vrednosti simbolu niz na liniji 29
+INFO  16:30:11,020 - Koriscen simbol bodovi na liniji 31
+INFO  16:30:11,020 - ExprPlus na liniji 31 tipa: rs.etf.pp1.symboltable.concepts.Struct@25359ed8
+INFO  16:30:11,020 - Koriscen simbol (niz) niz na liniji 31
+INFO  16:30:11,020 - ExprPlus na liniji 31 tipa: rs.etf.pp1.symboltable.concepts.Struct@25359ed8
+INFO  16:30:11,020 - Dodela vrednosti simbolu bodovi na liniji 31
+INFO  16:30:11,021 - Koriscen simbol bodovi na liniji 32
+INFO  16:30:11,021 - ExprPlus na liniji 32 tipa: rs.etf.pp1.symboltable.concepts.Struct@25359ed8
+INFO  16:30:11,021 - Print na liniji 32
+INFO  16:30:11,021 - ExprPlus na liniji 33 tipa: rs.etf.pp1.symboltable.concepts.Struct@25359ed8
+INFO  16:30:11,021 - Koriscen simbol (niz) niz na liniji 33
+INFO  16:30:11,021 - ExprPlus na liniji 33 tipa: rs.etf.pp1.symboltable.concepts.Struct@25359ed8
+INFO  16:30:11,021 - Print na liniji 33
+INFO  16:30:11,021 - Koriscen simbol nizch na liniji 36
+INFO  16:30:11,021 - ExprPlus na liniji 36 tipa: rs.etf.pp1.symboltable.concepts.Struct@25359ed8
+INFO  16:30:11,021 - ExprPlus na liniji 36 tipa: rs.etf.pp1.symboltable.concepts.Struct@5606c0b
+INFO  16:30:11,021 - Dodela vrednosti simbolu nizch na liniji 36
+INFO  16:30:11,021 - ExprPlus na liniji 37 tipa: rs.etf.pp1.symboltable.concepts.Struct@25359ed8
+INFO  16:30:11,021 - Koriscen simbol (niz) nizch na liniji 37
+INFO  16:30:11,021 - ExprPlus na liniji 37 tipa: rs.etf.pp1.symboltable.concepts.Struct@80ec1f8
+INFO  16:30:11,021 - Dodela vrednosti simbolu nizch na liniji 37
+INFO  16:30:11,021 - Koriscen simbol jedan na liniji 38
+INFO  16:30:11,021 - ExprPlus na liniji 38 tipa: rs.etf.pp1.symboltable.concepts.Struct@25359ed8
+INFO  16:30:11,021 - Koriscen simbol (niz) nizch na liniji 38
+INFO  16:30:11,021 - ExprPlus na liniji 38 tipa: rs.etf.pp1.symboltable.concepts.Struct@80ec1f8
+INFO  16:30:11,021 - Dodela vrednosti simbolu nizch na liniji 38
+INFO  16:30:11,021 - Koriscen simbol pet na liniji 39
+INFO  16:30:11,021 - ExprPlus na liniji 39 tipa: rs.etf.pp1.symboltable.concepts.Struct@25359ed8
+INFO  16:30:11,021 - AddopTermList Expr na liniji 39
+INFO  16:30:11,021 - Koriscen simbol (niz) nizch na liniji 39
+INFO  16:30:11,021 - ExprPlus na liniji 39 tipa: rs.etf.pp1.symboltable.concepts.Struct@80ec1f8
+INFO  16:30:11,021 - Dodela vrednosti simbolu nizch na liniji 39
+INFO  16:30:11,021 - ExprPlus na liniji 40 tipa: rs.etf.pp1.symboltable.concepts.Struct@25359ed8
+INFO  16:30:11,021 - Koriscen simbol (niz) nizch na liniji 40
+INFO  16:30:11,021 - ExprPlus na liniji 40 tipa: rs.etf.pp1.symboltable.concepts.Struct@80ec1f8
+INFO  16:30:11,021 - Print na liniji 40
+INFO  16:30:11,021 - Koriscen simbol jedan na liniji 41
+INFO  16:30:11,021 - ExprPlus na liniji 41 tipa: rs.etf.pp1.symboltable.concepts.Struct@25359ed8
+INFO  16:30:11,021 - Koriscen simbol (niz) nizch na liniji 41
+INFO  16:30:11,021 - ExprPlus na liniji 41 tipa: rs.etf.pp1.symboltable.concepts.Struct@80ec1f8
+INFO  16:30:11,021 - Print na liniji 41
+INFO  16:30:11,021 - Koriscen simbol a na liniji 43
+INFO  16:30:11,021 - ExprPlus na liniji 43 tipa: rs.etf.pp1.symboltable.concepts.Struct@25359ed8
+INFO  16:30:11,021 - Dodela vrednosti simbolu a na liniji 43
+INFO  16:30:11,021 - Koriscen simbol bodovi na liniji 45
+INFO  16:30:11,021 - Koriscen simbol bodovi na liniji 45
+INFO  16:30:11,021 - ExprMinus na liniji 45
+INFO  16:30:11,021 - Koriscen simbol pet na liniji 45
+INFO  16:30:11,021 - Koriscen simbol a na liniji 45
+INFO  16:30:11,021 - ExprPlus na liniji 45 tipa: rs.etf.pp1.symboltable.concepts.Struct@25359ed8
+INFO  16:30:11,021 - Koriscen simbol jedan na liniji 45
+INFO  16:30:11,021 - AddopTermList Expr na liniji 45
+INFO  16:30:11,021 - Koriscen simbol bodovi na liniji 45
+INFO  16:30:11,021 - AddopTermList Expr na liniji 45
+INFO  16:30:11,021 - ExprPlus na liniji 45 tipa: rs.etf.pp1.symboltable.concepts.Struct@25359ed8
+INFO  16:30:11,021 - AddopTermList Expr na liniji 45
+INFO  16:30:11,021 - AddopTermList Expr na liniji 45
+INFO  16:30:11,021 - AddopTermList Expr na liniji 45
+INFO  16:30:11,021 - Dodela vrednosti simbolu bodovi na liniji 45
+INFO  16:30:11,021 - Koriscen simbol bodovi na liniji 46
+INFO  16:30:11,021 - ExprPlus na liniji 46 tipa: rs.etf.pp1.symboltable.concepts.Struct@25359ed8
+INFO  16:30:11,021 - Print na liniji 46
+INFO  16:30:11,021 -  Print count calls = 0
+INFO  16:30:11,021 -  Deklarisanih promenljivih ima = 2
+INFO  16:30:11,021 - ===================================
+INFO  16:30:11,025 - Parsiranje uspesno zavrseno!

@@ -551,6 +551,18 @@ public class SemanticPass extends VisitorAdaptor {
     	report_info("Print na liniji " + p.getLine(), null);
     }
     
+    public void visit (StatementRead s) {
+    	if(s.getDesignator().obj.getKind() == Obj.Var || s.getDesignator().obj.getKind() == Obj.Elem) {
+    		if(s.getDesignator().obj.getType() == Tab.intType || s.getDesignator().obj.getType() == Tab.charType){} 
+    		else{
+    			report_error("Semanticka greska na liniji " + s.getLine() + ": Read ne podrzava dati tip", null);
+    		}
+    	}else {
+    		report_error("Semanticka greska na liniji " + s.getLine() + ": Read ne podrzava dati kind", null);
+    	}
+    }
+    
+    
     
     public boolean passed(){
     	return !errorDetected;

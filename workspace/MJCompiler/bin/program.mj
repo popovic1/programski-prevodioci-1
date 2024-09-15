@@ -41,7 +41,7 @@ program test301
 		print(nizch[jedan * 2]);
 			
 		a=1;
-		read(bodovi);
+		
 		bodovi = -bodovi + (pet * a / 2 - jedan) * bodovi - (3 % 2 + 3 * 2 - 3); 
 		print(bodovi);
 			
