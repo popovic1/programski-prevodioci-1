@@ -1,0 +1,16 @@
+program test_A_successful
+    int a, b, c, d, e, intArray[], niz[], nizTmp[], nizIndex[];
+{
+    void main() {
+        {
+           
+           
+            intArray = new int[10];
+            intArray[7] = 15;
+            intArray[7]++;
+            print(intArray[7]);
+            print(0);
+            
+        }
+    }
+}

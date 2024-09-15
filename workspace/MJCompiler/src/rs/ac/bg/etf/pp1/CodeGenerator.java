@@ -16,18 +16,17 @@ public class CodeGenerator extends VisitorAdaptor {
 	}
 	
 	public void visit(StatementPrintExpr printStmt){
-		if(printStmt.getExpr().struct == Tab.intType){
-			Code.loadConst(5);
+		Code.loadConst(0);
+		if(printStmt.getExpr().struct != Tab.charType){
 			Code.put(Code.print);
 		}else{
-			Code.loadConst(1);
 			Code.put(Code.bprint);
 		}
 	}
 
     public void visit(StatementPrintExprWithNum printStmt){
         Code.loadConst(printStmt.getNum());
-		if(printStmt.getExpr().struct == Tab.intType){
+		if(printStmt.getExpr().struct != Tab.charType){
 			Code.put(Code.print);
 		}else{
 			Code.put(Code.bprint);
@@ -60,7 +59,6 @@ public class CodeGenerator extends VisitorAdaptor {
 	}
 	
 	public void visit (StatementRead rdStmt) {
-		
 		if(rdStmt.getDesignator().obj.getType() == Tab.charType) {
 			Code.put(Code.bread);
 		}else {
@@ -71,11 +69,7 @@ public class CodeGenerator extends VisitorAdaptor {
 	}
 	
 	public void visit(FactorNum cnst){
-		Obj con = Tab.insert(Obj.Con, "$", cnst.struct);
-		con.setLevel(0);
-		con.setAdr(cnst.getN1());
-		
-		Code.load(con);
+		Code.loadConst(cnst.getN1());
 	}
 	
 	public void visit(FactorBool cnst){
@@ -108,6 +102,11 @@ public class CodeGenerator extends VisitorAdaptor {
 	}
 	
 	public void visit(DesignatorStatementInc dStmt) {
+		
+		if(dStmt.getDesignator().obj.getKind() == Obj.Elem) {
+			Code.put(Code.dup2);
+		}
+		Code.load(dStmt.getDesignator().obj);
 		Code.loadConst(1);
 		Code.put(Code.add);
 		Code.store(dStmt.getDesignator().obj);
@@ -115,6 +114,10 @@ public class CodeGenerator extends VisitorAdaptor {
 	}
 	
 	public void visit(DesignatorStatementDec dStmt) {
+		if(dStmt.getDesignator().obj.getKind() == Obj.Elem) {
+			Code.put(Code.dup2);
+		}
+		Code.load(dStmt.getDesignator().obj);
 		Code.loadConst(1);
 		Code.put(Code.sub);
 		Code.store(dStmt.getDesignator().obj);
@@ -146,16 +149,17 @@ public class CodeGenerator extends VisitorAdaptor {
 		if(!(dsg.getParent() instanceof DesignatorStatement1)) {
 			Code.load(dsg.obj);
 		}
+		
+//		if(dsg.getParent() instanceof Factor1 ||
+//				dsg.getParent() instanceof DesignatorStatementInc ||
+//				dsg.getParent() instanceof DesignatorStatementDec) {
+//				Code.load(dsg.obj);
+//			}
 	}
 	
 	public void visit (DesignatorArray dsg) {
 		
-		if(!(dsg.getParent() instanceof DesignatorStatement1 ||
-			dsg.getParent() instanceof StatementRead)){
-			
-//			Code.load(dsg.obj);
-//			Code.put(Code.dup_x1);
-//			Code.put(Code.pop);
+		if(dsg.getParent().getParent().getParent().getParent() instanceof StatementPrintExpr){
 					
 			if (dsg.getDesignName().obj.getType().getElemType() == Tab.charType) {
 				Code.put(Code.baload);
@@ -168,13 +172,39 @@ public class CodeGenerator extends VisitorAdaptor {
 		
 	}
 	
+	public void visit (DesignatorMatrix dsg) {
+		
+	}
+	
 	public void visit (DesignName dn) {
 		Code.load(dn.obj);
 	}
 	
-	public void visit (DesignatorMatrix dsg) {
-		
+	public void visit (ConstDeclSuffixNum1 cnst) {
+		Code.loadConst(cnst.getLiteral());
 	}
+	
+	public void visit (ConstDeclSuffixNum2 cnst) {
+		Code.loadConst(cnst.getLiteral());
+	}
+	
+	public void visit (ConstDeclSuffixChar1 cnst) {
+		Code.loadConst(cnst.getCh());
+	}
+	
+	public void visit (ConstDeclSuffixChar2 cnst) {
+		Code.loadConst(cnst.getCh());
+	}
+	
+	public void visit (ConstDeclSuffixBool1 cnst) {
+		Code.loadConst(cnst.getBo()? 1 : 0);
+	}
+	
+	public void visit (ConstDeclSuffixBool2 cnst) {
+		Code.loadConst(cnst.getBo()? 1 : 0);
+	}
+	
+
 	
 	
 	

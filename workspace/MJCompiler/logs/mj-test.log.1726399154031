@@ -1,0 +1,752 @@
+INFO  13:14:33,836 - Compiling source file: C:\Users\djordje.popovic\Desktop\Fakultet\PP1\programski-prevodioci-1\workspace\MJCompiler\test\program.mj
+INFO  13:14:33,896 - #2 program
+INFO  13:14:33,896 - #41 test_A_successful
+INFO  13:14:33,896 - #41 int
+INFO  13:14:33,898 - #41 a
+INFO  13:14:33,898 - #8 ,
+INFO  13:14:33,899 - #41 b
+INFO  13:14:33,899 - #8 ,
+INFO  13:14:33,899 - #41 c
+INFO  13:14:33,899 - #8 ,
+INFO  13:14:33,899 - #41 d
+INFO  13:14:33,899 - #8 ,
+INFO  13:14:33,899 - #41 e
+INFO  13:14:33,899 - #8 ,
+INFO  13:14:33,899 - #41 intArray
+INFO  13:14:33,899 - #10 [
+INFO  13:14:33,899 - #11 ]
+INFO  13:14:33,899 - #8 ,
+INFO  13:14:33,900 - #41 niz
+INFO  13:14:33,900 - #10 [
+INFO  13:14:33,900 - #11 ]
+INFO  13:14:33,902 - #8 ,
+INFO  13:14:33,902 - #41 nizTmp
+INFO  13:14:33,902 - #10 [
+INFO  13:14:33,902 - #11 ]
+INFO  13:14:33,902 - #8 ,
+INFO  13:14:33,902 - #41 nizIndex
+INFO  13:14:33,902 - #10 [
+INFO  13:14:33,902 - #11 ]
+INFO  13:14:33,902 - #7 ;
+INFO  13:14:33,902 - #3 {
+INFO  13:14:33,902 - #15 void
+INFO  13:14:33,902 - #41 main
+INFO  13:14:33,902 - #13 (
+INFO  13:14:33,902 - #14 )
+INFO  13:14:33,902 - #3 {
+INFO  13:14:33,903 - #3 {
+INFO  13:14:33,904 - #41 intArray
+INFO  13:14:33,904 - #6 =
+INFO  13:14:33,904 - #29 new
+INFO  13:14:33,905 - #41 int
+INFO  13:14:33,905 - #10 [
+INFO  13:14:33,905 - #40 10
+INFO  13:14:33,906 - #11 ]
+INFO  13:14:33,906 - #7 ;
+INFO  13:14:33,906 - #41 intArray
+INFO  13:14:33,906 - #10 [
+INFO  13:14:33,908 - #40 7
+INFO  13:14:33,908 - #11 ]
+INFO  13:14:33,908 - #6 =
+INFO  13:14:33,908 - #40 15
+INFO  13:14:33,908 - #7 ;
+INFO  13:14:33,908 - #41 intArray
+INFO  13:14:33,908 - #10 [
+INFO  13:14:33,908 - #40 7
+INFO  13:14:33,908 - #11 ]
+INFO  13:14:33,908 - #24 ++
+INFO  13:14:33,908 - #7 ;
+INFO  13:14:33,908 - #23 print
+INFO  13:14:33,908 - #13 (
+INFO  13:14:33,909 - #41 intArray
+INFO  13:14:33,909 - #10 [
+INFO  13:14:33,909 - #40 7
+INFO  13:14:33,909 - #11 ]
+INFO  13:14:33,909 - #14 )
+INFO  13:14:33,909 - #7 ;
+INFO  13:14:33,909 - #4 }
+INFO  13:14:33,909 - #4 }
+INFO  13:14:33,909 - #4 }
+INFO  13:14:33,918 - Program(
+  ProgName(
+   test_A_successful
+  ) [ProgName]
+  VarOrConstDeclList1(
+    NoVarOrConstDeclList(
+    ) [NoVarOrConstDeclList]
+    VarOrConstDeclVar(
+      VarDecl1(
+        Type(
+         int
+        ) [Type]
+        VarDeclElemsArrayMultiple(
+          VarDeclElemsArrayMultiple(
+            VarDeclElemsArrayMultiple(
+              VarDeclElemsArrayMultiple(
+                VarDeclElems1Multiple(
+                  VarDeclElems1Multiple(
+                    VarDeclElems1Multiple(
+                      VarDeclElems1Multiple(
+                        VarDeclElems1(
+                         a
+                        ) [VarDeclElems1]
+                       b
+                      ) [VarDeclElems1Multiple]
+                     c
+                    ) [VarDeclElems1Multiple]
+                   d
+                  ) [VarDeclElems1Multiple]
+                 e
+                ) [VarDeclElems1Multiple]
+               intArray
+              ) [VarDeclElemsArrayMultiple]
+             niz
+            ) [VarDeclElemsArrayMultiple]
+           nizTmp
+          ) [VarDeclElemsArrayMultiple]
+         nizIndex
+        ) [VarDeclElemsArrayMultiple]
+      ) [VarDecl1]
+    ) [VarOrConstDeclVar]
+  ) [VarOrConstDeclList1]
+  MethodDecl(
+    MethodTypeNameVoid(
+     main
+    ) [MethodTypeNameVoid]
+    NoVarDeclList(
+    ) [NoVarDeclList]
+    StatementList1(
+      NoStatementList(
+      ) [NoStatementList]
+      Statement2(
+        StatementList1(
+          StatementList1(
+            StatementList1(
+              StatementList1(
+                NoStatementList(
+                ) [NoStatementList]
+                Statement1(
+                  DesignatorStatement1(
+                    Designator1(
+                     intArray
+                    ) [Designator1]
+                    Assignop(
+                    ) [Assignop]
+                    ExprPlus(
+                      Term1(
+                        Factor3(
+                          Type(
+                           int
+                          ) [Type]
+                          ExprPlus(
+                            Term1(
+                              FactorNum(
+                               10
+                              ) [FactorNum]
+                            ) [Term1]
+                          ) [ExprPlus]
+                        ) [Factor3]
+                      ) [Term1]
+                    ) [ExprPlus]
+                  ) [DesignatorStatement1]
+                ) [Statement1]
+              ) [StatementList1]
+              Statement1(
+                DesignatorStatement1(
+                  DesignatorArray(
+                    DesignName(
+                     intArray
+                    ) [DesignName]
+                    ExprPlus(
+                      Term1(
+                        FactorNum(
+                         7
+                        ) [FactorNum]
+                      ) [Term1]
+                    ) [ExprPlus]
+                  ) [DesignatorArray]
+                  Assignop(
+                  ) [Assignop]
+                  ExprPlus(
+                    Term1(
+                      FactorNum(
+                       15
+                      ) [FactorNum]
+                    ) [Term1]
+                  ) [ExprPlus]
+                ) [DesignatorStatement1]
+              ) [Statement1]
+            ) [StatementList1]
+            Statement1(
+              DesignatorStatementInc(
+                DesignatorArray(
+                  DesignName(
+                   intArray
+                  ) [DesignName]
+                  ExprPlus(
+                    Term1(
+                      FactorNum(
+                       7
+                      ) [FactorNum]
+                    ) [Term1]
+                  ) [ExprPlus]
+                ) [DesignatorArray]
+              ) [DesignatorStatementInc]
+            ) [Statement1]
+          ) [StatementList1]
+          StatementPrintExpr(
+            ExprPlus(
+              Term1(
+                Factor1(
+                  DesignatorArray(
+                    DesignName(
+                     intArray
+                    ) [DesignName]
+                    ExprPlus(
+                      Term1(
+                        FactorNum(
+                         7
+                        ) [FactorNum]
+                      ) [Term1]
+                    ) [ExprPlus]
+                  ) [DesignatorArray]
+                ) [Factor1]
+              ) [Term1]
+            ) [ExprPlus]
+          ) [StatementPrintExpr]
+        ) [StatementList1]
+      ) [Statement2]
+    ) [StatementList1]
+  ) [MethodDecl]
+) [Program]
+INFO  13:14:33,918 - ===================================
+INFO  13:14:33,932 - Deklarisan novi simbol na liniji 2: a
+INFO  13:14:33,932 - Deklarisan novi simbol na liniji 2: b
+INFO  13:14:33,932 - Deklarisan novi simbol na liniji 2: c
+INFO  13:14:33,932 - Deklarisan novi simbol na liniji 2: d
+INFO  13:14:33,932 - Deklarisan novi simbol na liniji 2: e
+INFO  13:14:33,932 - Deklarisan novi simbol (niz) na liniji 2: intArray
+INFO  13:14:33,932 - Deklarisan novi simbol (niz) na liniji 2: niz
+INFO  13:14:33,932 - Deklarisan novi simbol (niz) na liniji 2: nizTmp
+INFO  13:14:33,932 - Deklarisan novi simbol (niz) na liniji 2: nizIndex
+INFO  13:14:33,932 - Obradjuje se funkcija main na liniji 4
+INFO  13:14:33,932 - Koriscen simbol intArray na liniji 7
+INFO  13:14:33,932 - ExprPlus na liniji 7 tipa: rs.etf.pp1.symboltable.concepts.Struct@20ce78ec
+INFO  13:14:33,932 - ExprPlus na liniji 7 tipa: rs.etf.pp1.symboltable.concepts.Struct@393671df
+INFO  13:14:33,932 - Dodela vrednosti simbolu intArray na liniji 7
+INFO  13:14:33,932 - ExprPlus na liniji 8 tipa: rs.etf.pp1.symboltable.concepts.Struct@20ce78ec
+INFO  13:14:33,932 - Koriscen simbol (niz) intArray na liniji 8
+INFO  13:14:33,932 - ExprPlus na liniji 8 tipa: rs.etf.pp1.symboltable.concepts.Struct@20ce78ec
+INFO  13:14:33,933 - Dodela vrednosti simbolu intArray na liniji 8
+INFO  13:14:33,933 - ExprPlus na liniji 9 tipa: rs.etf.pp1.symboltable.concepts.Struct@20ce78ec
+INFO  13:14:33,933 - Koriscen simbol (niz) intArray na liniji 9
+INFO  13:14:33,933 - Inkrementirana vrednost simbola intArray na liniji 9
+INFO  13:14:33,933 - ExprPlus na liniji 10 tipa: rs.etf.pp1.symboltable.concepts.Struct@20ce78ec
+INFO  13:14:33,933 - Koriscen simbol (niz) intArray na liniji 10
+INFO  13:14:33,933 - ExprPlus na liniji 10 tipa: rs.etf.pp1.symboltable.concepts.Struct@20ce78ec
+INFO  13:14:33,933 - Print na liniji 10
+INFO  13:14:33,933 -  Print count calls = 0
+INFO  13:14:33,933 -  Deklarisanih promenljivih ima = 0
+INFO  13:14:33,933 - ===================================
+INFO  13:15:44,265 - Compiling source file: C:\Users\djordje.popovic\Desktop\Fakultet\PP1\programski-prevodioci-1\workspace\MJCompiler\test\program.mj
+INFO  13:15:44,308 - #2 program
+INFO  13:15:44,308 - #41 test_A_successful
+INFO  13:15:44,308 - #41 int
+INFO  13:15:44,311 - #41 a
+INFO  13:15:44,311 - #8 ,
+INFO  13:15:44,311 - #41 b
+INFO  13:15:44,311 - #8 ,
+INFO  13:15:44,312 - #41 c
+INFO  13:15:44,312 - #8 ,
+INFO  13:15:44,312 - #41 d
+INFO  13:15:44,312 - #8 ,
+INFO  13:15:44,312 - #41 e
+INFO  13:15:44,312 - #8 ,
+INFO  13:15:44,312 - #41 intArray
+INFO  13:15:44,312 - #10 [
+INFO  13:15:44,312 - #11 ]
+INFO  13:15:44,312 - #8 ,
+INFO  13:15:44,312 - #41 niz
+INFO  13:15:44,312 - #10 [
+INFO  13:15:44,312 - #11 ]
+INFO  13:15:44,312 - #8 ,
+INFO  13:15:44,312 - #41 nizTmp
+INFO  13:15:44,312 - #10 [
+INFO  13:15:44,312 - #11 ]
+INFO  13:15:44,312 - #8 ,
+INFO  13:15:44,312 - #41 nizIndex
+INFO  13:15:44,312 - #10 [
+INFO  13:15:44,312 - #11 ]
+INFO  13:15:44,312 - #7 ;
+INFO  13:15:44,313 - #3 {
+INFO  13:15:44,313 - #15 void
+INFO  13:15:44,314 - #41 main
+INFO  13:15:44,314 - #13 (
+INFO  13:15:44,314 - #14 )
+INFO  13:15:44,314 - #3 {
+INFO  13:15:44,314 - #3 {
+INFO  13:15:44,315 - #41 intArray
+INFO  13:15:44,315 - #6 =
+INFO  13:15:44,315 - #29 new
+INFO  13:15:44,316 - #41 int
+INFO  13:15:44,317 - #10 [
+INFO  13:15:44,317 - #40 10
+INFO  13:15:44,317 - #11 ]
+INFO  13:15:44,317 - #7 ;
+INFO  13:15:44,318 - #41 intArray
+INFO  13:15:44,318 - #10 [
+INFO  13:15:44,319 - #40 7
+INFO  13:15:44,319 - #11 ]
+INFO  13:15:44,319 - #6 =
+INFO  13:15:44,319 - #40 15
+INFO  13:15:44,319 - #7 ;
+INFO  13:15:44,319 - #41 intArray
+INFO  13:15:44,319 - #10 [
+INFO  13:15:44,319 - #40 7
+INFO  13:15:44,319 - #11 ]
+INFO  13:15:44,319 - #24 ++
+INFO  13:15:44,319 - #7 ;
+INFO  13:15:44,319 - #23 print
+INFO  13:15:44,319 - #13 (
+INFO  13:15:44,319 - #41 intArray
+INFO  13:15:44,319 - #10 [
+INFO  13:15:44,320 - #40 7
+INFO  13:15:44,320 - #11 ]
+INFO  13:15:44,320 - #14 )
+INFO  13:15:44,320 - #7 ;
+INFO  13:15:44,320 - #4 }
+INFO  13:15:44,320 - #4 }
+INFO  13:15:44,320 - #4 }
+INFO  13:15:44,327 - Program(
+  ProgName(
+   test_A_successful
+  ) [ProgName]
+  VarOrConstDeclList1(
+    NoVarOrConstDeclList(
+    ) [NoVarOrConstDeclList]
+    VarOrConstDeclVar(
+      VarDecl1(
+        Type(
+         int
+        ) [Type]
+        VarDeclElemsArrayMultiple(
+          VarDeclElemsArrayMultiple(
+            VarDeclElemsArrayMultiple(
+              VarDeclElemsArrayMultiple(
+                VarDeclElems1Multiple(
+                  VarDeclElems1Multiple(
+                    VarDeclElems1Multiple(
+                      VarDeclElems1Multiple(
+                        VarDeclElems1(
+                         a
+                        ) [VarDeclElems1]
+                       b
+                      ) [VarDeclElems1Multiple]
+                     c
+                    ) [VarDeclElems1Multiple]
+                   d
+                  ) [VarDeclElems1Multiple]
+                 e
+                ) [VarDeclElems1Multiple]
+               intArray
+              ) [VarDeclElemsArrayMultiple]
+             niz
+            ) [VarDeclElemsArrayMultiple]
+           nizTmp
+          ) [VarDeclElemsArrayMultiple]
+         nizIndex
+        ) [VarDeclElemsArrayMultiple]
+      ) [VarDecl1]
+    ) [VarOrConstDeclVar]
+  ) [VarOrConstDeclList1]
+  MethodDecl(
+    MethodTypeNameVoid(
+     main
+    ) [MethodTypeNameVoid]
+    NoVarDeclList(
+    ) [NoVarDeclList]
+    StatementList1(
+      NoStatementList(
+      ) [NoStatementList]
+      Statement2(
+        StatementList1(
+          StatementList1(
+            StatementList1(
+              StatementList1(
+                NoStatementList(
+                ) [NoStatementList]
+                Statement1(
+                  DesignatorStatement1(
+                    Designator1(
+                     intArray
+                    ) [Designator1]
+                    Assignop(
+                    ) [Assignop]
+                    ExprPlus(
+                      Term1(
+                        Factor3(
+                          Type(
+                           int
+                          ) [Type]
+                          ExprPlus(
+                            Term1(
+                              FactorNum(
+                               10
+                              ) [FactorNum]
+                            ) [Term1]
+                          ) [ExprPlus]
+                        ) [Factor3]
+                      ) [Term1]
+                    ) [ExprPlus]
+                  ) [DesignatorStatement1]
+                ) [Statement1]
+              ) [StatementList1]
+              Statement1(
+                DesignatorStatement1(
+                  DesignatorArray(
+                    DesignName(
+                     intArray
+                    ) [DesignName]
+                    ExprPlus(
+                      Term1(
+                        FactorNum(
+                         7
+                        ) [FactorNum]
+                      ) [Term1]
+                    ) [ExprPlus]
+                  ) [DesignatorArray]
+                  Assignop(
+                  ) [Assignop]
+                  ExprPlus(
+                    Term1(
+                      FactorNum(
+                       15
+                      ) [FactorNum]
+                    ) [Term1]
+                  ) [ExprPlus]
+                ) [DesignatorStatement1]
+              ) [Statement1]
+            ) [StatementList1]
+            Statement1(
+              DesignatorStatementInc(
+                DesignatorArray(
+                  DesignName(
+                   intArray
+                  ) [DesignName]
+                  ExprPlus(
+                    Term1(
+                      FactorNum(
+                       7
+                      ) [FactorNum]
+                    ) [Term1]
+                  ) [ExprPlus]
+                ) [DesignatorArray]
+              ) [DesignatorStatementInc]
+            ) [Statement1]
+          ) [StatementList1]
+          StatementPrintExpr(
+            ExprPlus(
+              Term1(
+                Factor1(
+                  DesignatorArray(
+                    DesignName(
+                     intArray
+                    ) [DesignName]
+                    ExprPlus(
+                      Term1(
+                        FactorNum(
+                         7
+                        ) [FactorNum]
+                      ) [Term1]
+                    ) [ExprPlus]
+                  ) [DesignatorArray]
+                ) [Factor1]
+              ) [Term1]
+            ) [ExprPlus]
+          ) [StatementPrintExpr]
+        ) [StatementList1]
+      ) [Statement2]
+    ) [StatementList1]
+  ) [MethodDecl]
+) [Program]
+INFO  13:15:44,327 - ===================================
+INFO  13:15:44,331 - Deklarisan novi simbol na liniji 2: a
+INFO  13:15:44,332 - Deklarisan novi simbol na liniji 2: b
+INFO  13:15:44,332 - Deklarisan novi simbol na liniji 2: c
+INFO  13:15:44,332 - Deklarisan novi simbol na liniji 2: d
+INFO  13:15:44,332 - Deklarisan novi simbol na liniji 2: e
+INFO  13:15:44,332 - Deklarisan novi simbol (niz) na liniji 2: intArray
+INFO  13:15:44,332 - Deklarisan novi simbol (niz) na liniji 2: niz
+INFO  13:15:44,332 - Deklarisan novi simbol (niz) na liniji 2: nizTmp
+INFO  13:15:44,332 - Deklarisan novi simbol (niz) na liniji 2: nizIndex
+INFO  13:15:44,332 - Obradjuje se funkcija main na liniji 4
+INFO  13:15:44,332 - Koriscen simbol intArray na liniji 7
+INFO  13:15:44,332 - ExprPlus na liniji 7 tipa: rs.etf.pp1.symboltable.concepts.Struct@76329302
+INFO  13:15:44,332 - ExprPlus na liniji 7 tipa: rs.etf.pp1.symboltable.concepts.Struct@5e25a92e
+INFO  13:15:44,332 - Dodela vrednosti simbolu intArray na liniji 7
+INFO  13:15:44,332 - ExprPlus na liniji 8 tipa: rs.etf.pp1.symboltable.concepts.Struct@76329302
+INFO  13:15:44,332 - Koriscen simbol (niz) intArray na liniji 8
+INFO  13:15:44,332 - ExprPlus na liniji 8 tipa: rs.etf.pp1.symboltable.concepts.Struct@76329302
+INFO  13:15:44,332 - Dodela vrednosti simbolu intArray na liniji 8
+INFO  13:15:44,332 - ExprPlus na liniji 9 tipa: rs.etf.pp1.symboltable.concepts.Struct@76329302
+INFO  13:15:44,332 - Koriscen simbol (niz) intArray na liniji 9
+INFO  13:15:44,332 - Inkrementirana vrednost simbola intArray na liniji 9
+INFO  13:15:44,332 - ExprPlus na liniji 10 tipa: rs.etf.pp1.symboltable.concepts.Struct@76329302
+INFO  13:15:44,332 - Koriscen simbol (niz) intArray na liniji 10
+INFO  13:15:44,332 - ExprPlus na liniji 10 tipa: rs.etf.pp1.symboltable.concepts.Struct@76329302
+INFO  13:15:44,333 - Print na liniji 10
+INFO  13:15:44,333 -  Print count calls = 0
+INFO  13:15:44,333 -  Deklarisanih promenljivih ima = 0
+INFO  13:15:44,333 - ===================================
+INFO  13:15:44,335 - Parsiranje uspesno zavrseno!
+INFO  13:15:49,895 - Compiling source file: C:\Users\djordje.popovic\Desktop\Fakultet\PP1\programski-prevodioci-1\workspace\MJCompiler\test\program.mj
+INFO  13:15:49,943 - #2 program
+INFO  13:15:49,943 - #41 test_A_successful
+INFO  13:15:49,943 - #41 int
+INFO  13:15:49,944 - #41 a
+INFO  13:15:49,945 - #8 ,
+INFO  13:15:49,945 - #41 b
+INFO  13:15:49,945 - #8 ,
+INFO  13:15:49,945 - #41 c
+INFO  13:15:49,945 - #8 ,
+INFO  13:15:49,945 - #41 d
+INFO  13:15:49,945 - #8 ,
+INFO  13:15:49,945 - #41 e
+INFO  13:15:49,945 - #8 ,
+INFO  13:15:49,945 - #41 intArray
+INFO  13:15:49,945 - #10 [
+INFO  13:15:49,945 - #11 ]
+INFO  13:15:49,945 - #8 ,
+INFO  13:15:49,946 - #41 niz
+INFO  13:15:49,946 - #10 [
+INFO  13:15:49,946 - #11 ]
+INFO  13:15:49,946 - #8 ,
+INFO  13:15:49,946 - #41 nizTmp
+INFO  13:15:49,946 - #10 [
+INFO  13:15:49,946 - #11 ]
+INFO  13:15:49,946 - #8 ,
+INFO  13:15:49,946 - #41 nizIndex
+INFO  13:15:49,946 - #10 [
+INFO  13:15:49,946 - #11 ]
+INFO  13:15:49,946 - #7 ;
+INFO  13:15:49,946 - #3 {
+INFO  13:15:49,947 - #15 void
+INFO  13:15:49,947 - #41 main
+INFO  13:15:49,947 - #13 (
+INFO  13:15:49,947 - #14 )
+INFO  13:15:49,947 - #3 {
+INFO  13:15:49,948 - #3 {
+INFO  13:15:49,948 - #41 intArray
+INFO  13:15:49,948 - #6 =
+INFO  13:15:49,948 - #29 new
+INFO  13:15:49,949 - #41 int
+INFO  13:15:49,949 - #10 [
+INFO  13:15:49,949 - #40 10
+INFO  13:15:49,949 - #11 ]
+INFO  13:15:49,949 - #7 ;
+INFO  13:15:49,950 - #41 intArray
+INFO  13:15:49,950 - #10 [
+INFO  13:15:49,951 - #40 7
+INFO  13:15:49,951 - #11 ]
+INFO  13:15:49,951 - #6 =
+INFO  13:15:49,951 - #40 15
+INFO  13:15:49,951 - #7 ;
+INFO  13:15:49,951 - #41 intArray
+INFO  13:15:49,951 - #10 [
+INFO  13:15:49,951 - #40 7
+INFO  13:15:49,951 - #11 ]
+INFO  13:15:49,951 - #24 ++
+INFO  13:15:49,951 - #7 ;
+INFO  13:15:49,951 - #23 print
+INFO  13:15:49,951 - #13 (
+INFO  13:15:49,951 - #41 intArray
+INFO  13:15:49,951 - #10 [
+INFO  13:15:49,951 - #40 7
+INFO  13:15:49,951 - #11 ]
+INFO  13:15:49,953 - #14 )
+INFO  13:15:49,953 - #7 ;
+INFO  13:15:49,953 - #4 }
+INFO  13:15:49,953 - #4 }
+INFO  13:15:49,953 - #4 }
+INFO  13:15:49,959 - Program(
+  ProgName(
+   test_A_successful
+  ) [ProgName]
+  VarOrConstDeclList1(
+    NoVarOrConstDeclList(
+    ) [NoVarOrConstDeclList]
+    VarOrConstDeclVar(
+      VarDecl1(
+        Type(
+         int
+        ) [Type]
+        VarDeclElemsArrayMultiple(
+          VarDeclElemsArrayMultiple(
+            VarDeclElemsArrayMultiple(
+              VarDeclElemsArrayMultiple(
+                VarDeclElems1Multiple(
+                  VarDeclElems1Multiple(
+                    VarDeclElems1Multiple(
+                      VarDeclElems1Multiple(
+                        VarDeclElems1(
+                         a
+                        ) [VarDeclElems1]
+                       b
+                      ) [VarDeclElems1Multiple]
+                     c
+                    ) [VarDeclElems1Multiple]
+                   d
+                  ) [VarDeclElems1Multiple]
+                 e
+                ) [VarDeclElems1Multiple]
+               intArray
+              ) [VarDeclElemsArrayMultiple]
+             niz
+            ) [VarDeclElemsArrayMultiple]
+           nizTmp
+          ) [VarDeclElemsArrayMultiple]
+         nizIndex
+        ) [VarDeclElemsArrayMultiple]
+      ) [VarDecl1]
+    ) [VarOrConstDeclVar]
+  ) [VarOrConstDeclList1]
+  MethodDecl(
+    MethodTypeNameVoid(
+     main
+    ) [MethodTypeNameVoid]
+    NoVarDeclList(
+    ) [NoVarDeclList]
+    StatementList1(
+      NoStatementList(
+      ) [NoStatementList]
+      Statement2(
+        StatementList1(
+          StatementList1(
+            StatementList1(
+              StatementList1(
+                NoStatementList(
+                ) [NoStatementList]
+                Statement1(
+                  DesignatorStatement1(
+                    Designator1(
+                     intArray
+                    ) [Designator1]
+                    Assignop(
+                    ) [Assignop]
+                    ExprPlus(
+                      Term1(
+                        Factor3(
+                          Type(
+                           int
+                          ) [Type]
+                          ExprPlus(
+                            Term1(
+                              FactorNum(
+                               10
+                              ) [FactorNum]
+                            ) [Term1]
+                          ) [ExprPlus]
+                        ) [Factor3]
+                      ) [Term1]
+                    ) [ExprPlus]
+                  ) [DesignatorStatement1]
+                ) [Statement1]
+              ) [StatementList1]
+              Statement1(
+                DesignatorStatement1(
+                  DesignatorArray(
+                    DesignName(
+                     intArray
+                    ) [DesignName]
+                    ExprPlus(
+                      Term1(
+                        FactorNum(
+                         7
+                        ) [FactorNum]
+                      ) [Term1]
+                    ) [ExprPlus]
+                  ) [DesignatorArray]
+                  Assignop(
+                  ) [Assignop]
+                  ExprPlus(
+                    Term1(
+                      FactorNum(
+                       15
+                      ) [FactorNum]
+                    ) [Term1]
+                  ) [ExprPlus]
+                ) [DesignatorStatement1]
+              ) [Statement1]
+            ) [StatementList1]
+            Statement1(
+              DesignatorStatementInc(
+                DesignatorArray(
+                  DesignName(
+                   intArray
+                  ) [DesignName]
+                  ExprPlus(
+                    Term1(
+                      FactorNum(
+                       7
+                      ) [FactorNum]
+                    ) [Term1]
+                  ) [ExprPlus]
+                ) [DesignatorArray]
+              ) [DesignatorStatementInc]
+            ) [Statement1]
+          ) [StatementList1]
+          StatementPrintExpr(
+            ExprPlus(
+              Term1(
+                Factor1(
+                  DesignatorArray(
+                    DesignName(
+                     intArray
+                    ) [DesignName]
+                    ExprPlus(
+                      Term1(
+                        FactorNum(
+                         7
+                        ) [FactorNum]
+                      ) [Term1]
+                    ) [ExprPlus]
+                  ) [DesignatorArray]
+                ) [Factor1]
+              ) [Term1]
+            ) [ExprPlus]
+          ) [StatementPrintExpr]
+        ) [StatementList1]
+      ) [Statement2]
+    ) [StatementList1]
+  ) [MethodDecl]
+) [Program]
+INFO  13:15:49,959 - ===================================
+INFO  13:15:49,962 - Deklarisan novi simbol na liniji 2: a
+INFO  13:15:49,962 - Deklarisan novi simbol na liniji 2: b
+INFO  13:15:49,962 - Deklarisan novi simbol na liniji 2: c
+INFO  13:15:49,962 - Deklarisan novi simbol na liniji 2: d
+INFO  13:15:49,962 - Deklarisan novi simbol na liniji 2: e
+INFO  13:15:49,963 - Deklarisan novi simbol (niz) na liniji 2: intArray
+INFO  13:15:49,963 - Deklarisan novi simbol (niz) na liniji 2: niz
+INFO  13:15:49,963 - Deklarisan novi simbol (niz) na liniji 2: nizTmp
+INFO  13:15:49,963 - Deklarisan novi simbol (niz) na liniji 2: nizIndex
+INFO  13:15:49,963 - Obradjuje se funkcija main na liniji 4
+INFO  13:15:49,963 - Koriscen simbol intArray na liniji 7
+INFO  13:15:49,963 - ExprPlus na liniji 7 tipa: rs.etf.pp1.symboltable.concepts.Struct@76329302
+INFO  13:15:49,963 - ExprPlus na liniji 7 tipa: rs.etf.pp1.symboltable.concepts.Struct@5e25a92e
+INFO  13:15:49,963 - Dodela vrednosti simbolu intArray na liniji 7
+INFO  13:15:49,963 - ExprPlus na liniji 8 tipa: rs.etf.pp1.symboltable.concepts.Struct@76329302
+INFO  13:15:49,963 - Koriscen simbol (niz) intArray na liniji 8
+INFO  13:15:49,963 - ExprPlus na liniji 8 tipa: rs.etf.pp1.symboltable.concepts.Struct@76329302
+INFO  13:15:49,963 - Dodela vrednosti simbolu intArray na liniji 8
+INFO  13:15:49,963 - ExprPlus na liniji 9 tipa: rs.etf.pp1.symboltable.concepts.Struct@76329302
+INFO  13:15:49,963 - Koriscen simbol (niz) intArray na liniji 9
+INFO  13:15:49,963 - Inkrementirana vrednost simbola intArray na liniji 9
+INFO  13:15:49,963 - ExprPlus na liniji 10 tipa: rs.etf.pp1.symboltable.concepts.Struct@76329302
+INFO  13:15:49,963 - Koriscen simbol (niz) intArray na liniji 10
+INFO  13:15:49,963 - ExprPlus na liniji 10 tipa: rs.etf.pp1.symboltable.concepts.Struct@76329302
+INFO  13:15:49,964 - Print na liniji 10
+INFO  13:15:49,964 -  Print count calls = 0
+INFO  13:15:49,964 -  Deklarisanih promenljivih ima = 0
+INFO  13:15:49,964 - ===================================
+INFO  13:15:49,967 - Parsiranje uspesno zavrseno!

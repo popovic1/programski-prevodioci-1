@@ -1,0 +1,993 @@
+INFO  12:33:01,425 - Compiling source file: C:\Users\djordje.popovic\Desktop\Fakultet\PP1\programski-prevodioci-1\workspace\MJCompiler\test\program.mj
+INFO  12:33:01,474 - #2 program
+INFO  12:33:01,474 - #41 test_A_successful
+INFO  12:33:01,474 - #41 int
+INFO  12:33:01,475 - #41 a
+INFO  12:33:01,476 - #8 ,
+INFO  12:33:01,476 - #41 b
+INFO  12:33:01,476 - #8 ,
+INFO  12:33:01,476 - #41 c
+INFO  12:33:01,476 - #8 ,
+INFO  12:33:01,476 - #41 d
+INFO  12:33:01,476 - #8 ,
+INFO  12:33:01,476 - #41 e
+INFO  12:33:01,476 - #8 ,
+INFO  12:33:01,476 - #41 intArray
+INFO  12:33:01,476 - #10 [
+INFO  12:33:01,476 - #11 ]
+INFO  12:33:01,476 - #8 ,
+INFO  12:33:01,477 - #41 niz
+INFO  12:33:01,477 - #10 [
+INFO  12:33:01,477 - #11 ]
+INFO  12:33:01,478 - #8 ,
+INFO  12:33:01,478 - #41 nizTmp
+INFO  12:33:01,479 - #10 [
+INFO  12:33:01,479 - #11 ]
+INFO  12:33:01,479 - #8 ,
+INFO  12:33:01,479 - #41 nizIndex
+INFO  12:33:01,479 - #10 [
+INFO  12:33:01,479 - #11 ]
+INFO  12:33:01,479 - #7 ;
+INFO  12:33:01,479 - #3 {
+INFO  12:33:01,479 - #15 void
+INFO  12:33:01,480 - #41 main
+INFO  12:33:01,480 - #13 (
+INFO  12:33:01,480 - #14 )
+INFO  12:33:01,480 - #3 {
+INFO  12:33:01,480 - #3 {
+INFO  12:33:01,481 - #23 print
+INFO  12:33:01,481 - #13 (
+INFO  12:33:01,481 - #42 t
+INFO  12:33:01,481 - #14 )
+INFO  12:33:01,481 - #7 ;
+INFO  12:33:01,483 - #23 print
+INFO  12:33:01,483 - #13 (
+INFO  12:33:01,483 - #42 e
+INFO  12:33:01,483 - #14 )
+INFO  12:33:01,483 - #7 ;
+INFO  12:33:01,483 - #23 print
+INFO  12:33:01,483 - #13 (
+INFO  12:33:01,483 - #42 s
+INFO  12:33:01,483 - #14 )
+INFO  12:33:01,483 - #7 ;
+INFO  12:33:01,483 - #23 print
+INFO  12:33:01,484 - #13 (
+INFO  12:33:01,484 - #42 t
+INFO  12:33:01,484 - #14 )
+INFO  12:33:01,484 - #7 ;
+INFO  12:33:01,484 - #23 print
+INFO  12:33:01,484 - #13 (
+INFO  12:33:01,484 - #42  
+INFO  12:33:01,484 - #14 )
+INFO  12:33:01,484 - #7 ;
+INFO  12:33:01,484 - #23 print
+INFO  12:33:01,484 - #13 (
+INFO  12:33:01,484 - #42 i
+INFO  12:33:01,484 - #14 )
+INFO  12:33:01,484 - #7 ;
+INFO  12:33:01,484 - #23 print
+INFO  12:33:01,484 - #13 (
+INFO  12:33:01,484 - #42 /
+INFO  12:33:01,485 - #14 )
+INFO  12:33:01,485 - #7 ;
+INFO  12:33:01,485 - #23 print
+INFO  12:33:01,485 - #13 (
+INFO  12:33:01,485 - #42 o
+INFO  12:33:01,485 - #14 )
+INFO  12:33:01,485 - #7 ;
+INFO  12:33:01,485 - #23 print
+INFO  12:33:01,485 - #13 (
+INFO  12:33:01,485 - #41 eol
+INFO  12:33:01,485 - #14 )
+INFO  12:33:01,485 - #7 ;
+INFO  12:33:01,485 - #23 print
+INFO  12:33:01,485 - #13 (
+INFO  12:33:01,485 - #41 a
+INFO  12:33:01,485 - #8 ,
+INFO  12:33:01,485 - #40 3
+INFO  12:33:01,485 - #14 )
+INFO  12:33:01,485 - #7 ;
+INFO  12:33:01,485 - #41 intArray
+INFO  12:33:01,485 - #6 =
+INFO  12:33:01,485 - #29 new
+INFO  12:33:01,487 - #41 int
+INFO  12:33:01,487 - #10 [
+INFO  12:33:01,487 - #40 10
+INFO  12:33:01,487 - #11 ]
+INFO  12:33:01,487 - #7 ;
+INFO  12:33:01,487 - #23 print
+INFO  12:33:01,488 - #13 (
+INFO  12:33:01,488 - #41 eol
+INFO  12:33:01,488 - #14 )
+INFO  12:33:01,488 - #7 ;
+INFO  12:33:01,488 - #23 print
+INFO  12:33:01,488 - #13 (
+INFO  12:33:01,488 - #41 intArray
+INFO  12:33:01,488 - #10 [
+INFO  12:33:01,489 - #40 2
+INFO  12:33:01,489 - #11 ]
+INFO  12:33:01,489 - #14 )
+INFO  12:33:01,489 - #7 ;
+INFO  12:33:01,489 - #23 print
+INFO  12:33:01,489 - #13 (
+INFO  12:33:01,489 - #41 eol
+INFO  12:33:01,489 - #14 )
+INFO  12:33:01,489 - #7 ;
+INFO  12:33:01,490 - #23 print
+INFO  12:33:01,490 - #13 (
+INFO  12:33:01,490 - #42 a
+INFO  12:33:01,490 - #8 ,
+INFO  12:33:01,490 - #40 10
+INFO  12:33:01,490 - #14 )
+INFO  12:33:01,490 - #7 ;
+INFO  12:33:01,490 - #23 print
+INFO  12:33:01,490 - #13 (
+INFO  12:33:01,490 - #41 eol
+INFO  12:33:01,490 - #14 )
+INFO  12:33:01,491 - #7 ;
+INFO  12:33:01,491 - #23 print
+INFO  12:33:01,491 - #13 (
+INFO  12:33:01,491 - #41 eol
+INFO  12:33:01,491 - #14 )
+INFO  12:33:01,491 - #7 ;
+INFO  12:33:01,491 - #23 print
+INFO  12:33:01,491 - #13 (
+INFO  12:33:01,492 - #40 20130010
+INFO  12:33:01,492 - #14 )
+INFO  12:33:01,492 - #7 ;
+INFO  12:33:01,492 - #23 print
+INFO  12:33:01,492 - #13 (
+INFO  12:33:01,492 - #41 eol
+INFO  12:33:01,492 - #14 )
+INFO  12:33:01,492 - #7 ;
+INFO  12:33:01,492 - #23 print
+INFO  12:33:01,492 - #13 (
+INFO  12:33:01,492 - #42 t
+INFO  12:33:01,492 - #14 )
+INFO  12:33:01,492 - #7 ;
+INFO  12:33:01,492 - #23 print
+INFO  12:33:01,492 - #13 (
+INFO  12:33:01,492 - #42 e
+INFO  12:33:01,492 - #14 )
+INFO  12:33:01,492 - #7 ;
+INFO  12:33:01,492 - #23 print
+INFO  12:33:01,492 - #13 (
+INFO  12:33:01,492 - #42 s
+INFO  12:33:01,492 - #14 )
+INFO  12:33:01,492 - #7 ;
+INFO  12:33:01,492 - #23 print
+INFO  12:33:01,493 - #13 (
+INFO  12:33:01,493 - #42 t
+INFO  12:33:01,493 - #14 )
+INFO  12:33:01,493 - #7 ;
+INFO  12:33:01,493 - #23 print
+INFO  12:33:01,493 - #13 (
+INFO  12:33:01,493 - #42  
+INFO  12:33:01,493 - #14 )
+INFO  12:33:01,493 - #7 ;
+INFO  12:33:01,493 - #23 print
+INFO  12:33:01,493 - #13 (
+INFO  12:33:01,493 - #42 a
+INFO  12:33:01,493 - #14 )
+INFO  12:33:01,493 - #7 ;
+INFO  12:33:01,493 - #23 print
+INFO  12:33:01,493 - #13 (
+INFO  12:33:01,493 - #42 r
+INFO  12:33:01,493 - #14 )
+INFO  12:33:01,493 - #7 ;
+INFO  12:33:01,493 - #23 print
+INFO  12:33:01,493 - #13 (
+INFO  12:33:01,493 - #42 r
+INFO  12:33:01,493 - #14 )
+INFO  12:33:01,493 - #7 ;
+INFO  12:33:01,494 - #23 print
+INFO  12:33:01,494 - #13 (
+INFO  12:33:01,494 - #42 E
+INFO  12:33:01,494 - #14 )
+INFO  12:33:01,494 - #7 ;
+INFO  12:33:01,494 - #23 print
+INFO  12:33:01,494 - #13 (
+INFO  12:33:01,494 - #42 l
+INFO  12:33:01,494 - #14 )
+INFO  12:33:01,494 - #7 ;
+INFO  12:33:01,494 - #23 print
+INFO  12:33:01,494 - #13 (
+INFO  12:33:01,494 - #42 e
+INFO  12:33:01,494 - #14 )
+INFO  12:33:01,494 - #7 ;
+INFO  12:33:01,494 - #23 print
+INFO  12:33:01,494 - #13 (
+INFO  12:33:01,494 - #42 m
+INFO  12:33:01,494 - #14 )
+INFO  12:33:01,494 - #7 ;
+INFO  12:33:01,494 - #23 print
+INFO  12:33:01,494 - #13 (
+INFO  12:33:01,494 - #42  
+INFO  12:33:01,494 - #14 )
+INFO  12:33:01,494 - #7 ;
+INFO  12:33:01,494 - #23 print
+INFO  12:33:01,494 - #13 (
+INFO  12:33:01,494 - #42 i
+INFO  12:33:01,494 - #14 )
+INFO  12:33:01,495 - #7 ;
+INFO  12:33:01,495 - #23 print
+INFO  12:33:01,495 - #13 (
+INFO  12:33:01,495 - #42 n
+INFO  12:33:01,495 - #14 )
+INFO  12:33:01,495 - #7 ;
+INFO  12:33:01,495 - #23 print
+INFO  12:33:01,495 - #13 (
+INFO  12:33:01,495 - #42 c
+INFO  12:33:01,495 - #14 )
+INFO  12:33:01,495 - #7 ;
+INFO  12:33:01,495 - #23 print
+INFO  12:33:01,495 - #13 (
+INFO  12:33:01,495 - #42 /
+INFO  12:33:01,495 - #14 )
+INFO  12:33:01,495 - #7 ;
+INFO  12:33:01,495 - #23 print
+INFO  12:33:01,495 - #13 (
+INFO  12:33:01,495 - #42 d
+INFO  12:33:01,495 - #14 )
+INFO  12:33:01,495 - #7 ;
+INFO  12:33:01,495 - #23 print
+INFO  12:33:01,495 - #13 (
+INFO  12:33:01,495 - #42 e
+INFO  12:33:01,495 - #14 )
+INFO  12:33:01,495 - #7 ;
+INFO  12:33:01,495 - #23 print
+INFO  12:33:01,495 - #13 (
+INFO  12:33:01,495 - #42 c
+INFO  12:33:01,495 - #14 )
+INFO  12:33:01,495 - #7 ;
+INFO  12:33:01,495 - #23 print
+INFO  12:33:01,495 - #13 (
+INFO  12:33:01,495 - #41 eol
+INFO  12:33:01,495 - #14 )
+INFO  12:33:01,495 - #7 ;
+INFO  12:33:01,495 - #41 niz
+INFO  12:33:01,495 - #6 =
+INFO  12:33:01,495 - #29 new
+INFO  12:33:01,495 - #41 int
+INFO  12:33:01,495 - #10 [
+INFO  12:33:01,496 - #40 5
+INFO  12:33:01,496 - #11 ]
+INFO  12:33:01,496 - #7 ;
+INFO  12:33:01,496 - #41 niz
+INFO  12:33:01,496 - #10 [
+INFO  12:33:01,496 - #40 0
+INFO  12:33:01,496 - #11 ]
+INFO  12:33:01,496 - #24 ++
+INFO  12:33:01,496 - #7 ;
+INFO  12:33:01,496 - #41 niz
+INFO  12:33:01,496 - #10 [
+INFO  12:33:01,496 - #40 4
+INFO  12:33:01,496 - #11 ]
+INFO  12:33:01,496 - #25 --
+INFO  12:33:01,496 - #7 ;
+INFO  12:33:01,496 - #4 }
+INFO  12:33:01,496 - #4 }
+INFO  12:33:01,496 - #4 }
+INFO  12:33:01,506 - Program(
+  ProgName(
+   test_A_successful
+  ) [ProgName]
+  VarOrConstDeclList1(
+    NoVarOrConstDeclList(
+    ) [NoVarOrConstDeclList]
+    VarOrConstDeclVar(
+      VarDecl1(
+        Type(
+         int
+        ) [Type]
+        VarDeclElemsArrayMultiple(
+          VarDeclElemsArrayMultiple(
+            VarDeclElemsArrayMultiple(
+              VarDeclElemsArrayMultiple(
+                VarDeclElems1Multiple(
+                  VarDeclElems1Multiple(
+                    VarDeclElems1Multiple(
+                      VarDeclElems1Multiple(
+                        VarDeclElems1(
+                         a
+                        ) [VarDeclElems1]
+                       b
+                      ) [VarDeclElems1Multiple]
+                     c
+                    ) [VarDeclElems1Multiple]
+                   d
+                  ) [VarDeclElems1Multiple]
+                 e
+                ) [VarDeclElems1Multiple]
+               intArray
+              ) [VarDeclElemsArrayMultiple]
+             niz
+            ) [VarDeclElemsArrayMultiple]
+           nizTmp
+          ) [VarDeclElemsArrayMultiple]
+         nizIndex
+        ) [VarDeclElemsArrayMultiple]
+      ) [VarDecl1]
+    ) [VarOrConstDeclVar]
+  ) [VarOrConstDeclList1]
+  MethodDecl(
+    MethodTypeNameVoid(
+     main
+    ) [MethodTypeNameVoid]
+    NoVarDeclList(
+    ) [NoVarDeclList]
+    StatementList1(
+      NoStatementList(
+      ) [NoStatementList]
+      Statement2(
+        StatementList1(
+          StatementList1(
+            StatementList1(
+              StatementList1(
+                StatementList1(
+                  StatementList1(
+                    StatementList1(
+                      StatementList1(
+                        StatementList1(
+                          StatementList1(
+                            StatementList1(
+                              StatementList1(
+                                StatementList1(
+                                  StatementList1(
+                                    StatementList1(
+                                      StatementList1(
+                                        StatementList1(
+                                          StatementList1(
+                                            StatementList1(
+                                              StatementList1(
+                                                StatementList1(
+                                                  StatementList1(
+                                                    StatementList1(
+                                                      StatementList1(
+                                                        StatementList1(
+                                                          StatementList1(
+                                                            StatementList1(
+                                                              StatementList1(
+                                                                StatementList1(
+                                                                  StatementList1(
+                                                                    StatementList1(
+                                                                      StatementList1(
+                                                                        StatementList1(
+                                                                          StatementList1(
+                                                                            StatementList1(
+                                                                              StatementList1(
+                                                                                StatementList1(
+                                                                                  StatementList1(
+                                                                                    StatementList1(
+                                                                                      StatementList1(
+                                                                                        StatementList1(
+                                                                                          StatementList1(
+                                                                                            StatementList1(
+                                                                                              NoStatementList(
+                                                                                              ) [NoStatementList]
+                                                                                              StatementPrintExpr(
+                                                                                                ExprPlus(
+                                                                                                  Term1(
+                                                                                                    FactorChar(
+                                                                                                     t
+                                                                                                    ) [FactorChar]
+                                                                                                  ) [Term1]
+                                                                                                ) [ExprPlus]
+                                                                                              ) [StatementPrintExpr]
+                                                                                            ) [StatementList1]
+                                                                                            StatementPrintExpr(
+                                                                                              ExprPlus(
+                                                                                                Term1(
+                                                                                                  FactorChar(
+                                                                                                   e
+                                                                                                  ) [FactorChar]
+                                                                                                ) [Term1]
+                                                                                              ) [ExprPlus]
+                                                                                            ) [StatementPrintExpr]
+                                                                                          ) [StatementList1]
+                                                                                          StatementPrintExpr(
+                                                                                            ExprPlus(
+                                                                                              Term1(
+                                                                                                FactorChar(
+                                                                                                 s
+                                                                                                ) [FactorChar]
+                                                                                              ) [Term1]
+                                                                                            ) [ExprPlus]
+                                                                                          ) [StatementPrintExpr]
+                                                                                        ) [StatementList1]
+                                                                                        StatementPrintExpr(
+                                                                                          ExprPlus(
+                                                                                            Term1(
+                                                                                              FactorChar(
+                                                                                               t
+                                                                                              ) [FactorChar]
+                                                                                            ) [Term1]
+                                                                                          ) [ExprPlus]
+                                                                                        ) [StatementPrintExpr]
+                                                                                      ) [StatementList1]
+                                                                                      StatementPrintExpr(
+                                                                                        ExprPlus(
+                                                                                          Term1(
+                                                                                            FactorChar(
+                                                                                              
+                                                                                            ) [FactorChar]
+                                                                                          ) [Term1]
+                                                                                        ) [ExprPlus]
+                                                                                      ) [StatementPrintExpr]
+                                                                                    ) [StatementList1]
+                                                                                    StatementPrintExpr(
+                                                                                      ExprPlus(
+                                                                                        Term1(
+                                                                                          FactorChar(
+                                                                                           i
+                                                                                          ) [FactorChar]
+                                                                                        ) [Term1]
+                                                                                      ) [ExprPlus]
+                                                                                    ) [StatementPrintExpr]
+                                                                                  ) [StatementList1]
+                                                                                  StatementPrintExpr(
+                                                                                    ExprPlus(
+                                                                                      Term1(
+                                                                                        FactorChar(
+                                                                                         /
+                                                                                        ) [FactorChar]
+                                                                                      ) [Term1]
+                                                                                    ) [ExprPlus]
+                                                                                  ) [StatementPrintExpr]
+                                                                                ) [StatementList1]
+                                                                                StatementPrintExpr(
+                                                                                  ExprPlus(
+                                                                                    Term1(
+                                                                                      FactorChar(
+                                                                                       o
+                                                                                      ) [FactorChar]
+                                                                                    ) [Term1]
+                                                                                  ) [ExprPlus]
+                                                                                ) [StatementPrintExpr]
+                                                                              ) [StatementList1]
+                                                                              StatementPrintExpr(
+                                                                                ExprPlus(
+                                                                                  Term1(
+                                                                                    Factor1(
+                                                                                      Designator1(
+                                                                                       eol
+                                                                                      ) [Designator1]
+                                                                                    ) [Factor1]
+                                                                                  ) [Term1]
+                                                                                ) [ExprPlus]
+                                                                              ) [StatementPrintExpr]
+                                                                            ) [StatementList1]
+                                                                            StatementPrintExprWithNum(
+                                                                              ExprPlus(
+                                                                                Term1(
+                                                                                  Factor1(
+                                                                                    Designator1(
+                                                                                     a
+                                                                                    ) [Designator1]
+                                                                                  ) [Factor1]
+                                                                                ) [Term1]
+                                                                              ) [ExprPlus]
+                                                                             3
+                                                                            ) [StatementPrintExprWithNum]
+                                                                          ) [StatementList1]
+                                                                          Statement1(
+                                                                            DesignatorStatement1(
+                                                                              Designator1(
+                                                                               intArray
+                                                                              ) [Designator1]
+                                                                              Assignop(
+                                                                              ) [Assignop]
+                                                                              ExprPlus(
+                                                                                Term1(
+                                                                                  Factor3(
+                                                                                    Type(
+                                                                                     int
+                                                                                    ) [Type]
+                                                                                    ExprPlus(
+                                                                                      Term1(
+                                                                                        FactorNum(
+                                                                                         10
+                                                                                        ) [FactorNum]
+                                                                                      ) [Term1]
+                                                                                    ) [ExprPlus]
+                                                                                  ) [Factor3]
+                                                                                ) [Term1]
+                                                                              ) [ExprPlus]
+                                                                            ) [DesignatorStatement1]
+                                                                          ) [Statement1]
+                                                                        ) [StatementList1]
+                                                                        StatementPrintExpr(
+                                                                          ExprPlus(
+                                                                            Term1(
+                                                                              Factor1(
+                                                                                Designator1(
+                                                                                 eol
+                                                                                ) [Designator1]
+                                                                              ) [Factor1]
+                                                                            ) [Term1]
+                                                                          ) [ExprPlus]
+                                                                        ) [StatementPrintExpr]
+                                                                      ) [StatementList1]
+                                                                      StatementPrintExpr(
+                                                                        ExprPlus(
+                                                                          Term1(
+                                                                            Factor1(
+                                                                              DesignatorArray(
+                                                                                DesignName(
+                                                                                 intArray
+                                                                                ) [DesignName]
+                                                                                ExprPlus(
+                                                                                  Term1(
+                                                                                    FactorNum(
+                                                                                     2
+                                                                                    ) [FactorNum]
+                                                                                  ) [Term1]
+                                                                                ) [ExprPlus]
+                                                                              ) [DesignatorArray]
+                                                                            ) [Factor1]
+                                                                          ) [Term1]
+                                                                        ) [ExprPlus]
+                                                                      ) [StatementPrintExpr]
+                                                                    ) [StatementList1]
+                                                                    StatementPrintExpr(
+                                                                      ExprPlus(
+                                                                        Term1(
+                                                                          Factor1(
+                                                                            Designator1(
+                                                                             eol
+                                                                            ) [Designator1]
+                                                                          ) [Factor1]
+                                                                        ) [Term1]
+                                                                      ) [ExprPlus]
+                                                                    ) [StatementPrintExpr]
+                                                                  ) [StatementList1]
+                                                                  StatementPrintExprWithNum(
+                                                                    ExprPlus(
+                                                                      Term1(
+                                                                        FactorChar(
+                                                                         a
+                                                                        ) [FactorChar]
+                                                                      ) [Term1]
+                                                                    ) [ExprPlus]
+                                                                   10
+                                                                  ) [StatementPrintExprWithNum]
+                                                                ) [StatementList1]
+                                                                StatementPrintExpr(
+                                                                  ExprPlus(
+                                                                    Term1(
+                                                                      Factor1(
+                                                                        Designator1(
+                                                                         eol
+                                                                        ) [Designator1]
+                                                                      ) [Factor1]
+                                                                    ) [Term1]
+                                                                  ) [ExprPlus]
+                                                                ) [StatementPrintExpr]
+                                                              ) [StatementList1]
+                                                              StatementPrintExpr(
+                                                                ExprPlus(
+                                                                  Term1(
+                                                                    Factor1(
+                                                                      Designator1(
+                                                                       eol
+                                                                      ) [Designator1]
+                                                                    ) [Factor1]
+                                                                  ) [Term1]
+                                                                ) [ExprPlus]
+                                                              ) [StatementPrintExpr]
+                                                            ) [StatementList1]
+                                                            StatementPrintExpr(
+                                                              ExprPlus(
+                                                                Term1(
+                                                                  FactorNum(
+                                                                   20130010
+                                                                  ) [FactorNum]
+                                                                ) [Term1]
+                                                              ) [ExprPlus]
+                                                            ) [StatementPrintExpr]
+                                                          ) [StatementList1]
+                                                          StatementPrintExpr(
+                                                            ExprPlus(
+                                                              Term1(
+                                                                Factor1(
+                                                                  Designator1(
+                                                                   eol
+                                                                  ) [Designator1]
+                                                                ) [Factor1]
+                                                              ) [Term1]
+                                                            ) [ExprPlus]
+                                                          ) [StatementPrintExpr]
+                                                        ) [StatementList1]
+                                                        StatementPrintExpr(
+                                                          ExprPlus(
+                                                            Term1(
+                                                              FactorChar(
+                                                               t
+                                                              ) [FactorChar]
+                                                            ) [Term1]
+                                                          ) [ExprPlus]
+                                                        ) [StatementPrintExpr]
+                                                      ) [StatementList1]
+                                                      StatementPrintExpr(
+                                                        ExprPlus(
+                                                          Term1(
+                                                            FactorChar(
+                                                             e
+                                                            ) [FactorChar]
+                                                          ) [Term1]
+                                                        ) [ExprPlus]
+                                                      ) [StatementPrintExpr]
+                                                    ) [StatementList1]
+                                                    StatementPrintExpr(
+                                                      ExprPlus(
+                                                        Term1(
+                                                          FactorChar(
+                                                           s
+                                                          ) [FactorChar]
+                                                        ) [Term1]
+                                                      ) [ExprPlus]
+                                                    ) [StatementPrintExpr]
+                                                  ) [StatementList1]
+                                                  StatementPrintExpr(
+                                                    ExprPlus(
+                                                      Term1(
+                                                        FactorChar(
+                                                         t
+                                                        ) [FactorChar]
+                                                      ) [Term1]
+                                                    ) [ExprPlus]
+                                                  ) [StatementPrintExpr]
+                                                ) [StatementList1]
+                                                StatementPrintExpr(
+                                                  ExprPlus(
+                                                    Term1(
+                                                      FactorChar(
+                                                        
+                                                      ) [FactorChar]
+                                                    ) [Term1]
+                                                  ) [ExprPlus]
+                                                ) [StatementPrintExpr]
+                                              ) [StatementList1]
+                                              StatementPrintExpr(
+                                                ExprPlus(
+                                                  Term1(
+                                                    FactorChar(
+                                                     a
+                                                    ) [FactorChar]
+                                                  ) [Term1]
+                                                ) [ExprPlus]
+                                              ) [StatementPrintExpr]
+                                            ) [StatementList1]
+                                            StatementPrintExpr(
+                                              ExprPlus(
+                                                Term1(
+                                                  FactorChar(
+                                                   r
+                                                  ) [FactorChar]
+                                                ) [Term1]
+                                              ) [ExprPlus]
+                                            ) [StatementPrintExpr]
+                                          ) [StatementList1]
+                                          StatementPrintExpr(
+                                            ExprPlus(
+                                              Term1(
+                                                FactorChar(
+                                                 r
+                                                ) [FactorChar]
+                                              ) [Term1]
+                                            ) [ExprPlus]
+                                          ) [StatementPrintExpr]
+                                        ) [StatementList1]
+                                        StatementPrintExpr(
+                                          ExprPlus(
+                                            Term1(
+                                              FactorChar(
+                                               E
+                                              ) [FactorChar]
+                                            ) [Term1]
+                                          ) [ExprPlus]
+                                        ) [StatementPrintExpr]
+                                      ) [StatementList1]
+                                      StatementPrintExpr(
+                                        ExprPlus(
+                                          Term1(
+                                            FactorChar(
+                                             l
+                                            ) [FactorChar]
+                                          ) [Term1]
+                                        ) [ExprPlus]
+                                      ) [StatementPrintExpr]
+                                    ) [StatementList1]
+                                    StatementPrintExpr(
+                                      ExprPlus(
+                                        Term1(
+                                          FactorChar(
+                                           e
+                                          ) [FactorChar]
+                                        ) [Term1]
+                                      ) [ExprPlus]
+                                    ) [StatementPrintExpr]
+                                  ) [StatementList1]
+                                  StatementPrintExpr(
+                                    ExprPlus(
+                                      Term1(
+                                        FactorChar(
+                                         m
+                                        ) [FactorChar]
+                                      ) [Term1]
+                                    ) [ExprPlus]
+                                  ) [StatementPrintExpr]
+                                ) [StatementList1]
+                                StatementPrintExpr(
+                                  ExprPlus(
+                                    Term1(
+                                      FactorChar(
+                                        
+                                      ) [FactorChar]
+                                    ) [Term1]
+                                  ) [ExprPlus]
+                                ) [StatementPrintExpr]
+                              ) [StatementList1]
+                              StatementPrintExpr(
+                                ExprPlus(
+                                  Term1(
+                                    FactorChar(
+                                     i
+                                    ) [FactorChar]
+                                  ) [Term1]
+                                ) [ExprPlus]
+                              ) [StatementPrintExpr]
+                            ) [StatementList1]
+                            StatementPrintExpr(
+                              ExprPlus(
+                                Term1(
+                                  FactorChar(
+                                   n
+                                  ) [FactorChar]
+                                ) [Term1]
+                              ) [ExprPlus]
+                            ) [StatementPrintExpr]
+                          ) [StatementList1]
+                          StatementPrintExpr(
+                            ExprPlus(
+                              Term1(
+                                FactorChar(
+                                 c
+                                ) [FactorChar]
+                              ) [Term1]
+                            ) [ExprPlus]
+                          ) [StatementPrintExpr]
+                        ) [StatementList1]
+                        StatementPrintExpr(
+                          ExprPlus(
+                            Term1(
+                              FactorChar(
+                               /
+                              ) [FactorChar]
+                            ) [Term1]
+                          ) [ExprPlus]
+                        ) [StatementPrintExpr]
+                      ) [StatementList1]
+                      StatementPrintExpr(
+                        ExprPlus(
+                          Term1(
+                            FactorChar(
+                             d
+                            ) [FactorChar]
+                          ) [Term1]
+                        ) [ExprPlus]
+                      ) [StatementPrintExpr]
+                    ) [StatementList1]
+                    StatementPrintExpr(
+                      ExprPlus(
+                        Term1(
+                          FactorChar(
+                           e
+                          ) [FactorChar]
+                        ) [Term1]
+                      ) [ExprPlus]
+                    ) [StatementPrintExpr]
+                  ) [StatementList1]
+                  StatementPrintExpr(
+                    ExprPlus(
+                      Term1(
+                        FactorChar(
+                         c
+                        ) [FactorChar]
+                      ) [Term1]
+                    ) [ExprPlus]
+                  ) [StatementPrintExpr]
+                ) [StatementList1]
+                StatementPrintExpr(
+                  ExprPlus(
+                    Term1(
+                      Factor1(
+                        Designator1(
+                         eol
+                        ) [Designator1]
+                      ) [Factor1]
+                    ) [Term1]
+                  ) [ExprPlus]
+                ) [StatementPrintExpr]
+              ) [StatementList1]
+              Statement1(
+                DesignatorStatement1(
+                  Designator1(
+                   niz
+                  ) [Designator1]
+                  Assignop(
+                  ) [Assignop]
+                  ExprPlus(
+                    Term1(
+                      Factor3(
+                        Type(
+                         int
+                        ) [Type]
+                        ExprPlus(
+                          Term1(
+                            FactorNum(
+                             5
+                            ) [FactorNum]
+                          ) [Term1]
+                        ) [ExprPlus]
+                      ) [Factor3]
+                    ) [Term1]
+                  ) [ExprPlus]
+                ) [DesignatorStatement1]
+              ) [Statement1]
+            ) [StatementList1]
+            Statement1(
+              DesignatorStatementInc(
+                DesignatorArray(
+                  DesignName(
+                   niz
+                  ) [DesignName]
+                  ExprPlus(
+                    Term1(
+                      FactorNum(
+                       0
+                      ) [FactorNum]
+                    ) [Term1]
+                  ) [ExprPlus]
+                ) [DesignatorArray]
+              ) [DesignatorStatementInc]
+            ) [Statement1]
+          ) [StatementList1]
+          Statement1(
+            DesignatorStatementDec(
+              DesignatorArray(
+                DesignName(
+                 niz
+                ) [DesignName]
+                ExprPlus(
+                  Term1(
+                    FactorNum(
+                     4
+                    ) [FactorNum]
+                  ) [Term1]
+                ) [ExprPlus]
+              ) [DesignatorArray]
+            ) [DesignatorStatementDec]
+          ) [Statement1]
+        ) [StatementList1]
+      ) [Statement2]
+    ) [StatementList1]
+  ) [MethodDecl]
+) [Program]
+INFO  12:33:01,507 - ===================================
+INFO  12:33:01,509 - Deklarisan novi simbol na liniji 2: a
+INFO  12:33:01,509 - Deklarisan novi simbol na liniji 2: b
+INFO  12:33:01,509 - Deklarisan novi simbol na liniji 2: c
+INFO  12:33:01,509 - Deklarisan novi simbol na liniji 2: d
+INFO  12:33:01,509 - Deklarisan novi simbol na liniji 2: e
+INFO  12:33:01,509 - Deklarisan novi simbol (niz) na liniji 2: intArray
+INFO  12:33:01,509 - Deklarisan novi simbol (niz) na liniji 2: niz
+INFO  12:33:01,509 - Deklarisan novi simbol (niz) na liniji 2: nizTmp
+INFO  12:33:01,509 - Deklarisan novi simbol (niz) na liniji 2: nizIndex
+INFO  12:33:01,509 - Obradjuje se funkcija main na liniji 4
+INFO  12:33:01,509 - ExprPlus na liniji 6 tipa: rs.etf.pp1.symboltable.concepts.Struct@b59d31
+INFO  12:33:01,509 - Print na liniji 6
+INFO  12:33:01,509 - ExprPlus na liniji 6 tipa: rs.etf.pp1.symboltable.concepts.Struct@b59d31
+INFO  12:33:01,509 - Print na liniji 6
+INFO  12:33:01,509 - ExprPlus na liniji 6 tipa: rs.etf.pp1.symboltable.concepts.Struct@b59d31
+INFO  12:33:01,509 - Print na liniji 6
+INFO  12:33:01,509 - ExprPlus na liniji 6 tipa: rs.etf.pp1.symboltable.concepts.Struct@b59d31
+INFO  12:33:01,509 - Print na liniji 6
+INFO  12:33:01,509 - ExprPlus na liniji 6 tipa: rs.etf.pp1.symboltable.concepts.Struct@b59d31
+INFO  12:33:01,509 - Print na liniji 6
+INFO  12:33:01,509 - ExprPlus na liniji 6 tipa: rs.etf.pp1.symboltable.concepts.Struct@b59d31
+INFO  12:33:01,509 - Print na liniji 6
+INFO  12:33:01,509 - ExprPlus na liniji 6 tipa: rs.etf.pp1.symboltable.concepts.Struct@b59d31
+INFO  12:33:01,509 - Print na liniji 6
+INFO  12:33:01,511 - ExprPlus na liniji 6 tipa: rs.etf.pp1.symboltable.concepts.Struct@b59d31
+INFO  12:33:01,511 - Print na liniji 6
+INFO  12:33:01,511 - Koriscen simbol eol na liniji 6
+INFO  12:33:01,511 - ExprPlus na liniji 6 tipa: rs.etf.pp1.symboltable.concepts.Struct@b59d31
+INFO  12:33:01,511 - Print na liniji 6
+INFO  12:33:01,511 - Koriscen simbol a na liniji 7
+INFO  12:33:01,511 - ExprPlus na liniji 7 tipa: rs.etf.pp1.symboltable.concepts.Struct@62fdb4a6
+INFO  12:33:01,511 - Print na liniji 7
+INFO  12:33:01,511 - Koriscen simbol intArray na liniji 8
+INFO  12:33:01,511 - ExprPlus na liniji 8 tipa: rs.etf.pp1.symboltable.concepts.Struct@62fdb4a6
+INFO  12:33:01,511 - ExprPlus na liniji 8 tipa: rs.etf.pp1.symboltable.concepts.Struct@11e21d0e
+INFO  12:33:01,511 - Dodela vrednosti simbolu intArray na liniji 8
+INFO  12:33:01,511 - Koriscen simbol eol na liniji 9
+INFO  12:33:01,511 - ExprPlus na liniji 9 tipa: rs.etf.pp1.symboltable.concepts.Struct@b59d31
+INFO  12:33:01,511 - Print na liniji 9
+INFO  12:33:01,511 - ExprPlus na liniji 10 tipa: rs.etf.pp1.symboltable.concepts.Struct@62fdb4a6
+INFO  12:33:01,511 - Koriscen simbol (niz) intArray na liniji 10
+INFO  12:33:01,511 - ExprPlus na liniji 10 tipa: rs.etf.pp1.symboltable.concepts.Struct@62fdb4a6
+INFO  12:33:01,511 - Print na liniji 10
+INFO  12:33:01,511 - Koriscen simbol eol na liniji 11
+INFO  12:33:01,511 - ExprPlus na liniji 11 tipa: rs.etf.pp1.symboltable.concepts.Struct@b59d31
+INFO  12:33:01,511 - Print na liniji 11
+INFO  12:33:01,511 - ExprPlus na liniji 12 tipa: rs.etf.pp1.symboltable.concepts.Struct@b59d31
+INFO  12:33:01,511 - Print na liniji 12
+INFO  12:33:01,511 - Koriscen simbol eol na liniji 13
+INFO  12:33:01,511 - ExprPlus na liniji 13 tipa: rs.etf.pp1.symboltable.concepts.Struct@b59d31
+INFO  12:33:01,511 - Print na liniji 13
+INFO  12:33:01,511 - Koriscen simbol eol na liniji 14
+INFO  12:33:01,511 - ExprPlus na liniji 14 tipa: rs.etf.pp1.symboltable.concepts.Struct@b59d31
+INFO  12:33:01,511 - Print na liniji 14
+INFO  12:33:01,511 - ExprPlus na liniji 15 tipa: rs.etf.pp1.symboltable.concepts.Struct@62fdb4a6
+INFO  12:33:01,511 - Print na liniji 15
+INFO  12:33:01,511 - Koriscen simbol eol na liniji 16
+INFO  12:33:01,511 - ExprPlus na liniji 16 tipa: rs.etf.pp1.symboltable.concepts.Struct@b59d31
+INFO  12:33:01,511 - Print na liniji 16
+INFO  12:33:01,511 - ExprPlus na liniji 18 tipa: rs.etf.pp1.symboltable.concepts.Struct@b59d31
+INFO  12:33:01,511 - Print na liniji 18
+INFO  12:33:01,511 - ExprPlus na liniji 18 tipa: rs.etf.pp1.symboltable.concepts.Struct@b59d31
+INFO  12:33:01,511 - Print na liniji 18
+INFO  12:33:01,511 - ExprPlus na liniji 18 tipa: rs.etf.pp1.symboltable.concepts.Struct@b59d31
+INFO  12:33:01,511 - Print na liniji 18
+INFO  12:33:01,511 - ExprPlus na liniji 18 tipa: rs.etf.pp1.symboltable.concepts.Struct@b59d31
+INFO  12:33:01,511 - Print na liniji 18
+INFO  12:33:01,511 - ExprPlus na liniji 18 tipa: rs.etf.pp1.symboltable.concepts.Struct@b59d31
+INFO  12:33:01,511 - Print na liniji 18
+INFO  12:33:01,511 - ExprPlus na liniji 18 tipa: rs.etf.pp1.symboltable.concepts.Struct@b59d31
+INFO  12:33:01,511 - Print na liniji 18
+INFO  12:33:01,511 - ExprPlus na liniji 18 tipa: rs.etf.pp1.symboltable.concepts.Struct@b59d31
+INFO  12:33:01,511 - Print na liniji 18
+INFO  12:33:01,511 - ExprPlus na liniji 18 tipa: rs.etf.pp1.symboltable.concepts.Struct@b59d31
+INFO  12:33:01,511 - Print na liniji 18
+INFO  12:33:01,511 - ExprPlus na liniji 19 tipa: rs.etf.pp1.symboltable.concepts.Struct@b59d31
+INFO  12:33:01,511 - Print na liniji 19
+INFO  12:33:01,511 - ExprPlus na liniji 19 tipa: rs.etf.pp1.symboltable.concepts.Struct@b59d31
+INFO  12:33:01,511 - Print na liniji 19
+INFO  12:33:01,511 - ExprPlus na liniji 19 tipa: rs.etf.pp1.symboltable.concepts.Struct@b59d31
+INFO  12:33:01,511 - Print na liniji 19
+INFO  12:33:01,511 - ExprPlus na liniji 19 tipa: rs.etf.pp1.symboltable.concepts.Struct@b59d31
+INFO  12:33:01,511 - Print na liniji 19
+INFO  12:33:01,511 - ExprPlus na liniji 19 tipa: rs.etf.pp1.symboltable.concepts.Struct@b59d31
+INFO  12:33:01,511 - Print na liniji 19
+INFO  12:33:01,512 - ExprPlus na liniji 19 tipa: rs.etf.pp1.symboltable.concepts.Struct@b59d31
+INFO  12:33:01,512 - Print na liniji 19
+INFO  12:33:01,512 - ExprPlus na liniji 19 tipa: rs.etf.pp1.symboltable.concepts.Struct@b59d31
+INFO  12:33:01,512 - Print na liniji 19
+INFO  12:33:01,512 - ExprPlus na liniji 19 tipa: rs.etf.pp1.symboltable.concepts.Struct@b59d31
+INFO  12:33:01,512 - Print na liniji 19
+INFO  12:33:01,512 - ExprPlus na liniji 20 tipa: rs.etf.pp1.symboltable.concepts.Struct@b59d31
+INFO  12:33:01,512 - Print na liniji 20
+INFO  12:33:01,512 - ExprPlus na liniji 20 tipa: rs.etf.pp1.symboltable.concepts.Struct@b59d31
+INFO  12:33:01,512 - Print na liniji 20
+INFO  12:33:01,512 - ExprPlus na liniji 20 tipa: rs.etf.pp1.symboltable.concepts.Struct@b59d31
+INFO  12:33:01,512 - Print na liniji 20
+INFO  12:33:01,512 - ExprPlus na liniji 20 tipa: rs.etf.pp1.symboltable.concepts.Struct@b59d31
+INFO  12:33:01,512 - Print na liniji 20
+INFO  12:33:01,512 - Koriscen simbol eol na liniji 20
+INFO  12:33:01,512 - ExprPlus na liniji 20 tipa: rs.etf.pp1.symboltable.concepts.Struct@b59d31
+INFO  12:33:01,512 - Print na liniji 20
+INFO  12:33:01,512 - Koriscen simbol niz na liniji 21
+INFO  12:33:01,512 - ExprPlus na liniji 21 tipa: rs.etf.pp1.symboltable.concepts.Struct@62fdb4a6
+INFO  12:33:01,512 - ExprPlus na liniji 21 tipa: rs.etf.pp1.symboltable.concepts.Struct@1dd02175
+INFO  12:33:01,512 - Dodela vrednosti simbolu niz na liniji 21
+INFO  12:33:01,512 - ExprPlus na liniji 22 tipa: rs.etf.pp1.symboltable.concepts.Struct@62fdb4a6
+INFO  12:33:01,512 - Koriscen simbol (niz) niz na liniji 22
+INFO  12:33:01,512 - Inkrementirana vrednost simbola niz na liniji 22
+INFO  12:33:01,512 - ExprPlus na liniji 23 tipa: rs.etf.pp1.symboltable.concepts.Struct@62fdb4a6
+INFO  12:33:01,512 - Koriscen simbol (niz) niz na liniji 23
+INFO  12:33:01,512 - Dekrementirana vrednost simbola niz na liniji 23
+INFO  12:33:01,512 -  Print count calls = 0
+INFO  12:33:01,512 -  Deklarisanih promenljivih ima = 0
+INFO  12:33:01,512 - ===================================
+INFO  12:33:01,517 - Parsiranje uspesno zavrseno!
