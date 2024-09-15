@@ -222,6 +222,22 @@ public class CodeGenerator extends VisitorAdaptor {
 	public void visit (Empty2 e) {
 	}
 	
+//	public void visit (DesignatorMatrix dsg) {
+//	
+//	if(!(dsg.getParent().getParent() instanceof Statement1)) {
+//		
+//		if(dsg.getDesignName().obj.getType().getElemType() != Tab.charType) {
+//			Code.put(Code.aload);
+//		}else {
+//			Code.put(Code.baload);
+//		}
+//	}
+//}
+//
+//public void visit (Empty2 e) {
+//	Code.put(Code.aload);
+//}
+	
 	public void visit (DesignName dn) {
 		Code.load(dn.obj);
 	}
