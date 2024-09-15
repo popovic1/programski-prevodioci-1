@@ -143,6 +143,7 @@ public class CodeGenerator extends VisitorAdaptor {
 		
 		if(dStmt.getDesignator().obj.getKind() == Obj.Elem) {
 			Code.put(Code.dup2);
+			Code.put(Code.aload);
 		}
 //		Code.load(dStmt.getDesignator().obj);
 		Code.loadConst(1);
@@ -154,6 +155,7 @@ public class CodeGenerator extends VisitorAdaptor {
 	public void visit(DesignatorStatementDec dStmt) {
 		if(dStmt.getDesignator().obj.getKind() == Obj.Elem) {
 			Code.put(Code.dup2);
+			Code.put(Code.aload);
 		}
 //		Code.load(dStmt.getDesignator().obj);
 		Code.loadConst(1);
@@ -215,6 +217,9 @@ public class CodeGenerator extends VisitorAdaptor {
 	
 	public void visit (DesignatorMatrix dsg) {
 		
+	}
+	
+	public void visit (Empty2 e) {
 	}
 	
 	public void visit (DesignName dn) {

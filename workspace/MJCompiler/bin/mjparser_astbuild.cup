@@ -82,6 +82,7 @@ nonterminal Addop Addop;
 nonterminal Mulop Mulop;
 nonterminal Label Label;
 nonterminal Empty Empty;
+nonterminal Empty2 Empty2;
 
 nonterminal rs.etf.pp1.symboltable.concepts.Obj ProgName, Program, MethodDecl, MethodTypeName, DesignName, Designator, VarDeclElems, ConstDeclSuffix, ConstDecl;
 nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, Term, Factor, Expr, AddopTermList, MulopFactorList;
@@ -240,12 +241,14 @@ Factor ::= (Factor1) Designator:D1 {: RESULT=new Factor1(D1); RESULT.setLine(D1l
 		| (FactorChar) CHAR:C1 {: RESULT=new FactorChar(C1); RESULT.setLine(C1left); :}
 		| (FactorBool) BOOL:B1 {: RESULT=new FactorBool(B1); RESULT.setLine(B1left); :}
 		| (Factor3) NEW Type:T1 LBRACKET Expr:E2 RBRACKET {: RESULT=new Factor3(T1, E2); RESULT.setLine(T1left); :}
-		| (Factor4) NEW Type:T1 LBRACKET Expr:E2 RBRACKET Empty:E3 LBRACKET Expr:E4 RBRACKET {: RESULT=new Factor4(T1, E2, E3, E4); RESULT.setLine(T1left); :}
+		| (Factor4) NEW Type:T1 LBRACKET Expr:E2 RBRACKET Empty2:E3 LBRACKET Expr:E4 RBRACKET {: RESULT=new Factor4(T1, E2, E3, E4); RESULT.setLine(T1left); :}
 		| (Factor5) NEW Type:T1 LPAREN ActPars:A2 RPAREN {: RESULT=new Factor5(T1, A2); RESULT.setLine(T1left); :}
 		| (Factor6) LPAREN Expr:E1 RPAREN {: RESULT=new Factor6(E1); RESULT.setLine(E1left); :}
 		;
 		
 Empty ::= (Empty) {: RESULT=new Empty(); :};
+
+Empty2 ::= (Empty2) {: RESULT=new Empty2(); :};
 
 Designator ::= (Designator1) IDENT:desName {: RESULT=new Designator1(desName); RESULT.setLine(desNameleft); :}
 			| (DesignatorArray) DesignName:desName LBRACKET Expr:E1 RBRACKET {: RESULT=new DesignatorArray(desName, E1); RESULT.setLine(desNameleft); :}

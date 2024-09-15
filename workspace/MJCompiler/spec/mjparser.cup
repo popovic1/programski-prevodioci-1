@@ -57,7 +57,7 @@ nonterminal VarOrConstDeclList, MethodDeclList, VarOrConstDecl, VarDecl, Const;
 nonterminal BracketsOpt, VarDeclSuffix, VarDeclList, StaticInitializer, StatementList, TypeOrVoid, FormParsOpt;
 nonterminal FormPars, FormParsList, Statement, DesignatorStatement, Condition, Assignop, ActPars;
 nonterminal CommaExprList, CondTerm, OrCondTermList, CondFact, AndCondFactList, Relop, Addop;
-nonterminal Mulop, Label, Empty;
+nonterminal Mulop, Label, Empty, Empty2;
 
 nonterminal rs.etf.pp1.symboltable.concepts.Obj ProgName, Program, MethodDecl, MethodTypeName, DesignName, Designator, VarDeclElems, ConstDeclSuffix, ConstDecl;
 nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, Term, Factor, Expr, AddopTermList, MulopFactorList;
@@ -216,12 +216,14 @@ Factor ::= (Factor1) Designator
 		| (FactorChar) CHAR
 		| (FactorBool) BOOL
 		| (Factor3) NEW Type LBRACKET Expr RBRACKET
-		| (Factor4) NEW Type LBRACKET Expr RBRACKET Empty LBRACKET Expr RBRACKET
+		| (Factor4) NEW Type LBRACKET Expr RBRACKET Empty2 LBRACKET Expr RBRACKET
 		| (Factor5) NEW Type LPAREN ActPars RPAREN
 		| (Factor6) LPAREN Expr RPAREN
 		;
 		
 Empty ::= (Empty);
+
+Empty2 ::= (Empty2);
 
 Designator ::= (Designator1) IDENT:desName
 			| (DesignatorArray) DesignName:desName LBRACKET Expr RBRACKET
