@@ -72,6 +72,7 @@
 		<target name="runObj" depends="disasm" >
 			<java classname="rs.etf.pp1.mj.runtime.Run">
 				<arg value="test/program.obj"/>
+				<redirector input="input.txt"></redirector>
 				<classpath>
 					<pathelement location="lib/mj-runtime.jar"/>
 				</classpath>
@@ -80,6 +81,7 @@
 	    <target name="debug" depends="disasm">
 	        <java classname="rs.etf.pp1.mj.runtime.Run">
 	            <arg value="test/program.obj" />
+	        	<redirector input="input.txt"></redirector>
 	            <arg value="-debug" />
 	            <classpath>
 	                <pathelement location="lib/mj-runtime.jar" />
