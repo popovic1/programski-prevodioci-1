@@ -5,6 +5,7 @@ import rs.ac.bg.etf.pp1.ast.*;
 import rs.etf.pp1.mj.runtime.Code;
 import rs.etf.pp1.symboltable.Tab;
 import rs.etf.pp1.symboltable.concepts.Obj;
+import rs.etf.pp1.symboltable.concepts.Struct;
 
 public class CodeGenerator extends VisitorAdaptor {
 
@@ -107,10 +108,10 @@ public class CodeGenerator extends VisitorAdaptor {
 	}
 	
 	public void visit(DesignatorStatementInc dStmt) {
-		
 		Code.loadConst(1);
 		Code.put(Code.add);
 		Code.store(dStmt.getDesignator().obj);
+		
 	}
 	
 	public void visit(DesignatorStatementDec dStmt) {
@@ -148,26 +149,31 @@ public class CodeGenerator extends VisitorAdaptor {
 	}
 	
 	public void visit (DesignatorArray dsg) {
-		Code.load(dsg.getDesignName().obj);
 		
 		if(!(dsg.getParent() instanceof DesignatorStatement1 ||
 			dsg.getParent() instanceof StatementRead)){
-				
-			if(dsg.getDesignName().obj.getType() != Tab.charType) {
-				Code.put(Code.aload);
-			}else {
+			
+//			Code.load(dsg.obj);
+//			Code.put(Code.dup_x1);
+//			Code.put(Code.pop);
+					
+			if (dsg.getDesignName().obj.getType().getElemType() == Tab.charType) {
 				Code.put(Code.baload);
+				
+			}else {
 			}
-		}
+				Code.put(Code.aload);
+			}
+		
 		
 	}
 	
+	public void visit (DesignName dn) {
+		Code.load(dn.obj);
+	}
+	
 	public void visit (DesignatorMatrix dsg) {
-		if(dsg.getParent() instanceof DesignatorStatementInc
-				|| dsg.getParent() instanceof DesignatorStatementDec
-				|| dsg.getParent() instanceof Factor1) {
-			Code.load(dsg.obj);
-		}
+		
 	}
 	
 	

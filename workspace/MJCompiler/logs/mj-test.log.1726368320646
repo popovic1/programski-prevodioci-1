@@ -1,0 +1,216 @@
+INFO  04:44:00,553 - Compiling source file: C:\Users\djordje.popovic\Desktop\Fakultet\PP1\programski-prevodioci-1\workspace\MJCompiler\test\program.mj
+INFO  04:44:00,612 - #2 program
+INFO  04:44:00,612 - #41 test301
+INFO  04:44:00,612 - #5 const
+INFO  04:44:00,615 - #41 int
+INFO  04:44:00,615 - #41 nula
+INFO  04:44:00,615 - #6 =
+INFO  04:44:00,615 - #40 0
+INFO  04:44:00,615 - #7 ;
+INFO  04:44:00,615 - #5 const
+INFO  04:44:00,616 - #41 int
+INFO  04:44:00,616 - #41 jedan
+INFO  04:44:00,616 - #6 =
+INFO  04:44:00,616 - #40 1
+INFO  04:44:00,616 - #7 ;
+INFO  04:44:00,616 - #5 const
+INFO  04:44:00,617 - #41 int
+INFO  04:44:00,617 - #41 pet
+INFO  04:44:00,617 - #6 =
+INFO  04:44:00,617 - #40 5
+INFO  04:44:00,617 - #7 ;
+INFO  04:44:00,618 - #41 int
+INFO  04:44:00,618 - #41 niz
+INFO  04:44:00,618 - #10 [
+INFO  04:44:00,618 - #11 ]
+INFO  04:44:00,618 - #7 ;
+INFO  04:44:00,619 - #41 char
+INFO  04:44:00,619 - #41 nizch
+INFO  04:44:00,619 - #10 [
+INFO  04:44:00,619 - #11 ]
+INFO  04:44:00,619 - #7 ;
+INFO  04:44:00,619 - #41 int
+INFO  04:44:00,619 - #41 mat
+INFO  04:44:00,619 - #10 [
+INFO  04:44:00,619 - #11 ]
+INFO  04:44:00,619 - #10 [
+INFO  04:44:00,621 - #11 ]
+INFO  04:44:00,621 - #7 ;
+INFO  04:44:00,621 - #41 int
+INFO  04:44:00,621 - #41 a
+INFO  04:44:00,621 - #7 ;
+INFO  04:44:00,621 - #3 {
+INFO  04:44:00,622 - #15 void
+INFO  04:44:00,622 - #41 main
+INFO  04:44:00,622 - #13 (
+INFO  04:44:00,622 - #14 )
+INFO  04:44:00,622 - #41 int
+INFO  04:44:00,623 - #41 bodovi
+INFO  04:44:00,623 - #7 ;
+INFO  04:44:00,623 - #41 bool
+INFO  04:44:00,623 - #41 bt
+INFO  04:44:00,623 - #7 ;
+INFO  04:44:00,623 - #3 {
+INFO  04:44:00,623 - #23 print
+INFO  04:44:00,624 - #13 (
+INFO  04:44:00,624 - #41 jedan
+INFO  04:44:00,624 - #14 )
+INFO  04:44:00,625 - #7 ;
+INFO  04:44:00,625 - #4 }
+INFO  04:44:00,625 - #4 }
+INFO  04:44:00,631 - Program(
+  ProgName(
+   test301
+  ) [ProgName]
+  VarOrConstDeclList1(
+    VarOrConstDeclList1(
+      VarOrConstDeclList1(
+        VarOrConstDeclList1(
+          VarOrConstDeclList1(
+            VarOrConstDeclList1(
+              VarOrConstDeclList1(
+                NoVarOrConstDeclList(
+                ) [NoVarOrConstDeclList]
+                VarOrConstDeclConst(
+                  ConstDecl(
+                    Type(
+                     int
+                    ) [Type]
+                    ConstDeclSuffixNum2(
+                     nula
+                     0
+                    ) [ConstDeclSuffixNum2]
+                  ) [ConstDecl]
+                ) [VarOrConstDeclConst]
+              ) [VarOrConstDeclList1]
+              VarOrConstDeclConst(
+                ConstDecl(
+                  Type(
+                   int
+                  ) [Type]
+                  ConstDeclSuffixNum2(
+                   jedan
+                   1
+                  ) [ConstDeclSuffixNum2]
+                ) [ConstDecl]
+              ) [VarOrConstDeclConst]
+            ) [VarOrConstDeclList1]
+            VarOrConstDeclConst(
+              ConstDecl(
+                Type(
+                 int
+                ) [Type]
+                ConstDeclSuffixNum2(
+                 pet
+                 5
+                ) [ConstDeclSuffixNum2]
+              ) [ConstDecl]
+            ) [VarOrConstDeclConst]
+          ) [VarOrConstDeclList1]
+          VarOrConstDeclVar(
+            VarDecl1(
+              Type(
+               int
+              ) [Type]
+              VarDeclElemsArray(
+               niz
+              ) [VarDeclElemsArray]
+            ) [VarDecl1]
+          ) [VarOrConstDeclVar]
+        ) [VarOrConstDeclList1]
+        VarOrConstDeclVar(
+          VarDecl1(
+            Type(
+             char
+            ) [Type]
+            VarDeclElemsArray(
+             nizch
+            ) [VarDeclElemsArray]
+          ) [VarDecl1]
+        ) [VarOrConstDeclVar]
+      ) [VarOrConstDeclList1]
+      VarOrConstDeclVar(
+        VarDecl1(
+          Type(
+           int
+          ) [Type]
+          VarDeclElemsMatrix(
+           mat
+            Empty(
+            ) [Empty]
+          ) [VarDeclElemsMatrix]
+        ) [VarDecl1]
+      ) [VarOrConstDeclVar]
+    ) [VarOrConstDeclList1]
+    VarOrConstDeclVar(
+      VarDecl1(
+        Type(
+         int
+        ) [Type]
+        VarDeclElems1(
+         a
+        ) [VarDeclElems1]
+      ) [VarDecl1]
+    ) [VarOrConstDeclVar]
+  ) [VarOrConstDeclList1]
+  MethodDecl(
+    MethodTypeNameVoid(
+     main
+    ) [MethodTypeNameVoid]
+    VarDeclList1(
+      VarDeclList1(
+        NoVarDeclList(
+        ) [NoVarDeclList]
+        VarDecl1(
+          Type(
+           int
+          ) [Type]
+          VarDeclElems1(
+           bodovi
+          ) [VarDeclElems1]
+        ) [VarDecl1]
+      ) [VarDeclList1]
+      VarDecl1(
+        Type(
+         bool
+        ) [Type]
+        VarDeclElems1(
+         bt
+        ) [VarDeclElems1]
+      ) [VarDecl1]
+    ) [VarDeclList1]
+    StatementList1(
+      NoStatementList(
+      ) [NoStatementList]
+      StatementPrintExpr(
+        ExprPlus(
+          Term1(
+            Factor1(
+              Designator1(
+               jedan
+              ) [Designator1]
+            ) [Factor1]
+          ) [Term1]
+        ) [ExprPlus]
+      ) [StatementPrintExpr]
+    ) [StatementList1]
+  ) [MethodDecl]
+) [Program]
+INFO  04:44:00,631 - ===================================
+INFO  04:44:00,635 - Konstanta definisana na liniji 5: nula
+INFO  04:44:00,635 - Konstanta definisana na liniji 6: jedan
+INFO  04:44:00,635 - Konstanta definisana na liniji 7: pet
+INFO  04:44:00,635 - Deklarisan novi simbol (niz) na liniji 9: niz
+INFO  04:44:00,635 - Deklarisan novi simbol (niz) na liniji 10: nizch
+INFO  04:44:00,635 - Deklarisan novi simbol (matrica) na liniji 11: mat
+INFO  04:44:00,635 - Deklarisan novi simbol na liniji 13: a
+INFO  04:44:00,635 - Obradjuje se funkcija main na liniji 16
+INFO  04:44:00,636 - Deklarisan novi simbol na liniji 17: bodovi
+INFO  04:44:00,636 - Deklarisan novi simbol na liniji 18: bt
+INFO  04:44:00,636 - Koriscen simbol jedan na liniji 20
+INFO  04:44:00,636 - ExprPlus na liniji 20 tipa: rs.etf.pp1.symboltable.concepts.Struct@4148db48
+INFO  04:44:00,636 - Print na liniji 20
+INFO  04:44:00,636 -  Print count calls = 0
+INFO  04:44:00,636 -  Deklarisanih promenljivih ima = 2
+INFO  04:44:00,636 - ===================================
+INFO  04:44:00,641 - Parsiranje uspesno zavrseno!
