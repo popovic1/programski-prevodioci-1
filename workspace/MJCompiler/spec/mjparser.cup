@@ -44,7 +44,7 @@ scan with {:
 	return s;
 :}
 
-terminal PROG, LBRACE, RBRACE, CONST, ASSIGN, SEMI, COMMA, OR;
+terminal PROG, LBRACE, RBRACE, CONST, ASSIGN, SEMI, COMMA, OR, UNION;
 terminal LBRACKET, RBRACKET, STATIC, LPAREN, RPAREN, VOID, COLON, IF, ELSE, BREAK, CONTINUE, RETURN;
 terminal READ, PRINT, INCREMENT, DECREMENT, AND, PLUS, MINUS, NEW, DOT, ASTERISK, FORWARD_SLASH, PERCENT;
 terminal EQUAL, NOT_EQUAL, GREATER_THAN, GREATER_THAN_OR_EQUAL, LESS_THAN, LESS_THAN_OR_EQUAL;
@@ -57,9 +57,9 @@ nonterminal VarOrConstDeclList, MethodDeclList, VarOrConstDecl, VarDecl, Const;
 nonterminal BracketsOpt, VarDeclSuffix, VarDeclList, StaticInitializer, StatementList, TypeOrVoid, FormParsOpt;
 nonterminal FormPars, FormParsList, Statement, DesignatorStatement, Condition, Assignop, ActPars;
 nonterminal CommaExprList, CondTerm, OrCondTermList, CondFact, AndCondFactList, Relop, Addop;
-nonterminal Mulop, Label, Empty, Empty2;
+nonterminal Mulop, Setop, Label, Empty, Empty2;
 
-nonterminal rs.etf.pp1.symboltable.concepts.Obj ProgName, Program, MethodDecl, MethodTypeName, DesignName, Designator, VarDeclElems, ConstDeclSuffix, ConstDecl;
+nonterminal rs.etf.pp1.symboltable.concepts.Obj ProgName, Program, MethodDecl, MethodTypeName, MethodSignature, DesignName, Designator, VarDeclElems, ConstDeclSuffix, ConstDecl;
 nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, Term, Factor, Expr, AddopTermList, MulopFactorList;
 
 Program ::= (Program) PROG ProgName:progName VarOrConstDeclList LBRACE MethodDecl RBRACE;
@@ -99,7 +99,6 @@ VarDecl ::= (VarDecl1) Type VarDeclElems SEMI
 		;
 
 BracketsOpt ::= (BracketsOptArray) LBRACKET RBRACKET
-			| (BracketsOptMatrix) LBRACKET RBRACKET LBRACKET RBRACKET
  			| (NoBracketsOpt) /* epsilon */
 			;
 			
@@ -118,9 +117,13 @@ VarDeclSuffix ::= (VarDeclSuffix1) VarDeclSuffix COMMA Type IDENT BracketsOpt
 
 StaticInitializer ::= (StaticInitializer1) STATIC LBRACE StatementList RBRACE;
 
-MethodDecl ::= (MethodDecl) MethodTypeName LPAREN RPAREN VarDeclList LBRACE StatementList RBRACE;
+MethodSignature ::= (MethodSignature) MethodTypeName LPAREN RPAREN;
 
-MethodTypeName ::= (MethodTypeNameVoid) VOID IDENT:methName;
+MethodDecl ::= (MethodDecl) MethodSignature VarDeclList LBRACE StatementList RBRACE;
+
+MethodTypeName ::= (MethodTypeNameVoid) VOID IDENT:methName
+				| (MethodTypeNameType) Type IDENT:methName
+				;
 
 MethodDeclList ::= (MethodDeclList1) MethodDeclList MethodDecl
 				| (NoMethodDeclList) /* epsilon */
@@ -166,6 +169,7 @@ DesignatorStatement ::= (DesignatorStatement1) Designator Assignop Expr
 					| (DesignatorStatement2) Designator LPAREN ActPars RPAREN
 					| (DesignatorStatementInc) Designator INCREMENT
 					| (DesignatorStatementDec) Designator DECREMENT
+					| (DesignatorStatementSet) Designator Assignop Designator Setop Designator
 					| (DesignatorStatementError) SEMI error:l {: parser.report_error("Izvrsen oporavak pri designator statement-u do ; u liniji " + lleft, null); :}
 					;
 
@@ -216,18 +220,12 @@ Factor ::= (Factor1) Designator
 		| (FactorChar) CHAR
 		| (FactorBool) BOOL
 		| (Factor3) NEW Type LBRACKET Expr RBRACKET
-		| (Factor4) NEW Type LBRACKET Expr RBRACKET Empty2 LBRACKET Expr RBRACKET
 		| (Factor5) NEW Type LPAREN ActPars RPAREN
 		| (Factor6) LPAREN Expr RPAREN
 		;
-		
-Empty ::= (Empty);
-
-Empty2 ::= (Empty2);
 
 Designator ::= (Designator1) IDENT:desName
-			| (DesignatorArray) DesignName:desName LBRACKET Expr RBRACKET
-			| (DesignatorMatrix) DesignName:desName LBRACKET Expr:exa RBRACKET Empty LBRACKET Expr:exb RBRACKET
+			| (DesignatorArray) DesignName:desName LBRACKET Expr RBRACKET //vidi da li moze da se radi sa identom, ili moram da koristim DesignName
             ;
 DesignName ::= (DesignName) IDENT:name;
 Label ::= (LabelClass) IDENT;
@@ -251,3 +249,4 @@ Mulop ::= (Mulop1) ASTERISK
 		| (Modop) PERCENT
 		;
 
+Setop ::= (Setop) UNION

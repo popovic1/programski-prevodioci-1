@@ -48,7 +48,11 @@ import java_cup.runtime.Symbol;
 "return" 	{ return new_symbol(sym.RETURN, yytext()); }
 "void" 		{ return new_symbol(sym.VOID, yytext()); }
 "continue" 	{ return new_symbol(sym.CONTINUE, yytext()); }
-"static" 	{ return new_symbol(sym.STATIC, yytext()); }
+"union" 	{ return new_symbol(sym.UNION, yytext()); }
+"do" 		{ return new_symbol(sym.DO, yytext()); }
+"while" 	{ return new_symbol(sym.WHILE, yytext()); }
+"map"	 	{ return new_symbol(sym.MAP, yytext()); }
+"interface"	{ return new_symbol(sym.INTERFACE, yytext()); }
 
 "+" 		{ return new_symbol(sym.PLUS, yytext()); }
 "-" 		{ return new_symbol(sym.MINUS, yytext()); }
