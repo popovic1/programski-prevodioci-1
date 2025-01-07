@@ -104,10 +104,8 @@ BracketsOpt ::= (BracketsOptArray) LBRACKET RBRACKET
 			
 VarDeclElems ::= (VarDeclElems1Multiple) VarDeclElems COMMA IDENT:varName
 		| (VarDeclElemsArrayMultiple) VarDeclElems COMMA IDENT:varName LBRACKET RBRACKET
-		| (VarDeclElemsMatrixMultiple) VarDeclElems COMMA IDENT:varName LBRACKET RBRACKET Empty LBRACKET RBRACKET
 		| (VarDeclElems1) IDENT:varName
 		| (VarDeclElemsArray) IDENT:varName LBRACKET RBRACKET
-		| (VarDeclElemsMatrix) IDENT:varName LBRACKET RBRACKET Empty LBRACKET RBRACKET
 		;
 		
 		

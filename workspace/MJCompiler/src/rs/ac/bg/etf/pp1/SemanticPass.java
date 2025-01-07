@@ -86,6 +86,13 @@ public class SemanticPass extends VisitorAdaptor {
     	Tab.openScope();
 		report_info("Obradjuje se funkcija " + methodTypeName.getMethName(), methodTypeName);
     }
+
+	public void visit(MethodTypeNameType methodTypeName){
+    	currentMethod = Tab.insert(Obj.Meth, methodTypeName.getMethName(), Tab.getType().toString()); //kako doci do tipa f-je?
+    	methodTypeName.obj = currentMethod;
+    	Tab.openScope();
+		report_info("Obradjuje se funkcija " + methodTypeName.getMethName(), methodTypeName);
+    }
     
     public void visit(MethodDecl methodDecl){
     	if(!returnFound && currentMethod.getType() != Tab.noType){
@@ -153,36 +160,6 @@ public class SemanticPass extends VisitorAdaptor {
     	}
     	varDeclElems.obj = Tab.insert(Obj.Var, varDeclElems.getVarName(), new Struct(Struct.Array, currentType));
     	report_info("Deklarisan novi simbol (niz) na liniji " + varDeclElems.getLine() + ": " + varDeclElems.getVarName(), null);
-    	
-    	if(currentMethod == null) {
-    		globalDeclCount ++;
-    	}else {
-    		varDeclCount++;
-    	}
-    }
-    
-    public void visit(VarDeclElemsMatrix varDeclElems) {
-    	if(Tab.currentScope.findSymbol(varDeclElems.getVarName()) != null) {
-    		report_error("Semanticka greska na liniji "+ varDeclElems.getLine() + ": symbol " + varDeclElems.getVarName() + " je vec deklarisan", null);
-    		return;
-    	}
-    	varDeclElems.obj = Tab.insert(Obj.Var, varDeclElems.getVarName(), new Struct(Struct.Array, new Struct(Struct.Array, currentType)));
-    	report_info("Deklarisan novi simbol (matrica) na liniji " + varDeclElems.getLine() + ": " + varDeclElems.getVarName(), null);
-    	
-    	if(currentMethod == null) {
-    		globalDeclCount ++;
-    	}else {
-    		varDeclCount++;
-    	}
-    }
-    
-    public void visit(VarDeclElemsMatrixMultiple varDeclElems) {
-    	if(Tab.currentScope.findSymbol(varDeclElems.getVarName()) != null) {
-    		report_error("Semanticka greska na liniji "+ varDeclElems.getLine() + ": symbol " + varDeclElems.getVarName() + " je vec deklarisan", null);
-    		return;
-    	}
-    	varDeclElems.obj = Tab.insert(Obj.Var, varDeclElems.getVarName(), new Struct(Struct.Array, new Struct(Struct.Array, currentType)));
-    	report_info("Deklarisan novi simbol (matrica) na liniji " + varDeclElems.getLine() + ": " + varDeclElems.getVarName(), null);
     	
     	if(currentMethod == null) {
     		globalDeclCount ++;
@@ -342,33 +319,6 @@ public class SemanticPass extends VisitorAdaptor {
     	
     }
     
-    public void visit (DesignatorMatrix designator) {
-    	report_info("USAO U DESIGNATORMATRIX NA LINIJI " + designator.getLine(), null);
-    	
-    	Obj matrixObj = designator.getDesignName().obj;
-    	
-    	if(matrixObj.getType().getElemType().getKind() != Struct.Array
-    			|| matrixObj.getType().getElemType().getKind() != Struct.Array) {
-    		report_error("Semanticka greska na liniji " + designator.getLine() + ". Korisceni simbol (matrica) nije tipa Array: " + designator.getDesignName().getName(), null);
-    		return;
-    	}
-    	
-    	if(matrixObj.getType().getKind() != Struct.Array
-    			|| matrixObj.getType().getElemType().getKind() != Struct.Array) {
-    		report_error("Semanticka greska na liniji " + designator.getLine() + ". Korisceni simbol (matrica) nije tipa Array: " + designator.getDesignName().getName(), null);
-    		return;
-    	}
-    	
-    	if(designator.getExpr().struct != Tab.intType) {
-    		report_error("Semanticka greska na liniji " + designator.getLine() + ". Expr nije tipa int: " + designator.getDesignName().getName(), null);
-    		return;
-    	}
-    	
-    	designator.obj = new Obj(Obj.Elem, matrixObj.getName(), matrixObj.getType().getElemType().getElemType());
-    	report_info("Koriscen simbol (matrica) " + designator.getDesignName().getName() + " na liniji " + designator.getLine(), null);
-    	
-    }
-    
     public void visit (DesignName dn) {
     	Obj o = Tab.find(dn.getName());
     	
@@ -393,7 +343,11 @@ public class SemanticPass extends VisitorAdaptor {
     	}
     	report_info("Dodela vrednosti simbolu " + desStmt.getDesignator().obj.getName() + " na liniji " + desStmt.getLine(), null);
     }
-    
+
+    public void visit (DesignatorStatementSet desStmt) {
+    	// TODO
+	}
+
     public void visit (DesignatorStatementInc desStmt) {
     	if(!(desStmt.getDesignator().obj.getKind() == Obj.Elem 
     			|| desStmt.getDesignator().obj.getKind() == Obj.Var)) {
