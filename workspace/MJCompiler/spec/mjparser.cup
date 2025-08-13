@@ -44,7 +44,7 @@ scan with {:
 	return s;
 :}
 
-terminal PROG, LBRACE, RBRACE, CONST, ASSIGN, SEMI, COMMA, OR;
+terminal PROG, LBRACE, RBRACE, CONST, ASSIGN, SEMI, COMMA, OR, UNION;
 terminal LBRACKET, RBRACKET, STATIC, LPAREN, RPAREN, VOID, COLON, IF, ELSE, BREAK, CONTINUE, RETURN;
 terminal READ, PRINT, INCREMENT, DECREMENT, AND, PLUS, MINUS, NEW, DOT, ASTERISK, FORWARD_SLASH, PERCENT;
 terminal EQUAL, NOT_EQUAL, GREATER_THAN, GREATER_THAN_OR_EQUAL, LESS_THAN, LESS_THAN_OR_EQUAL;
@@ -53,14 +53,14 @@ terminal String IDENT;
 terminal Character CHAR;
 terminal Boolean BOOL;
 
-nonterminal VarOrConstDeclList, MethodDeclList, VarOrConstDecl, VarDecl, Const;
-nonterminal BracketsOpt, VarDeclSuffix, VarDeclList, StaticInitializer, StatementList, TypeOrVoid, FormParsOpt;
+nonterminal VarOrConstDeclList, MethodDeclList, VarOrConstDecl, VarDecl;
+nonterminal VarDeclList, StatementList, FormParsOpt;
 nonterminal FormPars, FormParsList, Statement, DesignatorStatement, Condition, Assignop, ActPars;
-nonterminal CommaExprList, CondTerm, OrCondTermList, CondFact, AndCondFactList, Relop, Addop;
-nonterminal Mulop, Label, Empty, Empty2;
+nonterminal CondTerm, CondFact, Relop, Addop, Setop;
+nonterminal Mulop, Label;
 
 nonterminal rs.etf.pp1.symboltable.concepts.Obj ProgName, Program, MethodDecl, MethodTypeName, DesignName, Designator, VarDeclElems, ConstDeclSuffix, ConstDecl;
-nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, Term, Factor, Expr, AddopTermList, MulopFactorList;
+nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, Term, Factor, Expr, MulopFactorList;
 
 Program ::= (Program) PROG ProgName:progName VarOrConstDeclList LBRACE MethodDecl RBRACE;
 
@@ -83,40 +83,22 @@ ConstDeclSuffix ::= (ConstDeclSuffixNum1) ConstDeclSuffix COMMA IDENT:constName 
 				| (ConstDeclSuffixBool1) ConstDeclSuffix COMMA IDENT:constName ASSIGN BOOL:bo
 				| (ConstDeclSuffixBool2) IDENT:constName ASSIGN BOOL:bo
 				;
-
-Const ::= (ConstNum) NUMBER
-		| (ConstChar) CHAR
-		| (ConstBool) BOOL
-		;
 		
 VarDeclList ::= (VarDeclList1) VarDeclList VarDecl
 			| (NoVarDeclList) /* epsilon */
 			;
 
 VarDecl ::= (VarDecl1) Type VarDeclElems SEMI
-		| (VarDeclErrorComma) COMMA error:l {: parser.report_error("Izvrsen oporavak pri deklaraciji globalnih promjenjivih do , u liniji " + lleft, null); :}
-		| (VarDeclErrorSemi) SEMI error:l {: parser.report_error("Izvrsen oporavak pri deklaraciji globalnih promjenjivih do ; u liniji " + lleft, null); :}
+		| (VarDeclErrorComma) error:l COMMA {: parser.report_error("Izvrsen oporavak pri deklaraciji globalnih promjenjivih do , u liniji " + lleft, null); :}
+		| (VarDeclErrorSemi) error:l SEMI {: parser.report_error("Izvrsen oporavak pri deklaraciji globalnih promjenjivih do ; u liniji " + lleft, null); :}
 		;
-
-BracketsOpt ::= (BracketsOptArray) LBRACKET RBRACKET
-			| (BracketsOptMatrix) LBRACKET RBRACKET LBRACKET RBRACKET
- 			| (NoBracketsOpt) /* epsilon */
-			;
 			
 VarDeclElems ::= (VarDeclElems1Multiple) VarDeclElems COMMA IDENT:varName
 		| (VarDeclElemsArrayMultiple) VarDeclElems COMMA IDENT:varName LBRACKET RBRACKET
-		| (VarDeclElemsMatrixMultiple) VarDeclElems COMMA IDENT:varName LBRACKET RBRACKET Empty LBRACKET RBRACKET
 		| (VarDeclElems1) IDENT:varName
 		| (VarDeclElemsArray) IDENT:varName LBRACKET RBRACKET
-		| (VarDeclElemsMatrix) IDENT:varName LBRACKET RBRACKET Empty LBRACKET RBRACKET
 		;
-		
-		
-VarDeclSuffix ::= (VarDeclSuffix1) VarDeclSuffix COMMA Type IDENT BracketsOpt
-				| (NoVarDeclSuffix) /* epsilon */
-				;
 
-StaticInitializer ::= (StaticInitializer1) STATIC LBRACE StatementList RBRACE;
 
 MethodDecl ::= (MethodDecl) MethodTypeName LPAREN RPAREN VarDeclList LBRACE StatementList RBRACE;
 
@@ -128,10 +110,6 @@ MethodDeclList ::= (MethodDeclList1) MethodDeclList MethodDecl
 
 FormParsOpt ::= (FormParsOpt1) FormPars
 			| (NoFormParsOpt) /* epsilon */
-			;
-
-TypeOrVoid ::= (TypeOrVoidType) Type
-			| (TypeOrVoidVoid) VOID
 			;
 
 FormPars ::= (FormPars1) Type IDENT FormParsList
@@ -147,15 +125,11 @@ Type ::= (Type) IDENT:typeName
 		;
 
 Statement ::= (Statement1) DesignatorStatement SEMI
-			| (StatementIf) IF LPAREN Condition RPAREN Statement
-			| (StatementBreak) BREAK SEMI
-			| (StatementContinue) CONTINUE SEMI
 			| (StatementReturnExpr) RETURN Expr SEMI
 			| (StatementReturn) RETURN SEMI
 			| (StatementRead) READ LPAREN Designator RPAREN SEMI
 			| (StatementPrintExpr) PRINT LPAREN Expr RPAREN SEMI
 			| (StatementPrintExprWithNum) PRINT LPAREN Expr COMMA NUMBER:num RPAREN SEMI
-			| (Statement2) LBRACE StatementList RBRACE
 			;
 
 StatementList ::= (StatementList1) StatementList Statement
@@ -166,41 +140,36 @@ DesignatorStatement ::= (DesignatorStatement1) Designator Assignop Expr
 					| (DesignatorStatement2) Designator LPAREN ActPars RPAREN
 					| (DesignatorStatementInc) Designator INCREMENT
 					| (DesignatorStatementDec) Designator DECREMENT
-					| (DesignatorStatementError) SEMI error:l {: parser.report_error("Izvrsen oporavak pri designator statement-u do ; u liniji " + lleft, null); :}
+					| (DesignatorStatement3) Designator Assignop Designator Setop Designator
+					| (DesignatorStatementError) error:l SEMI
+						{: parser.report_error("Izvrsen oporavak pri designator statement-u do ; u liniji " + lleft, null); :}
 					;
 
-ActPars ::= (ActPars1) Expr CommaExprList
+ActPars ::= (ActPars1) Expr
+		| (ActPars2) ActPars COMMA Expr
 		| (NoActPars) /* epsilon */
 		;
 
-CommaExprList ::= (CommaExprList1) CommaExprList COMMA Expr
-				| (NoCommaExprList) /* epsilon */
-				;
 
-Condition ::= (Condition1) CondTerm OrCondTermList;
+Condition ::= (Condition1) CondTerm
+			| (Condition2) Condition OR CondTerm
+			;
 
-OrCondTermList ::= (OrCondTermList1) OrCondTermList OR CondTerm
-				| (NoOrCondTermList) /* epsilon */
-				;
 
-CondTerm ::= (CondTerm1) CondFact AndCondFactList;
+CondTerm ::= (CondTerm1) CondFact
+			| (CondTerm2) CondTerm AND CondFact
+			;
 
-AndCondFactList ::= (AndCondFactList1) AndCondFactList AND CondFact
-				| (NoAndCondFactList) /* epsilon */
-				;
 
 CondFact ::= (CondFact1) Expr
 			| (CondFact2) Expr Relop Expr
 			;
 
+
 Expr ::= (ExprPlus) Term
 		| (ExprMinus) MINUS Term
 		| (ExprMultiple) Expr Addop Term
 		;
-
-AddopTermList ::= (AddopTermList1) AddopTermList Addop
-				| (NoAddopTermList) /* epsilon */
-				;
 
 Term ::= (Term1) Factor
 		| (Term2) Term Mulop Factor
@@ -216,20 +185,17 @@ Factor ::= (Factor1) Designator
 		| (FactorChar) CHAR
 		| (FactorBool) BOOL
 		| (Factor3) NEW Type LBRACKET Expr RBRACKET
-		| (Factor4) NEW Type LBRACKET Expr RBRACKET Empty2 LBRACKET Expr RBRACKET
 		| (Factor5) NEW Type LPAREN ActPars RPAREN
 		| (Factor6) LPAREN Expr RPAREN
 		;
 		
-Empty ::= (Empty);
-
-Empty2 ::= (Empty2);
 
 Designator ::= (Designator1) IDENT:desName
 			| (DesignatorArray) DesignName:desName LBRACKET Expr RBRACKET
-			| (DesignatorMatrix) DesignName:desName LBRACKET Expr:exa RBRACKET Empty LBRACKET Expr:exb RBRACKET
             ;
 DesignName ::= (DesignName) IDENT:name;
+
+
 Label ::= (LabelClass) IDENT;
 
 Assignop ::= (Assignop) ASSIGN;
@@ -250,4 +216,6 @@ Mulop ::= (Mulop1) ASTERISK
 		| (Divop) FORWARD_SLASH
 		| (Modop) PERCENT
 		;
+		
+Setop ::= (Setop1) UNION;
 

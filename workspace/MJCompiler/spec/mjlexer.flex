@@ -48,6 +48,7 @@ import java_cup.runtime.Symbol;
 "return" 	{ return new_symbol(sym.RETURN, yytext()); }
 "void" 		{ return new_symbol(sym.VOID, yytext()); }
 "continue" 	{ return new_symbol(sym.CONTINUE, yytext()); }
+"union" 	{ return new_symbol(sym.UNION, yytext()); }
 "static" 	{ return new_symbol(sym.STATIC, yytext()); }
 
 "+" 		{ return new_symbol(sym.PLUS, yytext()); }
@@ -82,7 +83,7 @@ import java_cup.runtime.Symbol;
 <COMMENT> "\r\n" { yybegin(YYINITIAL); }
 
 [0-9]+  	{ return new_symbol(sym.NUMBER, new Integer (yytext())); }
-'([\ -~])'	{ return new_symbol(sym.CHAR, new Character (yytext().charAt(1))); }
+'.'			{ return new_symbol(sym.CHAR, new Character (yytext().charAt(1))); }
 
 "true" 		{return new_symbol(sym.BOOL, new String("true"));}
 "false" 	{return new_symbol(sym.BOOL, new String("false"));}

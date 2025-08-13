@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 15/8/2024 17:50:36
+// 13/7/2025 12:38:35
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -8,13 +8,10 @@ package rs.ac.bg.etf.pp1.ast;
 public class ActPars1 extends ActPars {
 
     private Expr Expr;
-    private CommaExprList CommaExprList;
 
-    public ActPars1 (Expr Expr, CommaExprList CommaExprList) {
+    public ActPars1 (Expr Expr) {
         this.Expr=Expr;
         if(Expr!=null) Expr.setParent(this);
-        this.CommaExprList=CommaExprList;
-        if(CommaExprList!=null) CommaExprList.setParent(this);
     }
 
     public Expr getExpr() {
@@ -25,32 +22,21 @@ public class ActPars1 extends ActPars {
         this.Expr=Expr;
     }
 
-    public CommaExprList getCommaExprList() {
-        return CommaExprList;
-    }
-
-    public void setCommaExprList(CommaExprList CommaExprList) {
-        this.CommaExprList=CommaExprList;
-    }
-
     public void accept(Visitor visitor) {
         visitor.visit(this);
     }
 
     public void childrenAccept(Visitor visitor) {
         if(Expr!=null) Expr.accept(visitor);
-        if(CommaExprList!=null) CommaExprList.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
         if(Expr!=null) Expr.traverseTopDown(visitor);
-        if(CommaExprList!=null) CommaExprList.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
         if(Expr!=null) Expr.traverseBottomUp(visitor);
-        if(CommaExprList!=null) CommaExprList.traverseBottomUp(visitor);
         accept(visitor);
     }
 
@@ -61,12 +47,6 @@ public class ActPars1 extends ActPars {
 
         if(Expr!=null)
             buffer.append(Expr.toString("  "+tab));
-        else
-            buffer.append(tab+"  null");
-        buffer.append("\n");
-
-        if(CommaExprList!=null)
-            buffer.append(CommaExprList.toString("  "+tab));
         else
             buffer.append(tab+"  null");
         buffer.append("\n");
