@@ -105,8 +105,8 @@ VarDeclList ::= (VarDeclList1) VarDeclList:V1 VarDecl:V2 {: RESULT=new VarDeclLi
 			;
 
 VarDecl ::= (VarDecl1) Type:T1 VarDeclElems:V2 SEMI {: RESULT=new VarDecl1(T1, V2); RESULT.setLine(T1left); :}
-		| (VarDeclErrorComma) error:l COMMA {: parser.report_error("Izvrsen oporavak pri deklaraciji globalnih promjenjivih do , u liniji " + lleft, null); :} {: RESULT=new VarDeclErrorComma(); :}
-		| (VarDeclErrorSemi) error:l SEMI {: parser.report_error("Izvrsen oporavak pri deklaraciji globalnih promjenjivih do ; u liniji " + lleft, null); :} {: RESULT=new VarDeclErrorSemi(); :}
+		| (VarDeclErrorComma) error:l COMMA {: parser.report_error("Izvrsen oporavak pri deklaraciji promjenjivih do , u liniji " + lleft, null); :} {: RESULT=new VarDeclErrorComma(); :}
+		| (VarDeclErrorSemi) error:l SEMI {: parser.report_error("Izvrsen oporavak pri deklaraciji promjenjivih do ; u liniji " + lleft, null); :} {: RESULT=new VarDeclErrorSemi(); :}
 		;
 			
 VarDeclElems ::= (VarDeclElems1Multiple) VarDeclElems:V1 COMMA IDENT:varName {: RESULT=new VarDeclElems1Multiple(V1, varName); RESULT.setLine(V1left); :}

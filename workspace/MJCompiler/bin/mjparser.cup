@@ -89,8 +89,8 @@ VarDeclList ::= (VarDeclList1) VarDeclList VarDecl
 			;
 
 VarDecl ::= (VarDecl1) Type VarDeclElems SEMI
-		| (VarDeclErrorComma) error:l COMMA {: parser.report_error("Izvrsen oporavak pri deklaraciji globalnih promjenjivih do , u liniji " + lleft, null); :}
-		| (VarDeclErrorSemi) error:l SEMI {: parser.report_error("Izvrsen oporavak pri deklaraciji globalnih promjenjivih do ; u liniji " + lleft, null); :}
+		| (VarDeclErrorComma) error:l COMMA {: parser.report_error("Izvrsen oporavak pri deklaraciji promjenjivih do , u liniji " + lleft, null); :}
+		| (VarDeclErrorSemi) error:l SEMI {: parser.report_error("Izvrsen oporavak pri deklaraciji promjenjivih do ; u liniji " + lleft, null); :}
 		;
 			
 VarDeclElems ::= (VarDeclElems1Multiple) VarDeclElems COMMA IDENT:varName

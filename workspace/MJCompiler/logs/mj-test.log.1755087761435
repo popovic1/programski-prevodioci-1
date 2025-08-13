@@ -1,0 +1,167 @@
+INFO  14:22:27,300 - Compiling source file: C:\Users\djordje.popovic\Desktop\Fakultet\PP1\programski-prevodioci-1\workspace\MJCompiler\test\program1.mj
+INFO  14:22:27,335 - #2 program
+INFO  14:22:27,335 - #42 test301
+INFO  14:22:27,335 - #5 const
+INFO  14:22:27,336 - #42 int
+INFO  14:22:27,336 - #42 nula
+INFO  14:22:27,337 - #6 =
+INFO  14:22:27,337 - #41 0
+INFO  14:22:27,338 - #7 ;
+INFO  14:22:27,338 - #5 const
+INFO  14:22:27,339 - #42 int
+INFO  14:22:27,339 - #42 jedan
+INFO  14:22:27,339 - #6 =
+INFO  14:22:27,339 - #41 1
+INFO  14:22:27,339 - #7 ;
+INFO  14:22:27,339 - #5 const
+INFO  14:22:27,339 - #42 int
+INFO  14:22:27,339 - #42 pet
+INFO  14:22:27,339 - #6 =
+INFO  14:22:27,339 - #41 5
+INFO  14:22:27,339 - #7 ;
+INFO  14:22:27,340 - #42 int
+INFO  14:22:27,340 - #42 a
+INFO  14:22:27,340 - #8 ,
+INFO  14:22:27,340 - #42 c
+INFO  14:22:27,340 - #7 ;
+INFO  14:22:27,340 - #3 {
+INFO  14:22:27,340 - #16 void
+INFO  14:22:27,340 - #42 main
+INFO  14:22:27,340 - #14 (
+INFO  14:22:27,342 - #15 )
+INFO  14:22:27,342 - #42 int
+INFO  14:22:27,342 - #42 bodovi
+INFO  14:22:27,342 - #7 ;
+INFO  14:22:27,342 - #42 bool
+INFO  14:22:27,342 - #42 bt
+INFO  14:22:27,342 - #7 ;
+INFO  14:22:27,342 - #3 {
+INFO  14:22:27,342 - #42 bodovi
+INFO  14:22:27,344 - #6 =
+INFO  14:22:27,344 - #41 0
+INFO  14:22:27,344 - #7 ;
+INFO  14:22:27,345 - #42 bodovi
+INFO  14:22:27,345 - #25 ++
+INFO  14:22:27,345 - #7 ;
+INFO  14:22:27,345 - #4 }
+INFO  14:22:27,345 - #4 }
+INFO  14:22:27,348 - Program(
+  ProgName(
+   test301
+  ) [ProgName]
+  VarOrConstDeclList1(
+    VarOrConstDeclList1(
+      VarOrConstDeclList1(
+        VarOrConstDeclList1(
+          NoVarOrConstDeclList(
+          ) [NoVarOrConstDeclList]
+          VarOrConstDeclConst(
+            ConstDecl(
+              Type(
+               int
+              ) [Type]
+              ConstDeclSuffixNum2(
+               nula
+               0
+              ) [ConstDeclSuffixNum2]
+            ) [ConstDecl]
+          ) [VarOrConstDeclConst]
+        ) [VarOrConstDeclList1]
+        VarOrConstDeclConst(
+          ConstDecl(
+            Type(
+             int
+            ) [Type]
+            ConstDeclSuffixNum2(
+             jedan
+             1
+            ) [ConstDeclSuffixNum2]
+          ) [ConstDecl]
+        ) [VarOrConstDeclConst]
+      ) [VarOrConstDeclList1]
+      VarOrConstDeclConst(
+        ConstDecl(
+          Type(
+           int
+          ) [Type]
+          ConstDeclSuffixNum2(
+           pet
+           5
+          ) [ConstDeclSuffixNum2]
+        ) [ConstDecl]
+      ) [VarOrConstDeclConst]
+    ) [VarOrConstDeclList1]
+    VarOrConstDeclVar(
+      VarDecl1(
+        Type(
+         int
+        ) [Type]
+        VarDeclElems1Multiple(
+          VarDeclElems1(
+           a
+          ) [VarDeclElems1]
+         c
+        ) [VarDeclElems1Multiple]
+      ) [VarDecl1]
+    ) [VarOrConstDeclVar]
+  ) [VarOrConstDeclList1]
+  MethodDecl(
+    MethodTypeNameVoid(
+     main
+    ) [MethodTypeNameVoid]
+    VarDeclList1(
+      VarDeclList1(
+        NoVarDeclList(
+        ) [NoVarDeclList]
+        VarDecl1(
+          Type(
+           int
+          ) [Type]
+          VarDeclElems1(
+           bodovi
+          ) [VarDeclElems1]
+        ) [VarDecl1]
+      ) [VarDeclList1]
+      VarDecl1(
+        Type(
+         bool
+        ) [Type]
+        VarDeclElems1(
+         bt
+        ) [VarDeclElems1]
+      ) [VarDecl1]
+    ) [VarDeclList1]
+    StatementList1(
+      StatementList1(
+        NoStatementList(
+        ) [NoStatementList]
+        Statement1(
+          DesignatorStatement1(
+            Designator1(
+             bodovi
+            ) [Designator1]
+            Assignop(
+            ) [Assignop]
+            ExprPlus(
+              Term1(
+                FactorNum(
+                 0
+                ) [FactorNum]
+              ) [Term1]
+            ) [ExprPlus]
+          ) [DesignatorStatement1]
+        ) [Statement1]
+      ) [StatementList1]
+      Statement1(
+        DesignatorStatementInc(
+          Designator1(
+           bodovi
+          ) [Designator1]
+        ) [DesignatorStatementInc]
+      ) [Statement1]
+    ) [StatementList1]
+  ) [MethodDecl]
+) [Program]
+INFO  14:22:27,348 - ===================================
+INFO  14:22:27,349 -  Print count calls = 0
+INFO  14:22:27,349 -  Deklarisanih promenljivih ima = 4
