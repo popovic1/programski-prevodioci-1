@@ -8,6 +8,8 @@ import rs.ac.bg.etf.pp1.ast.*;
 
 parser code {:
 
+	boolean errorDetected;
+	
 	Logger log = Logger.getLogger(getClass());
    
    
@@ -27,6 +29,7 @@ parser code {:
     }
 
     public void report_error(String message, Object info) {
+    	errorDetected = true;
     	StringBuilder msg = new StringBuilder(message); 
     	if (info instanceof Symbol)
             msg.append (" na liniji ").append(((Symbol)info).left);
@@ -36,6 +39,9 @@ parser code {:
 
 :}
 
+init with {:
+	errorDetected = false;
+:}
 
 scan with {:
 	Symbol s = this.getScanner().next_token();
@@ -54,7 +60,6 @@ terminal Character CHAR;
 terminal Boolean BOOL;
 
 nonterminal VarOrConstDeclList VarOrConstDeclList;
-nonterminal MethodDeclList MethodDeclList;
 nonterminal VarOrConstDecl VarOrConstDecl;
 nonterminal VarDecl VarDecl;
 nonterminal VarDeclList VarDeclList;
@@ -75,8 +80,8 @@ nonterminal Setop Setop;
 nonterminal Mulop Mulop;
 nonterminal Label Label;
 
-nonterminal rs.etf.pp1.symboltable.concepts.Obj ProgName, Program, MethodDecl, MethodTypeName, DesignName, Designator, VarDeclElems, ConstDeclSuffix, ConstDecl;
-nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, Term, Factor, Expr, MulopFactorList;
+nonterminal rs.etf.pp1.symboltable.concepts.Obj ProgName, Program, MethodDecl, MethodTypeName, DesignName, VarDeclElems, ConstDeclSuffix, ConstDecl;
+nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, Term, Factor, Expr, MulopFactorList, Designator;
 
 Program ::= (Program) PROG ProgName:progName VarOrConstDeclList:V1 LBRACE MethodDecl:M2 RBRACE {: RESULT=new Program(progName, V1, M2); RESULT.setLine(progNameleft); :};
 
@@ -120,10 +125,6 @@ MethodDecl ::= (MethodDecl) MethodTypeName:M1 LPAREN RPAREN VarDeclList:V2 LBRAC
 
 MethodTypeName ::= (MethodTypeNameVoid) VOID IDENT:methName {: RESULT=new MethodTypeNameVoid(methName); RESULT.setLine(methNameleft); :};
 
-MethodDeclList ::= (MethodDeclList1) MethodDeclList:M1 MethodDecl:M2 {: RESULT=new MethodDeclList1(M1, M2); RESULT.setLine(M1left); :}
-				| (NoMethodDeclList) {: RESULT=new NoMethodDeclList(); :} /* epsilon */
-				;
-
 FormParsOpt ::= (FormParsOpt1) FormPars:F1 {: RESULT=new FormParsOpt1(F1); RESULT.setLine(F1left); :}
 			| (NoFormParsOpt) {: RESULT=new NoFormParsOpt(); :} /* epsilon */
 			;
@@ -137,8 +138,7 @@ FormParsList ::= (FormParsList1) FormParsList:F1 COMMA Type:T2 IDENT:I3 {: RESUL
 				| (NoFormParsList) {: RESULT=new NoFormParsList(); :} /* epsilon */
 				;
 
-Type ::= (Type) IDENT:typeName {: RESULT=new Type(typeName); RESULT.setLine(typeNameleft); :}
-		;
+Type ::= (Type) IDENT:typeName {: RESULT=new Type(typeName); RESULT.setLine(typeNameleft); :};
 
 Statement ::= (Statement1) DesignatorStatement:D1 SEMI {: RESULT=new Statement1(D1); RESULT.setLine(D1left); :}
 			| (StatementReturnExpr) RETURN Expr:E1 SEMI {: RESULT=new StatementReturnExpr(E1); RESULT.setLine(E1left); :}
@@ -206,8 +206,8 @@ Factor ::= (Factor1) Designator:D1 {: RESULT=new Factor1(D1); RESULT.setLine(D1l
 		;
 		
 
-Designator ::= (Designator1) IDENT:desName {: RESULT=new Designator1(desName); RESULT.setLine(desNameleft); :}
-			| (DesignatorArray) DesignName:desName LBRACKET Expr:E1 RBRACKET {: RESULT=new DesignatorArray(desName, E1); RESULT.setLine(desNameleft); :}
+Designator ::= (Designator1) DesignName:D1 {: RESULT=new Designator1(D1); RESULT.setLine(D1left); :}
+			| (DesignatorArray) DesignName:D1 LBRACKET Expr:E2 RBRACKET {: RESULT=new DesignatorArray(D1, E2); RESULT.setLine(D1left); :}
             ;
 DesignName ::= (DesignName) IDENT:name {: RESULT=new DesignName(name); RESULT.setLine(nameleft); :};
 

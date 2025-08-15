@@ -8,6 +8,8 @@ import rs.ac.bg.etf.pp1.ast.*;
 
 parser code {:
 
+	boolean errorDetected;
+	
 	Logger log = Logger.getLogger(getClass());
    
    
@@ -27,6 +29,7 @@ parser code {:
     }
 
     public void report_error(String message, Object info) {
+    	errorDetected = true;
     	StringBuilder msg = new StringBuilder(message); 
     	if (info instanceof Symbol)
             msg.append (" na liniji ").append(((Symbol)info).left);
@@ -36,6 +39,9 @@ parser code {:
 
 :}
 
+init with {:
+	errorDetected = false;
+:}
 
 scan with {:
 	Symbol s = this.getScanner().next_token();
@@ -53,14 +59,14 @@ terminal String IDENT;
 terminal Character CHAR;
 terminal Boolean BOOL;
 
-nonterminal VarOrConstDeclList, MethodDeclList, VarOrConstDecl, VarDecl;
+nonterminal VarOrConstDeclList, VarOrConstDecl, VarDecl;
 nonterminal VarDeclList, StatementList, FormParsOpt;
 nonterminal FormPars, FormParsList, Statement, DesignatorStatement, Condition, Assignop, ActPars;
 nonterminal CondTerm, CondFact, Relop, Addop, Setop;
 nonterminal Mulop, Label;
 
-nonterminal rs.etf.pp1.symboltable.concepts.Obj ProgName, Program, MethodDecl, MethodTypeName, DesignName, Designator, VarDeclElems, ConstDeclSuffix, ConstDecl;
-nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, Term, Factor, Expr, MulopFactorList;
+nonterminal rs.etf.pp1.symboltable.concepts.Obj ProgName, Program, MethodDecl, MethodTypeName, DesignName, VarDeclElems, ConstDeclSuffix, ConstDecl;
+nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, Term, Factor, Expr, MulopFactorList, Designator;
 
 Program ::= (Program) PROG ProgName:progName VarOrConstDeclList LBRACE MethodDecl RBRACE;
 
@@ -104,10 +110,6 @@ MethodDecl ::= (MethodDecl) MethodTypeName LPAREN RPAREN VarDeclList LBRACE Stat
 
 MethodTypeName ::= (MethodTypeNameVoid) VOID IDENT:methName;
 
-MethodDeclList ::= (MethodDeclList1) MethodDeclList MethodDecl
-				| (NoMethodDeclList) /* epsilon */
-				;
-
 FormParsOpt ::= (FormParsOpt1) FormPars
 			| (NoFormParsOpt) /* epsilon */
 			;
@@ -121,8 +123,7 @@ FormParsList ::= (FormParsList1) FormParsList COMMA Type IDENT
 				| (NoFormParsList) /* epsilon */
 				;
 
-Type ::= (Type) IDENT:typeName
-		;
+Type ::= (Type) IDENT:typeName;
 
 Statement ::= (Statement1) DesignatorStatement SEMI
 			| (StatementReturnExpr) RETURN Expr SEMI
@@ -190,8 +191,8 @@ Factor ::= (Factor1) Designator
 		;
 		
 
-Designator ::= (Designator1) IDENT:desName
-			| (DesignatorArray) DesignName:desName LBRACKET Expr RBRACKET
+Designator ::= (Designator1) DesignName
+			| (DesignatorArray) DesignName LBRACKET Expr RBRACKET
             ;
 DesignName ::= (DesignName) IDENT:name;
 

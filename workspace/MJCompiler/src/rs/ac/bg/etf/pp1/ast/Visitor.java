@@ -1,40 +1,39 @@
 // generated with ast extension for cup
 // version 0.8
-// 13/7/2025 14:20:58
+// 15/7/2025 2:16:48
 
 
 package rs.ac.bg.etf.pp1.ast;
 
 public interface Visitor { 
 
-    public void visit(Mulop Mulop);
-    public void visit(FormParsOpt FormParsOpt);
-    public void visit(Relop Relop);
-    public void visit(MulopFactorList MulopFactorList);
-    public void visit(ConstDeclSuffix ConstDeclSuffix);
-    public void visit(VarOrConstDecl VarOrConstDecl);
-    public void visit(VarDeclElems VarDeclElems);
-    public void visit(StatementList StatementList);
-    public void visit(Addop Addop);
-    public void visit(Factor Factor);
-    public void visit(CondTerm CondTerm);
     public void visit(Designator Designator);
-    public void visit(Term Term);
-    public void visit(FormParsList FormParsList);
-    public void visit(Condition Condition);
+    public void visit(Factor Factor);
+    public void visit(Mulop Mulop);
+    public void visit(DesignatorStatement DesignatorStatement);
+    public void visit(CondFact CondFact);
+    public void visit(Expr Expr);
+    public void visit(VarDeclElems VarDeclElems);
+    public void visit(FormPars FormPars);
+    public void visit(ConstDeclSuffix ConstDeclSuffix);
+    public void visit(VarDeclList VarDeclList);
+    public void visit(VarDecl VarDecl);
     public void visit(Label Label);
     public void visit(VarOrConstDeclList VarOrConstDeclList);
-    public void visit(VarDeclList VarDeclList);
-    public void visit(Expr Expr);
-    public void visit(ActPars ActPars);
-    public void visit(MethodTypeName MethodTypeName);
-    public void visit(DesignatorStatement DesignatorStatement);
+    public void visit(VarOrConstDecl VarOrConstDecl);
+    public void visit(MulopFactorList MulopFactorList);
+    public void visit(Addop Addop);
     public void visit(Statement Statement);
-    public void visit(VarDecl VarDecl);
-    public void visit(CondFact CondFact);
+    public void visit(Relop Relop);
+    public void visit(FormParsList FormParsList);
     public void visit(Setop Setop);
-    public void visit(MethodDeclList MethodDeclList);
-    public void visit(FormPars FormPars);
+    public void visit(Term Term);
+    public void visit(CondTerm CondTerm);
+    public void visit(Condition Condition);
+    public void visit(MethodTypeName MethodTypeName);
+    public void visit(ActPars ActPars);
+    public void visit(StatementList StatementList);
+    public void visit(FormParsOpt FormParsOpt);
     public void visit(Setop1 Setop1);
     public void visit(Modop Modop);
     public void visit(Divop Divop);
@@ -98,8 +97,6 @@ public interface Visitor {
     public void visit(FormPars1 FormPars1);
     public void visit(NoFormParsOpt NoFormParsOpt);
     public void visit(FormParsOpt1 FormParsOpt1);
-    public void visit(NoMethodDeclList NoMethodDeclList);
-    public void visit(MethodDeclList1 MethodDeclList1);
     public void visit(MethodTypeNameVoid MethodTypeNameVoid);
     public void visit(MethodDecl MethodDecl);
     public void visit(VarDeclElemsArray VarDeclElemsArray);
