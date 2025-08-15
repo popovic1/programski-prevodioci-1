@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 15/7/2025 2:16:48
+// 16/7/2025 1:29:38
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -14,18 +14,14 @@ public interface Visitor {
     public void visit(CondFact CondFact);
     public void visit(Expr Expr);
     public void visit(VarDeclElems VarDeclElems);
-    public void visit(FormPars FormPars);
     public void visit(ConstDeclSuffix ConstDeclSuffix);
     public void visit(VarDeclList VarDeclList);
     public void visit(VarDecl VarDecl);
-    public void visit(Label Label);
     public void visit(VarOrConstDeclList VarOrConstDeclList);
     public void visit(VarOrConstDecl VarOrConstDecl);
-    public void visit(MulopFactorList MulopFactorList);
     public void visit(Addop Addop);
     public void visit(Statement Statement);
     public void visit(Relop Relop);
-    public void visit(FormParsList FormParsList);
     public void visit(Setop Setop);
     public void visit(Term Term);
     public void visit(CondTerm CondTerm);
@@ -33,7 +29,6 @@ public interface Visitor {
     public void visit(MethodTypeName MethodTypeName);
     public void visit(ActPars ActPars);
     public void visit(StatementList StatementList);
-    public void visit(FormParsOpt FormParsOpt);
     public void visit(Setop1 Setop1);
     public void visit(Modop Modop);
     public void visit(Divop Divop);
@@ -47,7 +42,6 @@ public interface Visitor {
     public void visit(NotEqualop NotEqualop);
     public void visit(Equalop Equalop);
     public void visit(Assignop Assignop);
-    public void visit(LabelClass LabelClass);
     public void visit(DesignName DesignName);
     public void visit(DesignatorArray DesignatorArray);
     public void visit(Designator1 Designator1);
@@ -59,8 +53,6 @@ public interface Visitor {
     public void visit(FactorNum FactorNum);
     public void visit(Factor2 Factor2);
     public void visit(Factor1 Factor1);
-    public void visit(NoMulopFactorList NoMulopFactorList);
-    public void visit(MulopFactorList1 MulopFactorList1);
     public void visit(Term2 Term2);
     public void visit(Term1 Term1);
     public void visit(ExprMultiple ExprMultiple);
@@ -87,16 +79,8 @@ public interface Visitor {
     public void visit(StatementPrintExpr StatementPrintExpr);
     public void visit(StatementRead StatementRead);
     public void visit(StatementReturn StatementReturn);
-    public void visit(StatementReturnExpr StatementReturnExpr);
     public void visit(Statement1 Statement1);
     public void visit(Type Type);
-    public void visit(NoFormParsList NoFormParsList);
-    public void visit(FormParsList2 FormParsList2);
-    public void visit(FormParsList1 FormParsList1);
-    public void visit(FormPars2 FormPars2);
-    public void visit(FormPars1 FormPars1);
-    public void visit(NoFormParsOpt NoFormParsOpt);
-    public void visit(FormParsOpt1 FormParsOpt1);
     public void visit(MethodTypeNameVoid MethodTypeNameVoid);
     public void visit(MethodDecl MethodDecl);
     public void visit(VarDeclElemsArray VarDeclElemsArray);

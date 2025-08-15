@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 15/7/2025 2:16:48
+// 16/7/2025 1:29:38
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -14,18 +14,14 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(CondFact CondFact) { }
     public void visit(Expr Expr) { }
     public void visit(VarDeclElems VarDeclElems) { }
-    public void visit(FormPars FormPars) { }
     public void visit(ConstDeclSuffix ConstDeclSuffix) { }
     public void visit(VarDeclList VarDeclList) { }
     public void visit(VarDecl VarDecl) { }
-    public void visit(Label Label) { }
     public void visit(VarOrConstDeclList VarOrConstDeclList) { }
     public void visit(VarOrConstDecl VarOrConstDecl) { }
-    public void visit(MulopFactorList MulopFactorList) { }
     public void visit(Addop Addop) { }
     public void visit(Statement Statement) { }
     public void visit(Relop Relop) { }
-    public void visit(FormParsList FormParsList) { }
     public void visit(Setop Setop) { }
     public void visit(Term Term) { }
     public void visit(CondTerm CondTerm) { }
@@ -33,7 +29,6 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(MethodTypeName MethodTypeName) { }
     public void visit(ActPars ActPars) { }
     public void visit(StatementList StatementList) { }
-    public void visit(FormParsOpt FormParsOpt) { }
     public void visit(Setop1 Setop1) { visit(); }
     public void visit(Modop Modop) { visit(); }
     public void visit(Divop Divop) { visit(); }
@@ -47,7 +42,6 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(NotEqualop NotEqualop) { visit(); }
     public void visit(Equalop Equalop) { visit(); }
     public void visit(Assignop Assignop) { visit(); }
-    public void visit(LabelClass LabelClass) { visit(); }
     public void visit(DesignName DesignName) { visit(); }
     public void visit(DesignatorArray DesignatorArray) { visit(); }
     public void visit(Designator1 Designator1) { visit(); }
@@ -59,8 +53,6 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(FactorNum FactorNum) { visit(); }
     public void visit(Factor2 Factor2) { visit(); }
     public void visit(Factor1 Factor1) { visit(); }
-    public void visit(NoMulopFactorList NoMulopFactorList) { visit(); }
-    public void visit(MulopFactorList1 MulopFactorList1) { visit(); }
     public void visit(Term2 Term2) { visit(); }
     public void visit(Term1 Term1) { visit(); }
     public void visit(ExprMultiple ExprMultiple) { visit(); }
@@ -87,16 +79,8 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(StatementPrintExpr StatementPrintExpr) { visit(); }
     public void visit(StatementRead StatementRead) { visit(); }
     public void visit(StatementReturn StatementReturn) { visit(); }
-    public void visit(StatementReturnExpr StatementReturnExpr) { visit(); }
     public void visit(Statement1 Statement1) { visit(); }
     public void visit(Type Type) { visit(); }
-    public void visit(NoFormParsList NoFormParsList) { visit(); }
-    public void visit(FormParsList2 FormParsList2) { visit(); }
-    public void visit(FormParsList1 FormParsList1) { visit(); }
-    public void visit(FormPars2 FormPars2) { visit(); }
-    public void visit(FormPars1 FormPars1) { visit(); }
-    public void visit(NoFormParsOpt NoFormParsOpt) { visit(); }
-    public void visit(FormParsOpt1 FormParsOpt1) { visit(); }
     public void visit(MethodTypeNameVoid MethodTypeNameVoid) { visit(); }
     public void visit(MethodDecl MethodDecl) { visit(); }
     public void visit(VarDeclElemsArray VarDeclElemsArray) { visit(); }

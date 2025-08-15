@@ -17,7 +17,9 @@ set s1, s2, s3;
 	void main()	
 		int bodovi;
 		int temp;
+		bool flag;
 	{
+		flag = false;
 		bodovi = 0;
 		bodovi++;
 		bodovi = bodovi + jedan;
@@ -27,9 +29,9 @@ set s1, s2, s3;
 		print(eol);
 		
 		niz = new int[3];
-		niz[0] = 2;
-		niz[1] = 3;
-		niz[niz[0]] = niz[1] * 4;
+		niz[nula] = 2;
+		niz[jedan] = 3;
+		niz[niz[nula]] = niz[1] * 4;
 		bodovi = niz[2]/niz[0];
 		print(bodovi); //6
 		print(eol);
@@ -38,11 +40,11 @@ set s1, s2, s3;
 		
 		nizch = new char[3];
 		nizch[0] = 'a';
-		nizch[1] = 'b';
+		nizch[jedan] = 'b';
 		nizch[pet - 3] = 'c';
 		print(nizch[1]); //b
 		print(eol);
-		print(nizch[1 * 2]); //c
+		print(nizch[jedan * 2]); //c
 		print(eol);
 		print(ord(nizch[0])); //97
 			
@@ -67,6 +69,7 @@ set s1, s2, s3;
 		read(temp); add(s2, temp);
 		s3 = s1 union s2;
 		print(s3); // 5 10 union {3 procitana broja}
+		
 		
 	}
 }

@@ -60,13 +60,13 @@ terminal Character CHAR;
 terminal Boolean BOOL;
 
 nonterminal VarOrConstDeclList, VarOrConstDecl, VarDecl;
-nonterminal VarDeclList, StatementList, FormParsOpt;
-nonterminal FormPars, FormParsList, Statement, DesignatorStatement, Condition, Assignop, ActPars;
-nonterminal CondTerm, CondFact, Relop, Addop, Setop;
-nonterminal Mulop, Label;
+nonterminal VarDeclList, StatementList;
+nonterminal Statement, DesignatorStatement, Condition, Assignop, ActPars;
+nonterminal CondTerm, Relop, Addop, Setop;
+nonterminal Mulop;
 
 nonterminal rs.etf.pp1.symboltable.concepts.Obj ProgName, Program, MethodDecl, MethodTypeName, DesignName, VarDeclElems, ConstDeclSuffix, ConstDecl;
-nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, Term, Factor, Expr, MulopFactorList, Designator;
+nonterminal rs.etf.pp1.symboltable.concepts.Struct CondFact, Type, Term, Factor, Expr, Designator;
 
 Program ::= (Program) PROG ProgName:progName VarOrConstDeclList LBRACE MethodDecl RBRACE;
 
@@ -110,23 +110,11 @@ MethodDecl ::= (MethodDecl) MethodTypeName LPAREN RPAREN VarDeclList LBRACE Stat
 
 MethodTypeName ::= (MethodTypeNameVoid) VOID IDENT:methName;
 
-FormParsOpt ::= (FormParsOpt1) FormPars
-			| (NoFormParsOpt) /* epsilon */
-			;
 
-FormPars ::= (FormPars1) Type IDENT FormParsList
-			| (FormPars2) Type IDENT LBRACKET RBRACKET FormParsList
-			;
-
-FormParsList ::= (FormParsList1) FormParsList COMMA Type IDENT
-				| (FormParsList2) FormParsList COMMA Type IDENT LBRACKET RBRACKET
-				| (NoFormParsList) /* epsilon */
-				;
 
 Type ::= (Type) IDENT:typeName;
 
 Statement ::= (Statement1) DesignatorStatement SEMI
-			| (StatementReturnExpr) RETURN Expr SEMI
 			| (StatementReturn) RETURN SEMI
 			| (StatementRead) READ LPAREN Designator RPAREN SEMI
 			| (StatementPrintExpr) PRINT LPAREN Expr RPAREN SEMI
@@ -141,7 +129,7 @@ DesignatorStatement ::= (DesignatorStatement1) Designator Assignop Expr
 					| (DesignatorStatement2) Designator LPAREN ActPars RPAREN
 					| (DesignatorStatementInc) Designator INCREMENT
 					| (DesignatorStatementDec) Designator DECREMENT
-					| (DesignatorStatement3) Designator Assignop Designator Setop Designator
+					| (DesignatorStatement3) Designator:d1 Assignop Designator:d2 Setop Designator:d3
 					| (DesignatorStatementError) error:l SEMI
 						{: parser.report_error("Izvrsen oporavak pri designator statement-u do ; u liniji " + lleft, null); :}
 					;
@@ -176,9 +164,6 @@ Term ::= (Term1) Factor
 		| (Term2) Term Mulop Factor
 		;
 
-MulopFactorList ::= (MulopFactorList1) MulopFactorList Mulop Factor
-				| (NoMulopFactorList) /* epsilon */
-				;
 
 Factor ::= (Factor1) Designator
 		| (Factor2) Designator LPAREN ActPars RPAREN
@@ -191,13 +176,12 @@ Factor ::= (Factor1) Designator
 		;
 		
 
-Designator ::= (Designator1) DesignName
-			| (DesignatorArray) DesignName LBRACKET Expr RBRACKET
+Designator ::= (Designator1) DesignName:dn
+			| (DesignatorArray) DesignName:dn LBRACKET Expr RBRACKET
             ;
 DesignName ::= (DesignName) IDENT:name;
 
 
-Label ::= (LabelClass) IDENT;
 
 Assignop ::= (Assignop) ASSIGN;
 

@@ -64,24 +64,19 @@ nonterminal VarOrConstDecl VarOrConstDecl;
 nonterminal VarDecl VarDecl;
 nonterminal VarDeclList VarDeclList;
 nonterminal StatementList StatementList;
-nonterminal FormParsOpt FormParsOpt;
-nonterminal FormPars FormPars;
-nonterminal FormParsList FormParsList;
 nonterminal Statement Statement;
 nonterminal DesignatorStatement DesignatorStatement;
 nonterminal Condition Condition;
 nonterminal Assignop Assignop;
 nonterminal ActPars ActPars;
 nonterminal CondTerm CondTerm;
-nonterminal CondFact CondFact;
 nonterminal Relop Relop;
 nonterminal Addop Addop;
 nonterminal Setop Setop;
 nonterminal Mulop Mulop;
-nonterminal Label Label;
 
 nonterminal rs.etf.pp1.symboltable.concepts.Obj ProgName, Program, MethodDecl, MethodTypeName, DesignName, VarDeclElems, ConstDeclSuffix, ConstDecl;
-nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, Term, Factor, Expr, MulopFactorList, Designator;
+nonterminal rs.etf.pp1.symboltable.concepts.Struct CondFact, Type, Term, Factor, Expr, Designator;
 
 Program ::= (Program) PROG ProgName:progName VarOrConstDeclList:V1 LBRACE MethodDecl:M2 RBRACE {: RESULT=new Program(progName, V1, M2); RESULT.setLine(progNameleft); :};
 
@@ -125,23 +120,11 @@ MethodDecl ::= (MethodDecl) MethodTypeName:M1 LPAREN RPAREN VarDeclList:V2 LBRAC
 
 MethodTypeName ::= (MethodTypeNameVoid) VOID IDENT:methName {: RESULT=new MethodTypeNameVoid(methName); RESULT.setLine(methNameleft); :};
 
-FormParsOpt ::= (FormParsOpt1) FormPars:F1 {: RESULT=new FormParsOpt1(F1); RESULT.setLine(F1left); :}
-			| (NoFormParsOpt) {: RESULT=new NoFormParsOpt(); :} /* epsilon */
-			;
 
-FormPars ::= (FormPars1) Type:T1 IDENT:I2 FormParsList:F3 {: RESULT=new FormPars1(T1, I2, F3); RESULT.setLine(T1left); :}
-			| (FormPars2) Type:T1 IDENT:I2 LBRACKET RBRACKET FormParsList:F3 {: RESULT=new FormPars2(T1, I2, F3); RESULT.setLine(T1left); :}
-			;
-
-FormParsList ::= (FormParsList1) FormParsList:F1 COMMA Type:T2 IDENT:I3 {: RESULT=new FormParsList1(F1, T2, I3); RESULT.setLine(F1left); :}
-				| (FormParsList2) FormParsList:F1 COMMA Type:T2 IDENT:I3 LBRACKET RBRACKET {: RESULT=new FormParsList2(F1, T2, I3); RESULT.setLine(F1left); :}
-				| (NoFormParsList) {: RESULT=new NoFormParsList(); :} /* epsilon */
-				;
 
 Type ::= (Type) IDENT:typeName {: RESULT=new Type(typeName); RESULT.setLine(typeNameleft); :};
 
 Statement ::= (Statement1) DesignatorStatement:D1 SEMI {: RESULT=new Statement1(D1); RESULT.setLine(D1left); :}
-			| (StatementReturnExpr) RETURN Expr:E1 SEMI {: RESULT=new StatementReturnExpr(E1); RESULT.setLine(E1left); :}
 			| (StatementReturn) RETURN SEMI {: RESULT=new StatementReturn(); :}
 			| (StatementRead) READ LPAREN Designator:D1 RPAREN SEMI {: RESULT=new StatementRead(D1); RESULT.setLine(D1left); :}
 			| (StatementPrintExpr) PRINT LPAREN Expr:E1 RPAREN SEMI {: RESULT=new StatementPrintExpr(E1); RESULT.setLine(E1left); :}
@@ -156,7 +139,7 @@ DesignatorStatement ::= (DesignatorStatement1) Designator:D1 Assignop:A2 Expr:E3
 					| (DesignatorStatement2) Designator:D1 LPAREN ActPars:A2 RPAREN {: RESULT=new DesignatorStatement2(D1, A2); RESULT.setLine(D1left); :}
 					| (DesignatorStatementInc) Designator:D1 INCREMENT {: RESULT=new DesignatorStatementInc(D1); RESULT.setLine(D1left); :}
 					| (DesignatorStatementDec) Designator:D1 DECREMENT {: RESULT=new DesignatorStatementDec(D1); RESULT.setLine(D1left); :}
-					| (DesignatorStatement3) Designator:D1 Assignop:A2 Designator:D3 Setop:S4 Designator:D5 {: RESULT=new DesignatorStatement3(D1, A2, D3, S4, D5); RESULT.setLine(D1left); :}
+					| (DesignatorStatement3) Designator:d1 Assignop:A1 Designator:d2 Setop:S2 Designator:d3 {: RESULT=new DesignatorStatement3(d1, A1, d2, S2, d3); RESULT.setLine(d1left); :}
 					| (DesignatorStatementError) error:l SEMI
 						{: parser.report_error("Izvrsen oporavak pri designator statement-u do ; u liniji " + lleft, null); :} {: RESULT=new DesignatorStatementError(); :}
 					;
@@ -191,9 +174,6 @@ Term ::= (Term1) Factor:F1 {: RESULT=new Term1(F1); RESULT.setLine(F1left); :}
 		| (Term2) Term:T1 Mulop:M2 Factor:F3 {: RESULT=new Term2(T1, M2, F3); RESULT.setLine(T1left); :}
 		;
 
-MulopFactorList ::= (MulopFactorList1) MulopFactorList:M1 Mulop:M2 Factor:F3 {: RESULT=new MulopFactorList1(M1, M2, F3); RESULT.setLine(M1left); :}
-				| (NoMulopFactorList) {: RESULT=new NoMulopFactorList(); :} /* epsilon */
-				;
 
 Factor ::= (Factor1) Designator:D1 {: RESULT=new Factor1(D1); RESULT.setLine(D1left); :}
 		| (Factor2) Designator:D1 LPAREN ActPars:A2 RPAREN {: RESULT=new Factor2(D1, A2); RESULT.setLine(D1left); :}
@@ -206,13 +186,12 @@ Factor ::= (Factor1) Designator:D1 {: RESULT=new Factor1(D1); RESULT.setLine(D1l
 		;
 		
 
-Designator ::= (Designator1) DesignName:D1 {: RESULT=new Designator1(D1); RESULT.setLine(D1left); :}
-			| (DesignatorArray) DesignName:D1 LBRACKET Expr:E2 RBRACKET {: RESULT=new DesignatorArray(D1, E2); RESULT.setLine(D1left); :}
+Designator ::= (Designator1) DesignName:dn {: RESULT=new Designator1(dn); RESULT.setLine(dnleft); :}
+			| (DesignatorArray) DesignName:dn LBRACKET Expr:E1 RBRACKET {: RESULT=new DesignatorArray(dn, E1); RESULT.setLine(dnleft); :}
             ;
 DesignName ::= (DesignName) IDENT:name {: RESULT=new DesignName(name); RESULT.setLine(nameleft); :};
 
 
-Label ::= (LabelClass) IDENT:I1 {: RESULT=new LabelClass(I1); RESULT.setLine(I1left); :};
 
 Assignop ::= (Assignop) ASSIGN {: RESULT=new Assignop(); :};
 

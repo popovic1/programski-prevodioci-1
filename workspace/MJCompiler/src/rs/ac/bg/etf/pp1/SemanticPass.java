@@ -29,18 +29,24 @@ public class SemanticPass extends VisitorAdaptor {
 		Tab.currentScope().addToLocals(new Obj(Obj.Type, "set", setType));
 		
 		if (Tab.find("add") == Tab.noObj) {
-	        Obj add = Tab.insert(Obj.Meth, "add", Tab.noType); // void
+	        Obj add = Tab.insert(Obj.Meth, "add", Tab.noType); 
 	        Tab.openScope();
-	        Tab.insert(Obj.Var, "a", setType);                 // set
-	        Tab.insert(Obj.Var, "b", Tab.intType);             // int
+	        Obj o1 = Tab.insert(Obj.Var, "a", setType);               
+	        o1.setFpPos(1);
+	        Obj o2 = Tab.insert(Obj.Var, "b", Tab.intType);       
+	        o1.setFpPos(2);
+	        add.setLevel(2);
 	        Tab.chainLocalSymbols(add);
 	        Tab.closeScope();
 	    }
 	    if (Tab.find("addAll") == Tab.noObj) {
-	        Obj addAll = Tab.insert(Obj.Meth, "addAll", Tab.noType); // void
+	        Obj addAll = Tab.insert(Obj.Meth, "addAll", Tab.noType);
 	        Tab.openScope();
-	        Tab.insert(Obj.Var, "a", setType);                       // set
-	        Tab.insert(Obj.Var, "b", new Struct(Struct.Array, Tab.intType)); // int[]
+	        Obj o1 = Tab.insert(Obj.Var, "a", setType); 
+	        o1.setFpPos(1);
+	        Obj o2 = Tab.insert(Obj.Var, "b", new Struct(Struct.Array, Tab.intType));
+	        o2.setFpPos(2);
+	        addAll.setLevel(2);
 	        Tab.chainLocalSymbols(addAll);
 	        Tab.closeScope();
 	    }
@@ -329,10 +335,437 @@ public class SemanticPass extends VisitorAdaptor {
     	report_info("Koriscen simbol (niz) " + designator.getDesignName().getName() + " na liniji " + designator.getLine(), null);
     	
     }
-
-	public void visit(StatementPrintExpr print) {
-		printCallCount++;
+    
+	public void visit (DesignatorStatement1 desStmt) {
+		Designator des = desStmt.getDesignator();
+		Obj desObj;
+		
+		if(des instanceof Designator1) {
+			desObj = ((Designator1)des).getDesignName().obj;
+			
+			if(desObj.getKind() != Obj.Var) { //moze da bude i set, set je tipa var
+	    		report_error("Semanticka greska na liniji " + desStmt.getLine() + ": Designator nije ispravnog tipa", null);
+	    		return;
+	    	}
+			
+			if(!(desStmt.getExpr().struct.assignableTo(desObj.getType()))) {
+				report_info("!!!!!!!! Expr tipa: " + desStmt.getExpr().struct.getKind() + ", designator tipa " + desObj.getType().getKind(), null);
+				report_error("Semanticka greska na liniji " + desStmt.getLine() + ": Tipovi designatora i expr-a nisu kompatibilni.", null);
+				return;
+			}
+		}else {
+			desObj = ((DesignatorArray)des).getDesignName().obj;
+			
+			if(desObj.getKind() != Obj.Var || desObj.getType().getKind() != Struct.Array) {
+	    		report_error("Semanticka greska na liniji " + desStmt.getLine() + ": Designator nije ispravnog tipa", null);
+	    		return;
+	    	}
+			
+			if(!(desStmt.getExpr().struct.assignableTo(desObj.getType().getElemType()))) {
+				report_error("Semanticka greska na liniji " + desStmt.getLine() + ": Tipovi designatora i expr-a nisu kompatibilni.", null);
+				return;
+			}
+		}
+    	
+    	report_info("Dodela vrednosti simbolu " + desObj.getName() + " na liniji " + desStmt.getLine(), null);
+    }
+	
+	public void visit (DesignatorStatementInc desStmt) {
+		Designator des = desStmt.getDesignator();
+		Obj desObj;
+		
+		if(des instanceof Designator1) {
+			desObj = ((Designator1)des).getDesignName().obj;
+			
+			if(desObj.getKind() != Obj.Var) {
+	    		report_error("Semanticka greska na liniji " + desStmt.getLine() + ": Designator nije ispravnog tipa", null);
+	    		return;
+	    	}
+			
+			if(!(Tab.intType.assignableTo(desObj.getType()))) {
+				report_error("Semanticka greska na liniji " + desStmt.getLine() + ": Tipovi designatora i expr-a nisu kompatibilni.", null);
+				return;
+			}
+		}else {
+			desObj = ((DesignatorArray)des).getDesignName().obj;
+			
+			if(desObj.getKind() != Obj.Var || desObj.getType().getKind() != Struct.Array) {
+	    		report_error("Semanticka greska na liniji " + desStmt.getLine() + ": Designator nije ispravnog tipa", null);
+	    		return;
+	    	}
+			
+			if(!(Tab.intType.assignableTo(desObj.getType().getElemType()))) {
+				report_error("Semanticka greska na liniji " + desStmt.getLine() + ": Tipovi designatora i expr-a nisu kompatibilni.", null);
+				return;
+			}
+		}
+    	
+    	report_info("Inkrementirana vrednost simbolu " + desObj.getName() + " na liniji " + desStmt.getLine(), null);
+    }
+	
+	public void visit (DesignatorStatementDec desStmt) {
+		Designator des = desStmt.getDesignator();
+		Obj desObj;
+		
+		if(des instanceof Designator1) {
+			desObj = ((Designator1)des).getDesignName().obj;
+			
+			if(desObj.getKind() != Obj.Var) {
+	    		report_error("Semanticka greska na liniji " + desStmt.getLine() + ": Designator nije ispravnog tipa", null);
+	    		return;
+	    	}
+			
+			if(!(Tab.intType.assignableTo(desObj.getType()))) {
+				report_error("Semanticka greska na liniji " + desStmt.getLine() + ": Tipovi designatora i expr-a nisu kompatibilni.", null);
+				return;
+			}
+		}else {
+			desObj = ((DesignatorArray)des).getDesignName().obj;
+			
+			if(desObj.getKind() != Obj.Var || desObj.getType().getKind() != Struct.Array) {
+	    		report_error("Semanticka greska na liniji " + desStmt.getLine() + ": Designator nije ispravnog tipa", null);
+	    		return;
+	    	}
+			
+			if(!(Tab.intType.assignableTo(desObj.getType().getElemType()))) {
+				report_error("Semanticka greska na liniji " + desStmt.getLine() + ": Tipovi designatora i expr-a nisu kompatibilni.", null);
+				return;
+			}
+		}
+    	
+    	report_info("Dekrementirana vrednost simbolu " + desObj.getName() + " na liniji " + desStmt.getLine(), null);
+    }
+	
+	public void visit(DesignatorStatement2 desStmt) {
+		Designator d = desStmt.getDesignator();
+    	if(!(d instanceof Designator1)) {
+    		report_error("Semanticka greska na liniji " + desStmt.getLine() + ": Designator u DesignatorStatement2(poziv metode) nije Designator1 (niz je).", null);
+    		return;
+    	}
+    	
+    	Obj o = ((Designator1)d).getDesignName().obj;
+    	
+    	if(o.getKind() != Obj.Meth) {
+    		report_error("Semanticka greska na liniji " + desStmt.getLine() + ": Designator u DesignatorStatement2(poziv metode) nije tipa Obj.Meth.", null);
+    		return;
+    	}
+    	
+    	ActPars ap = desStmt.getActPars();
+    	java.util.ArrayList<Struct> params = new java.util.ArrayList<>();
+    	
+    	if (!(ap instanceof NoActPars)) {
+    		
+    		ActPars i = ap;
+    		
+    		while (i instanceof ActPars2) {
+    			params.add(((ActPars2)i).getExpr().struct);
+    			i = ((ActPars2)i).getActPars();
+    		}
+    		params.add(((ActPars1)i).getExpr().struct);
+    	}
+    	
+    	if(o.getLevel() != params.size()) {
+    		report_error("Semanticka greska na liniji " + desStmt.getLine() + ": Prosledjen pogresan broj argumenata: " + params.size() + " funkciji " + ((Designator1)d).getDesignName().getName() + " u DesignatorStatement2(poziv metode). Potreban broj argumenata: " + o.getLevel(), null);
+    		return;
+    	}
+    	
+    	java.util.Iterator<Obj> itArgs = o.getLocalSymbols().iterator();
+    	int cnt = params.size();
+    	while(itArgs.hasNext()) {
+    		Obj tmp = itArgs.next();
+    		Struct t = tmp.getType();
+    		Struct p = params.get(--cnt);
+    		
+    		boolean ok = false;
+    		
+    		if(t.equals(p)) {
+    			ok = true;
+    		}else if(t.getKind() == Struct.Array && t.getElemType() == Tab.noType
+    				&& p.getKind() == Struct.Array) {
+    			ok = true;
+    		}else if (p == Tab.nullType && t != null && (
+    	            t.getKind() == Struct.Array ||
+    	            t.equals(setType))) {
+    			
+    			ok = true;
+    		}
+    		
+    		if(!ok) {
+    			report_error("Semanticka greska na liniji " + desStmt.getLine() + ": Prosledjen pogresan tip argumenta " + cnt + " funkciji " + ((Designator1)d).getDesignName().getName() + " u DesignatorStatement2(poziv metode).", null);
+        		return;
+    		}
+    	}
+    	
+    	report_info("DesignatorStatement2: ispravno pozvana metoda na liniji " + desStmt.getLine() + " povratne vrednosti " + o.getType().getKind(), null);
 	}
+	
+	public void visit(DesignatorStatement3 desStmt) {
+		Designator d1 = desStmt.getDesignator();
+		Designator d2 = desStmt.getDesignator1();
+		Designator d3 = desStmt.getDesignator2();
+		
+		if(d1 instanceof Designator1 
+				&& d2 instanceof Designator1 
+				&& d3 instanceof Designator1) {
+			
+			Obj o1 = ((Designator1)d1).getDesignName().obj;
+			Obj o2 = ((Designator1)d2).getDesignName().obj;
+			Obj o3 = ((Designator1)d3).getDesignName().obj;
+			
+			if(o1.getType() == setType
+					&& o2.getType() == setType
+					&& o3.getType() == setType) {
+				
+				report_info("DesignatorStatement3 (set1 = set2 union set3) na liniji " + desStmt.getLine(), null);
+				
+			}else {
+				report_error("Semanticka greska na liniji " + desStmt.getLine() + ": DesignatorStatement3(set1 = set2 union set3): jedna od promenljivih nije tipa set.", null);
+				return;
+			}
+			
+		}else {
+			report_error("Semanticka greska na liniji " + desStmt.getLine() + ": DesignatorStatement3(set1 = set2 union set3): jedna od promenljivih nije tipa Designator1.", null);
+			return;
+		}
+	}
+	
+	public void visit (ExprPlus expr) {
+    	expr.struct = expr.getTerm().struct;
+    	currentStruct = expr.struct;
+    	report_info("ExprPlus na liniji " + expr.getLine() + " tipa: " + expr.getTerm().struct.getKind(), null);
+    }
+    
+    public void visit (ExprMinus expr) {
+    	if(expr.getTerm().struct != Tab.intType) {
+    		report_error("Semanticka greska na liniji " + expr.getLine() + ": Negativni izraz nije tipa int.", null);
+    		return;
+    	}
+    	expr.struct = expr.getTerm().struct;
+    	currentStruct = expr.struct;
+    	report_info("ExprMinus na liniji " + expr.getLine(), null);
+    }
+    
+    public void visit (ExprMultiple expr) {
+    	if(!(expr.getTerm().struct == Tab.intType && expr.getExpr().struct == Tab.intType)) {
+    		report_error("Semanticka greska na liniji " + expr.getLine() + ": Kompleksni addop izraz nije tipa int.", null);
+    		return;
+    	}
+    	expr.struct = Tab.intType;
+    	report_info("AddopTermList Expr na liniji " + expr.getLine(), null);
+    }
+    
+    public void visit (Term1 term) {
+    	
+    	term.struct = currentStruct = term.getFactor().struct;
+    	report_info("Term1 tipa " + term.struct.getKind() + " na liniji " + term.getLine(), null);
+    	
+    }
+    
+    public void visit (Term2 term) {
+    	
+    	if(!(term.getTerm().struct == Tab.intType && term.getFactor().struct == Tab.intType)) {
+    		report_error("Semanticka greska na liniji " + term.getLine() + ": Kompleksni mulop izraz nije tipa int.", null);
+    		return;
+    	}
+    	term.struct = Tab.intType;
+    	report_info("Mulop term (Term2) na liniji " + term.getLine(), null);  	
+    	
+    }
+    
+    public void visit(Factor1 fact) {
+    	
+    	Designator des = fact.getDesignator();
+    	Obj desObj;
+    	
+    	if(des instanceof Designator1) {
+    		desObj = ((Designator1)des).getDesignName().obj;
+    		fact.struct = desObj.getType();
+    	}else {
+    		desObj = ((DesignatorArray)des).getDesignName().obj;
+    		fact.struct = desObj.getType().getElemType();
+    	}
+    }
+    
+    public void visit(Factor2 fact) {
+    	Designator d = fact.getDesignator();
+    	if(!(d instanceof Designator1)) {
+    		report_error("Semanticka greska na liniji " + fact.getLine() + ": Designator u Factor2(poziv metode) nije Designator1 (niz je).", null);
+    		return;
+    	}
+    	
+    	Obj o = ((Designator1)d).getDesignName().obj;
+    	
+    	if(o.getKind() != Obj.Meth) {
+    		report_error("Semanticka greska na liniji " + fact.getLine() + ": Designator u Factor2(poziv metode) nije tipa Obj.Meth.", null);
+    		return;
+    	}
+    	
+    	ActPars ap = fact.getActPars();
+    	java.util.ArrayList<Struct> params = new java.util.ArrayList<>();
+    	
+    	if (!(ap instanceof NoActPars)) {
+    		
+    		ActPars i = ap;
+    		
+    		while (i instanceof ActPars2) {
+    			params.add(((ActPars2)i).getExpr().struct);
+    			i = ((ActPars2)i).getActPars();
+    		}
+    		params.add(((ActPars1)i).getExpr().struct);
+    	}
+    	
+    	if(o.getLevel() != params.size()) {
+    		report_error("Semanticka greska na liniji " + fact.getLine() + ": Prosledjen pogresan broj argumenata funkciji " + ((Designator1)d).getDesignName().getName() + " u Factor2(poziv metode).", null);
+    		return;
+    	}
+    	
+    	java.util.Iterator<Obj> itArgs = o.getLocalSymbols().iterator();
+    	int cnt = params.size();
+    	while(itArgs.hasNext()) {
+    		Obj tmp = itArgs.next();
+    		Struct t = tmp.getType();
+    		Struct p = params.get(--cnt);
+    		
+    		boolean ok = false;
+    		
+    		if(t.equals(p)) {
+    			ok = true;
+    		}else if(t.getKind() == Struct.Array && t.getElemType() == Tab.noType
+    				&& p.getKind() == Struct.Array) {
+    			ok = true;
+    		}else if (p == Tab.nullType && t != null && (
+    	            t.getKind() == Struct.Array ||
+    	            t.equals(setType))) {
+    			
+    			ok = true;
+    		}
+    		
+    		if(!ok) {
+    			report_error("Semanticka greska na liniji " + fact.getLine() + ": Prosledjen pogresan tip argumenta " + cnt + " funkciji " + ((Designator1)d).getDesignName().getName() + " u Factor2(poziv metode).", null);
+        		return;
+    		}
+    	}
+    	
+    	
+    	fact.struct = o.getType();
+    	report_info("Factor2: ispravno pozvana metoda na liniji " + fact.getLine() + " povratne vrednosti " + fact.struct.getKind(), null);
+    }
+    
+    public void visit(FactorNum fact) {
+    	fact.struct = Tab.intType;
+    }
+    
+    public void visit(FactorChar fact) {
+    	fact.struct = Tab.charType;
+    }
+    
+    public void visit(FactorBool fact) {
+    	fact.struct = boolType;
+    }
+    
+    public void visit(Factor3 fact) {
+    	if(!(Tab.intType.assignableTo(fact.getExpr().struct))) {
+			report_error("Semanticka greska na liniji " + fact.getLine() + ": Expr x kod new y[x] nije tipa int.", null);
+			return;
+		}
+    	if(fact.getType().struct == setType) {
+    		fact.struct = setType;
+    	}else {
+    		fact.struct = new Struct(Struct.Array, fact.getType().struct);
+    	}
+    	
+    }
+    
+    public void visit(Factor6 fact) {
+    	fact.struct = fact.getExpr().struct;
+    }
+    
+    public void visit (StatementRead s) {
+    	Designator d = s.getDesignator();
+    	Obj o;
+    	
+    	if(d instanceof Designator1) {
+    		o = ((Designator1)d).getDesignName().obj;
+    		
+    		if(o.getKind() != Obj.Var) {
+    			report_error("Semanticka greska na liniji " + s.getLine() + ": Read: Designator nije tipa Var.", null);
+    			return;
+    		}else if(o.getType() != Tab.intType && o.getType() != Tab.charType && o.getType() != boolType){
+    			report_error("Semanticka greska na liniji " + s.getLine() + ": Read ne podrzava dati tip", null);
+        		return;
+    		}else {
+    			report_info("Read uspesno pozvan na liniji " + s.getLine(), null);
+    		}
+    		
+    	}else {
+    		o = ((DesignatorArray)d).getDesignName().obj;
+    		
+    		if(o.getKind() != Obj.Var || o.getType().getKind() != Struct.Array) {
+    			report_error("Semanticka greska na liniji " + s.getLine() + ": Read: Designator nije element niza.", null);
+    			return;
+    		}else if(o.getType().getElemType() != Tab.intType && o.getType().getElemType() != Tab.charType && o.getType().getElemType() != boolType){
+    			report_error("Semanticka greska na liniji " + s.getLine() + ": Read ne podrzava dati tip", null);
+        		return;
+    		}else {
+    			report_info("Read uspesno pozvan na liniji " + s.getLine(), null);
+    		}
+    		
+    	}
+    }
+    
+    public void visit(StatementPrintExpr p) {
+    	printCallCount++;
+    	Struct s = p.getExpr().struct;
+    	
+    	while(s.getKind() == Struct.Array) {
+    		s = s.getElemType();
+    	}
+    	
+    	if(!(s == Tab.intType || s == Tab.charType || s == boolType || s == setType)) {
+    		report_error("Semanticka greska na liniji " + p.getLine() + ": Print ne podrzava dati tip", null);
+    		return;
+    	}
+    	report_info("Print na liniji " + p.getLine(), null);
+    }
+    
+    public void visit(StatementPrintExprWithNum p) {
+    	printCallCount++;
+    	Struct s = p.getExpr().struct;
+    	
+    	while(s.getKind() == Struct.Array) {
+    		s = s.getElemType();
+    	}
+    	
+    	if(!(s == Tab.intType || s == Tab.charType || s == boolType || s == setType)) {
+    		report_error("Semanticka greska na liniji " + p.getLine() + ": Print ne podrzava dati tip", null);
+    		return;
+    	}
+    	report_info("Print na liniji " + p.getLine(), null);
+    }
+
+    public void visit (CondFact2 cf) {
+    	
+    	Struct l = cf.getExpr().struct;
+    	Struct r = cf.getExpr1().struct;
+    	
+    	Relop rel = cf.getRelop();
+    	
+    	if(rel instanceof Equalop || rel instanceof NotEqualop) {
+    		if(!l.compatibleWith(r)) {
+    			report_error("Semanticka greska na liniji " + cf.getLine() + ": Tipovi u relop operaciji nisu kompatibilni.", null);
+        		return;
+    		}
+    	}else {
+    		if (!((l == Tab.intType && r == Tab.intType)
+    				|| (l == Tab.charType && r == Tab.charType))) {
+    			report_error("Semanticka greska na liniji " + cf.getLine() + ": Tipovi u relop operaciji nisu kompatibilni.", null);
+        		return;
+    		}
+    	}
+    	report_info("Ispravan CondFact2(relop operacija) na liniji " + cf.getLine(), null);
+    	
+    	cf.struct = boolType;
+    }
     
     public boolean passed(){
     	return !errorDetected;

@@ -1,0 +1,2318 @@
+INFO  21:24:04,882 - Compiling source file: C:\Users\djordje.popovic\Desktop\Fakultet\PP1\programski-prevodioci-1\workspace\MJCompiler\test\program1.mj
+INFO  21:24:04,957 - #2 program
+INFO  21:24:04,957 - #42 test301
+INFO  21:24:04,957 - #5 const
+INFO  21:24:04,960 - #42 int
+INFO  21:24:04,960 - #42 nula
+INFO  21:24:04,961 - #6 =
+INFO  21:24:04,961 - #41 0
+INFO  21:24:04,961 - #7 ;
+INFO  21:24:04,961 - #5 const
+INFO  21:24:04,962 - #42 int
+INFO  21:24:04,963 - #42 jedan
+INFO  21:24:04,963 - #6 =
+INFO  21:24:04,963 - #41 1
+INFO  21:24:04,963 - #7 ;
+INFO  21:24:04,963 - #5 const
+INFO  21:24:04,963 - #42 int
+INFO  21:24:04,964 - #42 pet
+INFO  21:24:04,964 - #6 =
+INFO  21:24:04,964 - #41 5
+INFO  21:24:04,964 - #7 ;
+INFO  21:24:04,982 - #42 int
+INFO  21:24:04,983 - #42 niz
+INFO  21:24:04,983 - #11 [
+INFO  21:24:04,983 - #12 ]
+INFO  21:24:04,983 - #7 ;
+INFO  21:24:04,983 - #42 char
+INFO  21:24:04,983 - #42 nizch
+INFO  21:24:04,984 - #11 [
+INFO  21:24:04,984 - #12 ]
+INFO  21:24:04,984 - #7 ;
+INFO  21:24:04,984 - #42 int
+INFO  21:24:04,984 - #42 a
+INFO  21:24:04,984 - #7 ;
+INFO  21:24:04,985 - #42 set
+INFO  21:24:04,985 - #42 s1
+INFO  21:24:04,985 - #8 ,
+INFO  21:24:04,985 - #42 s2
+INFO  21:24:04,985 - #8 ,
+INFO  21:24:04,985 - #42 s3
+INFO  21:24:04,985 - #7 ;
+INFO  21:24:04,985 - #3 {
+INFO  21:24:04,986 - #16 void
+INFO  21:24:04,986 - #42 main
+INFO  21:24:04,986 - #14 (
+INFO  21:24:04,986 - #15 )
+INFO  21:24:04,987 - #42 int
+INFO  21:24:04,988 - #42 bodovi
+INFO  21:24:04,989 - #7 ;
+INFO  21:24:04,989 - #42 int
+INFO  21:24:04,989 - #42 temp
+INFO  21:24:04,989 - #7 ;
+INFO  21:24:04,989 - #3 {
+INFO  21:24:04,989 - #42 bodovi
+INFO  21:24:04,991 - #6 =
+INFO  21:24:04,993 - #41 0
+INFO  21:24:04,994 - #7 ;
+INFO  21:24:04,994 - #42 bodovi
+INFO  21:24:04,994 - #25 ++
+INFO  21:24:04,994 - #7 ;
+INFO  21:24:04,995 - #42 bodovi
+INFO  21:24:04,995 - #6 =
+INFO  21:24:04,995 - #42 bodovi
+INFO  21:24:04,995 - #28 +
+INFO  21:24:04,996 - #42 jedan
+INFO  21:24:04,997 - #7 ;
+INFO  21:24:04,998 - #42 bodovi
+INFO  21:24:04,998 - #6 =
+INFO  21:24:04,998 - #42 bodovi
+INFO  21:24:04,998 - #32 *
+INFO  21:24:04,998 - #42 pet
+INFO  21:24:04,999 - #7 ;
+INFO  21:24:04,999 - #42 bodovi
+INFO  21:24:04,999 - #26 --
+INFO  21:24:04,999 - #7 ;
+INFO  21:24:05,001 - #24 print
+INFO  21:24:05,001 - #14 (
+INFO  21:24:05,001 - #42 bodovi
+INFO  21:24:05,001 - #15 )
+INFO  21:24:05,001 - #7 ;
+INFO  21:24:05,001 - #24 print
+INFO  21:24:05,002 - #14 (
+INFO  21:24:05,002 - #42 eol
+INFO  21:24:05,002 - #15 )
+INFO  21:24:05,002 - #7 ;
+INFO  21:24:05,002 - #42 niz
+INFO  21:24:05,002 - #6 =
+INFO  21:24:05,003 - #30 new
+INFO  21:24:05,003 - #42 int
+INFO  21:24:05,003 - #11 [
+INFO  21:24:05,003 - #41 3
+INFO  21:24:05,003 - #12 ]
+INFO  21:24:05,003 - #7 ;
+INFO  21:24:05,004 - #42 niz
+INFO  21:24:05,004 - #11 [
+INFO  21:24:05,004 - #42 nula
+INFO  21:24:05,004 - #12 ]
+INFO  21:24:05,005 - #6 =
+INFO  21:24:05,005 - #41 2
+INFO  21:24:05,005 - #7 ;
+INFO  21:24:05,006 - #42 niz
+INFO  21:24:05,006 - #11 [
+INFO  21:24:05,006 - #42 jedan
+INFO  21:24:05,006 - #12 ]
+INFO  21:24:05,007 - #6 =
+INFO  21:24:05,007 - #41 3
+INFO  21:24:05,007 - #7 ;
+INFO  21:24:05,008 - #42 niz
+INFO  21:24:05,008 - #11 [
+INFO  21:24:05,008 - #42 niz
+INFO  21:24:05,008 - #11 [
+INFO  21:24:05,009 - #42 nula
+INFO  21:24:05,009 - #12 ]
+INFO  21:24:05,009 - #12 ]
+INFO  21:24:05,010 - #6 =
+INFO  21:24:05,010 - #42 niz
+INFO  21:24:05,010 - #11 [
+INFO  21:24:05,010 - #41 1
+INFO  21:24:05,010 - #12 ]
+INFO  21:24:05,010 - #32 *
+INFO  21:24:05,010 - #41 4
+INFO  21:24:05,010 - #7 ;
+INFO  21:24:05,010 - #42 bodovi
+INFO  21:24:05,010 - #6 =
+INFO  21:24:05,010 - #42 niz
+INFO  21:24:05,011 - #11 [
+INFO  21:24:05,011 - #41 2
+INFO  21:24:05,011 - #12 ]
+INFO  21:24:05,011 - #33 /
+INFO  21:24:05,011 - #42 niz
+INFO  21:24:05,012 - #11 [
+INFO  21:24:05,013 - #41 0
+INFO  21:24:05,013 - #12 ]
+INFO  21:24:05,013 - #7 ;
+INFO  21:24:05,013 - #24 print
+INFO  21:24:05,013 - #14 (
+INFO  21:24:05,013 - #42 bodovi
+INFO  21:24:05,013 - #15 )
+INFO  21:24:05,013 - #7 ;
+INFO  21:24:05,013 - #24 print
+INFO  21:24:05,013 - #14 (
+INFO  21:24:05,013 - #42 eol
+INFO  21:24:05,013 - #15 )
+INFO  21:24:05,013 - #7 ;
+INFO  21:24:05,013 - #24 print
+INFO  21:24:05,013 - #14 (
+INFO  21:24:05,013 - #42 niz
+INFO  21:24:05,013 - #11 [
+INFO  21:24:05,013 - #41 2
+INFO  21:24:05,015 - #12 ]
+INFO  21:24:05,015 - #15 )
+INFO  21:24:05,015 - #7 ;
+INFO  21:24:05,015 - #24 print
+INFO  21:24:05,015 - #14 (
+INFO  21:24:05,015 - #42 eol
+INFO  21:24:05,015 - #15 )
+INFO  21:24:05,015 - #7 ;
+INFO  21:24:05,015 - #42 nizch
+INFO  21:24:05,015 - #6 =
+INFO  21:24:05,015 - #30 new
+INFO  21:24:05,015 - #42 char
+INFO  21:24:05,015 - #11 [
+INFO  21:24:05,015 - #41 3
+INFO  21:24:05,015 - #12 ]
+INFO  21:24:05,015 - #7 ;
+INFO  21:24:05,015 - #42 nizch
+INFO  21:24:05,015 - #11 [
+INFO  21:24:05,015 - #41 0
+INFO  21:24:05,015 - #12 ]
+INFO  21:24:05,015 - #6 =
+INFO  21:24:05,016 - #43 a
+INFO  21:24:05,016 - #7 ;
+INFO  21:24:05,016 - #42 nizch
+INFO  21:24:05,016 - #11 [
+INFO  21:24:05,016 - #42 jedan
+INFO  21:24:05,016 - #12 ]
+INFO  21:24:05,016 - #6 =
+INFO  21:24:05,016 - #43 b
+INFO  21:24:05,016 - #7 ;
+INFO  21:24:05,016 - #42 nizch
+INFO  21:24:05,016 - #11 [
+INFO  21:24:05,017 - #42 pet
+INFO  21:24:05,017 - #29 -
+INFO  21:24:05,017 - #41 3
+INFO  21:24:05,018 - #12 ]
+INFO  21:24:05,018 - #6 =
+INFO  21:24:05,018 - #43 c
+INFO  21:24:05,018 - #7 ;
+INFO  21:24:05,018 - #24 print
+INFO  21:24:05,019 - #14 (
+INFO  21:24:05,019 - #42 nizch
+INFO  21:24:05,019 - #11 [
+INFO  21:24:05,019 - #41 1
+INFO  21:24:05,019 - #12 ]
+INFO  21:24:05,019 - #15 )
+INFO  21:24:05,019 - #7 ;
+INFO  21:24:05,020 - #24 print
+INFO  21:24:05,020 - #14 (
+INFO  21:24:05,020 - #42 eol
+INFO  21:24:05,020 - #15 )
+INFO  21:24:05,020 - #7 ;
+INFO  21:24:05,020 - #24 print
+INFO  21:24:05,020 - #14 (
+INFO  21:24:05,020 - #42 nizch
+INFO  21:24:05,020 - #11 [
+INFO  21:24:05,020 - #42 jedan
+INFO  21:24:05,021 - #32 *
+INFO  21:24:05,021 - #41 2
+INFO  21:24:05,021 - #12 ]
+INFO  21:24:05,021 - #15 )
+INFO  21:24:05,021 - #7 ;
+INFO  21:24:05,021 - #24 print
+INFO  21:24:05,022 - #14 (
+INFO  21:24:05,022 - #42 eol
+INFO  21:24:05,023 - #15 )
+INFO  21:24:05,023 - #7 ;
+INFO  21:24:05,023 - #24 print
+INFO  21:24:05,023 - #14 (
+INFO  21:24:05,023 - #42 ord
+INFO  21:24:05,023 - #14 (
+INFO  21:24:05,023 - #42 nizch
+INFO  21:24:05,023 - #11 [
+INFO  21:24:05,024 - #41 0
+INFO  21:24:05,024 - #12 ]
+INFO  21:24:05,024 - #15 )
+INFO  21:24:05,024 - #15 )
+INFO  21:24:05,024 - #7 ;
+INFO  21:24:05,024 - #42 a
+INFO  21:24:05,024 - #6 =
+INFO  21:24:05,024 - #41 1
+INFO  21:24:05,024 - #7 ;
+INFO  21:24:05,026 - #23 read
+INFO  21:24:05,026 - #14 (
+INFO  21:24:05,026 - #42 bodovi
+INFO  21:24:05,026 - #15 )
+INFO  21:24:05,026 - #7 ;
+INFO  21:24:05,026 - #42 bodovi
+INFO  21:24:05,026 - #6 =
+INFO  21:24:05,027 - #29 -
+INFO  21:24:05,027 - #42 bodovi
+INFO  21:24:05,027 - #28 +
+INFO  21:24:05,027 - #14 (
+INFO  21:24:05,027 - #42 pet
+INFO  21:24:05,027 - #32 *
+INFO  21:24:05,027 - #42 a
+INFO  21:24:05,027 - #33 /
+INFO  21:24:05,027 - #41 2
+INFO  21:24:05,027 - #29 -
+INFO  21:24:05,027 - #42 nula
+INFO  21:24:05,027 - #15 )
+INFO  21:24:05,028 - #32 *
+INFO  21:24:05,028 - #42 bodovi
+INFO  21:24:05,028 - #29 -
+INFO  21:24:05,028 - #14 (
+INFO  21:24:05,028 - #41 3
+INFO  21:24:05,028 - #34 %
+INFO  21:24:05,028 - #41 2
+INFO  21:24:05,029 - #28 +
+INFO  21:24:05,029 - #41 3
+INFO  21:24:05,029 - #32 *
+INFO  21:24:05,029 - #41 2
+INFO  21:24:05,029 - #29 -
+INFO  21:24:05,029 - #41 7
+INFO  21:24:05,029 - #15 )
+INFO  21:24:05,029 - #7 ;
+INFO  21:24:05,029 - #24 print
+INFO  21:24:05,029 - #14 (
+INFO  21:24:05,029 - #42 bodovi
+INFO  21:24:05,029 - #15 )
+INFO  21:24:05,029 - #7 ;
+INFO  21:24:05,029 - #42 niz
+INFO  21:24:05,030 - #11 [
+INFO  21:24:05,030 - #41 0
+INFO  21:24:05,030 - #12 ]
+INFO  21:24:05,030 - #6 =
+INFO  21:24:05,030 - #41 1
+INFO  21:24:05,030 - #7 ;
+INFO  21:24:05,030 - #42 niz
+INFO  21:24:05,030 - #11 [
+INFO  21:24:05,030 - #41 1
+INFO  21:24:05,030 - #12 ]
+INFO  21:24:05,030 - #6 =
+INFO  21:24:05,030 - #41 2
+INFO  21:24:05,030 - #7 ;
+INFO  21:24:05,030 - #42 niz
+INFO  21:24:05,030 - #11 [
+INFO  21:24:05,030 - #41 2
+INFO  21:24:05,030 - #12 ]
+INFO  21:24:05,030 - #6 =
+INFO  21:24:05,030 - #41 3
+INFO  21:24:05,030 - #7 ;
+INFO  21:24:05,031 - #42 s1
+INFO  21:24:05,031 - #6 =
+INFO  21:24:05,031 - #30 new
+INFO  21:24:05,031 - #42 set
+INFO  21:24:05,031 - #11 [
+INFO  21:24:05,031 - #41 5
+INFO  21:24:05,031 - #12 ]
+INFO  21:24:05,031 - #7 ;
+INFO  21:24:05,031 - #42 s2
+INFO  21:24:05,031 - #6 =
+INFO  21:24:05,031 - #30 new
+INFO  21:24:05,031 - #42 set
+INFO  21:24:05,031 - #11 [
+INFO  21:24:05,032 - #41 5
+INFO  21:24:05,032 - #12 ]
+INFO  21:24:05,032 - #7 ;
+INFO  21:24:05,032 - #42 s3
+INFO  21:24:05,032 - #6 =
+INFO  21:24:05,032 - #30 new
+INFO  21:24:05,032 - #42 set
+INFO  21:24:05,032 - #11 [
+INFO  21:24:05,032 - #41 10
+INFO  21:24:05,032 - #12 ]
+INFO  21:24:05,032 - #7 ;
+INFO  21:24:05,032 - #42 addAll
+INFO  21:24:05,032 - #14 (
+INFO  21:24:05,032 - #42 s1
+INFO  21:24:05,032 - #8 ,
+INFO  21:24:05,032 - #42 niz
+INFO  21:24:05,032 - #15 )
+INFO  21:24:05,033 - #7 ;
+INFO  21:24:05,033 - #42 add
+INFO  21:24:05,033 - #14 (
+INFO  21:24:05,033 - #42 s2
+INFO  21:24:05,033 - #8 ,
+INFO  21:24:05,033 - #41 3
+INFO  21:24:05,033 - #15 )
+INFO  21:24:05,033 - #7 ;
+INFO  21:24:05,033 - #42 add
+INFO  21:24:05,033 - #14 (
+INFO  21:24:05,033 - #42 s2
+INFO  21:24:05,033 - #8 ,
+INFO  21:24:05,034 - #41 4
+INFO  21:24:05,034 - #15 )
+INFO  21:24:05,034 - #7 ;
+INFO  21:24:05,034 - #42 add
+INFO  21:24:05,034 - #14 (
+INFO  21:24:05,034 - #42 s2
+INFO  21:24:05,034 - #8 ,
+INFO  21:24:05,034 - #41 5
+INFO  21:24:05,034 - #15 )
+INFO  21:24:05,034 - #7 ;
+INFO  21:24:05,034 - #42 s3
+INFO  21:24:05,034 - #6 =
+INFO  21:24:05,034 - #42 s1
+INFO  21:24:05,034 - #10 union
+INFO  21:24:05,034 - #42 s2
+INFO  21:24:05,036 - #7 ;
+INFO  21:24:05,037 - #24 print
+INFO  21:24:05,037 - #14 (
+INFO  21:24:05,037 - #42 s3
+INFO  21:24:05,037 - #15 )
+INFO  21:24:05,037 - #7 ;
+INFO  21:24:05,037 - #24 print
+INFO  21:24:05,037 - #14 (
+INFO  21:24:05,037 - #42 eol
+INFO  21:24:05,037 - #15 )
+INFO  21:24:05,037 - #7 ;
+INFO  21:24:05,037 - #42 niz
+INFO  21:24:05,037 - #11 [
+INFO  21:24:05,037 - #41 0
+INFO  21:24:05,037 - #12 ]
+INFO  21:24:05,037 - #6 =
+INFO  21:24:05,038 - #41 5
+INFO  21:24:05,038 - #7 ;
+INFO  21:24:05,038 - #42 niz
+INFO  21:24:05,038 - #11 [
+INFO  21:24:05,038 - #41 1
+INFO  21:24:05,038 - #12 ]
+INFO  21:24:05,038 - #6 =
+INFO  21:24:05,038 - #41 5
+INFO  21:24:05,038 - #7 ;
+INFO  21:24:05,038 - #42 niz
+INFO  21:24:05,038 - #11 [
+INFO  21:24:05,038 - #41 2
+INFO  21:24:05,038 - #12 ]
+INFO  21:24:05,038 - #6 =
+INFO  21:24:05,038 - #41 10
+INFO  21:24:05,038 - #7 ;
+INFO  21:24:05,038 - #42 s1
+INFO  21:24:05,038 - #6 =
+INFO  21:24:05,038 - #30 new
+INFO  21:24:05,038 - #42 set
+INFO  21:24:05,039 - #11 [
+INFO  21:24:05,039 - #41 5
+INFO  21:24:05,039 - #12 ]
+INFO  21:24:05,039 - #7 ;
+INFO  21:24:05,039 - #42 s2
+INFO  21:24:05,039 - #6 =
+INFO  21:24:05,039 - #30 new
+INFO  21:24:05,039 - #42 set
+INFO  21:24:05,039 - #11 [
+INFO  21:24:05,039 - #41 5
+INFO  21:24:05,039 - #12 ]
+INFO  21:24:05,039 - #7 ;
+INFO  21:24:05,039 - #42 s3
+INFO  21:24:05,039 - #6 =
+INFO  21:24:05,039 - #30 new
+INFO  21:24:05,039 - #42 set
+INFO  21:24:05,039 - #11 [
+INFO  21:24:05,039 - #41 10
+INFO  21:24:05,039 - #12 ]
+INFO  21:24:05,040 - #7 ;
+INFO  21:24:05,040 - #42 addAll
+INFO  21:24:05,040 - #14 (
+INFO  21:24:05,040 - #42 s1
+INFO  21:24:05,040 - #8 ,
+INFO  21:24:05,040 - #42 niz
+INFO  21:24:05,040 - #15 )
+INFO  21:24:05,040 - #7 ;
+INFO  21:24:05,040 - #23 read
+INFO  21:24:05,040 - #14 (
+INFO  21:24:05,040 - #42 temp
+INFO  21:24:05,040 - #15 )
+INFO  21:24:05,040 - #7 ;
+INFO  21:24:05,040 - #42 add
+INFO  21:24:05,040 - #14 (
+INFO  21:24:05,040 - #42 s2
+INFO  21:24:05,040 - #8 ,
+INFO  21:24:05,040 - #42 temp
+INFO  21:24:05,040 - #15 )
+INFO  21:24:05,040 - #7 ;
+INFO  21:24:05,040 - #23 read
+INFO  21:24:05,040 - #14 (
+INFO  21:24:05,041 - #42 temp
+INFO  21:24:05,041 - #15 )
+INFO  21:24:05,041 - #7 ;
+INFO  21:24:05,041 - #42 add
+INFO  21:24:05,041 - #14 (
+INFO  21:24:05,041 - #42 s2
+INFO  21:24:05,041 - #8 ,
+INFO  21:24:05,041 - #42 temp
+INFO  21:24:05,041 - #15 )
+INFO  21:24:05,041 - #7 ;
+INFO  21:24:05,041 - #23 read
+INFO  21:24:05,041 - #14 (
+INFO  21:24:05,041 - #42 temp
+INFO  21:24:05,041 - #15 )
+INFO  21:24:05,041 - #7 ;
+INFO  21:24:05,041 - #42 add
+INFO  21:24:05,041 - #14 (
+INFO  21:24:05,041 - #42 s2
+INFO  21:24:05,041 - #8 ,
+INFO  21:24:05,041 - #42 temp
+INFO  21:24:05,041 - #15 )
+INFO  21:24:05,041 - #7 ;
+INFO  21:24:05,041 - #42 s3
+INFO  21:24:05,041 - #6 =
+INFO  21:24:05,042 - #42 s1
+INFO  21:24:05,042 - #10 union
+INFO  21:24:05,042 - #42 s2
+INFO  21:24:05,042 - #7 ;
+INFO  21:24:05,042 - #24 print
+INFO  21:24:05,042 - #14 (
+INFO  21:24:05,042 - #42 s3
+INFO  21:24:05,042 - #15 )
+INFO  21:24:05,042 - #7 ;
+INFO  21:24:05,042 - #4 }
+INFO  21:24:05,042 - #4 }
+INFO  21:24:05,118 - Program(
+  ProgName(
+   test301
+  ) [ProgName]
+  VarOrConstDeclList1(
+    VarOrConstDeclList1(
+      VarOrConstDeclList1(
+        VarOrConstDeclList1(
+          VarOrConstDeclList1(
+            VarOrConstDeclList1(
+              VarOrConstDeclList1(
+                NoVarOrConstDeclList(
+                ) [NoVarOrConstDeclList]
+                VarOrConstDeclConst(
+                  ConstDecl(
+                    Type(
+                     int
+                    ) [Type]
+                    ConstDeclSuffixNum2(
+                     nula
+                     0
+                    ) [ConstDeclSuffixNum2]
+                  ) [ConstDecl]
+                ) [VarOrConstDeclConst]
+              ) [VarOrConstDeclList1]
+              VarOrConstDeclConst(
+                ConstDecl(
+                  Type(
+                   int
+                  ) [Type]
+                  ConstDeclSuffixNum2(
+                   jedan
+                   1
+                  ) [ConstDeclSuffixNum2]
+                ) [ConstDecl]
+              ) [VarOrConstDeclConst]
+            ) [VarOrConstDeclList1]
+            VarOrConstDeclConst(
+              ConstDecl(
+                Type(
+                 int
+                ) [Type]
+                ConstDeclSuffixNum2(
+                 pet
+                 5
+                ) [ConstDeclSuffixNum2]
+              ) [ConstDecl]
+            ) [VarOrConstDeclConst]
+          ) [VarOrConstDeclList1]
+          VarOrConstDeclVar(
+            VarDecl1(
+              Type(
+               int
+              ) [Type]
+              VarDeclElemsArray(
+               niz
+              ) [VarDeclElemsArray]
+            ) [VarDecl1]
+          ) [VarOrConstDeclVar]
+        ) [VarOrConstDeclList1]
+        VarOrConstDeclVar(
+          VarDecl1(
+            Type(
+             char
+            ) [Type]
+            VarDeclElemsArray(
+             nizch
+            ) [VarDeclElemsArray]
+          ) [VarDecl1]
+        ) [VarOrConstDeclVar]
+      ) [VarOrConstDeclList1]
+      VarOrConstDeclVar(
+        VarDecl1(
+          Type(
+           int
+          ) [Type]
+          VarDeclElems1(
+           a
+          ) [VarDeclElems1]
+        ) [VarDecl1]
+      ) [VarOrConstDeclVar]
+    ) [VarOrConstDeclList1]
+    VarOrConstDeclVar(
+      VarDecl1(
+        Type(
+         set
+        ) [Type]
+        VarDeclElems1Multiple(
+          VarDeclElems1Multiple(
+            VarDeclElems1(
+             s1
+            ) [VarDeclElems1]
+           s2
+          ) [VarDeclElems1Multiple]
+         s3
+        ) [VarDeclElems1Multiple]
+      ) [VarDecl1]
+    ) [VarOrConstDeclVar]
+  ) [VarOrConstDeclList1]
+  MethodDecl(
+    MethodTypeNameVoid(
+     main
+    ) [MethodTypeNameVoid]
+    VarDeclList1(
+      VarDeclList1(
+        NoVarDeclList(
+        ) [NoVarDeclList]
+        VarDecl1(
+          Type(
+           int
+          ) [Type]
+          VarDeclElems1(
+           bodovi
+          ) [VarDeclElems1]
+        ) [VarDecl1]
+      ) [VarDeclList1]
+      VarDecl1(
+        Type(
+         int
+        ) [Type]
+        VarDeclElems1(
+         temp
+        ) [VarDeclElems1]
+      ) [VarDecl1]
+    ) [VarDeclList1]
+    StatementList1(
+      StatementList1(
+        StatementList1(
+          StatementList1(
+            StatementList1(
+              StatementList1(
+                StatementList1(
+                  StatementList1(
+                    StatementList1(
+                      StatementList1(
+                        StatementList1(
+                          StatementList1(
+                            StatementList1(
+                              StatementList1(
+                                StatementList1(
+                                  StatementList1(
+                                    StatementList1(
+                                      StatementList1(
+                                        StatementList1(
+                                          StatementList1(
+                                            StatementList1(
+                                              StatementList1(
+                                                StatementList1(
+                                                  StatementList1(
+                                                    StatementList1(
+                                                      StatementList1(
+                                                        StatementList1(
+                                                          StatementList1(
+                                                            StatementList1(
+                                                              StatementList1(
+                                                                StatementList1(
+                                                                  StatementList1(
+                                                                    StatementList1(
+                                                                      StatementList1(
+                                                                        StatementList1(
+                                                                          StatementList1(
+                                                                            StatementList1(
+                                                                              StatementList1(
+                                                                                StatementList1(
+                                                                                  StatementList1(
+                                                                                    StatementList1(
+                                                                                      StatementList1(
+                                                                                        StatementList1(
+                                                                                          StatementList1(
+                                                                                            StatementList1(
+                                                                                              StatementList1(
+                                                                                                StatementList1(
+                                                                                                  StatementList1(
+                                                                                                    StatementList1(
+                                                                                                      StatementList1(
+                                                                                                        StatementList1(
+                                                                                                          StatementList1(
+                                                                                                            StatementList1(
+                                                                                                              StatementList1(
+                                                                                                                StatementList1(
+                                                                                                                  StatementList1(
+                                                                                                                    StatementList1(
+                                                                                                                      NoStatementList(
+                                                                                                                      ) [NoStatementList]
+                                                                                                                      Statement1(
+                                                                                                                        DesignatorStatement1(
+                                                                                                                          Designator1(
+                                                                                                                            DesignName(
+                                                                                                                             bodovi
+                                                                                                                            ) [DesignName]
+                                                                                                                          ) [Designator1]
+                                                                                                                          Assignop(
+                                                                                                                          ) [Assignop]
+                                                                                                                          ExprPlus(
+                                                                                                                            Term1(
+                                                                                                                              FactorNum(
+                                                                                                                               0
+                                                                                                                              ) [FactorNum]
+                                                                                                                            ) [Term1]
+                                                                                                                          ) [ExprPlus]
+                                                                                                                        ) [DesignatorStatement1]
+                                                                                                                      ) [Statement1]
+                                                                                                                    ) [StatementList1]
+                                                                                                                    Statement1(
+                                                                                                                      DesignatorStatementInc(
+                                                                                                                        Designator1(
+                                                                                                                          DesignName(
+                                                                                                                           bodovi
+                                                                                                                          ) [DesignName]
+                                                                                                                        ) [Designator1]
+                                                                                                                      ) [DesignatorStatementInc]
+                                                                                                                    ) [Statement1]
+                                                                                                                  ) [StatementList1]
+                                                                                                                  Statement1(
+                                                                                                                    DesignatorStatement1(
+                                                                                                                      Designator1(
+                                                                                                                        DesignName(
+                                                                                                                         bodovi
+                                                                                                                        ) [DesignName]
+                                                                                                                      ) [Designator1]
+                                                                                                                      Assignop(
+                                                                                                                      ) [Assignop]
+                                                                                                                      ExprMultiple(
+                                                                                                                        ExprPlus(
+                                                                                                                          Term1(
+                                                                                                                            Factor1(
+                                                                                                                              Designator1(
+                                                                                                                                DesignName(
+                                                                                                                                 bodovi
+                                                                                                                                ) [DesignName]
+                                                                                                                              ) [Designator1]
+                                                                                                                            ) [Factor1]
+                                                                                                                          ) [Term1]
+                                                                                                                        ) [ExprPlus]
+                                                                                                                        AddopPlus(
+                                                                                                                        ) [AddopPlus]
+                                                                                                                        Term1(
+                                                                                                                          Factor1(
+                                                                                                                            Designator1(
+                                                                                                                              DesignName(
+                                                                                                                               jedan
+                                                                                                                              ) [DesignName]
+                                                                                                                            ) [Designator1]
+                                                                                                                          ) [Factor1]
+                                                                                                                        ) [Term1]
+                                                                                                                      ) [ExprMultiple]
+                                                                                                                    ) [DesignatorStatement1]
+                                                                                                                  ) [Statement1]
+                                                                                                                ) [StatementList1]
+                                                                                                                Statement1(
+                                                                                                                  DesignatorStatement1(
+                                                                                                                    Designator1(
+                                                                                                                      DesignName(
+                                                                                                                       bodovi
+                                                                                                                      ) [DesignName]
+                                                                                                                    ) [Designator1]
+                                                                                                                    Assignop(
+                                                                                                                    ) [Assignop]
+                                                                                                                    ExprPlus(
+                                                                                                                      Term2(
+                                                                                                                        Term1(
+                                                                                                                          Factor1(
+                                                                                                                            Designator1(
+                                                                                                                              DesignName(
+                                                                                                                               bodovi
+                                                                                                                              ) [DesignName]
+                                                                                                                            ) [Designator1]
+                                                                                                                          ) [Factor1]
+                                                                                                                        ) [Term1]
+                                                                                                                        Mulop1(
+                                                                                                                        ) [Mulop1]
+                                                                                                                        Factor1(
+                                                                                                                          Designator1(
+                                                                                                                            DesignName(
+                                                                                                                             pet
+                                                                                                                            ) [DesignName]
+                                                                                                                          ) [Designator1]
+                                                                                                                        ) [Factor1]
+                                                                                                                      ) [Term2]
+                                                                                                                    ) [ExprPlus]
+                                                                                                                  ) [DesignatorStatement1]
+                                                                                                                ) [Statement1]
+                                                                                                              ) [StatementList1]
+                                                                                                              Statement1(
+                                                                                                                DesignatorStatementDec(
+                                                                                                                  Designator1(
+                                                                                                                    DesignName(
+                                                                                                                     bodovi
+                                                                                                                    ) [DesignName]
+                                                                                                                  ) [Designator1]
+                                                                                                                ) [DesignatorStatementDec]
+                                                                                                              ) [Statement1]
+                                                                                                            ) [StatementList1]
+                                                                                                            StatementPrintExpr(
+                                                                                                              ExprPlus(
+                                                                                                                Term1(
+                                                                                                                  Factor1(
+                                                                                                                    Designator1(
+                                                                                                                      DesignName(
+                                                                                                                       bodovi
+                                                                                                                      ) [DesignName]
+                                                                                                                    ) [Designator1]
+                                                                                                                  ) [Factor1]
+                                                                                                                ) [Term1]
+                                                                                                              ) [ExprPlus]
+                                                                                                            ) [StatementPrintExpr]
+                                                                                                          ) [StatementList1]
+                                                                                                          StatementPrintExpr(
+                                                                                                            ExprPlus(
+                                                                                                              Term1(
+                                                                                                                Factor1(
+                                                                                                                  Designator1(
+                                                                                                                    DesignName(
+                                                                                                                     eol
+                                                                                                                    ) [DesignName]
+                                                                                                                  ) [Designator1]
+                                                                                                                ) [Factor1]
+                                                                                                              ) [Term1]
+                                                                                                            ) [ExprPlus]
+                                                                                                          ) [StatementPrintExpr]
+                                                                                                        ) [StatementList1]
+                                                                                                        Statement1(
+                                                                                                          DesignatorStatement1(
+                                                                                                            Designator1(
+                                                                                                              DesignName(
+                                                                                                               niz
+                                                                                                              ) [DesignName]
+                                                                                                            ) [Designator1]
+                                                                                                            Assignop(
+                                                                                                            ) [Assignop]
+                                                                                                            ExprPlus(
+                                                                                                              Term1(
+                                                                                                                Factor3(
+                                                                                                                  Type(
+                                                                                                                   int
+                                                                                                                  ) [Type]
+                                                                                                                  ExprPlus(
+                                                                                                                    Term1(
+                                                                                                                      FactorNum(
+                                                                                                                       3
+                                                                                                                      ) [FactorNum]
+                                                                                                                    ) [Term1]
+                                                                                                                  ) [ExprPlus]
+                                                                                                                ) [Factor3]
+                                                                                                              ) [Term1]
+                                                                                                            ) [ExprPlus]
+                                                                                                          ) [DesignatorStatement1]
+                                                                                                        ) [Statement1]
+                                                                                                      ) [StatementList1]
+                                                                                                      Statement1(
+                                                                                                        DesignatorStatement1(
+                                                                                                          DesignatorArray(
+                                                                                                            DesignName(
+                                                                                                             niz
+                                                                                                            ) [DesignName]
+                                                                                                            ExprPlus(
+                                                                                                              Term1(
+                                                                                                                Factor1(
+                                                                                                                  Designator1(
+                                                                                                                    DesignName(
+                                                                                                                     nula
+                                                                                                                    ) [DesignName]
+                                                                                                                  ) [Designator1]
+                                                                                                                ) [Factor1]
+                                                                                                              ) [Term1]
+                                                                                                            ) [ExprPlus]
+                                                                                                          ) [DesignatorArray]
+                                                                                                          Assignop(
+                                                                                                          ) [Assignop]
+                                                                                                          ExprPlus(
+                                                                                                            Term1(
+                                                                                                              FactorNum(
+                                                                                                               2
+                                                                                                              ) [FactorNum]
+                                                                                                            ) [Term1]
+                                                                                                          ) [ExprPlus]
+                                                                                                        ) [DesignatorStatement1]
+                                                                                                      ) [Statement1]
+                                                                                                    ) [StatementList1]
+                                                                                                    Statement1(
+                                                                                                      DesignatorStatement1(
+                                                                                                        DesignatorArray(
+                                                                                                          DesignName(
+                                                                                                           niz
+                                                                                                          ) [DesignName]
+                                                                                                          ExprPlus(
+                                                                                                            Term1(
+                                                                                                              Factor1(
+                                                                                                                Designator1(
+                                                                                                                  DesignName(
+                                                                                                                   jedan
+                                                                                                                  ) [DesignName]
+                                                                                                                ) [Designator1]
+                                                                                                              ) [Factor1]
+                                                                                                            ) [Term1]
+                                                                                                          ) [ExprPlus]
+                                                                                                        ) [DesignatorArray]
+                                                                                                        Assignop(
+                                                                                                        ) [Assignop]
+                                                                                                        ExprPlus(
+                                                                                                          Term1(
+                                                                                                            FactorNum(
+                                                                                                             3
+                                                                                                            ) [FactorNum]
+                                                                                                          ) [Term1]
+                                                                                                        ) [ExprPlus]
+                                                                                                      ) [DesignatorStatement1]
+                                                                                                    ) [Statement1]
+                                                                                                  ) [StatementList1]
+                                                                                                  Statement1(
+                                                                                                    DesignatorStatement1(
+                                                                                                      DesignatorArray(
+                                                                                                        DesignName(
+                                                                                                         niz
+                                                                                                        ) [DesignName]
+                                                                                                        ExprPlus(
+                                                                                                          Term1(
+                                                                                                            Factor1(
+                                                                                                              DesignatorArray(
+                                                                                                                DesignName(
+                                                                                                                 niz
+                                                                                                                ) [DesignName]
+                                                                                                                ExprPlus(
+                                                                                                                  Term1(
+                                                                                                                    Factor1(
+                                                                                                                      Designator1(
+                                                                                                                        DesignName(
+                                                                                                                         nula
+                                                                                                                        ) [DesignName]
+                                                                                                                      ) [Designator1]
+                                                                                                                    ) [Factor1]
+                                                                                                                  ) [Term1]
+                                                                                                                ) [ExprPlus]
+                                                                                                              ) [DesignatorArray]
+                                                                                                            ) [Factor1]
+                                                                                                          ) [Term1]
+                                                                                                        ) [ExprPlus]
+                                                                                                      ) [DesignatorArray]
+                                                                                                      Assignop(
+                                                                                                      ) [Assignop]
+                                                                                                      ExprPlus(
+                                                                                                        Term2(
+                                                                                                          Term1(
+                                                                                                            Factor1(
+                                                                                                              DesignatorArray(
+                                                                                                                DesignName(
+                                                                                                                 niz
+                                                                                                                ) [DesignName]
+                                                                                                                ExprPlus(
+                                                                                                                  Term1(
+                                                                                                                    FactorNum(
+                                                                                                                     1
+                                                                                                                    ) [FactorNum]
+                                                                                                                  ) [Term1]
+                                                                                                                ) [ExprPlus]
+                                                                                                              ) [DesignatorArray]
+                                                                                                            ) [Factor1]
+                                                                                                          ) [Term1]
+                                                                                                          Mulop1(
+                                                                                                          ) [Mulop1]
+                                                                                                          FactorNum(
+                                                                                                           4
+                                                                                                          ) [FactorNum]
+                                                                                                        ) [Term2]
+                                                                                                      ) [ExprPlus]
+                                                                                                    ) [DesignatorStatement1]
+                                                                                                  ) [Statement1]
+                                                                                                ) [StatementList1]
+                                                                                                Statement1(
+                                                                                                  DesignatorStatement1(
+                                                                                                    Designator1(
+                                                                                                      DesignName(
+                                                                                                       bodovi
+                                                                                                      ) [DesignName]
+                                                                                                    ) [Designator1]
+                                                                                                    Assignop(
+                                                                                                    ) [Assignop]
+                                                                                                    ExprPlus(
+                                                                                                      Term2(
+                                                                                                        Term1(
+                                                                                                          Factor1(
+                                                                                                            DesignatorArray(
+                                                                                                              DesignName(
+                                                                                                               niz
+                                                                                                              ) [DesignName]
+                                                                                                              ExprPlus(
+                                                                                                                Term1(
+                                                                                                                  FactorNum(
+                                                                                                                   2
+                                                                                                                  ) [FactorNum]
+                                                                                                                ) [Term1]
+                                                                                                              ) [ExprPlus]
+                                                                                                            ) [DesignatorArray]
+                                                                                                          ) [Factor1]
+                                                                                                        ) [Term1]
+                                                                                                        Divop(
+                                                                                                        ) [Divop]
+                                                                                                        Factor1(
+                                                                                                          DesignatorArray(
+                                                                                                            DesignName(
+                                                                                                             niz
+                                                                                                            ) [DesignName]
+                                                                                                            ExprPlus(
+                                                                                                              Term1(
+                                                                                                                FactorNum(
+                                                                                                                 0
+                                                                                                                ) [FactorNum]
+                                                                                                              ) [Term1]
+                                                                                                            ) [ExprPlus]
+                                                                                                          ) [DesignatorArray]
+                                                                                                        ) [Factor1]
+                                                                                                      ) [Term2]
+                                                                                                    ) [ExprPlus]
+                                                                                                  ) [DesignatorStatement1]
+                                                                                                ) [Statement1]
+                                                                                              ) [StatementList1]
+                                                                                              StatementPrintExpr(
+                                                                                                ExprPlus(
+                                                                                                  Term1(
+                                                                                                    Factor1(
+                                                                                                      Designator1(
+                                                                                                        DesignName(
+                                                                                                         bodovi
+                                                                                                        ) [DesignName]
+                                                                                                      ) [Designator1]
+                                                                                                    ) [Factor1]
+                                                                                                  ) [Term1]
+                                                                                                ) [ExprPlus]
+                                                                                              ) [StatementPrintExpr]
+                                                                                            ) [StatementList1]
+                                                                                            StatementPrintExpr(
+                                                                                              ExprPlus(
+                                                                                                Term1(
+                                                                                                  Factor1(
+                                                                                                    Designator1(
+                                                                                                      DesignName(
+                                                                                                       eol
+                                                                                                      ) [DesignName]
+                                                                                                    ) [Designator1]
+                                                                                                  ) [Factor1]
+                                                                                                ) [Term1]
+                                                                                              ) [ExprPlus]
+                                                                                            ) [StatementPrintExpr]
+                                                                                          ) [StatementList1]
+                                                                                          StatementPrintExpr(
+                                                                                            ExprPlus(
+                                                                                              Term1(
+                                                                                                Factor1(
+                                                                                                  DesignatorArray(
+                                                                                                    DesignName(
+                                                                                                     niz
+                                                                                                    ) [DesignName]
+                                                                                                    ExprPlus(
+                                                                                                      Term1(
+                                                                                                        FactorNum(
+                                                                                                         2
+                                                                                                        ) [FactorNum]
+                                                                                                      ) [Term1]
+                                                                                                    ) [ExprPlus]
+                                                                                                  ) [DesignatorArray]
+                                                                                                ) [Factor1]
+                                                                                              ) [Term1]
+                                                                                            ) [ExprPlus]
+                                                                                          ) [StatementPrintExpr]
+                                                                                        ) [StatementList1]
+                                                                                        StatementPrintExpr(
+                                                                                          ExprPlus(
+                                                                                            Term1(
+                                                                                              Factor1(
+                                                                                                Designator1(
+                                                                                                  DesignName(
+                                                                                                   eol
+                                                                                                  ) [DesignName]
+                                                                                                ) [Designator1]
+                                                                                              ) [Factor1]
+                                                                                            ) [Term1]
+                                                                                          ) [ExprPlus]
+                                                                                        ) [StatementPrintExpr]
+                                                                                      ) [StatementList1]
+                                                                                      Statement1(
+                                                                                        DesignatorStatement1(
+                                                                                          Designator1(
+                                                                                            DesignName(
+                                                                                             nizch
+                                                                                            ) [DesignName]
+                                                                                          ) [Designator1]
+                                                                                          Assignop(
+                                                                                          ) [Assignop]
+                                                                                          ExprPlus(
+                                                                                            Term1(
+                                                                                              Factor3(
+                                                                                                Type(
+                                                                                                 char
+                                                                                                ) [Type]
+                                                                                                ExprPlus(
+                                                                                                  Term1(
+                                                                                                    FactorNum(
+                                                                                                     3
+                                                                                                    ) [FactorNum]
+                                                                                                  ) [Term1]
+                                                                                                ) [ExprPlus]
+                                                                                              ) [Factor3]
+                                                                                            ) [Term1]
+                                                                                          ) [ExprPlus]
+                                                                                        ) [DesignatorStatement1]
+                                                                                      ) [Statement1]
+                                                                                    ) [StatementList1]
+                                                                                    Statement1(
+                                                                                      DesignatorStatement1(
+                                                                                        DesignatorArray(
+                                                                                          DesignName(
+                                                                                           nizch
+                                                                                          ) [DesignName]
+                                                                                          ExprPlus(
+                                                                                            Term1(
+                                                                                              FactorNum(
+                                                                                               0
+                                                                                              ) [FactorNum]
+                                                                                            ) [Term1]
+                                                                                          ) [ExprPlus]
+                                                                                        ) [DesignatorArray]
+                                                                                        Assignop(
+                                                                                        ) [Assignop]
+                                                                                        ExprPlus(
+                                                                                          Term1(
+                                                                                            FactorChar(
+                                                                                             a
+                                                                                            ) [FactorChar]
+                                                                                          ) [Term1]
+                                                                                        ) [ExprPlus]
+                                                                                      ) [DesignatorStatement1]
+                                                                                    ) [Statement1]
+                                                                                  ) [StatementList1]
+                                                                                  Statement1(
+                                                                                    DesignatorStatement1(
+                                                                                      DesignatorArray(
+                                                                                        DesignName(
+                                                                                         nizch
+                                                                                        ) [DesignName]
+                                                                                        ExprPlus(
+                                                                                          Term1(
+                                                                                            Factor1(
+                                                                                              Designator1(
+                                                                                                DesignName(
+                                                                                                 jedan
+                                                                                                ) [DesignName]
+                                                                                              ) [Designator1]
+                                                                                            ) [Factor1]
+                                                                                          ) [Term1]
+                                                                                        ) [ExprPlus]
+                                                                                      ) [DesignatorArray]
+                                                                                      Assignop(
+                                                                                      ) [Assignop]
+                                                                                      ExprPlus(
+                                                                                        Term1(
+                                                                                          FactorChar(
+                                                                                           b
+                                                                                          ) [FactorChar]
+                                                                                        ) [Term1]
+                                                                                      ) [ExprPlus]
+                                                                                    ) [DesignatorStatement1]
+                                                                                  ) [Statement1]
+                                                                                ) [StatementList1]
+                                                                                Statement1(
+                                                                                  DesignatorStatement1(
+                                                                                    DesignatorArray(
+                                                                                      DesignName(
+                                                                                       nizch
+                                                                                      ) [DesignName]
+                                                                                      ExprMultiple(
+                                                                                        ExprPlus(
+                                                                                          Term1(
+                                                                                            Factor1(
+                                                                                              Designator1(
+                                                                                                DesignName(
+                                                                                                 pet
+                                                                                                ) [DesignName]
+                                                                                              ) [Designator1]
+                                                                                            ) [Factor1]
+                                                                                          ) [Term1]
+                                                                                        ) [ExprPlus]
+                                                                                        Subop(
+                                                                                        ) [Subop]
+                                                                                        Term1(
+                                                                                          FactorNum(
+                                                                                           3
+                                                                                          ) [FactorNum]
+                                                                                        ) [Term1]
+                                                                                      ) [ExprMultiple]
+                                                                                    ) [DesignatorArray]
+                                                                                    Assignop(
+                                                                                    ) [Assignop]
+                                                                                    ExprPlus(
+                                                                                      Term1(
+                                                                                        FactorChar(
+                                                                                         c
+                                                                                        ) [FactorChar]
+                                                                                      ) [Term1]
+                                                                                    ) [ExprPlus]
+                                                                                  ) [DesignatorStatement1]
+                                                                                ) [Statement1]
+                                                                              ) [StatementList1]
+                                                                              StatementPrintExpr(
+                                                                                ExprPlus(
+                                                                                  Term1(
+                                                                                    Factor1(
+                                                                                      DesignatorArray(
+                                                                                        DesignName(
+                                                                                         nizch
+                                                                                        ) [DesignName]
+                                                                                        ExprPlus(
+                                                                                          Term1(
+                                                                                            FactorNum(
+                                                                                             1
+                                                                                            ) [FactorNum]
+                                                                                          ) [Term1]
+                                                                                        ) [ExprPlus]
+                                                                                      ) [DesignatorArray]
+                                                                                    ) [Factor1]
+                                                                                  ) [Term1]
+                                                                                ) [ExprPlus]
+                                                                              ) [StatementPrintExpr]
+                                                                            ) [StatementList1]
+                                                                            StatementPrintExpr(
+                                                                              ExprPlus(
+                                                                                Term1(
+                                                                                  Factor1(
+                                                                                    Designator1(
+                                                                                      DesignName(
+                                                                                       eol
+                                                                                      ) [DesignName]
+                                                                                    ) [Designator1]
+                                                                                  ) [Factor1]
+                                                                                ) [Term1]
+                                                                              ) [ExprPlus]
+                                                                            ) [StatementPrintExpr]
+                                                                          ) [StatementList1]
+                                                                          StatementPrintExpr(
+                                                                            ExprPlus(
+                                                                              Term1(
+                                                                                Factor1(
+                                                                                  DesignatorArray(
+                                                                                    DesignName(
+                                                                                     nizch
+                                                                                    ) [DesignName]
+                                                                                    ExprPlus(
+                                                                                      Term2(
+                                                                                        Term1(
+                                                                                          Factor1(
+                                                                                            Designator1(
+                                                                                              DesignName(
+                                                                                               jedan
+                                                                                              ) [DesignName]
+                                                                                            ) [Designator1]
+                                                                                          ) [Factor1]
+                                                                                        ) [Term1]
+                                                                                        Mulop1(
+                                                                                        ) [Mulop1]
+                                                                                        FactorNum(
+                                                                                         2
+                                                                                        ) [FactorNum]
+                                                                                      ) [Term2]
+                                                                                    ) [ExprPlus]
+                                                                                  ) [DesignatorArray]
+                                                                                ) [Factor1]
+                                                                              ) [Term1]
+                                                                            ) [ExprPlus]
+                                                                          ) [StatementPrintExpr]
+                                                                        ) [StatementList1]
+                                                                        StatementPrintExpr(
+                                                                          ExprPlus(
+                                                                            Term1(
+                                                                              Factor1(
+                                                                                Designator1(
+                                                                                  DesignName(
+                                                                                   eol
+                                                                                  ) [DesignName]
+                                                                                ) [Designator1]
+                                                                              ) [Factor1]
+                                                                            ) [Term1]
+                                                                          ) [ExprPlus]
+                                                                        ) [StatementPrintExpr]
+                                                                      ) [StatementList1]
+                                                                      StatementPrintExpr(
+                                                                        ExprPlus(
+                                                                          Term1(
+                                                                            Factor2(
+                                                                              Designator1(
+                                                                                DesignName(
+                                                                                 ord
+                                                                                ) [DesignName]
+                                                                              ) [Designator1]
+                                                                              ActPars1(
+                                                                                ExprPlus(
+                                                                                  Term1(
+                                                                                    Factor1(
+                                                                                      DesignatorArray(
+                                                                                        DesignName(
+                                                                                         nizch
+                                                                                        ) [DesignName]
+                                                                                        ExprPlus(
+                                                                                          Term1(
+                                                                                            FactorNum(
+                                                                                             0
+                                                                                            ) [FactorNum]
+                                                                                          ) [Term1]
+                                                                                        ) [ExprPlus]
+                                                                                      ) [DesignatorArray]
+                                                                                    ) [Factor1]
+                                                                                  ) [Term1]
+                                                                                ) [ExprPlus]
+                                                                              ) [ActPars1]
+                                                                            ) [Factor2]
+                                                                          ) [Term1]
+                                                                        ) [ExprPlus]
+                                                                      ) [StatementPrintExpr]
+                                                                    ) [StatementList1]
+                                                                    Statement1(
+                                                                      DesignatorStatement1(
+                                                                        Designator1(
+                                                                          DesignName(
+                                                                           a
+                                                                          ) [DesignName]
+                                                                        ) [Designator1]
+                                                                        Assignop(
+                                                                        ) [Assignop]
+                                                                        ExprPlus(
+                                                                          Term1(
+                                                                            FactorNum(
+                                                                             1
+                                                                            ) [FactorNum]
+                                                                          ) [Term1]
+                                                                        ) [ExprPlus]
+                                                                      ) [DesignatorStatement1]
+                                                                    ) [Statement1]
+                                                                  ) [StatementList1]
+                                                                  StatementRead(
+                                                                    Designator1(
+                                                                      DesignName(
+                                                                       bodovi
+                                                                      ) [DesignName]
+                                                                    ) [Designator1]
+                                                                  ) [StatementRead]
+                                                                ) [StatementList1]
+                                                                Statement1(
+                                                                  DesignatorStatement1(
+                                                                    Designator1(
+                                                                      DesignName(
+                                                                       bodovi
+                                                                      ) [DesignName]
+                                                                    ) [Designator1]
+                                                                    Assignop(
+                                                                    ) [Assignop]
+                                                                    ExprMultiple(
+                                                                      ExprMultiple(
+                                                                        ExprMinus(
+                                                                          Term1(
+                                                                            Factor1(
+                                                                              Designator1(
+                                                                                DesignName(
+                                                                                 bodovi
+                                                                                ) [DesignName]
+                                                                              ) [Designator1]
+                                                                            ) [Factor1]
+                                                                          ) [Term1]
+                                                                        ) [ExprMinus]
+                                                                        AddopPlus(
+                                                                        ) [AddopPlus]
+                                                                        Term2(
+                                                                          Term1(
+                                                                            Factor6(
+                                                                              ExprMultiple(
+                                                                                ExprPlus(
+                                                                                  Term2(
+                                                                                    Term2(
+                                                                                      Term1(
+                                                                                        Factor1(
+                                                                                          Designator1(
+                                                                                            DesignName(
+                                                                                             pet
+                                                                                            ) [DesignName]
+                                                                                          ) [Designator1]
+                                                                                        ) [Factor1]
+                                                                                      ) [Term1]
+                                                                                      Mulop1(
+                                                                                      ) [Mulop1]
+                                                                                      Factor1(
+                                                                                        Designator1(
+                                                                                          DesignName(
+                                                                                           a
+                                                                                          ) [DesignName]
+                                                                                        ) [Designator1]
+                                                                                      ) [Factor1]
+                                                                                    ) [Term2]
+                                                                                    Divop(
+                                                                                    ) [Divop]
+                                                                                    FactorNum(
+                                                                                     2
+                                                                                    ) [FactorNum]
+                                                                                  ) [Term2]
+                                                                                ) [ExprPlus]
+                                                                                Subop(
+                                                                                ) [Subop]
+                                                                                Term1(
+                                                                                  Factor1(
+                                                                                    Designator1(
+                                                                                      DesignName(
+                                                                                       nula
+                                                                                      ) [DesignName]
+                                                                                    ) [Designator1]
+                                                                                  ) [Factor1]
+                                                                                ) [Term1]
+                                                                              ) [ExprMultiple]
+                                                                            ) [Factor6]
+                                                                          ) [Term1]
+                                                                          Mulop1(
+                                                                          ) [Mulop1]
+                                                                          Factor1(
+                                                                            Designator1(
+                                                                              DesignName(
+                                                                               bodovi
+                                                                              ) [DesignName]
+                                                                            ) [Designator1]
+                                                                          ) [Factor1]
+                                                                        ) [Term2]
+                                                                      ) [ExprMultiple]
+                                                                      Subop(
+                                                                      ) [Subop]
+                                                                      Term1(
+                                                                        Factor6(
+                                                                          ExprMultiple(
+                                                                            ExprMultiple(
+                                                                              ExprPlus(
+                                                                                Term2(
+                                                                                  Term1(
+                                                                                    FactorNum(
+                                                                                     3
+                                                                                    ) [FactorNum]
+                                                                                  ) [Term1]
+                                                                                  Modop(
+                                                                                  ) [Modop]
+                                                                                  FactorNum(
+                                                                                   2
+                                                                                  ) [FactorNum]
+                                                                                ) [Term2]
+                                                                              ) [ExprPlus]
+                                                                              AddopPlus(
+                                                                              ) [AddopPlus]
+                                                                              Term2(
+                                                                                Term1(
+                                                                                  FactorNum(
+                                                                                   3
+                                                                                  ) [FactorNum]
+                                                                                ) [Term1]
+                                                                                Mulop1(
+                                                                                ) [Mulop1]
+                                                                                FactorNum(
+                                                                                 2
+                                                                                ) [FactorNum]
+                                                                              ) [Term2]
+                                                                            ) [ExprMultiple]
+                                                                            Subop(
+                                                                            ) [Subop]
+                                                                            Term1(
+                                                                              FactorNum(
+                                                                               7
+                                                                              ) [FactorNum]
+                                                                            ) [Term1]
+                                                                          ) [ExprMultiple]
+                                                                        ) [Factor6]
+                                                                      ) [Term1]
+                                                                    ) [ExprMultiple]
+                                                                  ) [DesignatorStatement1]
+                                                                ) [Statement1]
+                                                              ) [StatementList1]
+                                                              StatementPrintExpr(
+                                                                ExprPlus(
+                                                                  Term1(
+                                                                    Factor1(
+                                                                      Designator1(
+                                                                        DesignName(
+                                                                         bodovi
+                                                                        ) [DesignName]
+                                                                      ) [Designator1]
+                                                                    ) [Factor1]
+                                                                  ) [Term1]
+                                                                ) [ExprPlus]
+                                                              ) [StatementPrintExpr]
+                                                            ) [StatementList1]
+                                                            Statement1(
+                                                              DesignatorStatement1(
+                                                                DesignatorArray(
+                                                                  DesignName(
+                                                                   niz
+                                                                  ) [DesignName]
+                                                                  ExprPlus(
+                                                                    Term1(
+                                                                      FactorNum(
+                                                                       0
+                                                                      ) [FactorNum]
+                                                                    ) [Term1]
+                                                                  ) [ExprPlus]
+                                                                ) [DesignatorArray]
+                                                                Assignop(
+                                                                ) [Assignop]
+                                                                ExprPlus(
+                                                                  Term1(
+                                                                    FactorNum(
+                                                                     1
+                                                                    ) [FactorNum]
+                                                                  ) [Term1]
+                                                                ) [ExprPlus]
+                                                              ) [DesignatorStatement1]
+                                                            ) [Statement1]
+                                                          ) [StatementList1]
+                                                          Statement1(
+                                                            DesignatorStatement1(
+                                                              DesignatorArray(
+                                                                DesignName(
+                                                                 niz
+                                                                ) [DesignName]
+                                                                ExprPlus(
+                                                                  Term1(
+                                                                    FactorNum(
+                                                                     1
+                                                                    ) [FactorNum]
+                                                                  ) [Term1]
+                                                                ) [ExprPlus]
+                                                              ) [DesignatorArray]
+                                                              Assignop(
+                                                              ) [Assignop]
+                                                              ExprPlus(
+                                                                Term1(
+                                                                  FactorNum(
+                                                                   2
+                                                                  ) [FactorNum]
+                                                                ) [Term1]
+                                                              ) [ExprPlus]
+                                                            ) [DesignatorStatement1]
+                                                          ) [Statement1]
+                                                        ) [StatementList1]
+                                                        Statement1(
+                                                          DesignatorStatement1(
+                                                            DesignatorArray(
+                                                              DesignName(
+                                                               niz
+                                                              ) [DesignName]
+                                                              ExprPlus(
+                                                                Term1(
+                                                                  FactorNum(
+                                                                   2
+                                                                  ) [FactorNum]
+                                                                ) [Term1]
+                                                              ) [ExprPlus]
+                                                            ) [DesignatorArray]
+                                                            Assignop(
+                                                            ) [Assignop]
+                                                            ExprPlus(
+                                                              Term1(
+                                                                FactorNum(
+                                                                 3
+                                                                ) [FactorNum]
+                                                              ) [Term1]
+                                                            ) [ExprPlus]
+                                                          ) [DesignatorStatement1]
+                                                        ) [Statement1]
+                                                      ) [StatementList1]
+                                                      Statement1(
+                                                        DesignatorStatement1(
+                                                          Designator1(
+                                                            DesignName(
+                                                             s1
+                                                            ) [DesignName]
+                                                          ) [Designator1]
+                                                          Assignop(
+                                                          ) [Assignop]
+                                                          ExprPlus(
+                                                            Term1(
+                                                              Factor3(
+                                                                Type(
+                                                                 set
+                                                                ) [Type]
+                                                                ExprPlus(
+                                                                  Term1(
+                                                                    FactorNum(
+                                                                     5
+                                                                    ) [FactorNum]
+                                                                  ) [Term1]
+                                                                ) [ExprPlus]
+                                                              ) [Factor3]
+                                                            ) [Term1]
+                                                          ) [ExprPlus]
+                                                        ) [DesignatorStatement1]
+                                                      ) [Statement1]
+                                                    ) [StatementList1]
+                                                    Statement1(
+                                                      DesignatorStatement1(
+                                                        Designator1(
+                                                          DesignName(
+                                                           s2
+                                                          ) [DesignName]
+                                                        ) [Designator1]
+                                                        Assignop(
+                                                        ) [Assignop]
+                                                        ExprPlus(
+                                                          Term1(
+                                                            Factor3(
+                                                              Type(
+                                                               set
+                                                              ) [Type]
+                                                              ExprPlus(
+                                                                Term1(
+                                                                  FactorNum(
+                                                                   5
+                                                                  ) [FactorNum]
+                                                                ) [Term1]
+                                                              ) [ExprPlus]
+                                                            ) [Factor3]
+                                                          ) [Term1]
+                                                        ) [ExprPlus]
+                                                      ) [DesignatorStatement1]
+                                                    ) [Statement1]
+                                                  ) [StatementList1]
+                                                  Statement1(
+                                                    DesignatorStatement1(
+                                                      Designator1(
+                                                        DesignName(
+                                                         s3
+                                                        ) [DesignName]
+                                                      ) [Designator1]
+                                                      Assignop(
+                                                      ) [Assignop]
+                                                      ExprPlus(
+                                                        Term1(
+                                                          Factor3(
+                                                            Type(
+                                                             set
+                                                            ) [Type]
+                                                            ExprPlus(
+                                                              Term1(
+                                                                FactorNum(
+                                                                 10
+                                                                ) [FactorNum]
+                                                              ) [Term1]
+                                                            ) [ExprPlus]
+                                                          ) [Factor3]
+                                                        ) [Term1]
+                                                      ) [ExprPlus]
+                                                    ) [DesignatorStatement1]
+                                                  ) [Statement1]
+                                                ) [StatementList1]
+                                                Statement1(
+                                                  DesignatorStatement2(
+                                                    Designator1(
+                                                      DesignName(
+                                                       addAll
+                                                      ) [DesignName]
+                                                    ) [Designator1]
+                                                    ActPars2(
+                                                      ActPars1(
+                                                        ExprPlus(
+                                                          Term1(
+                                                            Factor1(
+                                                              Designator1(
+                                                                DesignName(
+                                                                 s1
+                                                                ) [DesignName]
+                                                              ) [Designator1]
+                                                            ) [Factor1]
+                                                          ) [Term1]
+                                                        ) [ExprPlus]
+                                                      ) [ActPars1]
+                                                      ExprPlus(
+                                                        Term1(
+                                                          Factor1(
+                                                            Designator1(
+                                                              DesignName(
+                                                               niz
+                                                              ) [DesignName]
+                                                            ) [Designator1]
+                                                          ) [Factor1]
+                                                        ) [Term1]
+                                                      ) [ExprPlus]
+                                                    ) [ActPars2]
+                                                  ) [DesignatorStatement2]
+                                                ) [Statement1]
+                                              ) [StatementList1]
+                                              Statement1(
+                                                DesignatorStatement2(
+                                                  Designator1(
+                                                    DesignName(
+                                                     add
+                                                    ) [DesignName]
+                                                  ) [Designator1]
+                                                  ActPars2(
+                                                    ActPars1(
+                                                      ExprPlus(
+                                                        Term1(
+                                                          Factor1(
+                                                            Designator1(
+                                                              DesignName(
+                                                               s2
+                                                              ) [DesignName]
+                                                            ) [Designator1]
+                                                          ) [Factor1]
+                                                        ) [Term1]
+                                                      ) [ExprPlus]
+                                                    ) [ActPars1]
+                                                    ExprPlus(
+                                                      Term1(
+                                                        FactorNum(
+                                                         3
+                                                        ) [FactorNum]
+                                                      ) [Term1]
+                                                    ) [ExprPlus]
+                                                  ) [ActPars2]
+                                                ) [DesignatorStatement2]
+                                              ) [Statement1]
+                                            ) [StatementList1]
+                                            Statement1(
+                                              DesignatorStatement2(
+                                                Designator1(
+                                                  DesignName(
+                                                   add
+                                                  ) [DesignName]
+                                                ) [Designator1]
+                                                ActPars2(
+                                                  ActPars1(
+                                                    ExprPlus(
+                                                      Term1(
+                                                        Factor1(
+                                                          Designator1(
+                                                            DesignName(
+                                                             s2
+                                                            ) [DesignName]
+                                                          ) [Designator1]
+                                                        ) [Factor1]
+                                                      ) [Term1]
+                                                    ) [ExprPlus]
+                                                  ) [ActPars1]
+                                                  ExprPlus(
+                                                    Term1(
+                                                      FactorNum(
+                                                       4
+                                                      ) [FactorNum]
+                                                    ) [Term1]
+                                                  ) [ExprPlus]
+                                                ) [ActPars2]
+                                              ) [DesignatorStatement2]
+                                            ) [Statement1]
+                                          ) [StatementList1]
+                                          Statement1(
+                                            DesignatorStatement2(
+                                              Designator1(
+                                                DesignName(
+                                                 add
+                                                ) [DesignName]
+                                              ) [Designator1]
+                                              ActPars2(
+                                                ActPars1(
+                                                  ExprPlus(
+                                                    Term1(
+                                                      Factor1(
+                                                        Designator1(
+                                                          DesignName(
+                                                           s2
+                                                          ) [DesignName]
+                                                        ) [Designator1]
+                                                      ) [Factor1]
+                                                    ) [Term1]
+                                                  ) [ExprPlus]
+                                                ) [ActPars1]
+                                                ExprPlus(
+                                                  Term1(
+                                                    FactorNum(
+                                                     5
+                                                    ) [FactorNum]
+                                                  ) [Term1]
+                                                ) [ExprPlus]
+                                              ) [ActPars2]
+                                            ) [DesignatorStatement2]
+                                          ) [Statement1]
+                                        ) [StatementList1]
+                                        Statement1(
+                                          DesignatorStatement3(
+                                            Designator1(
+                                              DesignName(
+                                               s3
+                                              ) [DesignName]
+                                            ) [Designator1]
+                                            Assignop(
+                                            ) [Assignop]
+                                            Designator1(
+                                              DesignName(
+                                               s1
+                                              ) [DesignName]
+                                            ) [Designator1]
+                                            Setop1(
+                                            ) [Setop1]
+                                            Designator1(
+                                              DesignName(
+                                               s2
+                                              ) [DesignName]
+                                            ) [Designator1]
+                                          ) [DesignatorStatement3]
+                                        ) [Statement1]
+                                      ) [StatementList1]
+                                      StatementPrintExpr(
+                                        ExprPlus(
+                                          Term1(
+                                            Factor1(
+                                              Designator1(
+                                                DesignName(
+                                                 s3
+                                                ) [DesignName]
+                                              ) [Designator1]
+                                            ) [Factor1]
+                                          ) [Term1]
+                                        ) [ExprPlus]
+                                      ) [StatementPrintExpr]
+                                    ) [StatementList1]
+                                    StatementPrintExpr(
+                                      ExprPlus(
+                                        Term1(
+                                          Factor1(
+                                            Designator1(
+                                              DesignName(
+                                               eol
+                                              ) [DesignName]
+                                            ) [Designator1]
+                                          ) [Factor1]
+                                        ) [Term1]
+                                      ) [ExprPlus]
+                                    ) [StatementPrintExpr]
+                                  ) [StatementList1]
+                                  Statement1(
+                                    DesignatorStatement1(
+                                      DesignatorArray(
+                                        DesignName(
+                                         niz
+                                        ) [DesignName]
+                                        ExprPlus(
+                                          Term1(
+                                            FactorNum(
+                                             0
+                                            ) [FactorNum]
+                                          ) [Term1]
+                                        ) [ExprPlus]
+                                      ) [DesignatorArray]
+                                      Assignop(
+                                      ) [Assignop]
+                                      ExprPlus(
+                                        Term1(
+                                          FactorNum(
+                                           5
+                                          ) [FactorNum]
+                                        ) [Term1]
+                                      ) [ExprPlus]
+                                    ) [DesignatorStatement1]
+                                  ) [Statement1]
+                                ) [StatementList1]
+                                Statement1(
+                                  DesignatorStatement1(
+                                    DesignatorArray(
+                                      DesignName(
+                                       niz
+                                      ) [DesignName]
+                                      ExprPlus(
+                                        Term1(
+                                          FactorNum(
+                                           1
+                                          ) [FactorNum]
+                                        ) [Term1]
+                                      ) [ExprPlus]
+                                    ) [DesignatorArray]
+                                    Assignop(
+                                    ) [Assignop]
+                                    ExprPlus(
+                                      Term1(
+                                        FactorNum(
+                                         5
+                                        ) [FactorNum]
+                                      ) [Term1]
+                                    ) [ExprPlus]
+                                  ) [DesignatorStatement1]
+                                ) [Statement1]
+                              ) [StatementList1]
+                              Statement1(
+                                DesignatorStatement1(
+                                  DesignatorArray(
+                                    DesignName(
+                                     niz
+                                    ) [DesignName]
+                                    ExprPlus(
+                                      Term1(
+                                        FactorNum(
+                                         2
+                                        ) [FactorNum]
+                                      ) [Term1]
+                                    ) [ExprPlus]
+                                  ) [DesignatorArray]
+                                  Assignop(
+                                  ) [Assignop]
+                                  ExprPlus(
+                                    Term1(
+                                      FactorNum(
+                                       10
+                                      ) [FactorNum]
+                                    ) [Term1]
+                                  ) [ExprPlus]
+                                ) [DesignatorStatement1]
+                              ) [Statement1]
+                            ) [StatementList1]
+                            Statement1(
+                              DesignatorStatement1(
+                                Designator1(
+                                  DesignName(
+                                   s1
+                                  ) [DesignName]
+                                ) [Designator1]
+                                Assignop(
+                                ) [Assignop]
+                                ExprPlus(
+                                  Term1(
+                                    Factor3(
+                                      Type(
+                                       set
+                                      ) [Type]
+                                      ExprPlus(
+                                        Term1(
+                                          FactorNum(
+                                           5
+                                          ) [FactorNum]
+                                        ) [Term1]
+                                      ) [ExprPlus]
+                                    ) [Factor3]
+                                  ) [Term1]
+                                ) [ExprPlus]
+                              ) [DesignatorStatement1]
+                            ) [Statement1]
+                          ) [StatementList1]
+                          Statement1(
+                            DesignatorStatement1(
+                              Designator1(
+                                DesignName(
+                                 s2
+                                ) [DesignName]
+                              ) [Designator1]
+                              Assignop(
+                              ) [Assignop]
+                              ExprPlus(
+                                Term1(
+                                  Factor3(
+                                    Type(
+                                     set
+                                    ) [Type]
+                                    ExprPlus(
+                                      Term1(
+                                        FactorNum(
+                                         5
+                                        ) [FactorNum]
+                                      ) [Term1]
+                                    ) [ExprPlus]
+                                  ) [Factor3]
+                                ) [Term1]
+                              ) [ExprPlus]
+                            ) [DesignatorStatement1]
+                          ) [Statement1]
+                        ) [StatementList1]
+                        Statement1(
+                          DesignatorStatement1(
+                            Designator1(
+                              DesignName(
+                               s3
+                              ) [DesignName]
+                            ) [Designator1]
+                            Assignop(
+                            ) [Assignop]
+                            ExprPlus(
+                              Term1(
+                                Factor3(
+                                  Type(
+                                   set
+                                  ) [Type]
+                                  ExprPlus(
+                                    Term1(
+                                      FactorNum(
+                                       10
+                                      ) [FactorNum]
+                                    ) [Term1]
+                                  ) [ExprPlus]
+                                ) [Factor3]
+                              ) [Term1]
+                            ) [ExprPlus]
+                          ) [DesignatorStatement1]
+                        ) [Statement1]
+                      ) [StatementList1]
+                      Statement1(
+                        DesignatorStatement2(
+                          Designator1(
+                            DesignName(
+                             addAll
+                            ) [DesignName]
+                          ) [Designator1]
+                          ActPars2(
+                            ActPars1(
+                              ExprPlus(
+                                Term1(
+                                  Factor1(
+                                    Designator1(
+                                      DesignName(
+                                       s1
+                                      ) [DesignName]
+                                    ) [Designator1]
+                                  ) [Factor1]
+                                ) [Term1]
+                              ) [ExprPlus]
+                            ) [ActPars1]
+                            ExprPlus(
+                              Term1(
+                                Factor1(
+                                  Designator1(
+                                    DesignName(
+                                     niz
+                                    ) [DesignName]
+                                  ) [Designator1]
+                                ) [Factor1]
+                              ) [Term1]
+                            ) [ExprPlus]
+                          ) [ActPars2]
+                        ) [DesignatorStatement2]
+                      ) [Statement1]
+                    ) [StatementList1]
+                    StatementRead(
+                      Designator1(
+                        DesignName(
+                         temp
+                        ) [DesignName]
+                      ) [Designator1]
+                    ) [StatementRead]
+                  ) [StatementList1]
+                  Statement1(
+                    DesignatorStatement2(
+                      Designator1(
+                        DesignName(
+                         add
+                        ) [DesignName]
+                      ) [Designator1]
+                      ActPars2(
+                        ActPars1(
+                          ExprPlus(
+                            Term1(
+                              Factor1(
+                                Designator1(
+                                  DesignName(
+                                   s2
+                                  ) [DesignName]
+                                ) [Designator1]
+                              ) [Factor1]
+                            ) [Term1]
+                          ) [ExprPlus]
+                        ) [ActPars1]
+                        ExprPlus(
+                          Term1(
+                            Factor1(
+                              Designator1(
+                                DesignName(
+                                 temp
+                                ) [DesignName]
+                              ) [Designator1]
+                            ) [Factor1]
+                          ) [Term1]
+                        ) [ExprPlus]
+                      ) [ActPars2]
+                    ) [DesignatorStatement2]
+                  ) [Statement1]
+                ) [StatementList1]
+                StatementRead(
+                  Designator1(
+                    DesignName(
+                     temp
+                    ) [DesignName]
+                  ) [Designator1]
+                ) [StatementRead]
+              ) [StatementList1]
+              Statement1(
+                DesignatorStatement2(
+                  Designator1(
+                    DesignName(
+                     add
+                    ) [DesignName]
+                  ) [Designator1]
+                  ActPars2(
+                    ActPars1(
+                      ExprPlus(
+                        Term1(
+                          Factor1(
+                            Designator1(
+                              DesignName(
+                               s2
+                              ) [DesignName]
+                            ) [Designator1]
+                          ) [Factor1]
+                        ) [Term1]
+                      ) [ExprPlus]
+                    ) [ActPars1]
+                    ExprPlus(
+                      Term1(
+                        Factor1(
+                          Designator1(
+                            DesignName(
+                             temp
+                            ) [DesignName]
+                          ) [Designator1]
+                        ) [Factor1]
+                      ) [Term1]
+                    ) [ExprPlus]
+                  ) [ActPars2]
+                ) [DesignatorStatement2]
+              ) [Statement1]
+            ) [StatementList1]
+            StatementRead(
+              Designator1(
+                DesignName(
+                 temp
+                ) [DesignName]
+              ) [Designator1]
+            ) [StatementRead]
+          ) [StatementList1]
+          Statement1(
+            DesignatorStatement2(
+              Designator1(
+                DesignName(
+                 add
+                ) [DesignName]
+              ) [Designator1]
+              ActPars2(
+                ActPars1(
+                  ExprPlus(
+                    Term1(
+                      Factor1(
+                        Designator1(
+                          DesignName(
+                           s2
+                          ) [DesignName]
+                        ) [Designator1]
+                      ) [Factor1]
+                    ) [Term1]
+                  ) [ExprPlus]
+                ) [ActPars1]
+                ExprPlus(
+                  Term1(
+                    Factor1(
+                      Designator1(
+                        DesignName(
+                         temp
+                        ) [DesignName]
+                      ) [Designator1]
+                    ) [Factor1]
+                  ) [Term1]
+                ) [ExprPlus]
+              ) [ActPars2]
+            ) [DesignatorStatement2]
+          ) [Statement1]
+        ) [StatementList1]
+        Statement1(
+          DesignatorStatement3(
+            Designator1(
+              DesignName(
+               s3
+              ) [DesignName]
+            ) [Designator1]
+            Assignop(
+            ) [Assignop]
+            Designator1(
+              DesignName(
+               s1
+              ) [DesignName]
+            ) [Designator1]
+            Setop1(
+            ) [Setop1]
+            Designator1(
+              DesignName(
+               s2
+              ) [DesignName]
+            ) [Designator1]
+          ) [DesignatorStatement3]
+        ) [Statement1]
+      ) [StatementList1]
+      StatementPrintExpr(
+        ExprPlus(
+          Term1(
+            Factor1(
+              Designator1(
+                DesignName(
+                 s3
+                ) [DesignName]
+              ) [Designator1]
+            ) [Factor1]
+          ) [Term1]
+        ) [ExprPlus]
+      ) [StatementPrintExpr]
+    ) [StatementList1]
+  ) [MethodDecl]
+) [Program]
+INFO  21:24:05,121 - ===================================
+INFO  21:24:05,126 - Konstanta definisana na liniji 5: nula
+INFO  21:24:05,126 - Konstanta definisana na liniji 6: jedan
+INFO  21:24:05,126 - Konstanta definisana na liniji 7: pet
+INFO  21:24:05,126 - Deklarisan novi simbol (niz) na liniji 9: niz
+INFO  21:24:05,127 - Deklarisan novi simbol (niz) na liniji 10: nizch
+INFO  21:24:05,127 - Deklarisan novi simbol na liniji 12: a
+INFO  21:24:05,127 - Deklarisan novi simbol na liniji 14: s1
+INFO  21:24:05,127 - Deklarisan novi simbol na liniji 14: s2
+INFO  21:24:05,127 - Deklarisan novi simbol na liniji 14: s3
+INFO  21:24:05,127 - Obradjuje se funkcija main na liniji 17
+INFO  21:24:05,127 - Deklarisan novi simbol na liniji 18: bodovi
+INFO  21:24:05,127 - Deklarisan novi simbol na liniji 19: temp
+INFO  21:24:05,127 - Koriscen simbol bodovi na liniji 21
+INFO  21:24:05,127 - Term1 tipa 1 na liniji 21
+INFO  21:24:05,127 - ExprPlus na liniji 21 tipa: 1
+INFO  21:24:05,127 - Dodela vrednosti simbolu bodovi na liniji 21
+INFO  21:24:05,127 - Koriscen simbol bodovi na liniji 22
+INFO  21:24:05,127 - Inkrementirana vrednost simbolu bodovi na liniji 22
+INFO  21:24:05,127 - Koriscen simbol bodovi na liniji 23
+INFO  21:24:05,127 - Koriscen simbol bodovi na liniji 23
+INFO  21:24:05,127 - Term1 tipa 1 na liniji 23
+INFO  21:24:05,127 - ExprPlus na liniji 23 tipa: 1
+INFO  21:24:05,127 - Koriscen simbol jedan na liniji 23
+INFO  21:24:05,127 - Term1 tipa 1 na liniji 23
+INFO  21:24:05,127 - AddopTermList Expr na liniji 23
+INFO  21:24:05,127 - Dodela vrednosti simbolu bodovi na liniji 23
+INFO  21:24:05,127 - Koriscen simbol bodovi na liniji 24
+INFO  21:24:05,127 - Koriscen simbol bodovi na liniji 24
+INFO  21:24:05,127 - Term1 tipa 1 na liniji 24
+INFO  21:24:05,127 - Koriscen simbol pet na liniji 24
+INFO  21:24:05,127 - Mulop term (Term2) na liniji 24
+INFO  21:24:05,127 - ExprPlus na liniji 24 tipa: 1
+INFO  21:24:05,127 - Dodela vrednosti simbolu bodovi na liniji 24
+INFO  21:24:05,127 - Koriscen simbol bodovi na liniji 25
+INFO  21:24:05,127 - Dekrementirana vrednost simbolu bodovi na liniji 25
+INFO  21:24:05,127 - Koriscen simbol bodovi na liniji 26
+INFO  21:24:05,127 - Term1 tipa 1 na liniji 26
+INFO  21:24:05,127 - ExprPlus na liniji 26 tipa: 1
+INFO  21:24:05,127 - Koriscen simbol eol na liniji 27
+INFO  21:24:05,127 - Term1 tipa 2 na liniji 27
+INFO  21:24:05,127 - ExprPlus na liniji 27 tipa: 2
+INFO  21:24:05,127 - Koriscen simbol niz na liniji 29
+INFO  21:24:05,127 - Term1 tipa 1 na liniji 29
+INFO  21:24:05,127 - ExprPlus na liniji 29 tipa: 1
+INFO  21:24:05,127 - Term1 tipa 3 na liniji 29
+INFO  21:24:05,127 - ExprPlus na liniji 29 tipa: 3
+INFO  21:24:05,128 - Dodela vrednosti simbolu niz na liniji 29
+INFO  21:24:05,128 - Koriscen simbol nula na liniji 30
+INFO  21:24:05,128 - Term1 tipa 1 na liniji 30
+INFO  21:24:05,128 - ExprPlus na liniji 30 tipa: 1
+INFO  21:24:05,128 - Koriscen simbol (niz) niz na liniji 30
+INFO  21:24:05,128 - Term1 tipa 1 na liniji 30
+INFO  21:24:05,128 - ExprPlus na liniji 30 tipa: 1
+INFO  21:24:05,128 - Dodela vrednosti simbolu niz na liniji 30
+INFO  21:24:05,128 - Koriscen simbol jedan na liniji 31
+INFO  21:24:05,128 - Term1 tipa 1 na liniji 31
+INFO  21:24:05,128 - ExprPlus na liniji 31 tipa: 1
+INFO  21:24:05,128 - Koriscen simbol (niz) niz na liniji 31
+INFO  21:24:05,128 - Term1 tipa 1 na liniji 31
+INFO  21:24:05,128 - ExprPlus na liniji 31 tipa: 1
+INFO  21:24:05,128 - Dodela vrednosti simbolu niz na liniji 31
+INFO  21:24:05,128 - Koriscen simbol nula na liniji 32
+INFO  21:24:05,128 - Term1 tipa 1 na liniji 32
+INFO  21:24:05,128 - ExprPlus na liniji 32 tipa: 1
+INFO  21:24:05,128 - Koriscen simbol (niz) niz na liniji 32
+INFO  21:24:05,128 - Term1 tipa 1 na liniji 32
+INFO  21:24:05,128 - ExprPlus na liniji 32 tipa: 1
+INFO  21:24:05,128 - Koriscen simbol (niz) niz na liniji 32
+INFO  21:24:05,128 - Term1 tipa 1 na liniji 32
+INFO  21:24:05,128 - ExprPlus na liniji 32 tipa: 1
+INFO  21:24:05,128 - Koriscen simbol (niz) niz na liniji 32
+INFO  21:24:05,128 - Term1 tipa 1 na liniji 32
+INFO  21:24:05,128 - Mulop term (Term2) na liniji 32
+INFO  21:24:05,128 - ExprPlus na liniji 32 tipa: 1
+INFO  21:24:05,128 - Dodela vrednosti simbolu niz na liniji 32
+INFO  21:24:05,128 - Koriscen simbol bodovi na liniji 33
+INFO  21:24:05,128 - Term1 tipa 1 na liniji 33
+INFO  21:24:05,128 - ExprPlus na liniji 33 tipa: 1
+INFO  21:24:05,128 - Koriscen simbol (niz) niz na liniji 33
+INFO  21:24:05,128 - Term1 tipa 1 na liniji 33
+INFO  21:24:05,128 - Term1 tipa 1 na liniji 33
+INFO  21:24:05,128 - ExprPlus na liniji 33 tipa: 1
+INFO  21:24:05,128 - Koriscen simbol (niz) niz na liniji 33
+INFO  21:24:05,128 - Mulop term (Term2) na liniji 33
+INFO  21:24:05,128 - ExprPlus na liniji 33 tipa: 1
+INFO  21:24:05,128 - Dodela vrednosti simbolu bodovi na liniji 33
+INFO  21:24:05,128 - Koriscen simbol bodovi na liniji 34
+INFO  21:24:05,128 - Term1 tipa 1 na liniji 34
+INFO  21:24:05,128 - ExprPlus na liniji 34 tipa: 1
+INFO  21:24:05,128 - Koriscen simbol eol na liniji 35
+INFO  21:24:05,128 - Term1 tipa 2 na liniji 35
+INFO  21:24:05,128 - ExprPlus na liniji 35 tipa: 2
+INFO  21:24:05,128 - Term1 tipa 1 na liniji 36
+INFO  21:24:05,128 - ExprPlus na liniji 36 tipa: 1
+INFO  21:24:05,128 - Koriscen simbol (niz) niz na liniji 36
+INFO  21:24:05,128 - Term1 tipa 1 na liniji 36
+INFO  21:24:05,128 - ExprPlus na liniji 36 tipa: 1
+INFO  21:24:05,128 - Koriscen simbol eol na liniji 37
+INFO  21:24:05,128 - Term1 tipa 2 na liniji 37
+INFO  21:24:05,128 - ExprPlus na liniji 37 tipa: 2
+INFO  21:24:05,128 - Koriscen simbol nizch na liniji 39
+INFO  21:24:05,129 - Term1 tipa 1 na liniji 39
+INFO  21:24:05,129 - ExprPlus na liniji 39 tipa: 1
+INFO  21:24:05,129 - Term1 tipa 3 na liniji 39
+INFO  21:24:05,129 - ExprPlus na liniji 39 tipa: 3
+INFO  21:24:05,129 - Dodela vrednosti simbolu nizch na liniji 39
+INFO  21:24:05,129 - Term1 tipa 1 na liniji 40
+INFO  21:24:05,129 - ExprPlus na liniji 40 tipa: 1
+INFO  21:24:05,129 - Koriscen simbol (niz) nizch na liniji 40
+INFO  21:24:05,129 - Term1 tipa 2 na liniji 40
+INFO  21:24:05,129 - ExprPlus na liniji 40 tipa: 2
+INFO  21:24:05,129 - Dodela vrednosti simbolu nizch na liniji 40
+INFO  21:24:05,129 - Koriscen simbol jedan na liniji 41
+INFO  21:24:05,129 - Term1 tipa 1 na liniji 41
+INFO  21:24:05,129 - ExprPlus na liniji 41 tipa: 1
+INFO  21:24:05,129 - Koriscen simbol (niz) nizch na liniji 41
+INFO  21:24:05,129 - Term1 tipa 2 na liniji 41
+INFO  21:24:05,129 - ExprPlus na liniji 41 tipa: 2
+INFO  21:24:05,129 - Dodela vrednosti simbolu nizch na liniji 41
+INFO  21:24:05,129 - Koriscen simbol pet na liniji 42
+INFO  21:24:05,129 - Term1 tipa 1 na liniji 42
+INFO  21:24:05,129 - ExprPlus na liniji 42 tipa: 1
+INFO  21:24:05,129 - Term1 tipa 1 na liniji 42
+INFO  21:24:05,129 - AddopTermList Expr na liniji 42
+INFO  21:24:05,129 - Koriscen simbol (niz) nizch na liniji 42
+INFO  21:24:05,129 - Term1 tipa 2 na liniji 42
+INFO  21:24:05,129 - ExprPlus na liniji 42 tipa: 2
+INFO  21:24:05,129 - Dodela vrednosti simbolu nizch na liniji 42
+INFO  21:24:05,129 - Term1 tipa 1 na liniji 43
+INFO  21:24:05,129 - ExprPlus na liniji 43 tipa: 1
+INFO  21:24:05,129 - Koriscen simbol (niz) nizch na liniji 43
+INFO  21:24:05,129 - Term1 tipa 2 na liniji 43
+INFO  21:24:05,129 - ExprPlus na liniji 43 tipa: 2
+INFO  21:24:05,129 - Koriscen simbol eol na liniji 44
+INFO  21:24:05,129 - Term1 tipa 2 na liniji 44
+INFO  21:24:05,129 - ExprPlus na liniji 44 tipa: 2
+INFO  21:24:05,129 - Koriscen simbol jedan na liniji 45
+INFO  21:24:05,129 - Term1 tipa 1 na liniji 45
+INFO  21:24:05,129 - Mulop term (Term2) na liniji 45
+INFO  21:24:05,129 - ExprPlus na liniji 45 tipa: 1
+INFO  21:24:05,129 - Koriscen simbol (niz) nizch na liniji 45
+INFO  21:24:05,129 - Term1 tipa 2 na liniji 45
+INFO  21:24:05,129 - ExprPlus na liniji 45 tipa: 2
+INFO  21:24:05,129 - Koriscen simbol eol na liniji 46
+INFO  21:24:05,129 - Term1 tipa 2 na liniji 46
+INFO  21:24:05,129 - ExprPlus na liniji 46 tipa: 2
+INFO  21:24:05,129 - Koriscen simbol ord na liniji 47
+INFO  21:24:05,129 - Term1 tipa 1 na liniji 47
+INFO  21:24:05,129 - ExprPlus na liniji 47 tipa: 1
+INFO  21:24:05,129 - Koriscen simbol (niz) nizch na liniji 47
+INFO  21:24:05,129 - Term1 tipa 2 na liniji 47
+INFO  21:24:05,129 - ExprPlus na liniji 47 tipa: 2
