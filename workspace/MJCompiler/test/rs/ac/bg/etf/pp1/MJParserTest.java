@@ -63,11 +63,11 @@ public class MJParserTest {
 				File objFile = new File("test/program.obj");
 				if(objFile.exists()) objFile.delete();
 				
-//				CodeGenerator codeGenerator = new CodeGenerator();
-//				prog.traverseBottomUp(codeGenerator);
-//				Code.dataSize = v.nVars;
-//				Code.mainPc = codeGenerator.getMainPc();
-//				Code.write(new FileOutputStream(objFile));
+				CodeGenerator codeGenerator = new CodeGenerator();
+				prog.traverseBottomUp(codeGenerator);
+				Code.dataSize = v.nVars;
+				Code.mainPc = codeGenerator.getMainPc();
+				Code.write(new FileOutputStream(objFile));
 				log.info("Parsiranje uspesno zavrseno!");
 			}else{
 				log.error("Parsiranje NIJE uspesno zavrseno!");

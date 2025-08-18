@@ -1,0 +1,296 @@
+INFO  23:57:58,203 - Compiling source file: C:\Users\djordje.popovic\Desktop\Fakultet\PP1\programski-prevodioci-1\workspace\MJCompiler\test\program2.mj
+INFO  23:57:58,238 - #2 program
+INFO  23:57:58,238 - #42 test301
+INFO  23:57:58,238 - #5 const
+INFO  23:57:58,239 - #42 int
+INFO  23:57:58,239 - #42 nula
+INFO  23:57:58,240 - #6 =
+INFO  23:57:58,240 - #41 0
+INFO  23:57:58,240 - #7 ;
+INFO  23:57:58,240 - #5 const
+INFO  23:57:58,241 - #42 int
+INFO  23:57:58,241 - #42 jedan
+INFO  23:57:58,241 - #6 =
+INFO  23:57:58,241 - #41 1
+INFO  23:57:58,241 - #7 ;
+INFO  23:57:58,241 - #5 const
+INFO  23:57:58,241 - #42 int
+INFO  23:57:58,241 - #42 pet
+INFO  23:57:58,241 - #6 =
+INFO  23:57:58,241 - #41 5
+INFO  23:57:58,241 - #7 ;
+INFO  23:57:58,242 - #42 int
+INFO  23:57:58,242 - #42 niz
+INFO  23:57:58,242 - #11 [
+INFO  23:57:58,242 - #12 ]
+INFO  23:57:58,242 - #7 ;
+INFO  23:57:58,242 - #42 char
+INFO  23:57:58,242 - #42 nizch
+INFO  23:57:58,242 - #11 [
+INFO  23:57:58,242 - #12 ]
+INFO  23:57:58,243 - #7 ;
+INFO  23:57:58,243 - #42 int
+INFO  23:57:58,243 - #42 a
+INFO  23:57:58,243 - #7 ;
+INFO  23:57:58,243 - #42 set
+INFO  23:57:58,243 - #42 s1
+INFO  23:57:58,243 - #8 ,
+INFO  23:57:58,243 - #42 s2
+INFO  23:57:58,243 - #8 ,
+INFO  23:57:58,243 - #42 s3
+INFO  23:57:58,243 - #7 ;
+INFO  23:57:58,243 - #3 {
+INFO  23:57:58,243 - #16 void
+INFO  23:57:58,243 - #42 main
+INFO  23:57:58,243 - #14 (
+INFO  23:57:58,244 - #15 )
+INFO  23:57:58,244 - #42 int
+INFO  23:57:58,245 - #42 bodovi
+INFO  23:57:58,245 - #7 ;
+INFO  23:57:58,245 - #42 int
+INFO  23:57:58,245 - #42 temp
+INFO  23:57:58,245 - #7 ;
+INFO  23:57:58,245 - #42 bool
+INFO  23:57:58,245 - #42 flag
+INFO  23:57:58,245 - #7 ;
+INFO  23:57:58,245 - #3 {
+INFO  23:57:58,245 - #42 bodovi
+INFO  23:57:58,246 - #6 =
+INFO  23:57:58,246 - #41 1
+INFO  23:57:58,248 - #7 ;
+INFO  23:57:58,248 - #42 temp
+INFO  23:57:58,249 - #6 =
+INFO  23:57:58,249 - #41 2
+INFO  23:57:58,249 - #7 ;
+INFO  23:57:58,249 - #24 print
+INFO  23:57:58,249 - #14 (
+INFO  23:57:58,249 - #42 bodovi
+INFO  23:57:58,249 - #15 )
+INFO  23:57:58,249 - #7 ;
+INFO  23:57:58,249 - #4 }
+INFO  23:57:58,249 - #4 }
+INFO  23:57:58,256 - Program(
+  ProgName(
+   test301
+  ) [ProgName]
+  VarOrConstDeclList1(
+    VarOrConstDeclList1(
+      VarOrConstDeclList1(
+        VarOrConstDeclList1(
+          VarOrConstDeclList1(
+            VarOrConstDeclList1(
+              VarOrConstDeclList1(
+                NoVarOrConstDeclList(
+                ) [NoVarOrConstDeclList]
+                VarOrConstDeclConst(
+                  ConstDecl(
+                    Type(
+                     int
+                    ) [Type]
+                    ConstDeclSuffixNum2(
+                     nula
+                     0
+                    ) [ConstDeclSuffixNum2]
+                  ) [ConstDecl]
+                ) [VarOrConstDeclConst]
+              ) [VarOrConstDeclList1]
+              VarOrConstDeclConst(
+                ConstDecl(
+                  Type(
+                   int
+                  ) [Type]
+                  ConstDeclSuffixNum2(
+                   jedan
+                   1
+                  ) [ConstDeclSuffixNum2]
+                ) [ConstDecl]
+              ) [VarOrConstDeclConst]
+            ) [VarOrConstDeclList1]
+            VarOrConstDeclConst(
+              ConstDecl(
+                Type(
+                 int
+                ) [Type]
+                ConstDeclSuffixNum2(
+                 pet
+                 5
+                ) [ConstDeclSuffixNum2]
+              ) [ConstDecl]
+            ) [VarOrConstDeclConst]
+          ) [VarOrConstDeclList1]
+          VarOrConstDeclVar(
+            VarDecl1(
+              Type(
+               int
+              ) [Type]
+              VarDeclElemsArray(
+               niz
+              ) [VarDeclElemsArray]
+            ) [VarDecl1]
+          ) [VarOrConstDeclVar]
+        ) [VarOrConstDeclList1]
+        VarOrConstDeclVar(
+          VarDecl1(
+            Type(
+             char
+            ) [Type]
+            VarDeclElemsArray(
+             nizch
+            ) [VarDeclElemsArray]
+          ) [VarDecl1]
+        ) [VarOrConstDeclVar]
+      ) [VarOrConstDeclList1]
+      VarOrConstDeclVar(
+        VarDecl1(
+          Type(
+           int
+          ) [Type]
+          VarDeclElems1(
+           a
+          ) [VarDeclElems1]
+        ) [VarDecl1]
+      ) [VarOrConstDeclVar]
+    ) [VarOrConstDeclList1]
+    VarOrConstDeclVar(
+      VarDecl1(
+        Type(
+         set
+        ) [Type]
+        VarDeclElems1Multiple(
+          VarDeclElems1Multiple(
+            VarDeclElems1(
+             s1
+            ) [VarDeclElems1]
+           s2
+          ) [VarDeclElems1Multiple]
+         s3
+        ) [VarDeclElems1Multiple]
+      ) [VarDecl1]
+    ) [VarOrConstDeclVar]
+  ) [VarOrConstDeclList1]
+  MethodDecl(
+    MethodTypeNameVoid(
+     main
+    ) [MethodTypeNameVoid]
+    VarDeclList1(
+      VarDeclList1(
+        VarDeclList1(
+          NoVarDeclList(
+          ) [NoVarDeclList]
+          VarDecl1(
+            Type(
+             int
+            ) [Type]
+            VarDeclElems1(
+             bodovi
+            ) [VarDeclElems1]
+          ) [VarDecl1]
+        ) [VarDeclList1]
+        VarDecl1(
+          Type(
+           int
+          ) [Type]
+          VarDeclElems1(
+           temp
+          ) [VarDeclElems1]
+        ) [VarDecl1]
+      ) [VarDeclList1]
+      VarDecl1(
+        Type(
+         bool
+        ) [Type]
+        VarDeclElems1(
+         flag
+        ) [VarDeclElems1]
+      ) [VarDecl1]
+    ) [VarDeclList1]
+    StatementList1(
+      StatementList1(
+        StatementList1(
+          NoStatementList(
+          ) [NoStatementList]
+          Statement1(
+            DesignatorStatement1(
+              Designator1(
+                DesignName(
+                 bodovi
+                ) [DesignName]
+              ) [Designator1]
+              Assignop(
+              ) [Assignop]
+              ExprPlus(
+                Term1(
+                  FactorNum(
+                   1
+                  ) [FactorNum]
+                ) [Term1]
+              ) [ExprPlus]
+            ) [DesignatorStatement1]
+          ) [Statement1]
+        ) [StatementList1]
+        Statement1(
+          DesignatorStatement1(
+            Designator1(
+              DesignName(
+               temp
+              ) [DesignName]
+            ) [Designator1]
+            Assignop(
+            ) [Assignop]
+            ExprPlus(
+              Term1(
+                FactorNum(
+                 2
+                ) [FactorNum]
+              ) [Term1]
+            ) [ExprPlus]
+          ) [DesignatorStatement1]
+        ) [Statement1]
+      ) [StatementList1]
+      StatementPrintExpr(
+        ExprPlus(
+          Term1(
+            Factor1(
+              Designator1(
+                DesignName(
+                 bodovi
+                ) [DesignName]
+              ) [Designator1]
+            ) [Factor1]
+          ) [Term1]
+        ) [ExprPlus]
+      ) [StatementPrintExpr]
+    ) [StatementList1]
+  ) [MethodDecl]
+) [Program]
+INFO  23:57:58,256 - ===================================
+INFO  23:57:58,258 - Konstanta definisana na liniji 5: nula
+INFO  23:57:58,258 - Konstanta definisana na liniji 6: jedan
+INFO  23:57:58,258 - Konstanta definisana na liniji 7: pet
+INFO  23:57:58,258 - Deklarisan novi simbol (niz) na liniji 9: niz
+INFO  23:57:58,258 - Deklarisan novi simbol (niz) na liniji 10: nizch
+INFO  23:57:58,258 - Deklarisan novi simbol na liniji 12: a
+INFO  23:57:58,258 - Deklarisan novi simbol na liniji 14: s1
+INFO  23:57:58,258 - Deklarisan novi simbol na liniji 14: s2
+INFO  23:57:58,258 - Deklarisan novi simbol na liniji 14: s3
+INFO  23:57:58,258 - Obradjuje se funkcija main na liniji 17
+INFO  23:57:58,258 - Deklarisan novi simbol na liniji 18: bodovi
+INFO  23:57:58,259 - Deklarisan novi simbol na liniji 19: temp
+INFO  23:57:58,259 - Deklarisan novi simbol na liniji 20: flag
+INFO  23:57:58,259 - Koriscen simbol bodovi na liniji 22
+INFO  23:57:58,259 - Term1 tipa 1 na liniji 22
+INFO  23:57:58,259 - ExprPlus na liniji 22 tipa: 1
+INFO  23:57:58,259 - Dodela vrednosti simbolu bodovi na liniji 22
+INFO  23:57:58,259 - Koriscen simbol temp na liniji 23
+INFO  23:57:58,259 - Term1 tipa 1 na liniji 23
+INFO  23:57:58,259 - ExprPlus na liniji 23 tipa: 1
+INFO  23:57:58,259 - Dodela vrednosti simbolu temp na liniji 23
+INFO  23:57:58,259 - Koriscen simbol bodovi na liniji 24
+INFO  23:57:58,259 - Term1 tipa 1 na liniji 24
+INFO  23:57:58,259 - ExprPlus na liniji 24 tipa: 1
+INFO  23:57:58,259 - Print na liniji 24
+INFO  23:57:58,259 -  Print count calls = 1
+INFO  23:57:58,259 -  Deklarisanih lokalnih promenljivih ima = 3
+INFO  23:57:58,259 -  Deklarisanih globalnih promenljivih ima = 6
+INFO  23:57:58,259 - ===================================
+INFO  23:57:58,263 - Parsiranje uspesno zavrseno!
