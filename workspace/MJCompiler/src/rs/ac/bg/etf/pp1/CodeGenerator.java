@@ -10,31 +10,44 @@ import rs.etf.pp1.symboltable.concepts.Struct;
 public class CodeGenerator extends VisitorAdaptor {
 
     private int mainPc;
-    private int tmpS, tmpX, tmpI;
+    private int tmpS, tmpX, tmpI, tmpJ, tmpK, tmpY;
     private Obj tS = new Obj(Obj.Var, "$s", Tab.intType);
     private Obj tX = new Obj(Obj.Var, "$x", Tab.intType);
     private Obj tI = new Obj(Obj.Var, "$i", Tab.intType);
+    private Obj tJ = new Obj(Obj.Var, "$j", Tab.intType); // counter
+    private Obj tK = new Obj(Obj.Var, "$k", Tab.intType); // index / srcB
+    private Obj tY = new Obj(Obj.Var, "$y", Tab.intType); // srcA
 
     public int getMainPc(){
         return mainPc;
     }
 
     public void visit(StatementPrintExpr printStmt){
-        if(printStmt.getExpr().struct != Tab.charType){
+        Struct t = printStmt.getExpr().struct;
+        if (t.getKind() == 6) {
+            // print set: elements separated by space
+            emitPrintSetInline();
+        } else if (t != Tab.charType) {
             Code.loadConst(5);
             Code.put(Code.print);
-        }else{
+        } else {
             Code.loadConst(1);
             Code.put(Code.bprint);
         }
     }
 
     public void visit(StatementPrintExprWithNum printStmt){
-        Code.loadConst(printStmt.getNum());
-        if(printStmt.getExpr().struct != Tab.charType){
-            Code.put(Code.print);
-        }else{
-            Code.put(Code.bprint);
+        Struct t = printStmt.getExpr().struct;
+        if (isSetType(t)) {
+            // width is ignored for sets; print elements separated by space
+            emitPrintSetInline();
+        } else {
+            Code.loadConst(printStmt.getNum());
+            if (t != Tab.charType) {
+                Code.put(Code.print);
+            } else {
+                Code.put(Code.bprint);
+            }
         }
     }
 
@@ -98,13 +111,16 @@ public class CodeGenerator extends VisitorAdaptor {
         VarCounter varCnt = new VarCounter();
         methodNode.traverseTopDown(varCnt);
         int base = varCnt.getCount();
-        tmpS = base; tmpX = base+1; tmpI = base+2;
+        tmpS = base; tmpX = base+1; tmpI = base+2; tmpJ = base+3; tmpK = base+4; tmpY = base+5;
         tS.setAdr(tmpS); tS.setLevel(1);
         tX.setAdr(tmpX); tX.setLevel(1);
         tI.setAdr(tmpI); tI.setLevel(1);
+        tJ.setAdr(tmpJ); tJ.setLevel(1);
+        tK.setAdr(tmpK); tK.setLevel(1);
+        tY.setAdr(tmpY); tY.setLevel(1);
         Code.put(Code.enter);
         Code.put(0);
-        Code.put(base + 3);
+        Code.put(base + 6);
     }
 
     public void visit(MethodDecl methodDecl){
@@ -179,6 +195,15 @@ public class CodeGenerator extends VisitorAdaptor {
             if ("add".equals(name)) {
                 emitAddInlineWithResult();
                 Code.put(Code.pop);
+            } else if ("addAll".equals(name)) {
+                emitAddAllInlineWithResult();
+                Code.put(Code.pop);
+            } else if ("union".equals(name)) {
+                emitUnionInlineWithResult();
+                Code.put(Code.pop);
+            } else if ("open".equals(name)) {
+                // prints first element of the set argument
+                emitPrintSetFirstInline();
             }
         }
     }
@@ -193,43 +218,230 @@ public class CodeGenerator extends VisitorAdaptor {
             } else if ("ord".equals(name) || "chr".equals(name)) {
             } else if ("add".equals(name)) {
                 emitAddInlineWithResult();
+            } else if ("addAll".equals(name)) {
+                emitAddAllInlineWithResult();
+            } else if ("union".equals(name)) {
+                emitUnionInlineWithResult();
             }
         }
     }
 
+    // add(s, x) -> returns 1 if inserted, 0 otherwise
     private void emitAddInlineWithResult(){
-        Code.store(tX);
-        Code.store(tS);
-        Code.load(tX); Code.loadConst(1); Code.put(Code.add); Code.store(tX);
-        Code.loadConst(0); Code.store(tI);
+        Code.store(tX);      // x
+        Code.store(tS);      // s
+        Code.load(tX); Code.loadConst(1); Code.put(Code.add); Code.store(tX); // x++ (store as value+1)
+        Code.loadConst(0); Code.store(tI); // i = 0
         int loopStart = Code.pc;
         Code.load(tI);
         Code.load(tS); Code.put(Code.arraylength);
-        Code.putFalseJump(Code.lt, 0);
+        Code.putFalseJump(Code.lt, 0); // if !(i < s.length) -> done (return 0)
         int jDoneZero1 = Code.pc - 2;
-        Code.load(tS); Code.load(tI); Code.put(Code.aload);
+        Code.load(tS); Code.load(tI); Code.put(Code.aload); // s[i]
         Code.load(tX);
-        Code.putFalseJump(Code.ne, 0);
+        Code.putFalseJump(Code.ne, 0); // if s[i] == x -> done (return 0)
         int jDoneZero2 = Code.pc - 2;
-        Code.load(tS); Code.load(tI); Code.put(Code.aload);
+        Code.load(tS); Code.load(tI); Code.put(Code.aload); // s[i]
         Code.loadConst(0);
-        Code.putFalseJump(Code.eq, 0);
+        Code.putFalseJump(Code.eq, 0); // if s[i] != 0 -> i++
         int jInc = Code.pc - 2;
         Code.load(tS); Code.load(tI);
         Code.load(tX);
-        Code.put(Code.astore);
+        Code.put(Code.astore);         // s[i] = x
         Code.loadConst(1);
-        Code.putJump(0);
+        Code.putJump(0);               // return 1
         int jDone = Code.pc - 2;
         Code.fixup(jDoneZero1);
         Code.fixup(jDoneZero2);
-        Code.loadConst(0);
+        Code.loadConst(0);             // return 0
         Code.putJump(0);
         int jDone2 = Code.pc - 2;
         Code.fixup(jInc);
-        Code.load(tI); Code.loadConst(1); Code.put(Code.add); Code.store(tI);
+        Code.load(tI); Code.loadConst(1); Code.put(Code.add); Code.store(tI); // i++
         Code.putJump(loopStart);
         Code.fixup(jDone);
         Code.fixup(jDone2);
     }
+
+    // addAll(dest, src) -> returns count of newly inserted elements
+    private void emitAddAllInlineWithResult(){
+        Code.store(tY);  // src
+        Code.store(tS);  // dest
+        Code.loadConst(0); Code.store(tJ); // count = 0
+        Code.loadConst(0); Code.store(tK); // i = 0
+        int loopStart = Code.pc;
+        Code.load(tK);
+        Code.load(tY); Code.put(Code.arraylength);
+        Code.putFalseJump(Code.lt, 0); // if !(i < src.length) -> end
+        int jEnd = Code.pc - 2;
+
+        // call add(dest, src[i])
+        Code.load(tS);
+        Code.load(tY); Code.load(tK); Code.put(Code.aload);
+        emitAddInlineWithResult(); // leaves 0/1 on stack
+
+        // count += result
+        Code.store(tX);
+        Code.load(tJ); Code.load(tX); Code.put(Code.add); Code.store(tJ);
+
+        // i++
+        Code.load(tK); Code.loadConst(1); Code.put(Code.add); Code.store(tK);
+        Code.putJump(loopStart);
+
+        // end
+        Code.fixup(jEnd);
+        Code.load(tJ); // result on stack
+    }
+
+    // union(dest, a, b) -> clears dest and inserts elements from a and b; returns total number of insertions
+    private void emitUnionInlineWithResult(){
+        Code.store(tK); // b
+        Code.store(tY); // a
+
+        // allocate fresh dest of size len(a)+len(b)
+        Code.load(tY); Code.put(Code.arraylength); Code.store(tI);
+        Code.load(tK); Code.put(Code.arraylength); Code.store(tJ);
+        Code.load(tI); Code.load(tJ); Code.put(Code.add);
+        Code.put(Code.newarray); Code.put(1);
+        Code.store(tS);
+
+        // addAll from sets: decode (v-1) and skip empties
+        Code.load(tS); Code.load(tY);
+        emitAddAllFromSetInlineWithResult();
+        Code.put(Code.pop); // discard count
+
+        Code.load(tS); Code.load(tK);
+        emitAddAllFromSetInlineWithResult();
+        Code.put(Code.pop);
+
+        // leave new set on stack as result
+        Code.load(tS);
+    }
+
+    // addAll(dest, srcSet) where srcSet is a set-encoded int[] (0 = empty; value = elem+1)
+    // returns count of newly inserted elements
+    private void emitAddAllFromSetInlineWithResult(){
+        Code.store(tY);  // src (set-encoded)
+        Code.store(tS);  // dest set
+        Code.loadConst(0); Code.store(tJ); // count = 0
+        Code.loadConst(0); Code.store(tK); // i = 0
+        int loopStart = Code.pc;
+        // while (i < src.length)
+        Code.load(tK);
+        Code.load(tY); Code.put(Code.arraylength);
+        Code.putFalseJump(Code.lt, 0);
+        int jEnd = Code.pc - 2;
+
+        // v = src[i]
+        Code.load(tY); Code.load(tK); Code.put(Code.aload); Code.store(tX);
+        // if (v == 0) skip insert
+        Code.load(tX); Code.loadConst(0);
+        Code.putFalseJump(Code.ne, 0);
+        int jSkip = Code.pc - 2;
+
+        // decode: val = v - 1
+        Code.load(tX); Code.loadConst(1); Code.put(Code.sub); Code.store(tX);
+        // call add(dest, val)
+        Code.load(tS); Code.load(tX);
+        emitAddInlineWithResult();
+        // accumulate count
+        Code.store(tX);
+        Code.load(tJ); Code.load(tX); Code.put(Code.add); Code.store(tJ);
+
+        // skip:
+        Code.fixup(jSkip);
+        // i++
+        Code.load(tK); Code.loadConst(1); Code.put(Code.add); Code.store(tK);
+        Code.putJump(loopStart);
+
+        // end
+        Code.fixup(jEnd);
+        Code.load(tJ);
+    }
+
+    private boolean isSetType(Struct s){
+        return s != null && s.getKind() == 6; // setType kind = 6
+    }
+
+    // print set stored as int[] with elements encoded as (value+1); 0 = empty
+    private void emitPrintSetInline(){
+        // consumes: set reference on stack
+        Code.store(tS);                 // tS = set
+        Code.loadConst(0); Code.store(tI); // i = 0
+        Code.loadConst(0); Code.store(tJ); // printedAny = 0
+
+        int loopStart = Code.pc;
+        // while (i < s.length)
+        Code.load(tI);
+        Code.load(tS); Code.put(Code.arraylength);
+        Code.putFalseJump(Code.lt, 0);
+        int jEnd = Code.pc - 2;
+
+        // if (s[i] == 0) goto inc;   // empty slot
+        Code.load(tS); Code.load(tI); Code.put(Code.aload);
+        Code.loadConst(0);
+        Code.putFalseJump(Code.ne, 0);
+        int jInc = Code.pc - 2;
+
+        // if (printedAny) print space
+        Code.load(tJ);
+        Code.loadConst(1);
+        Code.putFalseJump(Code.eq, 0);
+        int jSkipSpace = Code.pc - 2;
+        Code.loadConst(32); Code.loadConst(1); Code.put(Code.bprint);
+        Code.fixup(jSkipSpace);
+
+        // print (s[i] - 1)
+        Code.load(tS); Code.load(tI); Code.put(Code.aload);
+        Code.loadConst(1); Code.put(Code.sub);
+        Code.loadConst(5); Code.put(Code.print);
+
+        // printedAny = 1
+        Code.loadConst(1); Code.store(tJ);
+
+        // i++
+        Code.fixup(jInc);
+        Code.load(tI); Code.loadConst(1); Code.put(Code.add); Code.store(tI);
+        Code.putJump(loopStart);
+
+        // end
+        Code.fixup(jEnd);
+    }
+    private void emitPrintSetFirstInline(){
+        // expects: set ref on stack; prints first present element or -1 if empty
+        Code.store(tS);
+        Code.loadConst(0); Code.store(tI); // i = 0
+
+        int loopStart = Code.pc;
+        // while (i < s.length)
+        Code.load(tI);
+        Code.load(tS); Code.put(Code.arraylength);
+        Code.putFalseJump(Code.lt, 0);
+        int jEmpty = Code.pc - 2; // no element found
+
+        // if (s[i] == 0) goto inc;
+        Code.load(tS); Code.load(tI); Code.put(Code.aload);
+        Code.loadConst(0);
+        Code.putFalseJump(Code.ne, 0);
+        int jInc = Code.pc - 2;
+
+        // print (s[i] - 1) and finish
+        Code.load(tS); Code.load(tI); Code.put(Code.aload);
+        Code.loadConst(1); Code.put(Code.sub);
+        Code.loadConst(5); Code.put(Code.print);
+        Code.putJump(0);
+        int jEnd = Code.pc - 2;
+
+        // i++ and continue
+        Code.fixup(jInc);
+        Code.load(tI); Code.loadConst(1); Code.put(Code.add); Code.store(tI);
+        Code.putJump(loopStart);
+
+        // empty set -> print -1
+        Code.fixup(jEmpty);
+        Code.loadConst(-1);
+        Code.loadConst(5); Code.put(Code.print);
+        Code.fixup(jEnd);
+    }
 }
+
