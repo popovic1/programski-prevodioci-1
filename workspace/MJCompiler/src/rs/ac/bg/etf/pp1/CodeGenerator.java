@@ -38,7 +38,7 @@ public class CodeGenerator extends VisitorAdaptor {
 
     public void visit(StatementPrintExprWithNum printStmt){
         Struct t = printStmt.getExpr().struct;
-        if (isSetType(t)) {
+        if (t.getKind() == 6) {
             // width is ignored for sets; print elements separated by space
             emitPrintSetInline();
         } else {
@@ -198,14 +198,25 @@ public class CodeGenerator extends VisitorAdaptor {
             } else if ("addAll".equals(name)) {
                 emitAddAllInlineWithResult();
                 Code.put(Code.pop);
-            } else if ("union".equals(name)) {
-                emitUnionInlineWithResult();
-                Code.put(Code.pop);
-            } else if ("open".equals(name)) {
+            }else if ("open".equals(name)) {
                 // prints first element of the set argument
                 emitPrintSetFirstInline();
             }
         }
+    }
+    
+    public void visit(DesignatorStatement3 ds) {
+    	
+    	Obj res = ((Designator1)(ds.getDesignator())).getDesignName().obj;
+    	Obj o1 = ((Designator1)(ds.getDesignator1())).getDesignName().obj;
+    	Obj o2 = ((Designator1)(ds.getDesignator2())).getDesignName().obj;
+    	
+    	Code.load(res);
+        Code.load(o1);
+        Code.load(o2);
+    	
+    	emitUnionInlineWithResult();
+        Code.put(Code.pop);
     }
 
     public void visit(Factor2 fcall) {
@@ -220,8 +231,6 @@ public class CodeGenerator extends VisitorAdaptor {
                 emitAddInlineWithResult();
             } else if ("addAll".equals(name)) {
                 emitAddAllInlineWithResult();
-            } else if ("union".equals(name)) {
-                emitUnionInlineWithResult();
             }
         }
     }
@@ -275,7 +284,7 @@ public class CodeGenerator extends VisitorAdaptor {
         Code.putFalseJump(Code.lt, 0); // if !(i < src.length) -> end
         int jEnd = Code.pc - 2;
 
-        // call add(dest, src[i])
+        // call add(dest, src[i])b
         Code.load(tS);
         Code.load(tY); Code.load(tK); Code.put(Code.aload);
         emitAddInlineWithResult(); // leaves 0/1 on stack
@@ -293,75 +302,120 @@ public class CodeGenerator extends VisitorAdaptor {
         Code.load(tJ); // result on stack
     }
 
-    // union(dest, a, b) -> clears dest and inserts elements from a and b; returns total number of insertions
+ // dest = a union b -> clears dest and inserts elements from a and b; returns total number of insertions
     private void emitUnionInlineWithResult(){
-        Code.store(tK); // b
-        Code.store(tY); // a
-
-        // allocate fresh dest of size len(a)+len(b)
-        Code.load(tY); Code.put(Code.arraylength); Code.store(tI);
-        Code.load(tK); Code.put(Code.arraylength); Code.store(tJ);
-        Code.load(tI); Code.load(tJ); Code.put(Code.add);
-        Code.put(Code.newarray); Code.put(1);
-        Code.store(tS);
-
-        // addAll from sets: decode (v-1) and skip empties
-        Code.load(tS); Code.load(tY);
-        emitAddAllFromSetInlineWithResult();
-        Code.put(Code.pop); // discard count
-
-        Code.load(tS); Code.load(tK);
-        emitAddAllFromSetInlineWithResult();
-        Code.put(Code.pop);
-
-        // leave new set on stack as result
-        Code.load(tS);
-    }
-
-    // addAll(dest, srcSet) where srcSet is a set-encoded int[] (0 = empty; value = elem+1)
-    // returns count of newly inserted elements
-    private void emitAddAllFromSetInlineWithResult(){
-        Code.store(tY);  // src (set-encoded)
-        Code.store(tS);  // dest set
-        Code.loadConst(0); Code.store(tJ); // count = 0
-        Code.loadConst(0); Code.store(tK); // i = 0
-        int loopStart = Code.pc;
-        // while (i < src.length)
-        Code.load(tK);
+    	
+//    	Code.loadConst(111111);
+//    	Code.loadConst(5);
+//    	Code.put(Code.print);
+    	
+        // Stack ulaz: ..., dest, a, b  (b je na vrhu)
+        Code.store(tK);  // srcB
+        Code.store(tY);  // srcA
+        Code.store(tS);  // dest
+        
+        // Helper: in-place decrement all non-zero elements of an int[] array referenced by 'arrObj'
+        // i = 0; while (i < arr.length) { if (arr[i] != 0) arr[i] = arr[i] - 1; i++; }
+        // --- decrement srcA (tY)
+        Code.loadConst(0); Code.store(tI); // i = 0
+        int decAStart = Code.pc;
+        Code.load(tI);
         Code.load(tY); Code.put(Code.arraylength);
-        Code.putFalseJump(Code.lt, 0);
-        int jEnd = Code.pc - 2;
+        Code.putFalseJump(Code.lt, 0);                 // if !(i < len) -> endDecA
+        int jEndDecA = Code.pc - 2;
 
-        // v = src[i]
-        Code.load(tY); Code.load(tK); Code.put(Code.aload); Code.store(tX);
-        // if (v == 0) skip insert
-        Code.load(tX); Code.loadConst(0);
-        Code.putFalseJump(Code.ne, 0);
-        int jSkip = Code.pc - 2;
+//        // if (arr[i] == 0) goto incA;
+//        Code.load(tY); Code.load(tI); Code.put(Code.aload);
+//        Code.loadConst(0);
+//        Code.putFalseJump(Code.ne, 0);
+//        int jIncA = Code.pc - 2;
 
-        // decode: val = v - 1
-        Code.load(tX); Code.loadConst(1); Code.put(Code.sub); Code.store(tX);
-        // call add(dest, val)
-        Code.load(tS); Code.load(tX);
-        emitAddInlineWithResult();
-        // accumulate count
-        Code.store(tX);
-        Code.load(tJ); Code.load(tX); Code.put(Code.add); Code.store(tJ);
+        // arr[i] = arr[i] - 1;
+        Code.load(tY); Code.load(tI);                  // ... arr, i
+        Code.load(tY); Code.load(tI); Code.put(Code.aload); // value
+        Code.loadConst(1); Code.put(Code.sub);
+        Code.put(Code.astore);
 
-        // skip:
-        Code.fixup(jSkip);
-        // i++
-        Code.load(tK); Code.loadConst(1); Code.put(Code.add); Code.store(tK);
+        // incA: i++
+//        Code.fixup(jIncA);
+        Code.load(tI); Code.loadConst(1); Code.put(Code.add); Code.store(tI);
+        Code.putJump(decAStart);
+        Code.fixup(jEndDecA);
+
+        // --- decrement srcB (tK)
+        Code.loadConst(0); Code.store(tI); // i = 0
+        int decBStart = Code.pc;
+        Code.load(tI);
+        Code.load(tK); Code.put(Code.arraylength);
+        Code.putFalseJump(Code.lt, 0);                 // if !(i < len) -> endDecB
+        int jEndDecB = Code.pc - 2;
+
+//        // if (arr[i] == 0) goto incB;
+//        Code.load(tK); Code.load(tI); Code.put(Code.aload);
+//        Code.loadConst(0);
+//        Code.putFalseJump(Code.ne, 0);
+//        int jIncB = Code.pc - 2;
+
+        // arr[i] = arr[i] - 1;
+        Code.load(tK); Code.load(tI);                  // ... arr, i
+        Code.load(tK); Code.load(tI); Code.put(Code.aload); // value
+        Code.loadConst(1); Code.put(Code.sub);
+        Code.put(Code.astore);
+
+        // incB: i++
+//        Code.fixup(jIncB);
+        Code.load(tI); Code.loadConst(1); Code.put(Code.add); Code.store(tI);
+        Code.putJump(decBStart);
+        Code.fixup(jEndDecB);
+
+        // 1) clear(dest): for (i = 0; i < dest.length; i++) dest[i] = 0;
+        Code.loadConst(0); Code.store(tI); // i = 0
+        int loopStart = Code.pc;
+        Code.load(tI);
+        Code.load(tS); Code.put(Code.arraylength);
+        Code.putFalseJump(Code.lt, 0);         // if !(i < len) -> endClear
+        int jEndClear = Code.pc - 2;
+
+        Code.load(tS); Code.load(tI);          // dest[i] = 0;
+        Code.loadConst(0);
+        Code.put(Code.astore);
+
+        Code.load(tI); Code.loadConst(1);      // i++
+        Code.put(Code.add); Code.store(tI);
         Code.putJump(loopStart);
 
-        // end
-        Code.fixup(jEnd);
+        Code.fixup(jEndClear);
+
+        // save the context
+        Code.load(tS);
+        Code.load(tY);
+        Code.load(tK);
+        Code.load(tI);
+        
+        // 2) r1 = addAll(dest, srcA)
+        Code.load(tS);
+        Code.load(tY);
+        emitAddAllInlineWithResult();          // ostavlja r1 na steku
+        Code.store(tJ);// tJ = r1    
+        
+        // restore context
+        Code.store(tI);
+        Code.store(tK);
+        Code.store(tY);
+        Code.store(tS);
+        
+        // r1 na stek
         Code.load(tJ);
+
+        // 3) r2 = addAll(dest, srcB)
+        Code.load(tS);
+        Code.load(tK);
+        emitAddAllInlineWithResult();          // ostavlja r2 na steku
+
+        // 4) return r1 + r2 (na steku)
+        Code.put(Code.add);
     }
 
-    private boolean isSetType(Struct s){
-        return s != null && s.getKind() == 6; // setType kind = 6
-    }
 
     // print set stored as int[] with elements encoded as (value+1); 0 = empty
     private void emitPrintSetInline(){

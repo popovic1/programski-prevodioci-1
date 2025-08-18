@@ -51,6 +51,7 @@ set s1, s2, s3;
 		bodovi = -bodovi + (pet * a / 2 - nula) * bodovi - (3 % 2 + 3 * 2 - 7); 
 		print(bodovi); //bodovi
 		
+		
 		niz[0] = 9; niz[1] = 2; niz[2] = 3;
 		s1 = new set[5]; s2 = new set[5]; s3 = new set[10];
 		add(s2, 3); add(s2, 4); add(s2, 5);
